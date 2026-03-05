@@ -3,8 +3,9 @@
         "next": [
             "rebel_ninja_only_me",
             "rebel_ninja_in_battlefield",
-            "goto_rebel_ninja_by_guide",
-            "[JumpBack]open_ninjia_guide",
+            "ninja_guide_returning_player",
+            "ninja_guide_in_ninja_guide",
+            "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
         "timeout": 1500,
@@ -12,7 +13,7 @@
     },
     "goto_rebel_ninja_by_guide": {
         "recognition": "Custom",
-        "custom_recognition": "IsInNinjiaGuide",
+        "custom_recognition": "IsInNinjaGuide",
         "action": "Custom",
         "custom_action": "GoIntoEntryByGuide",
         "custom_action_param": {

@@ -1,8 +1,9 @@
 {
     "weekly_win": {
         "next": [
-            "goto_duel_field_by_guide",
-            "[JumpBack]open_ninjia_guide",
+            "ninja_guide_returning_player",
+            "ninja_guide_in_ninja_guide",
+            "[JumpBack]open_ninja_guide",
             "[JumpBack]go_to_war",
             "[JumpBack]weekly_win_match_fighting",
             "[JumpBack]back_main_screen_before_task"
@@ -13,7 +14,7 @@
     },
     "goto_duel_field_by_guide": {
         "recognition": "Custom",
-        "custom_recognition": "IsInNinjiaGuide",
+        "custom_recognition": "IsInNinjaGuide",
         "action": "Custom",
         "custom_action": "GoIntoEntryByGuide",
         "custom_action_param": {
@@ -51,7 +52,7 @@
     },
     "weekly_win_confirm_weekly_award": {
         "recognition": "TemplateMatch",
-        "template": "Share/weekly_ninjia_title.png",
+        "template": "Share/weekly_ninja_title.png",
         "roi": [
             0,
             475,
@@ -128,7 +129,9 @@
         "next": [
             "[JumpBack]winner_decided",
             "[JumpBack]click_All_skill",
-            "battle_tips"
+            "battle_tips",
+            "[JumpBack]go_to_war",
+            "[JumpBack]weekly_win_match_fighting"
         ],
         "timeout": 5000,
         "pre_delay": 0,
@@ -333,7 +336,12 @@
             210,
             200
         ],
-        "threshold": 0.9
+        "threshold": 0.9,
+        "next": [
+            "weekly_win_match_fighting",
+            "[JumpBack]battle_tips",
+            "battle_end"
+        ]
     },
     "battle_detail": {
         "recognition": "TemplateMatch",
@@ -360,7 +368,7 @@
             "cannot_go_to_war",
             "[JumpBack]weekly_win_match_fighting",
             "[JumpBack]weekly_win_rank_matching",
-            "[JumpBack]weekly_win_rank_confirm_ninjia",
+            "[JumpBack]weekly_win_rank_confirm_ninja",
             "[JumpBack]weekly_win_rank_ban",
             "[JumpBack]battle_tips",
             "[JumpBack]weekly_win_rank_up",
@@ -469,7 +477,7 @@
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]ban忍者[/color]"
     },
-    "weekly_win_rank_confirm_ninjia": {
+    "weekly_win_rank_confirm_ninja": {
         "recognition": "TemplateMatch",
         "template": [
             "Weekly_win/lock.png"

@@ -1,0 +1,219 @@
+{
+    "easy_season": {
+        "next": [
+            "easy_season_enter",
+            "easy_season_done",
+            "easy_season_may_be_in_more",
+            "[JumpBack]back_main_screen"
+        ],
+        "timeout": 3000,
+        "focus": "[color:DeepSkyBlue]进入轻松季任务[/color]"
+    },
+    "easy_season_done": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_season_done.png",
+        "roi": [
+            1066,
+            1,
+            145,
+            533
+        ],
+        "green_mask": true,
+        "action": "StopTask",
+        "focus": "[color:DeepSkyBlue]轻松季已完成[/color]"
+    },
+    "easy_season_enter": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_season.png",
+        "roi": [
+            1066,
+            1,
+            145,
+            533
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "easy_season_in_easy_season"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]进入轻松季[/color]"
+    },
+    "easy_season_in_easy_season": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Easy_season/easy_season_main.png"
+        ],
+        "roi": [
+            0,
+            0,
+            314,
+            171
+        ],
+        "next": [
+            "easy_season_one_key",
+            "easy_season_open",
+            "[JumpBack]easy_season_to_easy_helper",
+            "easy_season_not_open"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_to_easy_helper": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_helper.png",
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]点击轻松季[/color]"
+    },
+    "easy_season_open": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_helper_select.png",
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_not_open": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Easy_season/easy_helper_select.png",
+            "Easy_season/easy_helper.png"
+        ],
+        "inverse": true,
+        "roi": [
+            0,
+            103,
+            199,
+            272
+        ],
+        "next": "back_main_screen_and_stop",
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_one_key": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/one_key.png",
+        "roi": [
+            1091,
+            538,
+            188,
+            181
+        ],
+        "action": "Click",
+        "next": [
+            "easy_season_one_key_done",
+            "easy_season_no_gold_sweep",
+            "[JumpBack]easy_season_one_key"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]打开轻松季[/color]"
+    },
+    "easy_season_one_key_done": {
+        "recognition": "OCR",
+        "expected": [
+            "所有奖励",
+            "当前没有"
+        ],
+        "roi": [
+            486,
+            300,
+            336,
+            144
+        ],
+        "next": [
+            "back_main_screen_and_stop"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_no_gold_sweep": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_helper/no_gold.png",
+        "roi": [
+            650,
+            414,
+            205,
+            74
+        ],
+        "action": "Click",
+        "next": [
+            "easy_season_one_key_done",
+            "confirm_easy_season_one_key"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]不进行金币扫荡[/color]"
+    },
+    "confirm_easy_season_one_key": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Easy_season/approval.png"
+        ],
+        "roi": [
+            451,
+            41,
+            365,
+            177
+        ],
+        "next": [
+            "back_main_screen_and_stop"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "easy_season_may_be_in_more": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/more.png",
+        "roi": [
+            1066,
+            1,
+            145,
+            533
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "easy_season_in_more",
+            "easy_season_may_be_in_more",
+            "easy_season_in_easy_season"
+        ],
+        "timeout": 2000,
+        "pre_delay": 0,
+        "post_delay": 400
+    },
+    "easy_season_in_more": {
+        "recognition": "TemplateMatch",
+        "template": "Easy_season/easy_season.png",
+        "roi": [
+            866,
+            375,
+            316,
+            165
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "easy_season_in_easy_season",
+            "easy_season_in_more",
+            "easy_season_may_be_in_more"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]进入轻松季[/color]"
+    }
+}

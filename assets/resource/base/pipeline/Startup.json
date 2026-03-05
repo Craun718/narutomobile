@@ -52,13 +52,13 @@
     "before_game": {
         "recognition": "TemplateMatch",
         "template": "Startup/naruto_logo.png",
-        "threshold": 0.4,
         "roi": [
             6,
             0,
             348,
             218
         ],
+        "green_mask": true,
         "next": [
             "click_start_game",
             "[JumpBack]start_up_loading",
@@ -133,13 +133,13 @@
         "focus": "[color:DeepSkyBlue]确认同意信息[/color]"
     },
     "click_start_game": {
-        "recognition": "OCR",
-        "expected": "开始游戏",
+        "recognition": "TemplateMatch",
+        "template": "Startup/start_game.png",
         "roi": [
-            494,
-            530,
-            291,
-            153
+            355,
+            441,
+            612,
+            278
         ],
         "action": "Click",
         "next": [

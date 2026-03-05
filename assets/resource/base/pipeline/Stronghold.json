@@ -1,8 +1,9 @@
 {
     "stronghold": {
         "next": [
-            "stronghold_entry",
-            "[JumpBack]open_ninjia_guide",
+            "ninja_guide_returning_player",
+            "ninja_guide_in_ninja_guide",
+            "[JumpBack]open_ninja_guide",
             "stronghold_in_stronghold",
             "stronghold_in_map",
             "[JumpBack]back_main_screen_before_task"
@@ -117,6 +118,7 @@
             123
         ],
         "next": [
+            "stronghold_end",
             "stronghold_to_fire_stronghold"
         ],
         "focus": "[color:DeepSkyBlue]在要塞地图[/color]"

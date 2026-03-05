@@ -293,7 +293,8 @@
         "next": [
             "get_copper_in_privilege_points_done",
             "[JumpBack]get_copper_in_privilege_points",
-            "privilege_points"
+            "privilege_points",
+            "get_copper_in_privilege_points_done_1"
         ],
         "timeout": 1000,
         "$doc2": "遇到真投入什么字也没有",
@@ -317,6 +318,20 @@
             48
         ],
         "next": "back_main_screen_and_stop"
+    },
+    "get_copper_in_privilege_points_done_1": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/privilege_points_without_recharge.png",
+        "threshold": 0.9,
+        "$doc": "遇到真投入什么字也没有",
+        "roi": [
+            659,
+            600,
+            511,
+            120
+        ],
+        "next": "back_main_screen_and_stop",
+        "focus": "[color:DarkGoldenRod]没有充值按钮[/color]"
     },
     "get_copper_in_privilege_points": {
         "recognition": "OCR",

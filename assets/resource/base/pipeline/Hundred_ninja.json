@@ -1,24 +1,24 @@
 {
-    "hundred_ninjia": {
+    "hundred_ninja": {
         "next": [
-            "hundred_ninjia_match",
-            "[JumpBack]hundred_ninjia_entry",
+            "hundred_ninja_match",
+            "[JumpBack]hundred_ninja_entry",
             "[JumpBack]back_main_screen"
         ],
         "focus": "[color:DeepSkyBlue]进入百忍任务[/color]"
     },
-    "hundred_ninjia_entry": {
+    "hundred_ninja_entry": {
         "recognition": "TemplateMatch",
         "template": "home/决斗场",
         "threshold": 0.7,
         "action": "Click",
         "next": [
-            "hundred_ninjia_more_game_entry"
+            "hundred_ninja_more_game_entry"
         ],
         "post_delay": 1000,
         "focus": "[color:DeepSkyBlue]进入决斗场[/color]"
     },
-    "hundred_ninjia_more_game_entry": {
+    "hundred_ninja_more_game_entry": {
         "recognition": "OCR",
         "expected": [
             "更多玩法"
@@ -31,14 +31,14 @@
         ],
         "action": "Click",
         "next": [
-            "hundred_ninjia_icon"
+            "hundred_ninja_icon"
         ],
         "post_wait_freezes": 200,
         "focus": "[color:DeepSkyBlue]进入更多玩法[/color]"
     },
-    "hundred_ninjia_icon": {
+    "hundred_ninja_icon": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/entry.png",
+        "template": "Hundred_ninja/entry.png",
         "roi": [
             688,
             159,
@@ -49,9 +49,9 @@
         "post_wait_freezes": 1000,
         "focus": "[color:DeepSkyBlue]进入百忍对决[/color]"
     },
-    "hundred_ninjia_match": {
+    "hundred_ninja_match": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/match.png",
+        "template": "Hundred_ninja/match.png",
         "roi": [
             1169,
             602,
@@ -61,12 +61,12 @@
         "action": "Swipe",
         "duration": 50,
         "next": [
-            "hundred_ninjia_in_match",
-            "[JumpBack]hundred_ninjia_match"
+            "hundred_ninja_in_match",
+            "[JumpBack]hundred_ninja_match"
         ],
         "post_delay": 900
     },
-    "hundred_ninjia_in_match": {
+    "hundred_ninja_in_match": {
         "recognition": "OCR",
         "expected": [
             "0"
@@ -79,11 +79,11 @@
         ],
         "post_delay": 900,
         "next": [
-            "hundred_ninjia_not_in_match"
+            "hundred_ninja_not_in_match"
         ],
         "timeout": 60000
     },
-    "hundred_ninjia_not_in_match": {
+    "hundred_ninja_not_in_match": {
         "recognition": "OCR",
         "expected": [
             "0"
@@ -97,12 +97,12 @@
         "inverse": true,
         "post_delay": 900,
         "next": [
-            "hundred_ninjia_entrance_animation"
+            "hundred_ninja_entrance_animation"
         ],
         "timeout": 60000,
         "focus": "[color:DeepSkyBlue]匹配结束[/color]"
     },
-    "hundred_ninjia_entrance_animation": {
+    "hundred_ninja_entrance_animation": {
         "recognition": "OCR",
         "expected": [
             "百",
@@ -117,11 +117,11 @@
         ],
         "post_delay": 900,
         "next": [
-            "hundred_ninjia_out_entrance_animation"
+            "hundred_ninja_out_entrance_animation"
         ],
         "focus": "[color:DeepSkyBlue]百忍进场动画[/color]"
     },
-    "hundred_ninjia_out_entrance_animation": {
+    "hundred_ninja_out_entrance_animation": {
         "recognition": "OCR",
         "expected": [
             "百",
@@ -138,14 +138,14 @@
         "inverse": true,
         "post_delay": 900,
         "next": [
-            "hundred_ninjia_selcet_ninjia",
+            "hundred_ninja_selcet_ninja",
             "[JumpBack]wait_5_second"
         ],
         "focus": "[color:DeepSkyBlue]离开百忍进场动画[/color]"
     },
-    "hundred_ninjia_selcet_ninjia": {
+    "hundred_ninja_selcet_ninja": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/select_ninjia_masked.png",
+        "template": "Hundred_ninja/select_ninja_masked.png",
         "roi": [
             82,
             406,
@@ -156,16 +156,16 @@
         "green_mask": true,
         "action": "Click",
         "next": [
-            "hundred_ninjia_confirm_selcet_ninjia",
-            "hundred_ninjia_battle_tips",
-            "[JumpBack]hundred_ninjia_selcet_ninjia",
-            "hundred_ninjia_check_fight"
+            "hundred_ninja_confirm_selcet_ninja",
+            "hundred_ninja_battle_tips",
+            "[JumpBack]hundred_ninja_selcet_ninja",
+            "hundred_ninja_check_fight"
         ],
         "post_delay": 500,
         "timeout": 60000,
         "focus": "[color:DeepSkyBlue]进入百忍选忍者[/color]"
     },
-    "hundred_ninjia_battle_tips": {
+    "hundred_ninja_battle_tips": {
         "recognition": "TemplateMatch",
         "template": "Weekly_win/battle_tips.png",
         "roi": [
@@ -175,11 +175,11 @@
             157
         ],
         "next": [
-            "hundred_ninjia_tips_confirm"
+            "hundred_ninja_tips_confirm"
         ],
         "focus": "[color:DeepSkyBlue]战斗异常提示[/color]"
     },
-    "hundred_ninjia_tips_confirm": {
+    "hundred_ninja_tips_confirm": {
         "recognition": "OCR",
         "expected": "确定",
         "roi": [
@@ -190,11 +190,11 @@
         ],
         "action": "Click",
         "next": [
-            "hundred_ninjia_without_tips_confirm",
-            "hundred_ninjia_tips_confirm"
+            "hundred_ninja_without_tips_confirm",
+            "hundred_ninja_tips_confirm"
         ]
     },
-    "hundred_ninjia_without_tips_confirm": {
+    "hundred_ninja_without_tips_confirm": {
         "recognition": "OCR",
         "expected": "确定",
         "roi": [
@@ -208,7 +208,7 @@
             "back_main_screen_and_stop"
         ]
     },
-    "hundred_ninjia_confirm_selcet_ninjia": {
+    "hundred_ninja_confirm_selcet_ninja": {
         "recognition": "OCR",
         "expected": [
             "确定"
@@ -221,16 +221,16 @@
         ],
         "action": "Click",
         "next": [
-            "hundred_ninjia_check_fight",
-            "hundred_ninjia_battle_tips",
-            "[JumpBack]hundred_ninjia_selcet_ninjia"
+            "hundred_ninja_check_fight",
+            "hundred_ninja_battle_tips",
+            "[JumpBack]hundred_ninja_selcet_ninja"
         ],
         "timeout": 60000,
         "focus": "[color:DeepSkyBlue]百忍对决确定选忍者[/color]"
     },
-    "hundred_ninjia_fight": {
+    "hundred_ninja_fight": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/fight.png",
+        "template": "Hundred_ninja/fight.png",
         "roi": [
             0,
             0,
@@ -241,15 +241,15 @@
         "green_mask": true,
         "action": "DoNothing",
         "next": [
-            "hundred_ninjia_check_no_fight",
-            "[JumpBack]hundred_ninjia_click_All_skill",
+            "hundred_ninja_check_no_fight",
+            "[JumpBack]hundred_ninja_click_All_skill",
             "[JumpBack]wait_5_second"
         ],
         "focus": "[color:DeepSkyBlue]百忍对决战斗[/color]"
     },
-    "hundred_ninjia_check_fight": {
+    "hundred_ninja_check_fight": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/fight.png",
+        "template": "Hundred_ninja/fight.png",
         "roi": [
             0,
             0,
@@ -260,8 +260,8 @@
         "green_mask": true,
         "action": "DoNothing",
         "next": [
-            "hundred_ninjia_check_no_fight",
-            "[JumpBack]hundred_ninjia_check_fight",
+            "hundred_ninja_check_no_fight",
+            "[JumpBack]hundred_ninja_check_fight",
             "[JumpBack]wait_5_second"
         ],
         "focus": "[color:DeepSkyBlue]百忍对决战斗[/color]"
@@ -269,9 +269,9 @@
     "wait_5_second": {
         "post_delay": 5000
     },
-    "hundred_ninjia_check_no_fight": {
+    "hundred_ninja_check_no_fight": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/fight.png",
+        "template": "Hundred_ninja/fight.png",
         "roi": [
             0,
             0,
@@ -282,14 +282,14 @@
         "inverse": true,
         "green_mask": true,
         "next": [
-            "hundred_ninjia_confirm_game_over",
-            "hundred_ninjia_windfall",
-            "hundred_ninjia_check_fight",
+            "hundred_ninja_confirm_game_over",
+            "hundred_ninja_windfall",
+            "hundred_ninja_check_fight",
             "[JumpBack]wait_5_second"
         ],
         "focus": "[color:DeepSkyBlue]检测百忍对决不在战斗[/color]"
     },
-    "hundred_ninjia_windfall": {
+    "hundred_ninja_windfall": {
         "recognition": "OCR",
         "expected": [
             "继",
@@ -303,13 +303,13 @@
         ],
         "action": "Click",
         "next": [
-            "hundred_ninjia_entrance_animation",
-            "[JumpBack]hundred_ninjia_windfall",
+            "hundred_ninja_entrance_animation",
+            "[JumpBack]hundred_ninja_windfall",
             "[JumpBack]wait_5_second"
         ],
         "focus": "[color:DeepSkyBlue]赢了![/color]"
     },
-    "hundred_ninjia_confirm_game_over": {
+    "hundred_ninja_confirm_game_over": {
         "recognition": "OCR",
         "expected": [
             "确定"
@@ -322,16 +322,16 @@
         ],
         "action": "Click",
         "next": [
-            "hundred_ninjia_match",
-            "[JumpBack]hundred_ninjia_confirm_game_over"
+            "hundred_ninja_match",
+            "[JumpBack]hundred_ninja_confirm_game_over"
         ],
         "post_delay": 4000,
         "timeout": 60000,
         "focus": "[color:DeepSkyBlue]百忍对决战斗结束[/color]"
     },
-    "hundred_ninjia_click_All_skill": {
+    "hundred_ninja_click_All_skill": {
         "recognition": "TemplateMatch",
-        "template": "Hundred_ninjia/fight.png",
+        "template": "Hundred_ninja/fight.png",
         "roi": [
             0,
             0,
