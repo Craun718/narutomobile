@@ -238,6 +238,6 @@
         "action": "Click",
         "pre_delay": 0,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]组织祈福未完成[/color]"
+        "focus": "[color:DeepSkyBlue]积分赛未完成[/color]"
     }
 }

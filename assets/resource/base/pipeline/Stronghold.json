@@ -299,10 +299,10 @@
             108
         ],
         "next": [
-            "stronghold_battle_end",
-            "stronghold_in_stronghold",
-            "[JumpBack]battle_tips",
+            "stronghold_winner_decided",
             "[JumpBack]stronghold_click_All_skill",
+            "[JumpBack]battle_tips",
+            "stronghold_in_stronghold",
             "[JumpBack]stronghold_match_win",
             "stronghold_finished"
         ],
@@ -310,6 +310,32 @@
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]开始战斗[/color]"
+    },
+    "stronghold_winner_decided": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Weekly_win/winner.png"
+        ],
+        "roi": [
+            412,
+            427,
+            239,
+            177
+        ],
+        "green_mask": true,
+        "next": [
+            "stronghold_winner_decided",
+            "stronghold_battle_end",
+            "[JumpBack]battle_tips",
+            "stronghold_in_stronghold",
+            "[JumpBack]stronghold_match_win",
+            "stronghold_finished",
+            "[JumpBack]stronghold_click_All_skill"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "$doc": "有一部分忍者会复活,这时候可能会直接进战斗",
+        "timeout": 10000
     },
     "stronghold_finished": {
         "recognition": "OCR",
@@ -411,7 +437,7 @@
                     142,
                     154
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "summon",
@@ -427,7 +453,7 @@
                     54,
                     51
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "roll",
@@ -443,7 +469,7 @@
                     56,
                     55
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "attack",
@@ -459,7 +485,7 @@
                     92,
                     92
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "ultimate",
@@ -475,7 +501,7 @@
                     71,
                     65
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "skill1",
@@ -491,7 +517,7 @@
                     62,
                     54
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "skill2",
@@ -507,7 +533,7 @@
                     65,
                     59
                 ],
-                "duration": 100
+                "duration": 50
             },
             {
                 "$doc": "sub_skill1",
@@ -523,7 +549,7 @@
                     53,
                     44
                 ],
-                "duration": 100
+                "duration": 50
             }
         ],
         "pre_delay": 0,

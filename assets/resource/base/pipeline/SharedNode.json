@@ -99,6 +99,19 @@
     "recognition": "Or",
     "any_of": [
       {
+        "sub_name": "big_x",
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/big_x.png",
+        "green_mask": true,
+        "threshold": 0.6,
+        "roi": [
+          610,
+          0,
+          670,
+          229
+        ]
+      },
+      {
         "sub_name": "announcement_x",
         "recognition": "TemplateMatch",
         "template": "SharedNode/green_masked_x.png",
@@ -854,7 +867,8 @@
       285
     ],
     "next": [
-      "ninja_guide_returning_player_to_ninja_guide"
+      "ninja_guide_returning_player_to_ninja_guide",
+      "ninja_guide_returning_player_in_ninja_guide"
     ],
     "pre_delay": 0,
     "post_delay": 0,
@@ -1063,5 +1077,29 @@
     "pre_delay": 0,
     "post_delay": 0,
     "focus": "[color:DeepSkyBlue]功能还没解锁[/color]"
+  },
+  "shell_volume_up": {
+    "action": "Shell",
+    "cmd": "input keyevent 24"
+  },
+  "shell_volume_down": {
+    "action": "Shell",
+    "cmd": "input keyevent 25"
+  },
+  "shell_mute_and_unmute": {
+    "action": "Shell",
+    "cmd": "input keyevent 164"
+  },
+  "shell_back": {
+    "action": "Shell",
+    "cmd": "input keyevent 4"
+  },
+  "shell_home": {
+    "action": "Shell",
+    "cmd": "input keyevent 3"
+  },
+  "shell_enter": {
+    "action": "Shell",
+    "cmd": "input keyevent 66"
   }
 }
