@@ -50,7 +50,13 @@
         },
         {
             "name": "轻松助手",
-            "entry": "easy_helper"
+            "entry": "easy_helper",
+            "option": [
+                "轻松助手扫荡",
+                "秘境翻饰品牌",
+                "秘境翻忍具牌",
+                "秘境忍具每次只翻一张"
+            ]
         },
         {
             "name": "轻松季(beta)",
@@ -562,14 +568,52 @@
                 }
             ]
         },
+        "轻松助手扫荡": {
+            "type": "switch",
+            "description": "轻松助手秘境,小队扫荡",
+            "default_case": "Yes",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "secret_realm_celebreate": {
+                            "next": [
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "easy_helper_sweep"
+                            ]
+                        },
+                        "secret_realm_celebreate_1": {
+                            "next": [
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "easy_helper_sweep"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "easy_helper_log_on_award_done": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ]
+                        },
+                        "get_easy_helper_without_log_on_award": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "轻松季扫荡": {
             "type": "switch",
             "description": "轻松季领取扫荡卡,并扫荡",
-            "default_case": "No",
+            "default_case": "Yes",
             "cases": [
-                {
-                    "name": "No"
-                },
                 {
                     "name": "Yes",
                     "pipeline_override": {
@@ -602,6 +646,9 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "No"
                 }
             ]
         },

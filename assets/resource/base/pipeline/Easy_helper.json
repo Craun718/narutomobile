@@ -6,6 +6,8 @@
             "[JumpBack]back_main_screen"
         ],
         "timeout": 3000,
+        "pre_delay": 0,
+        "post_delay": 0,
         "focus": "[color:DeepSkyBlue]进入轻松助手任务[/color]"
     },
     "easy_helper_done": {
@@ -19,6 +21,8 @@
         ],
         "green_mask": true,
         "action": "StopTask",
+        "pre_delay": 0,
+        "post_delay": 0,
         "focus": "[color:DeepSkyBlue]轻松助手已完成[/color]"
     },
     "easy_helper_enter": {
@@ -36,6 +40,7 @@
             "easy_helper_one_key",
             "[JumpBack]easy_helper_daily"
         ],
+        "pre_delay": 0,
         "post_delay": 700,
         "focus": "[color:DeepSkyBlue]进入轻松助手[/color]"
     },
@@ -49,6 +54,7 @@
             50
         ],
         "action": "Click",
+        "pre_delay": 0,
         "post_delay": 700,
         "focus": "[color:DeepSkyBlue]点击一键审批[/color]"
     },
@@ -68,7 +74,9 @@
             "easy_helper_no_gold_sweep",
             "[JumpBack]easy_helper_one_key"
         ],
-        "post_wait_freezes": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 200,
         "focus": "[color:DeepSkyBlue]打开轻松助手[/color]"
     },
     "easy_helper_one_key_done": {
@@ -88,6 +96,8 @@
             "easy_helper_log_on_award_done",
             "[JumpBack]confirm_easy_helper_one_key"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 500
     },
     "easy_helper_no_gold_sweep": {
@@ -104,6 +114,8 @@
             "easy_helper_one_key_done",
             "confirm_easy_helper_one_key"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]不进行金币扫荡[/color]"
     },
@@ -129,7 +141,9 @@
             "confirm_easy_helper_one_key",
             "confirm_easy_helper_one_key_done"
         ],
-        "post_wait_freezes": 500,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]一键审批[/color]"
     },
     "confirm_easy_helper_one_key_done": {
@@ -165,6 +179,8 @@
             "[JumpBack]get_easy_helper_log_on_award",
             "[JumpBack]easy_helper_log_on_award_undone"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]轻松助手奖励未领取[/color]"
     },
@@ -183,6 +199,8 @@
             "easy_helper_privilege_undone",
             "easy_helper_privilege_done"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]轻松助手奖励已领取[/color]"
     },
@@ -200,7 +218,9 @@
             "easy_helper_privilege_undone",
             "easy_helper_privilege_done"
         ],
-        "post_wait_freezes": 400
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
     },
     "get_easy_helper_log_on_award": {
         "recognition": "TemplateMatch",
@@ -212,7 +232,9 @@
             89
         ],
         "action": "Click",
-        "post_wait_freezes": 400,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]领取签到奖励[/color]"
     },
     "easy_helper_privilege_done": {
@@ -229,6 +251,8 @@
         "next": [
             "easy_helper_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]轻松特权已完成[/color]"
     },
@@ -246,6 +270,8 @@
         "next": [
             "easy_helper_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]轻松特权未完成[/color]"
     },
@@ -253,7 +279,9 @@
         "next": [
             "check_no_easy_helper_sweep",
             "[JumpBack]get_easy_helper_sweep"
-        ]
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "check_no_easy_helper_sweep": {
         "recognition": "TemplateMatch",
@@ -270,6 +298,8 @@
         "next": [
             "easy_helper_team_dash_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]检查能否进行扫荡[/color]"
     },
@@ -285,12 +315,34 @@
         "threshold": 0.85,
         "action": "Click",
         "next": [
-            "check_without_easy_helper_back_to_sweep",
-            "[JumpBack]easy_helper_back_to_sweep",
-            "[JumpBack]easy_helper_celebrate_sweep"
+            "easy_helper_can_not_sweep",
+            "secret_realm_win",
+            "secret_realm_celebreate",
+            "secret_realm_celebreate_1",
+            "secret_realm_old_settlement",
+            "easy_season_plus_find_sweep_card_event"
         ],
-        "post_wait_freezes": 500,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]点击扫荡按钮[/color]"
+    },
+    "easy_helper_can_not_sweep": {
+        "recognition": "OCR",
+        "expected": [
+            "不足"
+        ],
+        "roi": [
+            483,
+            332,
+            318,
+            51
+        ],
+        "next": [
+            "easy_helper_team_dash_sweep"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "check_without_easy_helper_back_to_sweep": {
         "recognition": "TemplateMatch",
@@ -308,6 +360,8 @@
             "[JumpBack]easy_helper_celebrate_sweep",
             "[JumpBack]easy_helper_back_to_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]检测出现返回图标[/color]"
     },
@@ -328,6 +382,8 @@
             "check_no_easy_helper_sweep",
             "[JumpBack]get_easy_helper_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]返回扫荡界面[/color]"
     },
@@ -342,6 +398,8 @@
         ],
         "threshold": 0.85,
         "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]领取扫荡奖励[/color]"
     },
@@ -349,7 +407,9 @@
         "next": [
             "check_no_easy_helper_team_dash_sweep",
             "[JumpBack]get_easy_helper_team_dash_sweep"
-        ]
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "check_no_easy_helper_team_dash_sweep": {
         "recognition": "TemplateMatch",
@@ -366,6 +426,8 @@
         "next": [
             "back_main_screen_and_stop"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]领取扫荡奖励[/color]"
     },
@@ -384,6 +446,8 @@
             "confirm_easy_helper_team_dash_sweep",
             "[JumpBack]easy_helper_back_to_team_dash_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]开始小队扫荡[/color]"
     },
@@ -401,7 +465,9 @@
             "check_easy_helper_back_to_team_dash_sweep",
             "[JumpBack]easy_helper_back_to_team_dash_sweep"
         ],
-        "post_wait_freezes": 500,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]继续扫荡[/color]"
     },
     "check_easy_helper_back_to_team_dash_sweep": {
@@ -418,6 +484,8 @@
         "next": [
             "easy_helper_team_dash_sweep"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]检测返回图标[/color]"
     },
@@ -432,6 +500,8 @@
         ],
         "threshold": 0.9,
         "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 100,
         "focus": "[color:DeepSkyBlue]返回小队扫荡界面[/color]"
     }
