@@ -522,7 +522,8 @@
         "next": [
             "[JumpBack]more_gameplay_trace_vanish_choose_ninja",
             "more_gameplay_trace_vanish_without_confirm_selcet_ninja",
-            "[JumpBack]more_gameplay_trace_vanish_confirm_selcet_ninja"
+            "[JumpBack]more_gameplay_trace_vanish_confirm_selcet_ninja",
+            "more_gameplay_in_trace_vanish"
         ],
         "pre_delay": 0,
         "post_delay": 200,
