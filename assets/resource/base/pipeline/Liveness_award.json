@@ -39,9 +39,9 @@
             47
         ],
         "next": [
-            "get_liveness_award_box_1",
             "liveness_award_box_1_done",
-            "liveness_award_box_1_locked"
+            "liveness_award_box_1_locked",
+            "get_liveness_award_box_1"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -106,9 +106,9 @@
         ],
         "threshold": 0.9,
         "next": [
-            "get_liveness_award_box_2",
             "liveness_award_box_2_done",
             "liveness_award_box_2_locked",
+            "get_liveness_award_box_2",
             "[JumpBack]liveness_award_background"
         ],
         "pre_delay": 0,
@@ -126,6 +126,7 @@
             175,
             138
         ],
+        "method": 10001,
         "threshold": 0.9,
         "action": "Click",
         "next": [
@@ -148,9 +149,9 @@
         ],
         "threshold": 0.9,
         "next": [
-            "get_liveness_award_box_3",
             "liveness_award_box_3_done",
             "liveness_award_box_3_locked",
+            "get_liveness_award_box_3",
             "[JumpBack]liveness_award_background"
         ],
         "pre_delay": 0,
@@ -168,6 +169,7 @@
             170,
             140
         ],
+        "method": 10001,
         "threshold": 0.9,
         "action": "Click",
         "next": [
@@ -190,9 +192,9 @@
         ],
         "threshold": 0.9,
         "next": [
-            "get_liveness_award_box_4",
             "liveness_award_box_4_done",
             "liveness_award_box_4_locked",
+            "get_liveness_award_box_4",
             "[JumpBack]liveness_award_background"
         ],
         "pre_delay": 0,
@@ -210,6 +212,7 @@
             160,
             138
         ],
+        "method": 10001,
         "threshold": 0.9,
         "action": "Click",
         "next": [
@@ -250,6 +253,7 @@
             165,
             138
         ],
+        "method": 10001,
         "threshold": 0.9,
         "action": "Click",
         "next": [
@@ -270,8 +274,8 @@
             175,
             138
         ],
-        "threshold": 0.9,
-        "action": "Click",
+        "method": 10001,
+        "threshold": 0.95,
         "next": [
             "weekly_liveness_award_undone",
             "weekly_liveness_award_done"
@@ -289,8 +293,8 @@
             170,
             140
         ],
-        "threshold": 0.9,
-        "action": "Click",
+        "method": 10001,
+        "threshold": 0.95,
         "next": [
             "weekly_liveness_award_undone",
             "weekly_liveness_award_done"
@@ -308,8 +312,8 @@
             160,
             138
         ],
-        "threshold": 0.9,
-        "action": "Click",
+        "method": 10001,
+        "threshold": 0.95,
         "next": [
             "weekly_liveness_award_undone",
             "weekly_liveness_award_done"
@@ -327,8 +331,8 @@
             165,
             138
         ],
-        "threshold": 0.9,
-        "action": "Click",
+        "method": 10001,
+        "threshold": 0.95,
         "next": [
             "weekly_liveness_award_undone",
             "weekly_liveness_award_done"

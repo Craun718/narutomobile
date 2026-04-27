@@ -111,7 +111,7 @@
         {
             "name": "积分赛",
             "entry": "point_race",
-            "description": "领取当日奖励并尝试进行一次挑战。",
+            "description": "领取当日奖励,挑战逻辑是挑战战力比自己低的,并不保证取胜",
             "option": [
                 "积分赛强制战斗",
                 "积分赛挑战次数",
@@ -1864,7 +1864,7 @@
                 {
                     "name": "积分赛挑战次数",
                     "label": "积分赛挑战次数",
-                    "description": "输入需要的胜利次数,最大999",
+                    "description": "输入需要的挑战次数,最大999",
                     "pipeline_type": "int",
                     "default": "1",
                     "verify": "^[1-9]\\d{0,2}$"
