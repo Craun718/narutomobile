@@ -176,9 +176,8 @@
             "close_wechat_app"
         ],
         "action": "Click",
-        "pre_wait_freezes": 200,
-        "post_delay": 2000,
-        "post_wait_freezes": 400,
+        "pre_delay": 0,
+        "post_delay": 700,
         "focus": "[color:DeepSkyBlue]微信分享[/color]"
     },
     "try_share_to_qq": {
@@ -198,9 +197,8 @@
             "close_qq_app"
         ],
         "action": "Click",
-        "pre_wait_freezes": 200,
-        "post_delay": 2000,
-        "post_wait_freezes": 400,
+        "pre_delay": 0,
+        "post_delay": 700,
         "focus": "[color:DeepSkyBlue]qq分享[/color]"
     },
     "share_back_to_natuto": {
@@ -228,6 +226,8 @@
         "action": "StopApp",
         "package": "com.tencent.mm",
         "next": [
+            "share_quit_x",
+            "share_in_main_screen",
             "close_share_top_bar"
         ],
         "focus": "[color:DeepSkyBlue]关闭微信[/color]",
@@ -238,9 +238,9 @@
         "action": "StopApp",
         "package": "com.tencent.mobileqq",
         "next": [
-            "close_share_top_bar",
             "share_quit_x",
-            "share_in_main_screen"
+            "share_in_main_screen",
+            "close_share_top_bar"
         ],
         "focus": "[color:DeepSkyBlue]关闭qq[/color]",
         "pre_delay": 1000,
