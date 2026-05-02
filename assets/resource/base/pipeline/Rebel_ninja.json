@@ -614,7 +614,7 @@
             "rebel_ninja_not_find_enemy"
         ],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 400,
         "focus": "[color:DeepSkyBlue]准备战斗[/color]"
     },
     "rebel_ninja_not_find_enemy": {
@@ -794,6 +794,7 @@
             "rebel_ninja_confirm_enemy",
             "[JumpBack]rebel_ninja_low_enemy"
         ],
+        "pre_delay": 300,
         "post_delay": 400,
         "focus": "[color:DeepSkyBlue]低级敌人[/color]"
     },
@@ -814,6 +815,7 @@
             "rebel_ninja_confirm_enemy",
             "[JumpBack]rebel_ninja_mid_enemy"
         ],
+        "pre_delay": 300,
         "post_delay": 400,
         "focus": "[color:DeepSkyBlue]中级敌人[/color]"
     },
@@ -834,6 +836,7 @@
             "rebel_ninja_confirm_enemy",
             "[JumpBack]rebel_ninja_high_enemy"
         ],
+        "pre_delay": 300,
         "post_delay": 400,
         "focus": "[color:DeepSkyBlue]高级敌人[/color]"
     },
