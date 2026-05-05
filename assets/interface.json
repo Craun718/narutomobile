@@ -1639,6 +1639,14 @@
                             "next": "konoha_question_and_answer"
                         }
                     }
+                },
+                {
+                    "name": "合成赠礼",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "craft_gift"
+                        }
+                    }
                 }
             ]
         },
