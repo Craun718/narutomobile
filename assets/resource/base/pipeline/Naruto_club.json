@@ -874,6 +874,7 @@
         "template": "Naruto_club/mission_submit.png",
         "threshold": 0.6,
         "next": [
+            "roger_club_first_award",
             "club_first_award_done",
             "[JumpBack]club_first_award",
             "naruto_club_in_loop_wheel",
@@ -1002,7 +1003,7 @@
         "next": [
             "roger_club_first_award"
         ],
-        "timeout": 8000,
+        "timeout": 10000,
         "on_error": [
             "naruto_club_in_loop_wheel"
         ],
