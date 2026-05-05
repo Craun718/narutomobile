@@ -321,7 +321,6 @@
             39
         ],
         "threshold": 0.9,
-        "action": "Click",
         "inverse": true,
         "next": [
             "easy_helper_team_dash_sweep"
