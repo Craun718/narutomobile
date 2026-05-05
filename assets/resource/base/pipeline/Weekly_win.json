@@ -136,6 +136,7 @@
             "[JumpBack]click_All_skill",
             "battle_tips",
             "[JumpBack]go_to_war",
+            "battle_end",
             "[JumpBack]weekly_win_match_fighting"
         ],
         "timeout": 10000,
@@ -157,7 +158,8 @@
         "green_mask": true,
         "next": [
             "battle_end",
-            "weekly_win_substitution"
+            "weekly_win_substitution",
+            "weekly_win_match_fighting"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -354,6 +356,7 @@
             "[JumpBack]battle_tips",
             "battle_end"
         ],
+        "rate_limit": 2000,
         "pre_delay": 0,
         "post_delay": 0
     },
