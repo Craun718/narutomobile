@@ -640,7 +640,6 @@
             0.8
         ],
         "inverse": true,
-        "action": "Click",
         "target": [
             202,
             535,

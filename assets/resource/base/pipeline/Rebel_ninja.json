@@ -164,7 +164,6 @@
             133
         ],
         "inverse": true,
-        "action": "Click",
         "next": [
             "rebel_ninja_double_mode",
             "rebel_ninja_double_mode_checked",
@@ -561,7 +560,6 @@
             64
         ],
         "inverse": true,
-        "action": "Click",
         "next": [
             "rebel_ninja_group_to_rebel_ninja",
             "rebel_ninja",
