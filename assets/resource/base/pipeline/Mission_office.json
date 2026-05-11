@@ -184,7 +184,8 @@
         "threshold": 0.9,
         "green_mask": true,
         "next": [
-            "mission_office_recommended_team"
+            "mission_office_recommended_team",
+            "[JumpBack]mission_office_get_mission"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -284,7 +285,8 @@
         "threshold": 0.9,
         "green_mask": true,
         "next": [
-            "mission_office_recommended_team"
+            "mission_office_recommended_team",
+            "[JumpBack]mission_office_get_mission"
         ],
         "pre_delay": 0,
         "post_delay": 0,
