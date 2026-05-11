@@ -38,7 +38,7 @@
 
     Q: 脚本运行失败或者无法运行怎么办？
 
-    A: [QQ群](724500650)的群文件中有个名为`运行依赖`的文件夹，请手动下载并安装里面的**所有**程序。
+    A: [QQ群](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=w32iIG_oNqlyIvZOH3qbg2cOHllU4AoD&authKey=insHpV13my%2BnmO%2FzaYF67WDLj%2B0Vh2XagAKZmlRbV4n7ARSZXXybvKC%2B66dDMhZf&noverify=0&group_code=1047724031)的群文件中有个名为`运行依赖`的文件夹，请手动下载并安装里面的**所有**程序。
 
     Q: 安装成功并重启后还是出现这个该弹窗怎么办？
 
