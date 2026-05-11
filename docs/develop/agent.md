@@ -10,5 +10,7 @@
 
 ## Agent Server 打包
 
-> [!ERROR]
+> [!WARNING]
 > 本项目的agent server打包逻辑已经经过重写。与`M9A`的并不相同！请不要用`M9A`的 agent 打包文档进行参考。具体实现以实际源码为准！
+>
+> agent server的打包流程参考`.github/workflows/install.yml`中的实际写法，相关文档见 [GitHub Actions](https://docs.github.com/zh/actions)。
