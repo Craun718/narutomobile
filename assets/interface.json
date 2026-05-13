@@ -2183,6 +2183,7 @@
                     "pipeline_override": {
                         "secret_realm_win": {
                             "next": [
+                                "secret_realm_fight",
                                 "secret_realm_flip_without_card",
                                 "[JumpBack]secret_realm_flip_has_accessory_card",
                                 "secret_realm_gear_card",

@@ -493,8 +493,13 @@
     },
     "action": "Click",
     "focus": "关闭气泡弹窗",
-    "next": "ensure_to_close",
-    "timeout": 1000
+    "next": [
+      "ensure_to_close",
+      "close_notice"
+    ],
+    "timeout": 4000,
+    "pre_delay": 0,
+    "post_delay": 800
   },
   "ensure_to_close": {
     "recognition": {
