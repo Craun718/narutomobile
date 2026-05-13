@@ -3270,7 +3270,7 @@
                         "close_qq_app"
                     ],
                     "post_wait_freezes": 1000,
-                    "post_delay": "{等待时间}-1000"
+                    "post_delay": "{等待时间}"
                 },
                 "try_share_to_wechat": {
                     "next": [
