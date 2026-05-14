@@ -188,24 +188,51 @@
         "focus": "[color:tomato]高级任务无法自动战斗[/color]"
     },
     "advanture_anime": {
-        "recognition": "ColorMatch",
-        "upper": [
-            0,
-            0,
-            0
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "上黑边",
+                "recognition": "ColorMatch",
+                "upper": [
+                    1,
+                    1,
+                    1
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ],
+                "roi": [
+                    617,
+                    29,
+                    46,
+                    37
+                ],
+                "count": 1000
+            },
+            {
+                "sub_name": "下黑边",
+                "recognition": "ColorMatch",
+                "upper": [
+                    1,
+                    1,
+                    1
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ],
+                "roi": [
+                    1172,
+                    639,
+                    108,
+                    81
+                ],
+                "count": 1000
+            }
         ],
-        "lower": [
-            0,
-            0,
-            0
-        ],
-        "roi": [
-            617,
-            29,
-            46,
-            37
-        ],
-        "count": 1000,
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 300,
@@ -330,6 +357,7 @@
             "advanture_win",
             "advanture_lost",
             "advanture_skip_revive",
+            "[JumpBack]advanture_anime_skip",
             "[JumpBack]advanture_anime",
             "[JumpBack]advanture_skip_dialogue"
         ],
