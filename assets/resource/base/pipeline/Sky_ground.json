@@ -761,8 +761,9 @@
             341,
             240
         ],
-        "action": "Click",
+        "green_mask": true,
         "threshold": 0.9,
+        "action": "Click",
         "post_delay": 500,
         "next": [
             "sky_ground_confirm_new_set",

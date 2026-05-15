@@ -318,25 +318,29 @@
             240
         ],
         "green_mask": true,
-        "action": "Click",
         "threshold": 0.9,
-        "pre_delay": 0,
-        "post_delay": 500,
+        "action": "Click",
         "next": [
             "weekly_win_without_fail",
             "weekly_win_fail"
         ],
+        "pre_delay": 0,
+        "post_delay": 500,
         "focus": "[color:DeepSkyBlue]战斗失败[/color]"
     },
     "weekly_win_without_fail": {
         "recognition": "TemplateMatch",
-        "template": "Weekly_win/fail.png",
+        "template": [
+            "Weekly_win/fail.png",
+            "Weekly_win/fail_10th.png"
+        ],
         "roi": [
             480,
             328,
             341,
             240
         ],
+        "green_mask": true,
         "inverse": true,
         "threshold": 0.9,
         "pre_delay": 0,

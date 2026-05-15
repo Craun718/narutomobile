@@ -369,8 +369,10 @@
         "next": [
             "[JumpBack]shugyou_no_michi_loading",
             "shugyou_no_michi_in_fight",
-            "shugyou_no_michi_try_go_to_war",
-            "shugyou_no_michi_go_to_war"
+            "[JumpBack]shugyou_no_michi_level_teleportation",
+            "[JumpBack]shugyou_no_michi_level_award",
+            "shugyou_no_michi_go_to_war",
+            "shugyou_no_michi_try_go_to_war"
         ],
         "pre_delay": 0,
         "post_delay": 500
@@ -465,20 +467,20 @@
     },
     "fail_in_shugyou_no_michi": {
         "recognition": "TemplateMatch",
-        "template": [
-            "Practice_place/train_road_fail.png"
-        ],
+        "template": "Practice_place/train_road_fail.png",
         "roi": [
-            479,
-            137,
-            135,
-            138
+            318,
+            48,
+            676,
+            553
         ],
-        "pre_delay": 0,
-        "post_delay": 0,
+        "green_mask": true,
+        "threshold": 0.9,
         "next": [
             "back_main_screen_and_stop"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "focus": "战斗失败"
     },
     "win_in_shugyou_no_michi": {
@@ -487,19 +489,20 @@
             "Practice_place/train_road_win.png"
         ],
         "roi": [
-            565,
-            298,
-            61,
-            59
+            404,
+            113,
+            491,
+            328
         ],
-        "pre_delay": 0,
-        "post_delay": 0,
+        "threshold": 0.95,
         "action": "Click",
         "next": [
             "shugyou_no_michi_post_loading",
             "wait_for_battle_again",
             "win_in_shugyou_no_michi"
-        ]
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "shugyou_no_michi_post_loading": {
         "recognition": "OCR",
