@@ -106,11 +106,11 @@
             231,
             76
         ],
-        "pre_delay": 0,
-        "post_delay": 0,
         "next": [
             "back_main_screen_and_stop"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "focus": "[color:DeepSkyBlue]修行之路扫荡中[/color]"
     },
     "train_road_award": {
@@ -292,21 +292,21 @@
     },
     "shugyou_no_michi_auto_push": {
         "recognition": "TemplateMatch",
-        "template": "Weekly_win/go_to_war.png",
+        "template": "Practice_place/train_road_fight.png",
         "roi": [
             1104,
             541,
             149,
             153
         ],
-        "threshold": 0.3,
-        "pre_delay": 0,
-        "post_delay": 0,
         "next": [
             "[JumpBack]shugyou_no_michi_level_teleportation",
             "[JumpBack]shugyou_no_michi_level_award",
-            "[JumpBack]shugyou_no_michi_go_to_war"
-        ]
+            "[JumpBack]shugyou_no_michi_go_to_war",
+            "[JumpBack]shugyou_no_michi_try_go_to_war"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "shugyou_no_michi_level_award": {
         "recognition": "TemplateMatch",
@@ -337,25 +337,95 @@
     },
     "shugyou_no_michi_go_to_war": {
         "recognition": "TemplateMatch",
-        "template": "Weekly_win/go_to_war.png",
+        "template": "Practice_place/train_road_fight.png",
         "roi": [
             1104,
             541,
             149,
             153
         ],
-        "threshold": 0.35,
+        "method": 10001,
+        "threshold": 0.95,
         "action": "Click",
-        "post_delay": 3000,
         "next": [
-            "shugyou_no_michi_go_to_war",
+            "[JumpBack]shugyou_no_michi_loading",
+            "shugyou_no_michi_in_fight",
+            "shugyou_no_michi_go_to_war"
+        ],
+        "pre_delay": 0,
+        "post_delay": 300,
+        "focus": "进入战斗"
+    },
+    "shugyou_no_michi_try_go_to_war": {
+        "recognition": "TemplateMatch",
+        "template": "Practice_place/train_road_fight.png",
+        "roi": [
+            1104,
+            541,
+            149,
+            153
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]shugyou_no_michi_loading",
+            "shugyou_no_michi_in_fight",
+            "shugyou_no_michi_try_go_to_war",
+            "shugyou_no_michi_go_to_war"
+        ],
+        "pre_delay": 0,
+        "post_delay": 500
+    },
+    "shugyou_no_michi_loading": {
+        "recognition": "OCR",
+        "expected": [
+            "资源加载"
+        ],
+        "roi": [
+            491,
+            589,
+            295,
+            130
+        ],
+        "pre_delay": 0,
+        "post_delay": 1000
+    },
+    "shugyou_no_michi_in_fight": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "突袭和倒计时",
+                "recognition": "OCR",
+                "roi": [
+                    553,
+                    0,
+                    155,
+                    83
+                ],
+                "expected": [
+                    "突袭",
+                    "0"
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": [
+                    "Advanture/stop_button.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    1120,
+                    0,
+                    160,
+                    127
+                ]
+            }
+        ],
+        "next": [
             "win_in_shugyou_no_michi",
             "fail_in_shugyou_no_michi",
-            "[JumpBack]not_in_auto_battle"
-        ],
-        "rate_limit": 5000,
-        "timeout": 60000,
-        "focus": "进入战斗"
+            "[JumpBack]not_in_auto_battle",
+            "shugyou_no_michi_in_fight"
+        ]
     },
     "not_in_auto_battle": {
         "recognition": "OCR",
@@ -367,8 +437,11 @@
             59
         ],
         "inverse": true,
-        "next": "click_auto_battle",
-        "timeout": 1000,
+        "next": [
+            "click_auto_battle",
+            "win_in_shugyou_no_michi",
+            "fail_in_shugyou_no_michi"
+        ],
         "focus": "没有检测到自动战斗"
     },
     "click_auto_battle": {
@@ -383,44 +456,83 @@
         "pre_delay": 0,
         "post_delay": 500,
         "action": "Click",
+        "next": [
+            "win_in_shugyou_no_michi",
+            "fail_in_shugyou_no_michi",
+            "shugyou_no_michi_in_fight"
+        ],
         "focus": "开启自动战斗"
     },
     "fail_in_shugyou_no_michi": {
-        "recognition": "OCR",
-        "expected": "变强",
-        "roi": [
-            475,
-            222,
-            338,
-            141
+        "recognition": "TemplateMatch",
+        "template": [
+            "Practice_place/train_road_fail.png"
         ],
-        "action": "StopTask",
+        "roi": [
+            479,
+            137,
+            135,
+            138
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "back_main_screen_and_stop"
+        ],
         "focus": "战斗失败"
     },
     "win_in_shugyou_no_michi": {
-        "recognition": "OCR",
-        "expected": "点击任意位置",
+        "recognition": "TemplateMatch",
+        "template": [
+            "Practice_place/train_road_win.png"
+        ],
         "roi": [
-            514,
-            652,
-            283,
+            565,
+            298,
+            61,
             59
         ],
         "pre_delay": 0,
+        "post_delay": 0,
         "action": "Click",
-        "next": "wait_for_battle_again",
-        "timeout": 10000
+        "next": [
+            "shugyou_no_michi_post_loading",
+            "wait_for_battle_again",
+            "win_in_shugyou_no_michi"
+        ]
+    },
+    "shugyou_no_michi_post_loading": {
+        "recognition": "OCR",
+        "expected": [
+            "资源加载"
+        ],
+        "roi": [
+            491,
+            589,
+            295,
+            130
+        ],
+        "next": [
+            "shugyou_no_michi_post_loading",
+            "wait_for_battle_again"
+        ],
+        "pre_delay": 0,
+        "post_delay": 1000
     },
     "wait_for_battle_again": {
         "recognition": "TemplateMatch",
-        "template": "Weekly_win/go_to_war.png",
+        "template": "Practice_place/train_road_fight.png",
         "roi": [
             1104,
             541,
             149,
             153
         ],
-        "threshold": 0.35,
+        "next": [
+            "shugyou_no_michi_auto_push"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
         "post_wait_freezes": 200
     },
     "train_road_in_center_enter": {
