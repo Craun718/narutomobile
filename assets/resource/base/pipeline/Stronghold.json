@@ -190,7 +190,10 @@
     "stronghold_in_stronghold": {
         "recognition": "OCR",
         "expected": [
-            "组织"
+            "组织",
+            "个人",
+            "战力",
+            "名称"
         ],
         "roi": [
             0,
@@ -333,8 +336,7 @@
         ],
         "pre_delay": 0,
         "post_delay": 0,
-        "$doc": "有一部分忍者会复活,这时候可能会直接进战斗",
-        "timeout": 10000
+        "$doc": "有一部分忍者会复活,这时候可能会直接进战斗"
     },
     "stronghold_finished": {
         "recognition": "OCR",
