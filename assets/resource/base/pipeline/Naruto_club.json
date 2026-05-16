@@ -874,19 +874,19 @@
     "check_club_all_submit": {
         "recognition": "TemplateMatch",
         "template": "Naruto_club/mission_submit.png",
-        "threshold": 0.6,
+        "threshold": 0.8,
         "next": [
+            "[JumpBack]club_submit",
             "roger_club_first_award",
             "club_first_award_done",
             "[JumpBack]club_first_award",
             "naruto_club_in_loop_wheel",
-            "[JumpBack]club_first_award_on_error",
-            "[JumpBack]try_esc"
+            "[JumpBack]club_first_award_on_error"
         ],
         "inverse": true,
         "focus": "[color:DeepSkyBlue]检测任务是否已经全部提交[/color]",
-        "timeout": 5000,
-        "on_error": "award_kale"
+        "timeout": 10000,
+        "on_error": "try_esc"
     },
     "club_submit": {
         "recognition": "TemplateMatch",
