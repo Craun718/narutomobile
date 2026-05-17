@@ -656,6 +656,12 @@
     "close_yesterday_award": {
         "recognition": "TemplateMatch",
         "template": "Group/yesterday_award_done.png",
+        "roi": [
+            983,
+            191,
+            181,
+            158
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "focus": "[color:DeepSkyBlue]关闭昨日奖励界面[/color]"
