@@ -1498,7 +1498,9 @@
                     "pipeline_override": {
                         "check_no_treasure_box_award": {
                             "next": [
-                                "treasure_box_challenge"
+                                "get_treasure_box_award",
+                                "treasure_box_challenge",
+                                "[JumpBack]get_treasure_box_award_one_key"
                             ]
                         }
                     }

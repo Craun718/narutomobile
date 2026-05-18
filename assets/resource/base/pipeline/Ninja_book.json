@@ -689,7 +689,7 @@
             "get_treasure_box_award",
             "check_no_treasure_box_award"
         ],
-        "pre_delay": 0,
+        "pre_delay": 200,
         "post_delay": 0,
         "post_wait_freezes": 500,
         "focus": "[color:DeepSkyBlue]领取宝匣奖励[/color]"
@@ -728,7 +728,7 @@
             "get_treasure_box_award_without_one_key",
             "[JumpBack]get_treasure_box_award_one_key"
         ],
-        "pre_delay": 0,
+        "pre_delay": 200,
         "post_delay": 0,
         "post_wait_freezes": 500,
         "focus": "[color:DeepSkyBlue]一键领取宝匣奖励[/color]"
