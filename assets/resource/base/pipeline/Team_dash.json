@@ -210,23 +210,42 @@
         "focus": "[color:DeepSkyBlue]领取我的助战奖励[/color]"
     },
     "close_my_help": {
-        "recognition": "TemplateMatch",
-        "template": "Team_dash/my_help_x.png",
-        "roi": [
-            1175,
-            0,
-            99,
-            77
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "in_my_help",
+                "recognition": "TemplateMatch",
+                "template": "SharedNode/confrim_small_1.png",
+                "roi": [
+                    972,
+                    564,
+                    83,
+                    56
+                ]
+            },
+            {
+                "sub_name": "x",
+                "recognition": "TemplateMatch",
+                "template": "Team_dash/my_help_x.png",
+                "roi": [
+                    1175,
+                    0,
+                    99,
+                    77
+                ],
+                "threshold": 0.6
+            }
         ],
-        "threshold": 0.6,
+        "box_index": 1,
         "action": "Click",
         "next": [
             "team_dash_invite_page",
             "[JumpBack]close_my_help"
         ],
+        "pre_wait_freezes": 300,
         "pre_delay": 0,
         "post_delay": 0,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]关闭我的助战[/color]"
     },
     "team_dash_invite_page": {
@@ -291,10 +310,26 @@
         "next": [
             "team_dash_reach_the_upper_limit",
             "[JumpBack]team_dash_above_kage_sweep",
-            "[JumpBack]team_dash_auto_fight"
+            "[JumpBack]team_dash_auto_fight",
+            "[JumpBack]team_dash_in_loading"
         ],
+        "pre_wait_freezes": 300,
         "pre_delay": 0,
         "post_delay": 0
+    },
+    "team_dash_in_loading": {
+        "recognition": "OCR",
+        "expected": [
+            "资源加载"
+        ],
+        "roi": [
+            427,
+            599,
+            607,
+            41
+        ],
+        "pre_delay": 0,
+        "post_delay": 1000
     },
     "team_dash_reach_the_upper_limit": {
         "recognition": "TemplateMatch",
@@ -325,21 +360,107 @@
         "max_hit": 10,
         "action": "Click",
         "next": [
+            "[JumpBack]team_dash_same_ninja",
             "team_dash_loading",
             "check_in_team_dash_sweep",
             "team_dash_do_not_remind_gold",
             "team_dash_auto_fight",
+            "[JumpBack]team_dash_in_loading",
             "team_dash_auto_fight_retry_failed"
+        ],
+        "on_error": [
+            "unknow_error"
         ],
         "pre_delay": 0,
         "post_delay": 0,
         "timeout": 50000,
-        "on_error": [
-            "unknow_error"
-        ],
-        "post_wait_freezes": 500,
-        "rate_limit": 3000,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]小队突袭自动战斗[/color]"
+    },
+    "team_dash_same_ninja": {
+        "recognition": "OCR",
+        "expected": [
+            "使用相同",
+            "不能"
+        ],
+        "roi": [
+            461,
+            327,
+            362,
+            64
+        ],
+        "next": [
+            "team_dash_close_group"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "team_dash_close_group": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "in_my_help",
+                "recognition": "TemplateMatch",
+                "template": "Team_dash/team_dash_group.png",
+                "roi": [
+                    7,
+                    73,
+                    162,
+                    88
+                ]
+            },
+            {
+                "sub_name": "x",
+                "recognition": "TemplateMatch",
+                "template": "Team_dash/my_help_x.png",
+                "roi": [
+                    1175,
+                    0,
+                    99,
+                    77
+                ],
+                "threshold": 0.6
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "next": [
+            "team_dash_quit_group_team",
+            "team_dash_close_group"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "team_dash_quit_group_team": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confrim_small.png",
+        "roi": [
+            560,
+            397,
+            145,
+            101
+        ],
+        "action": "Click",
+        "next": [
+            "team_dash_quit_group_team_done",
+            "team_dash_quit_group_team"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "team_dash_quit_group_team_done": {
+        "recognition": "TemplateMatch",
+        "template": "Team_dash/team_dash_logo.png",
+        "roi": [
+            44,
+            0,
+            474,
+            199
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "team_dash_auto_fight_retry_failed": {
         "recognition": "TemplateMatch",
@@ -425,14 +546,96 @@
         ],
         "next": [
             "check_not_in_team_dash_sweep",
+            "[JumpBack]team_dash_not_in_auto_battle",
             "check_in_team_dash_sweep",
             "[JumpBack]team_dash_sweep_win"
         ],
         "rate_limit": 5000
     },
+    "team_dash_not_in_auto_battle": {
+        "recognition": "OCR",
+        "expected": "自动",
+        "roi": [
+            565,
+            56,
+            182,
+            59
+        ],
+        "inverse": true,
+        "next": [
+            "team_dash_click_auto_battle",
+            "check_not_in_team_dash_sweep",
+            "check_in_team_dash_sweep",
+            "[JumpBack]team_dash_sweep_win"
+        ],
+        "focus": "没有检测到自动战斗"
+    },
+    "team_dash_in_auto_battle": {
+        "recognition": "OCR",
+        "expected": "自动",
+        "roi": [
+            565,
+            56,
+            182,
+            59
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "team_dash_click_auto_battle": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "文字",
+                "recognition": "OCR",
+                "expected": "自动",
+                "roi": [
+                    0,
+                    194,
+                    93,
+                    101
+                ]
+            },
+            {
+                "sub_name": "图像",
+                "recognition": "TemplateMatch",
+                "template": "Practice_place/auto_battle.png",
+                "green_mask": true,
+                "roi": [
+                    0,
+                    194,
+                    93,
+                    101
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            29,
+            229,
+            32,
+            22
+        ],
+        "next": [
+            "team_dash_in_auto_battle",
+            "check_not_in_team_dash_sweep",
+            "check_in_team_dash_sweep",
+            "[JumpBack]team_dash_sweep_win"
+        ],
+        "pre_delay": 200,
+        "post_delay": 500,
+        "$doc": "好像老区没有默认开自动战斗",
+        "focus": "开启自动战斗"
+    },
     "team_dash_sweep_win": {
         "recognition": "TemplateMatch",
         "template": "Team_dash/auto_fight_end.png",
+        "roi": [
+            375,
+            614,
+            491,
+            105
+        ],
         "action": "Click",
         "focus": "[color:DeepSkyBlue]胜利退出[/color]",
         "pre_delay": 0,
@@ -442,6 +645,12 @@
     "check_not_in_team_dash_sweep": {
         "recognition": "TemplateMatch",
         "template": "Team_dash/team_dash_logo.png",
+        "roi": [
+            44,
+            0,
+            474,
+            199
+        ],
         "pre_delay": 0,
         "post_delay": 0,
         "focus": "[color:DeepSkyBlue]检测不在进行小队突袭战斗[/color]"
@@ -450,23 +659,61 @@
         "recognition": "TemplateMatch",
         "template": "Team_dash/above_kage_sweep.png",
         "roi": [
-            1165,
-            584,
-            44,
-            42
+            1074,
+            505,
+            204,
+            207
         ],
         "threshold": 0.8,
         "action": "Swipe",
         "duration": 50,
         "next": [
+            "[JumpBack]team_dash_above_kage_quit",
             "team_dash_do_not_remind_gold",
             "team_dash_above_kage_sweep",
             "back_main_screen_and_stop"
         ],
         "pre_delay": 0,
         "post_delay": 0,
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]超影扫荡[/color]"
+    },
+    "team_dash_above_kage_quit": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": [
+                    "Weekly_win/victory.png"
+                ],
+                "roi": [
+                    480,
+                    328,
+                    341,
+                    240
+                ],
+                "green_mask": true,
+                "threshold": 0.8
+            },
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "点击",
+                    "任意"
+                ],
+                "roi": [
+                    375,
+                    614,
+                    491,
+                    105
+                ]
+            }
+        ],
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 500,
+        "$doc": "点击任意地方退出"
     },
     "close_team_dash": {
         "recognition": "TemplateMatch",

@@ -144,7 +144,8 @@
             "option": [
                 "借组织助战"
             ],
-            "default_check": true
+            "default_check": true,
+            "description": "组织里有人用和自己一样忍者时,建议关闭借组织助战"
         },
         {
             "name": "免费招募",
