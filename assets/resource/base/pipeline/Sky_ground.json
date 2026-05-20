@@ -489,6 +489,7 @@
             "right_swipe_for_empty_column",
             "left_swipe_for_empty_column",
             "up_swipe_for_empty_column",
+            "down_swipe_for_empty_column",
             "sky_ground_in_main"
         ],
         "timeout": 60000,
@@ -571,7 +572,14 @@
         "post_delay": 900,
         "next": [
             "sky_ground_to_column",
-            "down_swipe_for_empty_column"
+            "down_swipe_for_empty_column",
+            "sky_ground_end",
+            "sky_ground_group_encouragement",
+            "[JumpBack]sky_ground_to_award_column",
+            "[JumpBack]sky_ground_on_column",
+            "[JumpBack]sky_ground_to_fight_column",
+            "[JumpBack]sky_ground_in_fight",
+            "sky_ground_in_main"
         ],
         "focus": "[color:DeepSkyBlue]右滑选择空柱子[/color]"
     },
@@ -602,7 +610,14 @@
         "post_delay": 900,
         "next": [
             "sky_ground_to_column",
-            "up_swipe_for_empty_column"
+            "up_swipe_for_empty_column",
+            "sky_ground_end",
+            "sky_ground_group_encouragement",
+            "[JumpBack]sky_ground_to_award_column",
+            "[JumpBack]sky_ground_on_column",
+            "[JumpBack]sky_ground_to_fight_column",
+            "[JumpBack]sky_ground_in_fight",
+            "sky_ground_in_main"
         ],
         "focus": "[color:DeepSkyBlue]左滑选择空柱子[/color]"
     },
@@ -635,7 +650,12 @@
             "[JumpBack]sky_ground_to_award_column",
             "sky_ground_to_column",
             "[JumpBack]sky_ground_to_fight_column",
-            "left_swipe_for_empty_column"
+            "left_swipe_for_empty_column",
+            "sky_ground_end",
+            "sky_ground_group_encouragement",
+            "[JumpBack]sky_ground_on_column",
+            "[JumpBack]sky_ground_in_fight",
+            "sky_ground_in_main"
         ],
         "focus": "[color:DeepSkyBlue]下滑选择空柱子[/color]"
     },
@@ -668,7 +688,12 @@
             "[JumpBack]sky_ground_to_award_column",
             "sky_ground_to_column",
             "[JumpBack]sky_ground_to_fight_column",
-            "down_swipe_for_empty_column"
+            "left_swipe_for_empty_column",
+            "sky_ground_end",
+            "sky_ground_group_encouragement",
+            "[JumpBack]sky_ground_on_column",
+            "[JumpBack]sky_ground_in_fight",
+            "sky_ground_in_main"
         ],
         "focus": "[color:DeepSkyBlue]上滑选择空柱子[/color]"
     },
