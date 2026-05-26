@@ -318,7 +318,9 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "close_surf_post"
+            "close_surf_post",
+            "scroll",
+            "fourth_like"
         ],
         "focus": "[color:DeepSkyBlue]第四个点赞任务[/color]"
     },

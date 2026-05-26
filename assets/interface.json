@@ -1549,13 +1549,11 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "click_club_icon": {
+                        "club_like_mission": {
                             "next": [
+                                "close_surf_post",
                                 "scroll",
-                                "click_club_icon",
-                                "naruto_club_too_many_people",
-                                "[JumpBack]without_naruto_club",
-                                "unknow_error"
+                                "club_like_mission"
                             ]
                         }
                     }
