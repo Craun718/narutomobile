@@ -1616,7 +1616,7 @@
                     }
                 },
                 {
-                    "name": "自动领取奥义图",
+                    "name": "奥义图大富翁",
                     "description": "请在点击“送奥义”后的下一个界面开启",
                     "pipeline_override": {
                         "mini_game": {
