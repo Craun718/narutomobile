@@ -906,7 +906,7 @@
             651
         ],
         "method": 10001,
-        "threshold": 0.95,
+        "threshold": 0.98,
         "action": "Click",
         "pre_delay": 0,
         "post_delay": 0,

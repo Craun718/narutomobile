@@ -252,7 +252,8 @@
     "next": [
       "[JumpBack]goto_daily_award",
       "already_in_daily_award",
-      "[JumpBack]close_chat"
+      "[JumpBack]close_chat",
+      "award_center_enter"
     ]
   },
   "goto_daily_award": {
