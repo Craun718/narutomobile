@@ -490,7 +490,7 @@
     "check_selected_ninja_book_liveness": {
         "recognition": "TemplateMatch",
         "template": [
-            "Ninja_book/liveness_undone_selected.png"
+            "Ninja_book/liveness_selected.png"
         ],
         "roi": [
             0,
@@ -502,8 +502,8 @@
         "threshold": 0.8,
         "action": "Click",
         "next": [
-            "check_no_ninja_book_liveness_award",
             "[JumpBack]ninja_book_liveness_award",
+            "check_no_ninja_book_liveness_award",
             "[JumpBack]close_ninja_book_level_up_page_when_liveness",
             "[JumpBack]close_ninja_book_liveness_detail"
         ],

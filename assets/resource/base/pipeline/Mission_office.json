@@ -1123,9 +1123,12 @@
         "next": [
             "take_mission_office_mission_full",
             "take_mission_done",
-            "mission_office_get_mission",
+            "mission_office_get_mission"
+        ],
+        "on_error": [
             "back_main_screen_and_stop"
         ],
+        "timeout": 6000,
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 200
