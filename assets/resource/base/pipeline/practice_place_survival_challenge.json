@@ -316,13 +316,15 @@
         ],
         "action": "Click",
         "next": [
-            "survival_challenge_sweep_ready",
             "survival_challenge_sweep_confirm"
+        ],
+        "on_error": [
+            "survival_challenge_sweep_ready"
         ],
         "timeout": 1500,
         "pre_delay": 0,
         "post_delay": 0,
-        "post_wait_freezes": 400
+        "post_wait_freezes": 300
     },
     "survival_challenge_sweep_confirm": {
         "recognition": "OCR",
