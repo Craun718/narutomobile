@@ -43,7 +43,8 @@
                 "启动超时后行为",
                 "账号属性",
                 "允许MAN管理qq和火影信息",
-                "拒绝qq获取火影信息"
+                "拒绝qq获取火影信息",
+                "am_start启动"
             ],
             "description": "软件会关闭公告气泡,如果此任务经常失败可以在[开始游戏按钮界面]或者[无公告游戏主界面]开启任务",
             "default_check": true
@@ -557,6 +558,24 @@
                 }
             ],
             "description": "超时时间计时从游戏启动到腾讯游戏界面结束,所以不用担心时间太短会反复重启"
+        },
+        "am_start启动": {
+            "type": "switch",
+            "description": "用不了monkey指令的模拟器,如雷电部分版本;开启后换成am start启动",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "start_up": {
+                            "action": "Shell",
+                            "cmd": "am start -n com.tencent.KiHan/com.itop.gcloud.msdk.core.policy.MSDKPolicyActivity.Substitute0"
+                        }
+                    }
+                }
+            ]
         },
         "启动超时后行为": {
             "type": "select",
