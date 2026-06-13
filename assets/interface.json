@@ -394,7 +394,7 @@
                 "清理调试图像"
             ],
             "default_check": true,
-            "description": "清理多余的日志文件,节省空间"
+            "description": "清理多余的日志文件,节省空间;考虑到方便debug,不会删除MFA日志;可以使用MFA清理缓存功能代替"
         },
         {
             "name": "完成标记",
@@ -3526,7 +3526,7 @@
             }
         },
         "清理agent图像": {
-            "description": "清理agent产生的图像",
+            "description": "清理debug/custom下的图像",
             "type": "switch",
             "cases": [
                 {
@@ -3543,7 +3543,7 @@
             ]
         },
         "清理agent日志": {
-            "description": "清理agent产生的日志",
+            "description": "清理debug/custom下的日志",
             "type": "switch",
             "cases": [
                 {
@@ -3560,7 +3560,7 @@
             ]
         },
         "清理报错图像": {
-            "description": "清理报错的图像",
+            "description": "清理debug/on_error下的图像",
             "type": "switch",
             "cases": [
                 {
@@ -3577,7 +3577,7 @@
             ]
         },
         "清理调试图像": {
-            "description": "清理调试的图像",
+            "description": "清理debug/vision下的图像",
             "type": "switch",
             "cases": [
                 {

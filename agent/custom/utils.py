@@ -310,37 +310,50 @@ def send_notification(title: str = "系统通知", msg: str = "这是一条测�
 
 # 日志文件清理基准时间
 DEFAULT_BASE_TIME = datetime(2025, 5, 1, 0, 0, 0, 0)
-# 全局共享变量,由 CleanupMaafwBakLogs 设置,供日志文件清理节点使用
+# 每次任务调用一次utils.py,因此不用持久化;由 CleanupMaafwBakLogs 设置,供日志文件清理节点使用
 base_time_for_cleanup: Optional[datetime] = DEFAULT_BASE_TIME
 
 
 def extract_datetime_from_log_name(filename: str) -> Optional[datetime]:
+    """
+    从日志文件名中提取 datetime
+    """
     try:
         middle = filename.replace("maafw.bak.", "").replace(".log", "")
-        date_part, time_part = middle.split("-")
-        year, month, day = date_part.split(".")
-        time_components = time_part.split(".")
-        if len(time_components) == 4:
-            hour, minute, second, millisecond = time_components
-        elif len(time_components) == 3:
-            hour, minute, sec_ms = time_components
-            if "." in sec_ms:
-                second, millisecond = sec_ms.split(".")
+        if "-" in middle:
+            date_part, time_part = middle.split("-")
+            year, month, day = date_part.split(".")
+            time_components = time_part.split(".")
+            if len(time_components) == 4:
+                hour, minute, second, millisecond = time_components
+            elif len(time_components) == 3:
+                hour, minute, sec_ms = time_components
+                if "." in sec_ms:
+                    second, millisecond = sec_ms.split(".")
+                else:
+                    second = sec_ms
+                    millisecond = "0"
             else:
-                second = sec_ms
-                millisecond = "0"
+                return None
+            microsecond = int(millisecond.ljust(6, "0")[:6])
+            return datetime(
+                int(year),
+                int(month),
+                int(day),
+                int(hour),
+                int(minute),
+                int(second),
+                microsecond,
+            )
         else:
-            return None
-        microsecond = int(millisecond.ljust(6, "0")[:6])
-        return datetime(
-            int(year),
-            int(month),
-            int(day),
-            int(hour),
-            int(minute),
-            int(second),
-            microsecond,
-        )
+            # 中断导致没有时间部分的情况,此时时间部分设为 23:59:59.999999
+            date_str = middle.rstrip(".")
+            parts = date_str.split(".")
+            if len(parts) == 3:
+                year, month, day = parts
+                return datetime(int(year), int(month), int(day), 23, 59, 59, 999999)
+            else:
+                return None
     except Exception:
         return None
 
@@ -462,6 +475,7 @@ def extract_datetime_from_image_name(filename: str) -> Optional[datetime]:
 
 def clean_images_in_dir(debug_folder: Path, sub_dir: str):
     """
+    因为maafw.bak.log的日期是其内容的最晚日期,因此只有删了日志文件才去删除图片;
     清理指定子目录下所有图片时间早于 base_time_for_cleanup 的文件
     """
     target_dir = debug_folder / sub_dir
