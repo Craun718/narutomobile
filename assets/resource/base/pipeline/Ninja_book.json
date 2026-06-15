@@ -181,10 +181,10 @@
         ],
         "action": "Click",
         "target": [
-            1067,
-            0,
-            213,
-            143
+            1074,
+            78,
+            86,
+            44
         ],
         "green_mask": true,
         "threshold": 0.9,
