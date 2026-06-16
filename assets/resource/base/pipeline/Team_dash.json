@@ -366,15 +366,14 @@
             "check_in_team_dash_sweep",
             "team_dash_do_not_remind_gold",
             "team_dash_auto_fight",
-            "[JumpBack]team_dash_in_loading",
-            "team_dash_auto_fight_retry_failed"
+            "[JumpBack]team_dash_in_loading"
         ],
         "on_error": [
+            "team_dash_auto_fight_retry_failed",
             "unknow_error"
         ],
         "pre_delay": 0,
         "post_delay": 0,
-        "timeout": 50000,
         "post_wait_freezes": 300,
         "focus": "[color:DeepSkyBlue]小队突袭自动战斗[/color]"
     },
