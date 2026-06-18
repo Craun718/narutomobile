@@ -1,0 +1,793 @@
+{
+    "nindao_clash": {
+        "next": [
+            "select_nindao_clash",
+            "nindao_clash_entry",
+            "[JumpBack]back_main_screen"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]进入忍道交锋任务[/color]"
+    },
+    "nindao_clash_entry": {
+        "recognition": "TemplateMatch",
+        "template": "Activity/headhunt.png",
+        "roi": [
+            1194,
+            132,
+            50,
+            42
+        ],
+        "action": "Click",
+        "target": [
+            1196,
+            32,
+            53,
+            45
+        ],
+        "next": [
+            "nindao_clash_entry",
+            "nindao_clash_not_in_main_screen",
+            "[JumpBack]back_main_screen_and_stop"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 700,
+        "focus": "[color:DeepSkyBlue]进入活动[/color]"
+    },
+    "nindao_clash_not_in_main_screen": {
+        "next": [
+            "find_nindao_clash",
+            "[JumpBack]swipes_for_nindao_clash"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "swipes_for_nindao_clash": {
+        "action": "Swipe",
+        "begin": [
+            80,
+            300,
+            10,
+            10
+        ],
+        "end": [
+            80,
+            100,
+            10,
+            10
+        ],
+        "duration": 200,
+        "pre_delay": 0,
+        "post_delay": 700,
+        "max_hit": 5,
+        "focus": "[color:DeepSkyBlue]前往忍道交锋[/color]"
+    },
+    "find_nindao_clash": {
+        "recognition": "OCR",
+        "expected": "忍道交锋",
+        "replace": [
+            [
+                "丑",
+                "忍"
+            ],
+            [
+                "双",
+                "忍"
+            ]
+        ],
+        "roi": [
+            0,
+            115,
+            212,
+            605
+        ],
+        "action": "Click",
+        "next": [
+            "select_nindao_clash",
+            "find_nindao_clash"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300,
+        "focus": "[color:DeepSkyBlue]找到花店[/color]"
+    },
+    "select_nindao_clash": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "lock",
+                "recognition": "OCR",
+                "expected": "未解锁",
+                "roi": [
+                    176,
+                    434,
+                    1103,
+                    59
+                ]
+            },
+            {
+                "sub_name": "reward",
+                "recognition": "TemplateMatch",
+                "template": "Nindao_clash/selected.png",
+                "roi": [
+                    170,
+                    340,
+                    1109,
+                    74
+                ]
+            }
+        ],
+        "next": [
+            "nindao_clash_undone",
+            "nindao_clash_without_red_point"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]选中花店[/color]"
+    },
+    "nindao_clash_undone": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/red_point.png",
+        "roi": [
+            175,
+            468,
+            1104,
+            88
+        ],
+        "method": 10001,
+        "green_mask": true,
+        "threshold": 0.95,
+        "next": [
+            "nindao_clash_check_recognition_area",
+            "[JumpBack]swipe_for_nindao_clash_recognition_area"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "swipe_for_nindao_clash_recognition_area": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/red_point.png",
+        "roi": [
+            175,
+            468,
+            1104,
+            88
+        ],
+        "method": 10001,
+        "green_mask": true,
+        "threshold": 0.95,
+        "action": "Swipe",
+        "max_hit": 10,
+        "begin": [
+            505,
+            439,
+            1,
+            1
+        ],
+        "end": [
+            728,
+            439,
+            1,
+            1
+        ],
+        "duration": 200,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_check_recognition_area": {
+        "recognition": "OCR",
+        "expected": [
+            "挑",
+            "战",
+            "简",
+            "普",
+            "难"
+        ],
+        "roi": [
+            135,
+            68,
+            1144,
+            123
+        ],
+        "next": [
+            "[JumpBack]nindao_clash_get_award",
+            "nindao_clash_gold_8",
+            "[JumpBack]nindao_clash_refresh",
+            "nindao_clash_without_red_point"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "nindao_clash_get_award": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/get.png",
+        "roi": [
+            175,
+            468,
+            1104,
+            88
+        ],
+        "action": "Click",
+        "target_offset": [
+            59,
+            12,
+            -116,
+            -22
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 200
+    },
+    "nindao_clash_without_red_point": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/red_point.png",
+        "roi": [
+            175,
+            468,
+            1104,
+            88
+        ],
+        "green_mask": true,
+        "threshold": 0.9,
+        "inverse": true,
+        "next": [
+            "swipe_for_nindao_clash_end"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "swipe_for_nindao_clash_end": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "sub_name": "lock",
+                "recognition": "OCR",
+                "expected": "未解锁",
+                "roi": [
+                    176,
+                    434,
+                    1103,
+                    59
+                ]
+            },
+            {
+                "sub_name": "reward",
+                "recognition": "TemplateMatch",
+                "template": "Nindao_clash/selected.png",
+                "roi": [
+                    170,
+                    340,
+                    1109,
+                    74
+                ]
+            }
+        ],
+        "action": "Swipe",
+        "begin": [
+            1158,
+            278,
+            1,
+            1
+        ],
+        "end": [
+            402,
+            295,
+            1,
+            1
+        ],
+        "duration": 300,
+        "max_hit": 3,
+        "next": [
+            "nindao_clash_undone",
+            "nindao_clash_end",
+            "swipe_for_nindao_clash_end"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_end": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/end.png",
+        "roi": [
+            1237,
+            130,
+            42,
+            123
+        ],
+        "next": [
+            "back_main_screen_and_stop"
+        ],
+        "pre_wait_freezes": 300,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]忍道交锋到达尽头[/color]"
+    },
+    "nindao_clash_low": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/low.png",
+        "roi": [
+            165,
+            382,
+            1114,
+            96
+        ],
+        "threshold": 0.95,
+        "next": [
+            "nindao_clash_sweep",
+            "nindao_clash_go"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "nindao_clash_mid": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/mid.png",
+        "roi": [
+            165,
+            382,
+            1114,
+            96
+        ],
+        "threshold": 0.95,
+        "next": [
+            "nindao_clash_sweep",
+            "nindao_clash_go"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "nindao_clash_gold_4": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/gold_4.png",
+        "roi": [
+            165,
+            382,
+            1114,
+            96
+        ],
+        "threshold": 0.95,
+        "next": [
+            "nindao_clash_sweep",
+            "nindao_clash_go"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]发现四倍金箱[/color]"
+    },
+    "nindao_clash_gold_8": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/gold_8.png",
+        "roi": [
+            165,
+            382,
+            1114,
+            96
+        ],
+        "threshold": 0.95,
+        "next": [
+            "nindao_clash_sweep",
+            "nindao_clash_go"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]发现八倍金箱[/color]"
+    },
+    "nindao_clash_refresh": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/red_point.png",
+        "roi": [
+            175,
+            468,
+            1104,
+            88
+        ],
+        "method": 10001,
+        "green_mask": true,
+        "threshold": 0.95,
+        "action": "Click",
+        "target_offset": [
+            -89,
+            17,
+            15,
+            8
+        ],
+        "next": [
+            "[JumpBack]nindao_clash_anime_on",
+            "nindao_clash_cancel_refresh",
+            "nindao_clash_confirm_refresh",
+            "nindao_clash_check_recognition_area",
+            "nindao_clash_refresh"
+        ],
+        "pre_wait_freezes": 300,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 500
+    },
+    "nindao_clash_anime_on": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/anime_on.png",
+        "roi": [
+            480,
+            492,
+            66,
+            59
+        ],
+        "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "nindao_clash_anime_off",
+            "nindao_clash_anime_on"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_anime_off": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/anime_off.png",
+        "roi": [
+            480,
+            492,
+            66,
+            59
+        ],
+        "threshold": 0.95,
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "nindao_clash_confirm_refresh": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confrim.png",
+        "roi": [
+            405,
+            390,
+            227,
+            113
+        ],
+        "target_offset": [
+            74,
+            20,
+            -145,
+            -39
+        ],
+        "action": "Click",
+        "next": [
+            "nindao_clash_confirm_refresh",
+            "nindao_clash_refresh"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_cancel_refresh": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/cancel.png",
+        "roi": [
+            646,
+            404,
+            222,
+            91
+        ],
+        "action": "Click",
+        "next": [
+            "nindao_clash_cancel_refresh",
+            "nindao_clash_sweep"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_sweep": {
+        "recognition": "TemplateMatch",
+        "template": "Nindao_clash/sweep.png",
+        "roi": [
+            1046,
+            616,
+            233,
+            103
+        ],
+        "action": "Click",
+        "next": [
+            "nindao_clash_confirm_sweep",
+            "nindao_clash_sweep"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_confirm_sweep": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confrim.png",
+        "roi": [
+            405,
+            390,
+            227,
+            113
+        ],
+        "action": "Click",
+        "next": [
+            "nindao_clash_win",
+            "nindao_clash_confirm_sweep",
+            "select_nindao_clash"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_win": {
+        "recognition": "TemplateMatch",
+        "template": "Advanture/win.png",
+        "roi": [
+            350,
+            0,
+            696,
+            607
+        ],
+        "action": "Click",
+        "next": [
+            "nindao_clash_win",
+            "select_nindao_clash"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_go": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Nindao_clash/go.png",
+            "Nindao_clash/keep_go.png"
+        ],
+        "roi": [
+            1046,
+            616,
+            233,
+            103
+        ],
+        "action": "Click",
+        "next": [
+            "nindao_clash_confirm_set",
+            "nindao_clash_go"
+        ],
+        "pre_wait_freezes": 300,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_confirm_set": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confrim_small_2.png",
+        "roi": [
+            634,
+            592,
+            246,
+            108
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]game_resource_loading",
+            "nindao_clash_in_game",
+            "nindao_clash_confirm_set"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 300
+    },
+    "nindao_clash_in_game": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Advanture/stop_button.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            1120,
+            0,
+            160,
+            127
+        ],
+        "next": [
+            "nindao_clash_in_fight",
+            "[JumpBack]nindao_clash_go_fight"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "nindao_clash_go_fight": {
+        "recognition": "TemplateMatch",
+        "template": "Advanture/stop_button.png",
+        "green_mask": true,
+        "roi": [
+            1120,
+            0,
+            160,
+            127
+        ],
+        "action": "Swipe",
+        "begin": [
+            212,
+            545,
+            12,
+            12
+        ],
+        "end": [
+            274,
+            527,
+            27,
+            37
+        ],
+        "duration": 800
+    },
+    "nindao_clash_in_fight": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "SharedNode/yellow_boss_health_bar.png",
+            "SharedNode/red_boss_health_bar.png"
+        ],
+        "roi": [
+            259,
+            622,
+            656,
+            79
+        ],
+        "threshold": 0.9,
+        "next": [
+            "nindao_clash_win",
+            "[JumpBack]nindao_clash_click_All_skill",
+            "select_nindao_clash",
+            "nindao_clash_in_fight"
+        ],
+        "on_error": [
+            "back_main_screen_and_stop"
+        ]
+    },
+    "nindao_clash_click_All_skill": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "SharedNode/yellow_boss_health_bar.png",
+            "SharedNode/red_boss_health_bar.png"
+        ],
+        "roi": [
+            259,
+            622,
+            656,
+            79
+        ],
+        "threshold": 0.9,
+        "action": "MultiSwipe",
+        "swipes": [
+            {
+                "$doc": "replace",
+                "begin": [
+                    793,
+                    564,
+                    142,
+                    154
+                ],
+                "end": [
+                    793,
+                    564,
+                    142,
+                    154
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "summon",
+                "begin": [
+                    1128,
+                    153,
+                    54,
+                    51
+                ],
+                "end": [
+                    1128,
+                    153,
+                    54,
+                    51
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "roll",
+                "begin": [
+                    1127,
+                    268,
+                    56,
+                    55
+                ],
+                "end": [
+                    1127,
+                    268,
+                    56,
+                    55
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "attack",
+                "begin": [
+                    1099,
+                    548,
+                    92,
+                    92
+                ],
+                "end": [
+                    1099,
+                    548,
+                    92,
+                    92
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "ultimate",
+                "begin": [
+                    1120,
+                    400,
+                    71,
+                    65
+                ],
+                "end": [
+                    1120,
+                    400,
+                    71,
+                    65
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "skill1",
+                "begin": [
+                    970,
+                    613,
+                    62,
+                    54
+                ],
+                "end": [
+                    970,
+                    613,
+                    62,
+                    54
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "skill2",
+                "begin": [
+                    985,
+                    471,
+                    65,
+                    59
+                ],
+                "end": [
+                    985,
+                    471,
+                    65,
+                    59
+                ],
+                "duration": 100
+            },
+            {
+                "$doc": "sub_skill1",
+                "begin": [
+                    875,
+                    472,
+                    53,
+                    44
+                ],
+                "end": [
+                    875,
+                    472,
+                    53,
+                    44
+                ],
+                "duration": 100
+            }
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    }
+}

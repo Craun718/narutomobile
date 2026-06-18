@@ -355,6 +355,7 @@
             "entry": "mini_game",
             "option": [
                 "选择小游戏",
+                "忍道交锋刷什么",
                 "羁绊追寻自动退出",
                 "木叶小吃店不选蓝红色奖励"
             ],
@@ -1643,6 +1644,15 @@
             "description": "请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
                 {
+                    "name": "忍道交锋(beta)",
+                    "description": "刷不出来8个S箱",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "nindao_clash"
+                        }
+                    }
+                },
+                {
                     "name": "聚宝试炼领取奖励",
                     "pipeline_override": {
                         "mini_game": {
@@ -1721,6 +1731,57 @@
                     "pipeline_override": {
                         "mini_game": {
                             "next": "craft_gift"
+                        }
+                    }
+                }
+            ]
+        },
+        "忍道交锋刷什么": {
+            "description": "要刷的箱子等级,遇到低于期望等级的箱子会刷新",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "4倍S箱",
+                    "pipeline_override": {
+                        "nindao_clash_check_recognition_area": {
+                            "next": [
+                                "[JumpBack]nindao_clash_get_award",
+                                "nindao_clash_gold_4",
+                                "nindao_clash_gold_8",
+                                "[JumpBack]nindao_clash_refresh",
+                                "nindao_clash_without_red_point"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "A箱子",
+                    "pipeline_override": {
+                        "nindao_clash_check_recognition_area": {
+                            "next": [
+                                "[JumpBack]nindao_clash_get_award",
+                                "nindao_clash_mid",
+                                "nindao_clash_gold_4",
+                                "nindao_clash_gold_8",
+                                "[JumpBack]nindao_clash_refresh",
+                                "nindao_clash_without_red_point"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "最逊的那个",
+                    "pipeline_override": {
+                        "nindao_clash_check_recognition_area": {
+                            "next": [
+                                "[JumpBack]nindao_clash_get_award",
+                                "nindao_clash_low",
+                                "nindao_clash_mid",
+                                "nindao_clash_gold_4",
+                                "nindao_clash_gold_8",
+                                "[JumpBack]nindao_clash_refresh",
+                                "nindao_clash_without_red_point"
+                            ]
                         }
                     }
                 }
