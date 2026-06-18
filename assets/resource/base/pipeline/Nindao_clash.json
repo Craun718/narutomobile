@@ -90,7 +90,7 @@
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 300,
-        "focus": "[color:DeepSkyBlue]找到花店[/color]"
+        "focus": "[color:DeepSkyBlue]找到忍界交锋[/color]"
     },
     "select_nindao_clash": {
         "recognition": "Or",
@@ -124,7 +124,7 @@
         ],
         "pre_delay": 0,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]选中花店[/color]"
+        "focus": "[color:DeepSkyBlue]选中忍界交锋[/color]"
     },
     "nindao_clash_undone": {
         "recognition": "TemplateMatch",
@@ -529,8 +529,8 @@
         ],
         "action": "Click",
         "next": [
-            "nindao_clash_win",
-            "select_nindao_clash"
+            "select_nindao_clash",
+            "nindao_clash_win"
         ],
         "pre_delay": 0,
         "post_delay": 0,
