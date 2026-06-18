@@ -52,10 +52,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/daily.png",
         "roi": [
-            423,
-            37,
-            61,
-            50
+            400,
+            34,
+            76,
+            79
         ],
         "action": "Click",
         "pre_delay": 0,
@@ -64,12 +64,14 @@
     },
     "easy_helper_one_key": {
         "recognition": "TemplateMatch",
-        "template": "Easy_helper/easy_helper_one_key_button.png",
+        "template": [
+            "Easy_helper/easy_helper_one_key_button.png"
+        ],
         "roi": [
-            1196,
-            550,
-            42,
-            50
+            1049,
+            456,
+            230,
+            227
         ],
         "action": "Click",
         "next": [
@@ -171,10 +173,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/log_on_award_undone.png",
         "roi": [
-            583,
-            37,
-            81,
-            48
+            560,
+            32,
+            101,
+            66
         ],
         "threshold": 0.85,
         "action": "Click",
@@ -209,10 +211,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/log_on_award_done.png",
         "roi": [
-            592,
-            37,
-            72,
-            45
+            560,
+            32,
+            101,
+            66
         ],
         "threshold": 0.85,
         "action": "Click",
@@ -262,10 +264,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/easy_helper_privilege_done.png",
         "roi": [
-            778,
-            37,
-            64,
-            48
+            740,
+            28,
+            93,
+            64
         ],
         "threshold": 0.85,
         "action": "Click",
@@ -281,10 +283,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/easy_helper_privilege_undone.png",
         "roi": [
-            784,
-            37,
-            58,
-            48
+            740,
+            28,
+            93,
+            64
         ],
         "threshold": 0.85,
         "action": "Click",
@@ -319,10 +321,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/sweep.png",
         "roi": [
-            889,
-            501,
-            55,
-            39
+            864,
+            485,
+            86,
+            56
         ],
         "threshold": 0.9,
         "inverse": true,
@@ -338,10 +340,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/sweep.png",
         "roi": [
-            889,
-            501,
-            55,
-            39
+            864,
+            485,
+            86,
+            56
         ],
         "threshold": 0.85,
         "action": "Click",
@@ -445,10 +447,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/team_dash_undone.png",
         "roi": [
-            1220,
-            501,
-            50,
-            42
+            1180,
+            490,
+            96,
+            56
         ],
         "threshold": 0.9,
         "inverse": true,
@@ -465,10 +467,10 @@
         "recognition": "TemplateMatch",
         "template": "Easy_helper/team_dash_undone.png",
         "roi": [
-            1220,
-            501,
-            50,
-            42
+            1180,
+            490,
+            96,
+            56
         ],
         "threshold": 0.9,
         "action": "Click",
