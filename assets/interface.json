@@ -118,6 +118,7 @@
                 "积分赛强制战斗",
                 "积分赛跨服",
                 "积分赛挑战次数",
+                "积分赛失败后再战",
                 "从奖励中心进入",
                 "忍界指引寻找积分赛"
             ],
@@ -2123,6 +2124,26 @@
                             }
                         }
                     }
+                }
+            ]
+        },
+        "积分赛失败后再战": {
+            "description": "胜败乃兵家常事界面的操作",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "point_race_direct_hit_quit": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ],
+                            "focus": "[color:DeepSkyBlue]积分赛失败[/color]"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes"
                 }
             ]
         },

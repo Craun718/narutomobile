@@ -253,10 +253,30 @@
             "max_hit": 1
         },
         "next": [
-            "point_race_challenge_enter"
+            "point_race_challenge_enter",
+            "point_race_direct_hit_quit"
         ],
         "pre_delay": 0,
         "post_delay": 0
+    },
+    "point_race_direct_hit_quit": {
+        "recognition": "OCR",
+        "expected": [
+            "点击"
+        ],
+        "roi": [
+            480,
+            572,
+            316,
+            135
+        ],
+        "action": "Click",
+        "next": [
+            "point_race_challenge_enter",
+            "point_race_direct_hit_quit"
+        ],
+        "post_wait_freezes": 500,
+        "focus": "[color:DeepSkyBlue]积分赛失败,再战[/color]"
     },
     "point_race_get_challenge_button": {
         "recognition": "OCR",
