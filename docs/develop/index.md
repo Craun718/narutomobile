@@ -105,10 +105,10 @@ python ./tools/ci/configure.py
 安装完成后，可以运行项目来验证是否安装成功：
 
 ```bash title="验证安装"
-python -m agent.main <identifier>
+python -m agent.main <identifier>#<identifier>替换为uuid如"3be2c931-9c0d-4d69-9ebd-eed2263e06fd"
 ```
 
-`identifier`的值在`assets/interface.json`里
+`identifier`属性与值可以放在`assets/interface.json`里的"agent"属性中
 
 **✓ 如果能够正常启动，说明开发环境已经搭建完成！**
 
