@@ -2919,22 +2919,16 @@
                 {
                     "name": "天战场",
                     "pipeline_override": {
-                        "sky_ground_battlefield_selection": {
-                            "next": [
-                                "sky_battlefield",
-                                "sky_ground_settlement"
-                            ]
+                        "ground_battlefield": {
+                            "enabled": false
                         }
                     }
                 },
                 {
                     "name": "地战场",
                     "pipeline_override": {
-                        "sky_ground_battlefield_selection": {
-                            "next": [
-                                "ground_battlefield",
-                                "sky_ground_settlement"
-                            ]
+                        "sky_battlefield": {
+                            "enabled": false
                         }
                     }
                 }
@@ -3056,6 +3050,7 @@
                         "sky_ground_battlefield_selection": {
                             "next": [
                                 "sky_battlefield",
+                                "ground_battlefield",
                                 "sky_ground_settlement",
                                 "sky_ground_not_open"
                             ]
