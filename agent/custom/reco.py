@@ -67,8 +67,10 @@ class IsCounterOverflow(CustomRecognition):
             context.tasker.post_stop()
             return CustomRecognition.AnalyzeResult(box=None, detail={})
 
-        task_id = argv.task_detail.task_id
-        now_count = counter.get_count(task_id)
+        now_count = counter.get_count(argv.task_detail.task_id)
+        logger.info(
+            f"当前节点名：{argv.node_name} 当前任务ID：{argv.task_detail.task_id}"
+        )
         if now_count >= max_hit:
             logger.debug(f"计数器溢出！最大值: {max_hit} 当前值: {now_count} ")
             logger.info("达到最大执行次数")
