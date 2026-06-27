@@ -953,70 +953,57 @@
         "focus": "[color:DeepSkyBlue]匹配首胜任务未完成[/color]"
     },
     "weekly_win_combo_attack": {
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [
+        "action": "Click",
+        "target": [
             1099,
             548,
             92,
             92
         ],
-        "end": [
-            1099,
-            548,
-            92,
-            92
-        ],
-        "duration": 180,
         "pre_delay": 0,
-        "post_delay": 0,
-        "focus": "[color:darkgray]周胜普攻收尾[/color]"
+        "post_delay": 0
     },
     "weekly_win_combo_attack_1": {
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [
+        "action": "Click",
+        "target": [
             1099,
             548,
             92,
             92
         ],
-        "end": [
-            1099,
-            548,
-            92,
-            92
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "weekly_win_combo_skill_1"
+        ]
+    },
+    "weekly_win_combo_skill_1": {
+        "action": "Click",
+        "target": [
+            970,
+            613,
+            62,
+            54
         ],
-        "duration": 90,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
             "weekly_win_combo_skill_2"
-        ],
-        "focus": "[color:darkgray]周胜穿插普攻1[/color]"
+        ]
     },
     "weekly_win_combo_attack_2": {
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [
+        "action": "Click",
+        "target": [
             1099,
             548,
             92,
             92
         ],
-        "end": [
-            1099,
-            548,
-            92,
-            92
-        ],
-        "duration": 90,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
             "weekly_win_combo_ultimate"
-        ],
-        "focus": "[color:darkgray]周胜穿插普攻2[/color]"
+        ]
     },
     "weekly_win_combo_replace": {
         "action": "Click",
@@ -1030,8 +1017,7 @@
         "post_delay": 0,
         "next": [
             "weekly_win_combo_attack"
-        ],
-        "focus": "[color:darkgray]周胜替身[/color]"
+        ]
     },
     "weekly_win_combo_roll": {
         "action": "Click",
@@ -1045,8 +1031,7 @@
         "post_delay": 0,
         "next": [
             "weekly_win_combo_replace"
-        ],
-        "focus": "[color:darkgray]周胜密卷[/color]"
+        ]
     },
     "weekly_win_combo_skill_2": {
         "action": "Click",
@@ -1060,8 +1045,7 @@
         "post_delay": 0,
         "next": [
             "weekly_win_combo_attack_2"
-        ],
-        "focus": "[color:darkgray]周胜二技能[/color]"
+        ]
     },
     "weekly_win_combo_summon": {
         "action": "Click",
@@ -1075,8 +1059,7 @@
         "post_delay": 0,
         "next": [
             "weekly_win_combo_roll"
-        ],
-        "focus": "[color:darkgray]周胜通灵[/color]"
+        ]
     },
     "weekly_win_combo_ultimate": {
         "action": "Click",
@@ -1090,7 +1073,6 @@
         "post_delay": 0,
         "next": [
             "weekly_win_combo_summon"
-        ],
-        "focus": "[color:darkgray]周胜奥义[/color]"
+        ]
     }
 }

@@ -211,7 +211,8 @@
                 "清周胜过期宝箱",
                 "从奖励中心进入",
                 "出现提示时重启任务",
-                "周胜不攻击"
+                "周胜不攻击",
+                "串行连点器(beta)"
             ],
             "description": "请在主页开始任务，请尽量不要滥用这个功能影响其他人游戏体验。该功能**不支持雷电模拟器**，与之有关的问题也不会被受理。"
         },
@@ -246,6 +247,7 @@
                 "秘境忍具每次只翻一张",
                 "从奖励中心进入",
                 "有挑战卷的时候才挑战",
+                "串行连点器(beta)",
                 "烈炎秘境",
                 "罡体秘境",
                 "水牢秘境",
@@ -2092,6 +2094,43 @@
                                 "tips_confirm",
                                 "[JumpBack]weekly_win_rank_up",
                                 "weekly_win"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "串行连点器(beta)": {
+            "type": "switch",
+            "description": "雷电模拟器使用多指滑动的时候,有时会出现触摸残留bug.可以选择开启这个选项,将多指滑动转换成串行节点,但是不保证正常运行",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "weekly_win_match_fighting": {
+                            "next": [
+                                "[JumpBack]winner_decided",
+                                "[JumpBack]weekly_win_combo_attack_1",
+                                "battle_tips",
+                                "[JumpBack]go_to_war",
+                                "battle_end",
+                                "[JumpBack]weekly_win_match_fighting"
+                            ]
+                        },
+                        "secret_realm_in_fight": {
+                            "next": [
+                                "[JumpBack]secret_realm_combo_attack_1",
+                                "secret_realm_settlement",
+                                "secret_realm_wasted",
+                                "secret_realm_win",
+                                "secret_realm_in_fight",
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "secret_realm_old_settlement",
+                                "secret_realm_fight"
                             ]
                         }
                     }
