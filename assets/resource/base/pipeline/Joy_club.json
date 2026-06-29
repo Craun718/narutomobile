@@ -198,7 +198,8 @@
         "action": "Click",
         "next": [
             "joy_club_close_draw_award",
-            "joy_club_draw_done"
+            "joy_club_draw_done",
+            "joy_club_draw"
         ],
         "pre_wait_freezes": 200,
         "pre_delay": 0,
