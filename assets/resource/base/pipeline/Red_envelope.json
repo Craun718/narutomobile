@@ -26,7 +26,7 @@
         ],
         "next": [
             "red_envelope_check_in_activity",
-            "[JumpBack]red_envelope_to_activity"
+            "red_envelope_to_activity"
         ],
         "post_wait_freezes": 900,
         "focus": "[color:DeepSkyBlue]进入活动[/color]"
@@ -63,7 +63,9 @@
             10
         ],
         "next": [
-            "red_envelope_entry"
+            "red_envelope_entry",
+            "swipes_for_red_envelope",
+            "back_main_screen_and_stop"
         ],
         "duration": 200,
         "post_delay": 900,
@@ -80,6 +82,7 @@
             175,
             580
         ],
+        "max_hit": 5,
         "action": "Click",
         "next": [
             "check_selected_red_envelope",

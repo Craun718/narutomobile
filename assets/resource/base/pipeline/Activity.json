@@ -120,6 +120,7 @@
         "next": [
             "has_ramen",
             "mouthly_sign_tab",
+            "activity_entry",
             "swipes_for_monthly_sign",
             "retry_failed"
         ],

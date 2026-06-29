@@ -27,6 +27,7 @@
         ],
         "next": [
             "find_konoha_snack",
+            "konoha_snack_entry",
             "[JumpBack]swipes_for_konoha_snack",
             "[JumpBack]back_main_screen_and_stop"
         ],

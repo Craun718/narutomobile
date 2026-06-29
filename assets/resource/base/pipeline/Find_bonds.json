@@ -25,6 +25,7 @@
         ],
         "next": [
             "find_find_bonds",
+            "find_bonds_entry",
             "[JumpBack]swipes_for_find_bonds",
             "[JumpBack]back_main_screen_and_stop"
         ],

@@ -27,6 +27,7 @@
         ],
         "next": [
             "find_konoha_konoha_question_and_answer",
+            "konoha_question_and_answer_entry",
             "[JumpBack]swipes_for_konoha_question_and_answer",
             "[JumpBack]back_main_screen_and_stop"
         ],

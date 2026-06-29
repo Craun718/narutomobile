@@ -27,6 +27,7 @@
         ],
         "next": [
             "find_flower_shop",
+            "flower_shop_entry",
             "[JumpBack]swipes_for_flower_shop",
             "[JumpBack]back_main_screen_and_stop"
         ],

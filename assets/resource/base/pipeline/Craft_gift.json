@@ -27,6 +27,7 @@
         ],
         "next": [
             "find_craft_gift",
+            "craft_gift_entry",
             "[JumpBack]swipes_for_craft_gift",
             "[JumpBack]back_main_screen_and_stop"
         ],
