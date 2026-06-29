@@ -16,6 +16,7 @@
             50,
             42
         ],
+        "threshold": 0.9,
         "action": "Click",
         "target": [
             1196,

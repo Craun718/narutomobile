@@ -18,6 +18,7 @@
             50,
             42
         ],
+        "threshold": 0.9,
         "action": "Click",
         "$doc": "活动的图标会变，所以识别用的是招募的图标",
         "target": [
