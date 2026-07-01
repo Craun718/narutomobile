@@ -755,7 +755,8 @@
             "[JumpBack]sky_ground_click_All_skill",
             "sky_ground_success",
             "sky_ground_fail",
-            "sky_ground_in_main"
+            "sky_ground_in_main",
+            "[JumpBack]battle_tips"
         ]
     },
     "sky_ground_success": {
