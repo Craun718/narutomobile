@@ -71,19 +71,11 @@ if %errorlevel% neq 0 (
 )
 
 
-cd .. 
-echo [信息] 更新子模块...
-git submodule update --remote
-if %errorlevel% neq 0 (
-    echo [错误] 更新子模块失败
-    pause
-    exit /b 1
-)
-
+cd ..
 echo [信息] 配置项目...
-python tools\configure.py
+python tools\ci\configure.py
 if %errorlevel% neq 0 (
-    echo [错误] 配置文件生成失败
+    echo [错误] OCR 模型下载失败
     pause
     exit /b 1
 )

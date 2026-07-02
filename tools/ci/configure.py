@@ -1,26 +1,32 @@
-import shutil
+import urllib.request
+import zipfile
 
 from utils import assets_dir
 
+OCR_DOWNLOAD_URL = (
+    "https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
+)
+
 
 def configure_ocr_model():
-    if not (assets_dir / "MaaCommonAssets" / "OCR").exists():
-        print(
-            'Please clone this repository completely, don’t miss "--recursive", and don’t download the zip package!'
-        )
-        print('请完整克隆本仓库，不要漏掉 "--recursive"，也不要下载源码 zip 包！')
-        exit(1)
-
     ocr_dir = assets_dir / "resource" / "base" / "model" / "ocr"
-    if not ocr_dir.exists():  # copy default OCR model only if dir does not exist
-        shutil.copytree(
-            # v4 真的比 v5 好用.jpg
-            assets_dir / "MaaCommonAssets" / "OCR" / "ppocr_v4" / "zh_cn",
-            ocr_dir,
-            dirs_exist_ok=True,
-        )
-    else:
-        print("Found existing OCR directory, skipping default OCR model import.")
+
+    if ocr_dir.exists():
+        print("Found existing OCR directory, skipping download.")
+        return
+
+    print(f"Downloading OCR model from {OCR_DOWNLOAD_URL}...")
+    ocr_dir.mkdir(parents=True, exist_ok=True)
+
+    zip_path = assets_dir / "resource" / "base" / "model" / "ocr.zip"
+    urllib.request.urlretrieve(OCR_DOWNLOAD_URL, zip_path)
+
+    print("Extracting OCR model...")
+    with zipfile.ZipFile(zip_path, "r") as zip_ref:
+        zip_ref.extractall(ocr_dir)
+
+    zip_path.unlink()
+    print("OCR model configured successfully.")
 
 
 if __name__ == "__main__":
