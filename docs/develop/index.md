@@ -58,12 +58,13 @@ cd narutomobile
 
 ---
 
-## 4. 更新 Git 子模块
+## 4. 下载 OCR（文字识别）资源文件 [ppocr_v6.zip](https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip) 解压到 `assets/resource/model/ocr/` 目录下，确保路径如下：
 
-克隆完成项目代码后，在项目根目录下执行以下命令：
-
-```bash title="更新Git子模块"
-git submodule update --init --recursive
+```tree
+   assets/resource/model/ocr/
+   ├── det.onnx
+   ├── keys.txt
+   └── rec.onnx
 ```
 
 ---
@@ -90,17 +91,7 @@ pip install -r requirements.txt
 
 ---
 
-## 6. 配置 OCR 模型
-
-在项目的根目录运行以下命令配置 OCR 模型：
-
-```bash title="配置OCR模型"
-python ./tools/ci/configure.py
-```
-
----
-
-## 7. 验证安装
+## 6. 验证安装
 
 安装完成后，可以运行项目来验证是否安装成功：
 
@@ -114,9 +105,9 @@ python -m agent.main <identifier>#<identifier>替换为uuid如"3be2c931-9c0d-4d6
 
 ---
 
-## 8. 开始开发
+## 7. 开始开发
 
-### 8.1 入门指南
+### 7.1 入门指南
 
 1. 阅读 [M9A 开发须知](https://1999.fan/zh_cn/develop/development.html)，了解如何在本地以开发模式运行本项目（本项目与M9A的项目结构类似，可以作为学习参考）。
 
@@ -133,18 +124,17 @@ python -m agent.main <identifier>#<identifier>替换为uuid如"3be2c931-9c0d-4d6
 
 ---
 
-## 9. 进行调试
+## 8. 进行调试
 
 | 工具 | 简介 |
 | --- | --- |
-| [MaaDebugger](https://github.com/MaaXYZ/MaaDebugger) | 独立调试工具 |
 | [Maa Pipeline Support](https://docs.maa.plus/zh-cn/develop/vsc-ext-tutorial.html) | VSCode 插件，提供调试、截图、获取 ROI 、取色等功能（强烈推荐） |
 
 ---
 
-## 10. 常见问题与解决方案
+## 9. 常见问题与解决方案
 
-### 11.1 运行项目问题
+### 9.1 运行项目问题
 
 1. **错误**：提示 "Failed to load det or rec", "ocrer is null"
    **解决方案**：确保 MaaFramework 依赖已正确安装，且 OCR 模型文件完整
@@ -152,7 +142,7 @@ python -m agent.main <identifier>#<identifier>替换为uuid如"3be2c931-9c0d-4d6
 2. **错误**：提示找不到模块
    **解决方案**：检查是否已正确激活虚拟环境（如果使用了虚拟环境），或重新安装依赖
 
-### 11.2 开发相关问题
+### 9.2 开发相关问题
 
 1. **问题**：我在这个仓库里提了 Issue 很久没人回复
    **解决方案**：本项目目前紧缺人手，你可以先阅读文档自行尝试寻找解决方案。欢迎提交 PR 贡献代码！
