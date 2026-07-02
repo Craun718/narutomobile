@@ -1,7 +1,7 @@
 from pathlib import Path
 import argparse
 from zipfile import ZipFile
-from urllib import request
+from utils import download
 
 default_version = "3.12.9"
 default_arch = "amd64"
@@ -31,28 +31,6 @@ def get_args():
     return parser.parse_args()
 
 
-def download_file(url, dest_path, chunk_size=8192):
-    with request.urlopen(url) as response, open(dest_path, "wb") as out_file:
-        # 获取文件大小（如果可用）
-        total_size = int(response.headers.get("Content-Length", 0))
-        print(f"Total size: {total_size} bytes")
-
-        downloaded = 0
-        while True:
-            chunk = response.read(chunk_size)
-            if not chunk:
-                break
-            out_file.write(chunk)
-            downloaded += len(chunk)
-            # 使用 \r 动态更新显示，而不是添加新行
-            if total_size > 0:
-                percent = (downloaded / total_size) * 100
-                print(f"\rDownloaded: {downloaded}/{total_size} bytes ({percent:.1f}%)", end="", flush=True)
-            else:
-                print(f"\rDownloaded: {downloaded} bytes", end="", flush=True)
-        print()  # 下载完成后换行
-
-
 def main():
     args = get_args()
     tmp_path = Path(args.tmp_dir)
@@ -70,7 +48,7 @@ def main():
 
     if not python_embed_zip_path.exists():
         print(f"Downloading Python embed zip from {python_embed_url}...")
-        download_file(python_embed_url, python_embed_zip_path)
+        download(python_embed_url, python_embed_zip_path)
         print("Download completed.")
     else:
         print("Python embed zip already exists.")

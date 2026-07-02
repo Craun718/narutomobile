@@ -9,7 +9,6 @@ import shutil
 import subprocess
 import urllib.request as request
 
-
 sys.path.insert(0, Path(__file__).parent.__str__())
 sys.path.insert(0, (Path(__file__).parent / "ci").__str__())
 
@@ -19,7 +18,7 @@ from ci.install import (
     install_agent,
 )
 from ci.setup_embed_python import PYTHON_VERSION_TARGET
-from setup_full_python import download_file
+from utils import download
 
 DEFAULT_MFA_VERSION = "v2.12.1"
 GHPROXY_URL = "https://gh-proxy.natsuu.top/"
@@ -109,7 +108,7 @@ def download_mfa_release(version, archive_name, cache_path):
         url = GHPROXY_URL + url
 
     print(f"Downloading from {url}...")
-    download_file(url, cache_path)
+    download(url, cache_path)
 
 
 # modified from download_deps.py of M9A
