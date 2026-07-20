@@ -8,15 +8,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from utils import current_script_dir, project_root_dir
 from utils.logger import logger
 
 # utf-8
 sys.stdout.reconfigure(encoding="utf-8")  # type: ignore
 
-# 获取当前main.py路径并设置上级目录为工作目录
-current_file_path = Path(__file__).resolve()  # 当前脚本的绝对路径
-current_script_dir = current_file_path.parent  # 包含此脚本的目录
-project_root_dir = current_script_dir.parent  # 假定的项目根目录
 
 # 更改CWD到项目根目录
 if Path.cwd() != project_root_dir:
