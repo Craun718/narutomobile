@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from utils import current_script_dir, project_root_dir
+from utils import assets_interface_path, current_script_dir, interface_path, project_root_dir
 from utils.logger import logger
 
 # utf-8
@@ -30,18 +30,10 @@ VENV_DIR = Path(project_root_dir) / VENV_NAME
 
 
 ### 配置相关 ###
-def read_interface_version(interface_file_name="./interface.json") -> str:
-    interface_path = Path(project_root_dir) / interface_file_name
-    assets_interface_path = Path(project_root_dir) / "assets" / interface_file_name
-
-    if not (assets_interface_path.exists() or interface_path.exists()):
-        logger.error("未找到interface.json")
-        return "unknown"
-
-    if assets_interface_path.exists():
-        return "DEBUG"
-
+def read_interface_version() -> str:
     try:
+        if assets_interface_path.exists():
+            return "DEBUG"
         with open(interface_path, encoding="utf-8") as f:
             interface_data = json.load(f)
             return interface_data.get("version", "unknown")

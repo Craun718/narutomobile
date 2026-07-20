@@ -19,12 +19,15 @@ class ArenaFight(CustomAction):
         super().__init__(*args, **kwargs)
         self.miss_time = 0
 
-        self.emoji_template = cv2.imread(resource_base / "image" / "Weekly_win" / "battle_emoji.png")
-        if not self.emoji_template:
-            raise FileNotFoundError("emoji_template not found")
-        self.winner_template = cv2.imread(resource_base / "image" / "Weekly_win" / "winner.png")
-        if not self.winner_template:
-            raise FileNotFoundError("winner_template not found")
+        emoji_template_path = resource_base / "image" / "Weekly_win" / "battle_emoji.png"
+        if not emoji_template_path.exists():
+            raise FileNotFoundError(f"emoji_template not found:{emoji_template_path}")
+        self.emoji_template = cv2.imread(emoji_template_path)
+
+        winner_template_path = resource_base / "image" / "Weekly_win" / "winner.png"
+        if not winner_template_path.exists():
+            raise FileNotFoundError(f"winner_template not found:{winner_template_path}")
+        self.winner_template = cv2.imread(winner_template_path)
 
     def should_stop(self, ctx: Context) -> bool:
         # 战斗表情是否可见
