@@ -105,7 +105,10 @@
                                     "type": "string"
                                 }
                             },
-                            "required": ["name", "value"]
+                            "required": [
+                                "name",
+                                "value"
+                            ]
                         }
                     }
                 },
@@ -113,5 +116,9 @@
             }
         }
     },
-    "required": ["controller", "resource", "task"]
+    "required": [
+        "controller",
+        "resource",
+        "task"
+    ]
 }
