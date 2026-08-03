@@ -1006,7 +1006,9 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "confirm_club_first_award"
+            "confirm_club_first_award",
+            "roger_club_first_award",
+            "club_first_award_done"
         ],
         "focus": "[color:DeepSkyBlue]领取第一个奖励[/color]"
     },
@@ -1045,7 +1047,8 @@
         "post_delay": 5000,
         "timeout": 10000,
         "next": [
-            "roger_club_first_award"
+            "roger_club_first_award",
+            "club_first_award_done"
         ],
         "on_error": [
             "naruto_club_in_loop_wheel"
