@@ -8,7 +8,7 @@ uv.lock
 MaaCommonAssets/
 *.md
 resource/base/model/ocr/
-tools/schema/interface.schema.json
-tools/schema/interface_config.schema.json
-tools/schema/interface_import.schema.json
-tools/schema/pipeline.schema.json
+deps/tools/schema/interface.schema.json
+deps/tools/schema/interface_config.schema.json
+deps/tools/schema/interface_import.schema.json
+deps/tools/schema/pipeline.schema.json
