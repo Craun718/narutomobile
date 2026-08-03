@@ -36,10 +36,10 @@
     "give_energy_account_friend": {
         "recognition": "OCR",
         "roi": [
-            143,
-            169,
-            197,
-            143
+            76,
+            160,
+            182,
+            126
         ],
         "expected": [
             "游戏好友"

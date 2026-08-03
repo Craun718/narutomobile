@@ -1097,7 +1097,8 @@
         "timeout": 15000,
         "next": [
             "confirm_club_second_award",
-            "club_second_award"
+            "club_second_award",
+            "club_second_award_done"
         ],
         "on_error": "award_kale",
         "focus": "[color:DeepSkyBlue]领取第二个奖励[/color]"
