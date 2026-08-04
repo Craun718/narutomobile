@@ -3764,7 +3764,7 @@
             ]
         },
         "清周胜过期宝箱": {
-            "description": "清周胜过期宝箱要有时间卡,会先打完周胜胜利次数再开始清理过期宝箱",
+            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗",
             "type": "switch",
             "cases": [
                 {
@@ -3773,10 +3773,11 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "weekly_win_stop": {
+                        "win_counter": {
                             "next": [
                                 "weekly_win_duel_mission",
-                                "back_main_screen_and_stop"
+                                "go_to_war_again",
+                                "weekly_win_stop"
                             ]
                         },
                         "weekly_win_get_weekly_duel_mission_award_2_end": {
@@ -3796,7 +3797,23 @@
                         "weekly_win_check_no_daily_duel_mission_award": {
                             "next": [
                                 "weekly_win_check_daily_duel_mission_recover_award",
-                                "back_main_screen_and_stop"
+                                "weekly_win_check_daily_duel_mission_back_fight"
+                            ]
+                        },
+                        "weekly_win_check_daily_duel_mission_without_recover_award": {
+                            "next": [
+                                "weekly_win_check_daily_duel_mission_back_fight"
+                            ]
+                        },
+                        "weekly_win_check_daily_duel_mission_without_time_card": {
+                            "next": [
+                                "weekly_win_check_daily_duel_mission_back_fight"
+                            ]
+                        },
+                        "weekly_win_check_daily_duel_mission_back_fight": {
+                            "next": [
+                                "go_to_war_again",
+                                "weekly_win_stop"
                             ]
                         }
                     }
