@@ -83,9 +83,25 @@
         "next": [
             "confirm_free_headhunt",
             "free_headhunt_fake",
-            "free_headhunt_waiting"
+            "free_headhunt_waiting",
+            "[JumpBack]headhunt_whole_ninja"
         ],
         "focus": "[color:DeepSkyBlue]有免费高级招募[/color]"
+    },
+    "headhunt_whole_ninja": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confirm.png",
+        "roi": [
+            654,
+            592,
+            251,
+            113
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 0,
+        "focus": "[color:DeepSkyBlue]整卡![/color]"
     },
     "free_headhunt_fake": {
         "recognition": "OCR",
@@ -136,6 +152,7 @@
         "inverse": true,
         "pre_delay": 0,
         "post_delay": 0,
+        "next": [],
         "focus": "[color:DeepSkyBlue]完成免费高级招募[/color]"
     },
     "swipe_for_headhunt_recruit_enter": {
@@ -231,7 +248,8 @@
         "post_delay": 0,
         "next": [
             "confirm_headhunt_recruit",
-            "headhunt_recruit"
+            "headhunt_recruit",
+            "[JumpBack]headhunt_whole_ninja"
         ],
         "focus": "[color:DeepSkyBlue]进行免费普通招募[/color]"
     },
