@@ -849,6 +849,12 @@
         ],
         "pre_delay": 0,
         "action": "Click",
+        "target": [
+            659,
+            465,
+            31,
+            20
+        ],
         "post_wait_freezes": 400,
         "post_delay": 0,
         "next": [
