@@ -112,7 +112,9 @@
                         }
                     }
                 },
-                "required": ["name"]
+                "required": [
+                    "name"
+                ]
             }
         }
     },
