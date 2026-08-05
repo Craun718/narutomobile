@@ -105,22 +105,13 @@
                                     "type": "string"
                                 }
                             },
-                            "required": [
-                                "name",
-                                "value"
-                            ]
+                            "required": ["name", "value"]
                         }
                     }
                 },
-                "required": [
-                    "name"
-                ]
+                "required": ["name"]
             }
         }
     },
-    "required": [
-        "controller",
-        "resource",
-        "task"
-    ]
+    "required": ["controller", "resource", "task"]
 }
