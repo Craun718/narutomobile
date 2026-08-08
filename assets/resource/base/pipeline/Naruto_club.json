@@ -1008,7 +1008,8 @@
         "next": [
             "confirm_club_first_award",
             "roger_club_first_award",
-            "club_first_award_done"
+            "club_first_award_done",
+            "club_first_award"
         ],
         "focus": "[color:DeepSkyBlue]领取第一个奖励[/color]"
     },
