@@ -474,3 +474,26 @@ class CheckBuyEnergyCount(CustomRecognition):
             f"购买体力计数器状态: 最大值:{count} 当前值: {self.start_count - now_count},初始值{self.start_count},识别值{now_count}"  # noqa: E501
         )
         return CustomRecognition.AnalyzeResult(box=None, detail={})
+
+
+@AgentServer.custom_recognition("SwitchAccountFindTargetArea")
+class SwitchAccountFindTargetArea(CustomRecognition):
+    """
+    切换账号找目标区
+    """
+
+    def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg) -> CustomRecognition.AnalyzeResult:
+        param = json.loads(argv.custom_recognition_param)
+        target_area = param.get("expected", "521")
+        area_roi = context.run_recognition("switch_account_target_area_roi", argv.image)
+        for result in area_roi.all_results:
+            box = tuple(result.box)
+            reco_detail = context.run_recognition("custom_ocr", argv.image, {"custom_ocr": {"roi": box}})
+            if reco_detail and reco_detail.hit:
+                try:
+                    area_num = reco_detail.best_result.text.strip()
+                    if area_num == target_area:
+                        return CustomRecognition.AnalyzeResult(box=box, detail={})
+                except (AttributeError, ValueError, TypeError):
+                    continue
+        return CustomRecognition.AnalyzeResult(box=None, detail={})

@@ -4501,9 +4501,9 @@
                     ]
                 },
                 "switch_account_find_target_area": {
-                    "expected": [
-                        "{区序号}"
-                    ]
+                    "custom_recognition_param": {
+                        "expected": "{区序号}"
+                    }
                 }
             }
         },
