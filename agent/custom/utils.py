@@ -3,7 +3,6 @@ import random
 import re
 from collections.abc import Iterable
 from datetime import datetime
-from pathlib import Path
 from random import randint
 from time import sleep
 
@@ -12,7 +11,7 @@ from maa.define import RectType
 from notifypy import Notify
 from numpy import ndarray
 from PIL import Image
-from utils import bdc, get_format_timestamp, jD, jL, logo, root
+from utils import bdc, debug_dir, get_format_timestamp, jD, jL, logo, root
 from utils.logger import log_dir, logger
 
 
@@ -332,12 +331,6 @@ def get_digit_count(context: Context, image: ndarray, roi: list[int], default=No
     return value, source_text
 
 
-# 日志文件清理基准时间
-DEFAULT_BASE_TIME = datetime(2025, 5, 1, 0, 0, 0, 0)
-# 每次任务调用一次utils.py,因此不用持久化;由 CleanupAgentDebug 设置,供日志文件清理节点使用
-base_time_for_cleanup: datetime | None = DEFAULT_BASE_TIME
-
-
 def extract_datetime_from_log_name(filename: str) -> datetime | None:
     """
     从日志文件名中提取 datetime
@@ -382,53 +375,43 @@ def extract_datetime_from_log_name(filename: str) -> datetime | None:
         return None
 
 
-def cleanup_maafw_bak_logs(debug_folder: Path, keep_count: int):
+def cleanup_maafw_bak_logs(keep_count: int) -> datetime | None:
     """
     清理旧的 maafw.bak.*.log 文件,保留最新的 keep_count 个。
-    如果有日志被删除,将全局变量 base_time_for_cleanup 更新为被删除日志中最晚的时间;
-    否则重置为 DEFAULT_BASE_TIME
+    返回最旧备份日志的时间作为后续日志/图片清理的基准;
+    无法确定最旧日志时返回 None,调用方应跳过日志/图片清理。
     """
-    global base_time_for_cleanup
-    log_files = list(debug_folder.glob("maafw.bak.*.log"))
+    log_files = list(debug_dir.glob("maafw.bak.*.log"))
     print(f"[日志清理] 找到日志总数: {len(log_files)}")
     if not log_files:
-        print("[日志清理] 无符合格式的日志，跳过")
-        base_time_for_cleanup = DEFAULT_BASE_TIME
-        return
+        print("[日志清理] 无符合格式的日志,无法确定最旧日志,跳过日志/图片清理")
+        return None
 
     logs_with_time = []
     for log_path in log_files:
-        dt = extract_datetime_from_log_name(log_path.name)
-        if dt:
-            logs_with_time.append((dt, log_path))
-        else:
-            print(f"[日志清理] 无法解析日志时间,跳过: {log_path.name}")
-
-    if not logs_with_time:
-        print("[日志清理] 所有日志均无法解析时间,跳过")
-        base_time_for_cleanup = DEFAULT_BASE_TIME
-        return
+        loa_datetime = extract_datetime_from_log_name(log_path.name)
+        if loa_datetime is None:
+            print(f"[日志清理] 无法解析日志时间,无法确定最旧日志,跳过日志/图片清理: {log_path.name}")
+            return None
+        logs_with_time.append((loa_datetime, log_path))
 
     logs_with_time.sort(key=lambda x: x[0], reverse=True)
     to_delete_logs = logs_with_time[keep_count:]
 
-    if not to_delete_logs:
+    if to_delete_logs:
+        print(f"[日志清理] 待删除旧日志: {len(to_delete_logs)} 个")
+        for loa_datetime, log_path in to_delete_logs:
+            try:
+                log_path.unlink()
+                print(f"[日志清理] 已删除: {log_path.name} (时间 {loa_datetime})")
+            except Exception as e:
+                print(f"[日志清理] 删除失败 {log_path.name}: {e}")
+    else:
         print("[日志清理] 没有需要删除的日志")
-        base_time_for_cleanup = DEFAULT_BASE_TIME
-        return
 
-    print(f"[日志清理] 待删除旧日志: {len(to_delete_logs)} 个")
-    for dt, log_path in to_delete_logs:
-        try:
-            log_path.unlink()
-            print(f"[日志清理] 已删除: {log_path.name} (时间 {dt})")
-        except Exception as e:
-            print(f"[日志清理] 删除失败 {log_path.name}: {e}")
-
-    # 更新基准时间为被删除日志中最晚的时间
-    deleted_latest = to_delete_logs[0][0]
-    print(f"[日志清理] 被删除日志中最晚时间: {deleted_latest}")
-    base_time_for_cleanup = deleted_latest
+    oldest_log_time = logs_with_time[-1][0]
+    print(f"[日志清理] 最旧日志时间: {oldest_log_time}")
+    return oldest_log_time
 
 
 def extract_datetime_from_image_name(filename: str) -> datetime | None:
@@ -466,14 +449,13 @@ def extract_datetime_from_image_name(filename: str) -> datetime | None:
         return None
 
 
-def clean_images_in_dirs(debug_folder: Path):
+def clean_images_in_dirs(base_time: datetime):
     """
-    因为maafw.bak.log的日期是其内容的最晚日期,因此只有删了日志文件才去删除图片;
-    依次清理多个子目录下所有图片时间早于 base_time_for_cleanup 的文件
+    依次清理多个子目录下所有图片时间早于 base_time 的文件
     """
     sub_dirs = ("custom", "on_error", "vision")
     for sub_dir in sub_dirs:
-        target_dir = debug_folder / sub_dir
+        target_dir = debug_dir / sub_dir
         if not target_dir.exists():
             print(f"[图片清理] 目录不存在,跳过: {target_dir}")
             continue
@@ -485,7 +467,6 @@ def clean_images_in_dirs(debug_folder: Path):
             print(f"[图片清理] {sub_dir} 目录下无图片文件,跳过")
             continue
 
-        base_time = base_time_for_cleanup
         to_delete = []
         for img_path in img_files:
             img_dt = extract_datetime_from_image_name(img_path.name)
@@ -514,11 +495,12 @@ def clean_images_in_dirs(debug_folder: Path):
         )
 
 
-def clean_logs_in_dir(debug_folder: Path, sub_dir: str):
+def clean_logs_in_dir(base_time: datetime):
     """
-    清理指定子目录下的日志文件(格式 YYYY-MM-DD.log),删除日期早于 base_time_for_cleanup 的文件
+    清理 debug/custom 下的日志文件(格式 YYYY-MM-DD.log),删除日期早于 base_time 的文件
     """
-    target_dir = debug_folder / sub_dir
+    sub_dir = "custom"
+    target_dir = debug_dir / sub_dir
     if not target_dir.exists():
         print(f"[日志清理] 目录不存在,跳过: {target_dir}")
         return
@@ -537,7 +519,6 @@ def clean_logs_in_dir(debug_folder: Path, sub_dir: str):
         except Exception:
             return None
 
-    base_time = base_time_for_cleanup
     base_date = base_time.date()  # 只用比较日期部分
     to_delete = []
     for log_path in log_files:

@@ -7,6 +7,7 @@ from maa.agent.agent_server import AgentServer, TaskDetail
 from maa.context import Context
 from maa.custom_action import CustomAction
 from maa.define import RectType
+from utils import debug_dir
 from utils.counter import counter
 from utils.logger import logger
 
@@ -27,7 +28,6 @@ from ..utils import (
 
 root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(root))
-debug_folder = root / "debug"
 
 
 @AgentServer.custom_action("StopTaskList")
@@ -369,14 +369,17 @@ class CleanupAgentDebug(CustomAction):
             if count_val and str(count_val).isdigit():
                 keep_count = int(count_val)
 
-        if not debug_folder.exists():
+        if not debug_dir.exists():
             logger.info("[Agent调试清理] debug文件夹不存在,跳过")
             return CustomAction.RunResult(success=True)
 
         try:
-            cleanup_maafw_bak_logs(debug_folder, keep_count)
-            clean_logs_in_dir(debug_folder, "custom")
-            clean_images_in_dirs(debug_folder)
+            cutoff = cleanup_maafw_bak_logs(keep_count)
+            if cutoff is None:
+                logger.info("[Agent调试清理] 无法确定最旧日志,跳过日志/图片清理")
+                return CustomAction.RunResult(success=True)
+            clean_logs_in_dir(cutoff)
+            clean_images_in_dirs(cutoff)
             return CustomAction.RunResult(success=True)
         except Exception as e:
             logger.error(f"Agent调试清理 执行异常: {e}")

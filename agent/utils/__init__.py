@@ -17,6 +17,7 @@ bdc = lambda s: b64decode(s).decode("utf-8")  # noqa: E731
 jL = json.load
 jD = json.dump
 root = Path(__file__).resolve().parent.parent.parent
+debug_dir = root / "debug"
 
 is_debug = any(root.glob("MFAAvalonia*"))
 logo = (root / "docs" / "imgs" / "logo.png").absolute()

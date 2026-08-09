@@ -3,10 +3,10 @@ from pathlib import Path
 
 from loguru import logger as _logger
 
-from utils import root
+from utils import debug_dir
 
 # 默认日志目录使用绝对路径
-log_dir = root / "debug" / "custom"
+log_dir = debug_dir / "custom"
 
 
 def setup_logger(log_dir: Path = log_dir, console_level: str = "INFO"):
