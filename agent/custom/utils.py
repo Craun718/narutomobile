@@ -466,50 +466,52 @@ def extract_datetime_from_image_name(filename: str) -> datetime | None:
         return None
 
 
-def clean_images_in_dir(debug_folder: Path, sub_dir: str):
+def clean_images_in_dirs(debug_folder: Path):
     """
     因为maafw.bak.log的日期是其内容的最晚日期,因此只有删了日志文件才去删除图片;
-    清理指定子目录下所有图片时间早于 base_time_for_cleanup 的文件
+    依次清理多个子目录下所有图片时间早于 base_time_for_cleanup 的文件
     """
-    target_dir = debug_folder / sub_dir
-    if not target_dir.exists():
-        print(f"[图片清理] 目录不存在,跳过: {target_dir}")
-        return
-
-    img_extensions = {".png", ".jpg", ".jpeg", ".bmp", ".gif"}
-    img_files = [f for f in target_dir.iterdir() if f.is_file() and f.suffix.lower() in img_extensions]
-    total_count = len(img_files)
-    if total_count == 0:
-        print(f"[图片清理] {sub_dir} 目录下无图片文件,跳过")
-        return
-
-    base_time = base_time_for_cleanup
-    to_delete = []
-    for img_path in img_files:
-        img_dt = extract_datetime_from_image_name(img_path.name)
-        if img_dt is None:
-            print(f"[图片清理] 无法解析图片时间,跳过: {img_path.name}")
+    sub_dirs = ("custom", "on_error", "vision")
+    for sub_dir in sub_dirs:
+        target_dir = debug_folder / sub_dir
+        if not target_dir.exists():
+            print(f"[图片清理] 目录不存在,跳过: {target_dir}")
             continue
-        if img_dt < base_time:
-            to_delete.append((img_dt, img_path))
 
-    eligible = len(to_delete)
-    if eligible == 0:
-        print(f"[图片清理] {sub_dir} 目录下共有 {total_count} 张图片,没有时间早于 {base_time} 的图片")
-        return
+        img_extensions = {".png", ".jpg", ".jpeg", ".bmp", ".gif"}
+        img_files = [f for f in target_dir.iterdir() if f.is_file() and f.suffix.lower() in img_extensions]
+        total_count = len(img_files)
+        if total_count == 0:
+            print(f"[图片清理] {sub_dir} 目录下无图片文件,跳过")
+            continue
 
-    deleted = 0
-    for img_dt, img_path in to_delete:
-        try:
-            img_path.unlink()
-            deleted += 1
-            print(f"[图片清理] 删除图片: {img_path.name} (时间 {img_dt})")
-        except Exception as e:
-            print(f"[图片清理] 删除失败 {img_path.name}: {e}")
+        base_time = base_time_for_cleanup
+        to_delete = []
+        for img_path in img_files:
+            img_dt = extract_datetime_from_image_name(img_path.name)
+            if img_dt is None:
+                print(f"[图片清理] 无法解析图片时间,跳过: {img_path.name}")
+                continue
+            if img_dt < base_time:
+                to_delete.append((img_dt, img_path))
 
-    print(
-        f"[图片清理] {sub_dir} 目录下共有 {total_count} 张图片,其中时间早于 {base_time} 的有 {eligible} 张,实际删除了 {deleted} 张"  # noqa: E501
-    )
+        eligible = len(to_delete)
+        if eligible == 0:
+            print(f"[图片清理] {sub_dir} 目录下共有 {total_count} 张图片,没有时间早于 {base_time} 的图片")
+            continue
+
+        deleted = 0
+        for img_dt, img_path in to_delete:
+            try:
+                img_path.unlink()
+                deleted += 1
+                print(f"[图片清理] 删除图片: {img_path.name} (时间 {img_dt})")
+            except Exception as e:
+                print(f"[图片清理] 删除失败 {img_path.name}: {e}")
+
+        print(
+            f"[图片清理] {sub_dir} 目录下共有 {total_count} 张图片,其中时间早于 {base_time} 的有 {eligible} 张,实际删除了 {deleted} 张"  # noqa: E501
+        )
 
 
 def clean_logs_in_dir(debug_folder: Path, sub_dir: str):

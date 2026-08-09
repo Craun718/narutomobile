@@ -12,7 +12,7 @@ from utils.logger import logger
 
 from ..utils import (
     check_resolution,
-    clean_images_in_dir,
+    clean_images_in_dirs,
     clean_logs_in_dir,
     cleanup_maafw_bak_logs,
     click,
@@ -375,10 +375,8 @@ class CleanupAgentDebug(CustomAction):
 
         try:
             cleanup_maafw_bak_logs(debug_folder, keep_count)
-            clean_images_in_dir(debug_folder, "custom")
             clean_logs_in_dir(debug_folder, "custom")
-            clean_images_in_dir(debug_folder, "on_error")
-            clean_images_in_dir(debug_folder, "vision")
+            clean_images_in_dirs(debug_folder)
             return CustomAction.RunResult(success=True)
         except Exception as e:
             logger.error(f"Agent调试清理 执行异常: {e}")
