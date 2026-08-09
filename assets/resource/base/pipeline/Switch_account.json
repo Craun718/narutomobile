@@ -165,15 +165,15 @@
     },
     "switch_account_target_area_roi": {
         "recognition": "TemplateMatch",
-        "template": "Switch_account/area_ocr_roi.png",
         "roi": [
             417,
             105,
             842,
             79
         ],
-        "threshold": 0.9,
+        "template": "Switch_account/area_ocr_roi.png",
         "green_mask": true,
+        "threshold": 0.9,
         "pre_delay": 0,
         "post_delay": 0
     },
