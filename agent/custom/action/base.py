@@ -359,22 +359,8 @@ class NonlinearSwipe(CustomAction):
             return CustomAction.RunResult(success=False)
 
 
-def _run_cleanup(action_name: str, cleanup_func, *args, **kwargs):
-    """通用清理模板"""
-    try:
-        if not debug_folder.exists():
-            logger.info(f"[{action_name}] debug文件夹不存在,跳过")
-            return CustomAction.RunResult(success=True)
-
-        cleanup_func(debug_folder, *args, **kwargs)
-        return CustomAction.RunResult(success=True)
-    except Exception as e:
-        logger.error(f"{action_name} 执行异常: {e}")
-        return CustomAction.RunResult(success=False)
-
-
-@AgentServer.custom_action("CleanupMaafwBakLogs")
-class CleanupMaafwBakLogs(CustomAction):
+@AgentServer.custom_action("CleanupAgentDebug")
+class CleanupAgentDebug(CustomAction):
     def run(self, context, argv):
         keep_count = 3
         if argv.custom_action_param:
@@ -382,31 +368,21 @@ class CleanupMaafwBakLogs(CustomAction):
             count_val = param_dict.get("save_log_count", "")
             if count_val and str(count_val).isdigit():
                 keep_count = int(count_val)
-        return _run_cleanup("MaafwBak日志清理", cleanup_maafw_bak_logs, keep_count)
 
+        if not debug_folder.exists():
+            logger.info("[Agent调试清理] debug文件夹不存在,跳过")
+            return CustomAction.RunResult(success=True)
 
-@AgentServer.custom_action("CleanupOnErrorImg")
-class CleanupOnErrorImg(CustomAction):
-    def run(self, context, argv):
-        return _run_cleanup("on_error图片清理", clean_images_in_dir, "on_error")
-
-
-@AgentServer.custom_action("CleanupVisionImg")
-class CleanupVisionImg(CustomAction):
-    def run(self, context, argv):
-        return _run_cleanup("vision图片清理", clean_images_in_dir, "vision")
-
-
-@AgentServer.custom_action("CleanupCustomImg")
-class CleanupCustomImg(CustomAction):
-    def run(self, context, argv):
-        return _run_cleanup("custom图片清理", clean_images_in_dir, "custom")
-
-
-@AgentServer.custom_action("CleanupCustomLog")
-class CleanupCustomLog(CustomAction):
-    def run(self, context, argv):
-        return _run_cleanup("custom日志清理", clean_logs_in_dir, "custom")
+        try:
+            cleanup_maafw_bak_logs(debug_folder, keep_count)
+            clean_images_in_dir(debug_folder, "custom")
+            clean_logs_in_dir(debug_folder, "custom")
+            clean_images_in_dir(debug_folder, "on_error")
+            clean_images_in_dir(debug_folder, "vision")
+            return CustomAction.RunResult(success=True)
+        except Exception as e:
+            logger.error(f"Agent调试清理 执行异常: {e}")
+            return CustomAction.RunResult(success=False)
 
 
 @AgentServer.custom_action("ShopSwipeBack")

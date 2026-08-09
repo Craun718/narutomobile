@@ -334,7 +334,7 @@ def get_digit_count(context: Context, image: ndarray, roi: list[int], default=No
 
 # 日志文件清理基准时间
 DEFAULT_BASE_TIME = datetime(2025, 5, 1, 0, 0, 0, 0)
-# 每次任务调用一次utils.py,因此不用持久化;由 CleanupMaafwBakLogs 设置,供日志文件清理节点使用
+# 每次任务调用一次utils.py,因此不用持久化;由 CleanupAgentDebug 设置,供日志文件清理节点使用
 base_time_for_cleanup: datetime | None = DEFAULT_BASE_TIME
 
 
