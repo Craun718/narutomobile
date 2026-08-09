@@ -311,6 +311,7 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "[JumpBack]leave_the_team",
             "team_dash_reach_the_upper_limit",
             "team_dash_above_kage_quit",
             "[JumpBack]team_dash_above_kage_sweep",

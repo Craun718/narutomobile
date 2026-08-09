@@ -103,15 +103,13 @@
         "focus": "[color:darkgray]离开当前队伍[/color]"
     },
     "confirm_tip": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confirm.png",
         "roi": [
-            303,
-            263,
-            696,
-            456
-        ],
-        "expected": [
-            "确定"
+            483,
+            367,
+            308,
+            153
         ],
         "pre_delay": 0,
         "action": "Click",

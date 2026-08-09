@@ -917,6 +917,7 @@
                     "pipeline_override": {
                         "dash_or_exit": {
                             "next": [
+                                "[JumpBack]leave_the_team",
                                 "team_dash_reach_the_upper_limit",
                                 "team_dash_above_kage_quit",
                                 "[JumpBack]team_dash_check_not_4x_reward",
@@ -3955,7 +3956,10 @@
                     "pipeline_override": {
                         "team_dash_invite_page": {
                             "next": [
-                                "team_dash_invite_ninja"
+                                "team_dash_invite_ninja",
+                                "[JumpBack]can_not_invite",
+                                "dash_or_exit",
+                                "retry_failed"
                             ]
                         }
                     }
@@ -3965,7 +3969,8 @@
                     "pipeline_override": {
                         "team_dash_invite_page": {
                             "next": [
-                                "dash_or_exit"
+                                "dash_or_exit",
+                                "retry_failed"
                             ]
                         }
                     }
