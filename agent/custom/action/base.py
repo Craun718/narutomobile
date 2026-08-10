@@ -367,7 +367,7 @@ class CleanupAgentDebug(CustomAction):
             param_dict = json.loads(argv.custom_action_param)
             count_val = param_dict.get("save_log_count", "")
             if count_val and str(count_val).isdigit():
-                keep_count = int(count_val)
+                keep_count = max(int(count_val), 1)
 
         if not debug_dir.exists():
             logger.info("[Agent调试清理] debug文件夹不存在,跳过")
