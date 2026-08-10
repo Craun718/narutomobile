@@ -439,11 +439,7 @@
             "name": "日志文件清理",
             "entry": "cleanup_maafw_bak_logs",
             "option": [
-                "保留备份日志个数",
-                "清理agent图像",
-                "清理agent日志",
-                "清理报错图像",
-                "清理调试图像"
+                "保留备份日志个数"
             ],
             "default_check": true,
             "description": "清理多余的日志文件,节省空间;考虑到方便debug,不会删除MFA日志;可以使用MFA清理缓存功能代替"
@@ -5454,74 +5450,6 @@
                     }
                 }
             }
-        },
-        "清理agent图像": {
-            "description": "清理debug/custom下的图像",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_custom_img": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "清理agent日志": {
-            "description": "清理debug/custom下的日志",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_custom_log": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "清理报错图像": {
-            "description": "清理debug/on_error下的图像",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_on_error_img": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "清理调试图像": {
-            "description": "清理debug/vision下的图像",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_vision_img": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
         }
     }
 }

@@ -11,11 +11,7 @@
                 "RetryFailed",
                 "CounterIncrement",
                 "NonlinearSwipe",
-                "CleanupMaafwBakLogs",
-                "CleanupOnErrorImg",
-                "CleanupVisionImg",
-                "CleanupCustomImg",
-                "CleanupCustomLog",
+                "CleanupAgentDebug",
                 "ShopSwipeBack",
                 "SecondaryPasswordAction"
             ]
@@ -44,19 +40,7 @@
                     "$ref": "#/$defs/NonlinearSwipe"
                 },
                 {
-                    "$ref": "#/$defs/CleanupMaafwBakLogsParam"
-                },
-                {
-                    "$ref": "#/$defs/CleanupOnErrorImgParam"
-                },
-                {
-                    "$ref": "#/$defs/CleanupVisionImgParam"
-                },
-                {
-                    "$ref": "#/$defs/CleanupCustomImgParam"
-                },
-                {
-                    "$ref": "#/$defs/CleanupCustomLogParam"
+                    "$ref": "#/$defs/CleanupAgentDebugParam"
                 },
                 {
                     "$ref": "#/$defs/ShopSwipeBackParam"
@@ -152,10 +136,10 @@
             "markdownDescription": "非线性滑动\n\n**功能说明：**\n- 进行非线性滑动\n\n**返回值：**\n- `success`正常时返回 true",
             "properties": {}
         },
-        "CleanupMaafwBakLogsParam": {
+        "CleanupAgentDebugParam": {
             "type": "object",
-            "description": "清理debug目录下的maafw.bak日志文件,保留指定数量的最新日志",
-            "markdownDescription": "清理maafw.bak日志文件\n\n**功能说明：**\n- 扫描项目根目录下 debug 文件夹\n- 匹配格式:maafw.bak.*.log\n- 按文件名时间戳从新到旧排序\n- 删除超出指定数量的旧日志文件\n- 无依赖项目日志器,使用控制台输出\n\n**参数说明:**\n- `save_log_count`:保留的最新日志文件数量\n  - 类型:整数（数字）\n  - 非必填,默认值:3\n  - 示例:`5` 表示保留最新5个日志\n\n**返回值:**\n- `success`:执行完成始终返回 true",
+            "description": "清理maafw备份日志,并清理debug/custom下的图像和日志,以及debug/on_error、vision下的图像",
+            "markdownDescription": "清理agent调试日志\n\n**功能说明：**\n- 清理debug目录下的maafw.bak日志,保留指定数量\n- 清理debug/custom下的图像和日志\n- 清理debug/on_error下的图像\n- 清理debug/vision下的图像\n\n**参数说明:**\n- `save_log_count`:保留的最新日志文件数量\n  - 类型:整数（数字）\n  - 非必填,默认值:3\n  - 示例:`5` 表示保留最新5个日志\n\n**返回值:**\n- `success`:执行完成始终返回 true",
             "properties": {
                 "save_log_count": {
                     "title": "Save Log Count",
@@ -166,30 +150,6 @@
                     "markdownDescription": "*integer*\n\n保留的最新日志文件数量.默认值:3最小值:1"
                 }
             }
-        },
-        "CleanupOnErrorImgParam": {
-            "type": "object",
-            "description": "清理 debug/on_error 目录下的过期图片",
-            "markdownDescription": "清理 debug/on_error 目录下的过期图片\n\n**功能说明：**\n- 删除所有图片时间早于全局基准时间的文件\n\n**返回值：**\n- `success` 正常时返回 true",
-            "properties": {}
-        },
-        "CleanupVisionImgParam": {
-            "type": "object",
-            "description": "清理 debug/vision 目录下的过期图片",
-            "markdownDescription": "清理 debug/vision 目录下的过期图片\n\n**功能说明：**\n- 删除所有图片时间早于全局基准时间的文件\n\n**返回值：**\n- `success` 正常时返回 true",
-            "properties": {}
-        },
-        "CleanupCustomImgParam": {
-            "type": "object",
-            "description": "清理 debug/custom 目录下的过期图片",
-            "markdownDescription": "清理 debug/custom 目录下的过期图片\n\n**功能说明：**\n- 删除所有图片时间早于全局基准时间的文件\n\n**返回值：**\n- `success` 正常时返回 true",
-            "properties": {}
-        },
-        "CleanupCustomLogParam": {
-            "type": "object",
-            "description": "清理 debug/custom 目录下的过期日志文件",
-            "markdownDescription": "清理 debug/custom 目录下的过期日志文件\n\n**功能说明：**\n- 删除所有日志日期早于全局基准日期的文件(日志格式 YYYY-MM-DD.log)\n\n**返回值：**\n- `success` 正常时返回 true",
-            "properties": {}
         },
         "ShopSwipeBackParam": {
             "type": "object",
