@@ -494,13 +494,22 @@
         ],
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": {
+            "threshold": 0.8,
+            "time": 300,
+            "target": [
+                520,
+                285,
+                261,
+                150
+            ]
+        },
         "post_delay": 0,
         "next": [
             "team_dash_loading",
             "check_in_team_dash_sweep",
-            "dash_or_exit",
-            "team_dash_keep_fight"
+            "team_dash_keep_fight",
+            "dash_or_exit"
         ],
         "focus": "[color:DeepSkyBlue]点击继续战斗[/color]"
     },
