@@ -517,15 +517,15 @@
     },
     "team_dash_matching": {
         "recognition": "OCR",
-        "expected": [
-            "寻找队友",
-            "稍等"
-        ],
         "roi": [
             483,
             306,
             333,
             167
+        ],
+        "expected": [
+            "寻找队友",
+            "稍等"
         ],
         "pre_delay": 0,
         "post_delay": 0,
