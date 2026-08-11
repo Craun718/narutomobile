@@ -316,7 +316,8 @@
             "team_dash_above_kage_quit",
             "[JumpBack]team_dash_above_kage_sweep",
             "[JumpBack]team_dash_auto_fight",
-            "[JumpBack]team_dash_in_loading"
+            "[JumpBack]team_dash_in_loading",
+            "check_in_team_dash_sweep"
         ]
     },
     "team_dash_in_loading": {
@@ -509,9 +510,30 @@
             "team_dash_loading",
             "check_in_team_dash_sweep",
             "team_dash_keep_fight",
+            "team_dash_matching",
             "dash_or_exit"
         ],
         "focus": "[color:DeepSkyBlue]点击继续战斗[/color]"
+    },
+    "team_dash_matching": {
+        "recognition": "OCR",
+        "expected": [
+            "寻找队友",
+            "稍等"
+        ],
+        "roi": [
+            483,
+            306,
+            333,
+            167
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "team_dash_loading",
+            "check_in_team_dash_sweep",
+            "[JumpBack]team_dash_in_loading"
+        ]
     },
     "team_dash_loading": {
         "recognition": "OCR",
