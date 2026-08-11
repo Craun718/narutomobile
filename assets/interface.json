@@ -118,6 +118,7 @@
             "option": [
                 "积分赛强制战斗",
                 "积分赛跨服",
+                "积分赛战斗",
                 "积分赛挑战次数",
                 "积分赛失败后再战",
                 "从奖励中心进入",
@@ -4057,6 +4058,27 @@
                         "wait_for_select_opponent": {
                             "next": [
                                 "point_race_cross_server"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "积分赛战斗": {
+            "description": "是否寻找对手挑战,关闭后只会领取奖励",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "point_race_challenge_enter": {
+                            "action": "DoNothing",
+                            "next": [
+                                "point_race_quit",
+                                "point_race_challenge_enter"
                             ]
                         }
                     }
