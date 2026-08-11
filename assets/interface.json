@@ -3939,7 +3939,13 @@
                     "name": "Yes",
                     "pipeline_override": {
                         "click_All_skill": {
-                            "action": "DoNothing"
+                            "action": "Click",
+                            "target": [
+                                793,
+                                564,
+                                142,
+                                154
+                            ]
                         }
                     }
                 }
