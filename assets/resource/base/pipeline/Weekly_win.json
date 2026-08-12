@@ -901,14 +901,31 @@
         "focus": "[color:DeepSkyBlue]确认没有可追回过期决斗宝箱[/color]"
     },
     "weekly_win_check_daily_duel_mission_back_fight": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            1079,
-            0,
-            200,
-            115
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    1079,
+                    0,
+                    200,
+                    115
+                ],
+                "template": "Weekly_win/x.png"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    30,
+                    466,
+                    407,
+                    202
+                ],
+                "expected": [
+                    "每周"
+                ]
+            }
         ],
-        "template": "Weekly_win/x.png",
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 500,

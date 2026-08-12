@@ -3811,7 +3811,6 @@
                         "weekly_win_check_daily_duel_mission_back_fight": {
                             "next": [
                                 "go_to_war_again",
-                                "weekly_win_stop",
                                 "[JumpBack]weekly_win_check_daily_duel_mission_back_fight"
                             ]
                         },
