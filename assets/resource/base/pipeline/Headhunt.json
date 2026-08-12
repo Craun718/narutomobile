@@ -346,12 +346,16 @@
             "领",
             "取"
         ],
+        "pre_delay": 0,
         "action": "Click",
+        "max_hit": 5,
         "post_delay": 0,
         "next": [
             "top_secret_treasure_box_without_copper",
             "top_secret_treasure_box_copper"
-        ]
+        ],
+        "timeout": 5000,
+        "on_error": "back_main_screen_and_stop"
     },
     "top_secret_treasure_box_without_copper": {
         "recognition": "OCR",
