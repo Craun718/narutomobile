@@ -3762,7 +3762,7 @@
             ]
         },
         "清周胜过期宝箱": {
-            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗",
+            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "type": "switch",
             "cases": [
                 {
@@ -3811,13 +3811,8 @@
                         "weekly_win_check_daily_duel_mission_back_fight": {
                             "next": [
                                 "go_to_war_again",
-                                "[JumpBack]weekly_win_check_daily_duel_mission_back_fight"
-                            ]
-                        },
-                        "go_to_war_again": {
-                            "next": [
-                                "go_to_war",
-                                "[JumpBack]weekly_win_check_daily_duel_mission_back_fight"
+                                "[JumpBack]weekly_win_check_daily_duel_mission_back_fight",
+                                "back_main_screen_and_stop"
                             ]
                         }
                     }
