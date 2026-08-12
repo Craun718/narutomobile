@@ -3807,13 +3807,6 @@
                             "next": [
                                 "weekly_win_check_daily_duel_mission_back_fight"
                             ]
-                        },
-                        "weekly_win_check_daily_duel_mission_back_fight": {
-                            "next": [
-                                "go_to_war_again",
-                                "[JumpBack]weekly_win_check_daily_duel_mission_back_fight",
-                                "back_main_screen_and_stop"
-                            ]
                         }
                     }
                 }

@@ -930,8 +930,9 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "go_to_war",
-            "[JumpBack]weekly_win_check_daily_duel_mission_back_fight"
+            "weekly_win_check_daily_duel_mission_back_fight",
+            "go_to_war_again",
+            "back_main_screen_and_stop"
         ],
         "focus": "[color:DeepSkyBlue]回到战斗[/color]"
     },
