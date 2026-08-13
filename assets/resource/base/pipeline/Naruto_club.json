@@ -457,7 +457,8 @@
             82
         ],
         "expected": [
-            "村口"
+            "村口",
+            "村□"
         ],
         "action": "Click",
         "post_wait_freezes": 400,
@@ -513,7 +514,8 @@
             82
         ],
         "expected": [
-            "村口"
+            "村口",
+            "村□"
         ],
         "action": "Click",
         "post_wait_freezes": 400,
