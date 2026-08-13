@@ -220,7 +220,7 @@
             "Headhunt/no_free_headhunt_2.png",
             "Headhunt/no_free_headhunt_2_1.png"
         ],
-        "threshold": 0.5,
+        "threshold": 0.9,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
