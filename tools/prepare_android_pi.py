@@ -4,6 +4,7 @@
 interface.json 在 assets/，agent 在仓库根。Gradle 的 include 只能相对 assets 目录，
 所以先摊到 Android/pi-root/：根上是 interface.json，旁边是 agent/。
 """
+
 from __future__ import annotations
 
 import shutil
