@@ -34,7 +34,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -74,31 +74,31 @@ jobs:
       actions: write
     steps:
       - name: Download desktop artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: MaaAutoNaruto-win-*-${{ github.ref_name }}
           path: release-assets/desktop
 
       - name: Download macOS artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: MaaAutoNaruto-macos-*-${{ github.ref_name }}
           path: release-assets/desktop
 
       - name: Download Linux artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: MaaAutoNaruto-linux-*-${{ github.ref_name }}
           path: release-assets/desktop
 
       - name: Download Android APK
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: MaaAutoNaruto-android-release-${{ github.ref_name }}
           path: release-assets/android
 
       - name: Download changelog
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: release-changelog-${{ github.ref_name }}
           path: release-assets/changelog
@@ -123,7 +123,7 @@ jobs:
           fi
 
       - name: Create or update GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ github.ref_name }}
           body_path: release-assets/changelog/CHANGES.md
