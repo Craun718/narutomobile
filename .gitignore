@@ -477,3 +477,10 @@ temp
 
 # Node.js
 .pnpm-store/v11/index.db
+
+
+# Android
+## 仅由 tool/generator_pi_profile.py 生成，不需要提交
+pi-profile.yaml
+
+.android-build/
