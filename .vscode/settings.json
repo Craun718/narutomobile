@@ -21,7 +21,10 @@
             "url": "/deps/tools/interface_config.schema.json"
         }
     ],
-    "[json]": {
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "[jsonc]": {
         "editor.formatOnSave": true,
         "editor.insertSpaces": true,
         "editor.tabSize": 4,
