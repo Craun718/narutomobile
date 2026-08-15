@@ -37,6 +37,8 @@ python tools/prepare_android_pi.py
 
 包名是 `com.aliothmoon.maafw.maanaruto`。桌面端的 `child_exec` 不参与，解释器是配方里的 `bin/python3`。
 
+CI：`.github/workflows/android.yml` 按上面那套打 debug 包，APK 挂在 Actions artifact 上。
+
 `pi-root/` 和 `agent-dist/` 不进 git。升外壳：
 
 ```bash
