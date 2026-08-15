@@ -1,6 +1,6 @@
 # Android 客户端
 
-外壳是 [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp) 子模块，和本仓库的开发用 MaaFwApp 不是同一份。
+外壳是 [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp) 子模块。
 `interface.json` 在 `assets/`，agent 在仓库根，Gradle 只能从一个目录 include，所以先摊成 `Android/pi-root/`。
 
 ## 首次
@@ -39,7 +39,7 @@ python Android/MaaFwApp/scripts/setup_maa_framework.py --tag v5.12.3
 ./Android/MaaFwApp/gradlew.bat -p Android/MaaFwApp :app:assembleRelease
 ```
 
-包名是 `com.aliothmoon.maafw.maanaruto`。桌面端的 `child_exec` 不参与，解释器是配方里的 `bin/python3`。
+包名是 `com.aliothmoon.maafw.man`。桌面端的 `child_exec` 不参与，解释器是配方里的 `bin/python3`。
 
 签名读环境变量，缺了就打未签名包：`KEYSTORE_PATH`、`KEYSTORE_PASSWORD`、`KEY_ALIAS`、`KEY_PASSWORD`。也可写进子模块的 `local.properties`，环境变量优先。
 
