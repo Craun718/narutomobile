@@ -313,6 +313,7 @@
         "focus": "[color:DeepSkyBlue]绝密宝匣已完成[/color]"
     },
     "top_secret_treasure_box_log": {
+        "max_hit": 20,
         "recognition": "TemplateMatch",
         "roi": [
             1210,
@@ -330,7 +331,6 @@
             "top_secret_treasure_box_copper",
             "top_secret_treasure_box_log"
         ],
-        "max_hit": 20,
         "on_error": "back_main_screen_and_stop",
         "focus": "[color:DeepSkyBlue]进入绝密宝匣奖励记录[/color]"
     },
