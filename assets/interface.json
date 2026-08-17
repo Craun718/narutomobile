@@ -7,56 +7,6 @@
     "mirrorchyan_rid": "MaaAutoNaruto",
     "mirrorchyan_multiplatform": true,
     "interface_version": 2,
-    "preset": [
-        {
-            "name": "日常全任务",
-            "task": [
-                { "name": "进入火影" },
-                { "name": "招财" },
-                { "name": "排行榜" },
-                { "name": "送体力" },
-                { "name": "每日分享" },
-                { "name": "组织" },
-                { "name": "积分赛" },
-                { "name": "修行之路" },
-                { "name": "生存挑战" },
-                { "name": "小队突袭" },
-                { "name": "免费招募" },
-                { "name": "月签到和一乐拉面" },
-                { "name": "刷体力(精英副本)" },
-                { "name": "任务集会所(beta)" },
-                { "name": "丰饶之间" },
-                { "name": "忍法帖" },
-                { "name": "决斗场(连点器)" },
-                { "name": "火影情报社(beta)" },
-                { "name": "邮箱" },
-                { "name": "活跃宝箱" },
-                { "name": "秘境" },
-                { "name": "日志文件清理" },
-                { "name": "完成标记" }
-            ]
-        },
-        {
-            "name": "轻量日常",
-            "task": [
-                { "name": "进入火影" },
-                { "name": "招财" },
-                { "name": "排行榜" },
-                { "name": "送体力" },
-                { "name": "组织" },
-                { "name": "邮箱" },
-                { "name": "活跃宝箱" },
-                { "name": "完成标记" }
-            ]
-        },
-        {
-            "name": "测试headhunt",
-            "task": [
-                { "name": "进入火影" },
-                { "name": "免费招募" }
-            ]
-        }
-    ],
     "agent": {
         "child_exec": "../.venv/Scripts/python.exe",
         "child_args": [
@@ -68,9 +18,7 @@
     "controller": [
         {
             "name": "连接模拟器",
-            "type": "Adb",
-            "adb_path": "E:/Program Files/Netease/MuMu/nx_main/adb.exe",
-            "address": "127.0.0.1:16416"
+            "type": "Adb"
         },
         {
             "name": "PlayCover on macOS",
@@ -4019,10 +3967,10 @@
                                 62
                             ],
                             "target": [
-                                978,
-                                109,
-                                64,
-                                38
+                                996,
+                                116,
+                                26,
+                                23
                             ]
                         }
                     }
@@ -4041,10 +3989,10 @@
                                 62
                             ],
                             "target": [
-                                1062,
-                                109,
-                                64,
-                                38
+                                1081,
+                                115,
+                                21,
+                                23
                             ]
                         }
                     }
@@ -4063,10 +4011,10 @@
                                 62
                             ],
                             "target": [
-                                1146,
-                                109,
-                                62,
-                                36
+                                1164,
+                                114,
+                                23,
+                                25
                             ]
                         }
                     }
