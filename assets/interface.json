@@ -3935,14 +3935,14 @@
                     "name": "预设1",
                     "pipeline_override": {
                         "weekly_win_switch_preset": {
-                            "expected": [
-                                "1"
-                            ],
                             "roi": [
                                 800,
                                 94,
                                 115,
                                 62
+                            ],
+                            "expected": [
+                                "1"
                             ],
                             "target": [
                                 825,
@@ -3957,14 +3957,14 @@
                     "name": "预设2",
                     "pipeline_override": {
                         "weekly_win_switch_preset": {
-                            "expected": [
-                                "2"
-                            ],
                             "roi": [
                                 943,
                                 94,
                                 108,
                                 62
+                            ],
+                            "expected": [
+                                "2"
                             ],
                             "target": [
                                 996,
@@ -3979,14 +3979,14 @@
                     "name": "预设3",
                     "pipeline_override": {
                         "weekly_win_switch_preset": {
-                            "expected": [
-                                "3"
-                            ],
                             "roi": [
                                 1040,
                                 94,
                                 108,
                                 62
+                            ],
+                            "expected": [
+                                "3"
                             ],
                             "target": [
                                 1081,
@@ -4001,14 +4001,14 @@
                     "name": "预设4",
                     "pipeline_override": {
                         "weekly_win_switch_preset": {
-                            "expected": [
-                                "4"
-                            ],
                             "roi": [
                                 1121,
                                 94,
                                 108,
                                 62
+                            ],
+                            "expected": [
+                                "4"
                             ],
                             "target": [
                                 1164,
