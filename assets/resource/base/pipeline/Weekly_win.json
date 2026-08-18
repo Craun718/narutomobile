@@ -287,6 +287,210 @@
         "next": "back_main_screen_and_stop",
         "focus": "[color:DeepSkyBlue]周胜任务结束[/color]"
     },
+    "weekly_win_preset_prewar": {
+        "recognition": "OCR",
+        "roi": [
+            994,
+            665,
+            106,
+            41
+        ],
+        "expected": [
+            "调整",
+            "阵容"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            1024,
+            673,
+            47,
+            25
+        ],
+        "post_delay": 800,
+        "timeout": 10000,
+        "next": [
+            "weekly_win_preset_open"
+        ],
+        "on_error": [
+            "[JumpBack]go_to_war"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:点击调整阵容[/color]"
+    },
+    "weekly_win_preset_entry": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            788,
+            520,
+            492,
+            200
+        ],
+        "template": "Weekly_win/lock.png",
+        "threshold": 0.8,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "weekly_win_preset_open"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:识别到锁定界面,点锁定阵容前切预设[/color]"
+    },
+    "weekly_win_preset_open": {
+        "recognition": "OCR",
+        "roi": [
+            738,
+            424,
+            40,
+            55
+        ],
+        "expected": [
+            "预设"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            742,
+            455,
+            29,
+            18
+        ],
+        "target_offset": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "post_delay": 1500,
+        "next": [
+            "weekly_win_switch_preset"
+        ],
+        "on_error": [
+            "[JumpBack]weekly_win_rank_confirm_ninja"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:打开预设面板[/color]"
+    },
+    "weekly_win_switch_preset": {
+        "recognition": "OCR",
+        "roi": [
+            800,
+            94,
+            115,
+            62
+        ],
+        "expected": [
+            "1"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            825,
+            109,
+            64,
+            38
+        ],
+        "post_delay": 500,
+        "next": [
+            "weekly_win_preset_confirm"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:选择预设页签[/color]"
+    },
+    "weekly_win_preset_confirm": {
+        "recognition": "OCR",
+        "roi": [
+            940,
+            568,
+            147,
+            48
+        ],
+        "expected": [
+            "选择预设"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "weekly_win_preset_save"
+        ],
+        "on_error": [
+            "weekly_win_preset_confirm_pos"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:确认选择预设[/color]"
+    },
+    "weekly_win_preset_confirm_pos": {
+        "recognition": "DirectHit",
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            948,
+            573,
+            136,
+            36
+        ],
+        "post_delay": 1000,
+        "next": [
+            "weekly_win_preset_save"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:确认选择预设(坐标兜底)[/color]"
+    },
+    "weekly_win_preset_save": {
+        "recognition": "OCR",
+        "roi": [
+            964,
+            573,
+            106,
+            40
+        ],
+        "expected": [
+            "确",
+            "锁",
+            "定"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 1200,
+        "next": [
+            "cannot_go_to_war",
+            "[JumpBack]weekly_win_match_fighting",
+            "[JumpBack]weekly_win_rank_matching",
+            "[JumpBack]weekly_win_rank_confirm_ninja",
+            "[JumpBack]weekly_win_rank_ban",
+            "[JumpBack]battle_tips",
+            "[JumpBack]weekly_win_locked",
+            "[JumpBack]weekly_win_rank_up",
+            "[JumpBack]battle_again",
+            "[JumpBack]weekly_win_substitution",
+            "[JumpBack]go_to_war"
+        ],
+        "on_error": [
+            "weekly_win_preset_save_pos"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:保存阵容[/color]"
+    },
+    "weekly_win_preset_save_pos": {
+        "recognition": "DirectHit",
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            956,
+            573,
+            119,
+            36
+        ],
+        "post_delay": 800,
+        "next": [
+            "cannot_go_to_war",
+            "[JumpBack]weekly_win_match_fighting",
+            "[JumpBack]weekly_win_rank_matching",
+            "[JumpBack]weekly_win_rank_confirm_ninja",
+            "[JumpBack]weekly_win_rank_ban",
+            "[JumpBack]battle_tips",
+            "[JumpBack]weekly_win_locked",
+            "[JumpBack]weekly_win_rank_up",
+            "[JumpBack]battle_again",
+            "[JumpBack]weekly_win_substitution",
+            "[JumpBack]go_to_war"
+        ],
+        "focus": "[color:DeepSkyBlue]切换预设:保存阵容(坐标兜底)[/color]"
+    },
     "weekly_win_rank_up": {
         "recognition": "OCR",
         "roi": [

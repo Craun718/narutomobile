@@ -217,8 +217,60 @@
                 "从奖励中心进入",
                 "出现提示时重启任务",
                 "周胜不攻击",
-                "串行连点器(beta)"
+                "串行连点器(beta)",
+                "切换预设"
             ],
+            "pipeline_override": {
+                "ninja_guide_to_funtion_entry": {
+                    "next": [
+                        "[JumpBack]weekly_win_mouthly_award",
+                        "[JumpBack]weekly_win_mouthly_reset_award",
+                        "[JumpBack]weekly_win_weekly_award",
+                        "[JumpBack]weekly_win_confirm_weekly_award",
+                        "[JumpBack]weekly_win_preset_prewar",
+                        "[JumpBack]go_to_war",
+                        "ninja_guide_to_funtion_entry"
+                    ]
+                },
+                "ninja_guide_returning_player_to_funtion_entry": {
+                    "next": [
+                        "[JumpBack]weekly_win_mouthly_award",
+                        "[JumpBack]weekly_win_mouthly_reset_award",
+                        "[JumpBack]weekly_win_weekly_award",
+                        "[JumpBack]weekly_win_confirm_weekly_award",
+                        "[JumpBack]weekly_win_preset_prewar",
+                        "[JumpBack]go_to_war",
+                        "ninja_guide_returning_player_to_funtion_entry"
+                    ]
+                },
+                "weekly_win_ac_entry_undone": {
+                    "next": [
+                        "[JumpBack]weekly_win_mouthly_award",
+                        "[JumpBack]weekly_win_mouthly_reset_award",
+                        "[JumpBack]weekly_win_weekly_award",
+                        "[JumpBack]weekly_win_confirm_weekly_award",
+                        "[JumpBack]weekly_win_preset_prewar",
+                        "[JumpBack]go_to_war",
+                        "weekly_win_ac_entry_undone"
+                    ]
+                },
+                "go_to_war": {
+                    "next": [
+                        "cannot_go_to_war",
+                        "[JumpBack]weekly_win_match_fighting",
+                        "[JumpBack]weekly_win_rank_matching",
+                        "[JumpBack]weekly_win_preset_entry",
+                        "[JumpBack]weekly_win_rank_confirm_ninja",
+                        "[JumpBack]weekly_win_rank_ban",
+                        "[JumpBack]battle_tips",
+                        "[JumpBack]weekly_win_locked",
+                        "[JumpBack]weekly_win_rank_up",
+                        "[JumpBack]battle_again",
+                        "[JumpBack]weekly_win_substitution",
+                        "[JumpBack]go_to_war"
+                    ]
+                }
+            },
             "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理"
         },
         {
@@ -1286,6 +1338,7 @@
                                 "[JumpBack]weekly_win_mouthly_reset_award",
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
                                 "[JumpBack]go_to_war",
                                 "ninja_guide_to_funtion_entry"
                             ]
@@ -1334,6 +1387,7 @@
                                 "[JumpBack]weekly_win_mouthly_reset_award",
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
                                 "[JumpBack]go_to_war",
                                 "ninja_guide_returning_player_to_funtion_entry"
                             ]
@@ -3837,6 +3891,7 @@
                                 "cannot_go_to_war",
                                 "[JumpBack]weekly_win_match_fighting",
                                 "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_preset_entry",
                                 "[JumpBack]weekly_win_rank_confirm_ninja",
                                 "[JumpBack]weekly_win_rank_ban",
                                 "battle_tips",
@@ -3852,6 +3907,114 @@
                                 "tips_confirm",
                                 "[JumpBack]weekly_win_rank_up",
                                 "weekly_win"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "切换预设": {
+            "type": "select",
+            "description": "每局开战前自动切换到指定编号的阵容预设(忍术对战与排位赛);请保持'忍界指引寻找周胜'开启",
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "weekly_win_preset_prewar": {
+                            "enabled": false
+                        },
+                        "weekly_win_preset_entry": {
+                            "enabled": false
+                        },
+                        "weekly_win_preset_open": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "预设1",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "expected": [
+                                "1"
+                            ],
+                            "roi": [
+                                800,
+                                94,
+                                115,
+                                62
+                            ],
+                            "target": [
+                                825,
+                                109,
+                                64,
+                                38
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "预设2",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "expected": [
+                                "2"
+                            ],
+                            "roi": [
+                                943,
+                                94,
+                                108,
+                                62
+                            ],
+                            "target": [
+                                996,
+                                116,
+                                26,
+                                23
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "预设3",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "expected": [
+                                "3"
+                            ],
+                            "roi": [
+                                1040,
+                                94,
+                                108,
+                                62
+                            ],
+                            "target": [
+                                1081,
+                                115,
+                                21,
+                                23
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "预设4",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "expected": [
+                                "4"
+                            ],
+                            "roi": [
+                                1121,
+                                94,
+                                108,
+                                62
+                            ],
+                            "target": [
+                                1164,
+                                114,
+                                23,
+                                25
                             ]
                         }
                     }
