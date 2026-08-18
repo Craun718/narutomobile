@@ -1490,33 +1490,33 @@
         "any_of": [
             {
                 "recognition": "TemplateMatch",
-                "template": "Mission_office/get.png",
                 "roi": [
                     1123,
                     263,
                     93,
                     44
-                ]
+                ],
+                "template": "Mission_office/get.png"
             },
             {
                 "recognition": "TemplateMatch",
-                "template": "Mission_office/get.png",
                 "roi": [
                     1123,
                     377,
                     96,
                     44
-                ]
+                ],
+                "template": "Mission_office/get.png"
             },
             {
                 "recognition": "TemplateMatch",
-                "template": "Mission_office/get.png",
                 "roi": [
                     1123,
                     488,
                     93,
                     44
-                ]
+                ],
+                "template": "Mission_office/get.png"
             }
         ],
         "pre_delay": 0,
