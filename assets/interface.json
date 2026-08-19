@@ -119,6 +119,7 @@
             "option": [
                 "积分赛强制战斗",
                 "积分赛跨服",
+                "积分赛战斗",
                 "积分赛挑战次数",
                 "积分赛失败后再战",
                 "从奖励中心进入",
@@ -217,8 +218,60 @@
                 "从奖励中心进入",
                 "出现提示时重启任务",
                 "周胜不攻击",
-                "串行连点器(beta)"
+                "串行连点器(beta)",
+                "切换预设"
             ],
+            "pipeline_override": {
+                "ninja_guide_to_funtion_entry": {
+                    "next": [
+                        "[JumpBack]weekly_win_mouthly_award",
+                        "[JumpBack]weekly_win_mouthly_reset_award",
+                        "[JumpBack]weekly_win_weekly_award",
+                        "[JumpBack]weekly_win_confirm_weekly_award",
+                        "[JumpBack]weekly_win_preset_prewar",
+                        "[JumpBack]go_to_war",
+                        "ninja_guide_to_funtion_entry"
+                    ]
+                },
+                "ninja_guide_returning_player_to_funtion_entry": {
+                    "next": [
+                        "[JumpBack]weekly_win_mouthly_award",
+                        "[JumpBack]weekly_win_mouthly_reset_award",
+                        "[JumpBack]weekly_win_weekly_award",
+                        "[JumpBack]weekly_win_confirm_weekly_award",
+                        "[JumpBack]weekly_win_preset_prewar",
+                        "[JumpBack]go_to_war",
+                        "ninja_guide_returning_player_to_funtion_entry"
+                    ]
+                },
+                "weekly_win_ac_entry_undone": {
+                    "next": [
+                        "[JumpBack]weekly_win_mouthly_award",
+                        "[JumpBack]weekly_win_mouthly_reset_award",
+                        "[JumpBack]weekly_win_weekly_award",
+                        "[JumpBack]weekly_win_confirm_weekly_award",
+                        "[JumpBack]weekly_win_preset_prewar",
+                        "[JumpBack]go_to_war",
+                        "weekly_win_ac_entry_undone"
+                    ]
+                },
+                "go_to_war": {
+                    "next": [
+                        "cannot_go_to_war",
+                        "[JumpBack]weekly_win_match_fighting",
+                        "[JumpBack]weekly_win_rank_matching",
+                        "[JumpBack]weekly_win_preset_entry",
+                        "[JumpBack]weekly_win_rank_confirm_ninja",
+                        "[JumpBack]weekly_win_rank_ban",
+                        "[JumpBack]battle_tips",
+                        "[JumpBack]weekly_win_locked",
+                        "[JumpBack]weekly_win_rank_up",
+                        "[JumpBack]battle_again",
+                        "[JumpBack]weekly_win_substitution",
+                        "[JumpBack]go_to_war"
+                    ]
+                }
+            },
             "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理"
         },
         {
@@ -440,11 +493,7 @@
             "name": "日志文件清理",
             "entry": "cleanup_maafw_bak_logs",
             "option": [
-                "保留备份日志个数",
-                "清理agent图像",
-                "清理agent日志",
-                "清理报错图像",
-                "清理调试图像"
+                "保留备份日志个数"
             ],
             "default_check": true,
             "description": "清理多余的日志文件,节省空间;考虑到方便debug,不会删除MFA日志;可以使用MFA清理缓存功能代替"
@@ -958,6 +1007,7 @@
                     "pipeline_override": {
                         "dash_or_exit": {
                             "next": [
+                                "[JumpBack]leave_the_team",
                                 "team_dash_reach_the_upper_limit",
                                 "team_dash_above_kage_quit",
                                 "[JumpBack]team_dash_check_not_4x_reward",
@@ -1329,6 +1379,7 @@
                                 "[JumpBack]weekly_win_mouthly_reset_award",
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
                                 "[JumpBack]go_to_war",
                                 "ninja_guide_to_funtion_entry"
                             ]
@@ -1377,6 +1428,7 @@
                                 "[JumpBack]weekly_win_mouthly_reset_award",
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
                                 "[JumpBack]go_to_war",
                                 "ninja_guide_returning_player_to_funtion_entry"
                             ]
@@ -1915,7 +1967,7 @@
         },
         "金币助手": {
             "type": "switch",
-            "description": "确认MFA不会在喂豚豚闪退后开启,闪退bug成因还在寻找",
+            "description": "确认MFA不会在金币助手闪退后开启,闪退bug成因还在寻找",
             "cases": [
                 {
                     "name": "No",
@@ -3805,7 +3857,7 @@
             ]
         },
         "清周胜过期宝箱": {
-            "description": "清周胜过期宝箱要有时间卡,会先打完周胜胜利次数再开始清理过期宝箱",
+            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "type": "switch",
             "cases": [
                 {
@@ -3814,10 +3866,11 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "weekly_win_stop": {
+                        "win_counter": {
                             "next": [
                                 "weekly_win_duel_mission",
-                                "back_main_screen_and_stop"
+                                "go_to_war_again",
+                                "weekly_win_stop"
                             ]
                         },
                         "weekly_win_get_weekly_duel_mission_award_2_end": {
@@ -3837,7 +3890,17 @@
                         "weekly_win_check_no_daily_duel_mission_award": {
                             "next": [
                                 "weekly_win_check_daily_duel_mission_recover_award",
-                                "back_main_screen_and_stop"
+                                "weekly_win_check_daily_duel_mission_back_fight"
+                            ]
+                        },
+                        "weekly_win_check_daily_duel_mission_without_recover_award": {
+                            "next": [
+                                "weekly_win_check_daily_duel_mission_back_fight"
+                            ]
+                        },
+                        "weekly_win_check_daily_duel_mission_without_time_card": {
+                            "next": [
+                                "weekly_win_check_daily_duel_mission_back_fight"
                             ]
                         }
                     }
@@ -3869,6 +3932,7 @@
                                 "cannot_go_to_war",
                                 "[JumpBack]weekly_win_match_fighting",
                                 "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_preset_entry",
                                 "[JumpBack]weekly_win_rank_confirm_ninja",
                                 "[JumpBack]weekly_win_rank_ban",
                                 "battle_tips",
@@ -3884,6 +3948,114 @@
                                 "tips_confirm",
                                 "[JumpBack]weekly_win_rank_up",
                                 "weekly_win"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "切换预设": {
+            "type": "select",
+            "description": "每局开战前自动切换到指定编号的阵容预设(忍术对战与排位赛);请保持'忍界指引寻找周胜'开启",
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "weekly_win_preset_prewar": {
+                            "enabled": false
+                        },
+                        "weekly_win_preset_entry": {
+                            "enabled": false
+                        },
+                        "weekly_win_preset_open": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "预设1",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "roi": [
+                                800,
+                                94,
+                                115,
+                                62
+                            ],
+                            "expected": [
+                                "1"
+                            ],
+                            "target": [
+                                825,
+                                109,
+                                64,
+                                38
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "预设2",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "roi": [
+                                943,
+                                94,
+                                108,
+                                62
+                            ],
+                            "expected": [
+                                "2"
+                            ],
+                            "target": [
+                                996,
+                                116,
+                                26,
+                                23
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "预设3",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "roi": [
+                                1040,
+                                94,
+                                108,
+                                62
+                            ],
+                            "expected": [
+                                "3"
+                            ],
+                            "target": [
+                                1081,
+                                115,
+                                21,
+                                23
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "预设4",
+                    "pipeline_override": {
+                        "weekly_win_switch_preset": {
+                            "roi": [
+                                1121,
+                                94,
+                                108,
+                                62
+                            ],
+                            "expected": [
+                                "4"
+                            ],
+                            "target": [
+                                1164,
+                                114,
+                                23,
+                                25
                             ]
                         }
                     }
@@ -3958,7 +4130,13 @@
                     "name": "Yes",
                     "pipeline_override": {
                         "click_All_skill": {
-                            "action": "DoNothing"
+                            "action": "Click",
+                            "target": [
+                                793,
+                                564,
+                                142,
+                                154
+                            ]
                         }
                     }
                 }
@@ -3972,7 +4150,10 @@
                     "pipeline_override": {
                         "team_dash_invite_page": {
                             "next": [
-                                "team_dash_invite_ninja"
+                                "team_dash_invite_ninja",
+                                "[JumpBack]can_not_invite",
+                                "dash_or_exit",
+                                "retry_failed"
                             ]
                         }
                     }
@@ -3982,7 +4163,8 @@
                     "pipeline_override": {
                         "team_dash_invite_page": {
                             "next": [
-                                "dash_or_exit"
+                                "dash_or_exit",
+                                "retry_failed"
                             ]
                         }
                     }
@@ -4073,6 +4255,27 @@
                         "wait_for_select_opponent": {
                             "next": [
                                 "point_race_cross_server"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "积分赛战斗": {
+            "description": "是否寻找对手挑战,关闭后只会领取奖励",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "point_race_challenge_enter": {
+                            "action": "DoNothing",
+                            "next": [
+                                "point_race_quit",
+                                "point_race_challenge_enter"
                             ]
                         }
                     }
@@ -4513,9 +4716,9 @@
                     ]
                 },
                 "switch_account_find_target_area": {
-                    "expected": [
-                        "{区序号}"
-                    ]
+                    "custom_recognition_param": {
+                        "expected": "{区序号}"
+                    }
                 }
             }
         },
@@ -5466,74 +5669,6 @@
                     }
                 }
             }
-        },
-        "清理agent图像": {
-            "description": "清理debug/custom下的图像",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_custom_img": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "清理agent日志": {
-            "description": "清理debug/custom下的日志",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_custom_log": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "清理报错图像": {
-            "description": "清理debug/on_error下的图像",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_on_error_img": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "清理调试图像": {
-            "description": "清理debug/vision下的图像",
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "Yes"
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "cleanup_vision_img": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
         }
     }
 }

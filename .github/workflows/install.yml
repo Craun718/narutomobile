@@ -1,8 +1,8 @@
 name: install
 
 env:
-  MFAA_VERSION: v2.12.1
-  MAA_FRAMEWORK_VERSION: v5.12.1
+  MFAA_VERSION: v2.15.2
+  MAA_FRAMEWORK_VERSION: v5.12.3
 
 on:
   push:

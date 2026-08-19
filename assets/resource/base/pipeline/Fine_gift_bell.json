@@ -5,6 +5,7 @@
         "next": [
             "select_fine_gift_bell",
             "fine_gift_bell_entry",
+            "fine_gift_bell_all",
             "[JumpBack]back_main_screen"
         ],
         "focus": "[color:DeepSkyBlue]进入送好礼摇铃任务[/color]"
@@ -52,6 +53,7 @@
         "post_delay": 0,
         "next": [
             "select_fine_gift_bell",
+            "fine_gift_bell_all",
             "find_fine_gift_bell"
         ],
         "focus": "[color:DeepSkyBlue]找到送好礼摇铃[/color]"
@@ -69,7 +71,8 @@
         "post_delay": 0,
         "next": [
             "fine_gift_get_voucher",
-            "fine_gift_get_voucher_done"
+            "fine_gift_get_voucher_done",
+            "fine_gift_bell_all"
         ],
         "focus": "[color:DeepSkyBlue]选中送好礼摇铃[/color]"
     },
@@ -137,11 +140,15 @@
             69,
             41
         ],
-        "template": "Fine_gift_bell/voucher_done.png",
+        "template": [
+            "Fine_gift_bell/voucher_done.png",
+            "Fine_gift_bell/voucher_done_1.png"
+        ],
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "fine_gift_ring_bell"
+            "fine_gift_ring_bell",
+            "fine_gift_bell_all"
         ]
     },
     "fine_gift_ring_bell": {
@@ -158,7 +165,8 @@
         "post_delay": 200,
         "next": [
             "fine_gift_bell_done",
-            "fine_gift_check_ring_bell"
+            "fine_gift_check_ring_bell",
+            "fine_gift_bell_all"
         ]
     },
     "fine_gift_check_ring_bell": {
@@ -178,7 +186,8 @@
         "next": [
             "fine_gift_bell_confirm",
             "fine_gift_check_ring_bell",
-            "fine_gift_bell_done"
+            "fine_gift_bell_done",
+            "fine_gift_bell_all"
         ]
     },
     "fine_gift_bell_confirm": {
@@ -196,6 +205,7 @@
         "next": [
             "fine_gift_bell_confirm",
             "fine_gift_bell_done",
+            "fine_gift_bell_all",
             "back_main_screen_and_stop"
         ]
     },
@@ -211,6 +221,20 @@
             "不足",
             "无法"
         ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "back_main_screen_and_stop",
+        "focus": "[color:DeepSkyBlue]礼卷不足[/color]"
+    },
+    "fine_gift_bell_all": {
+        "recognition": "OCR",
+        "roi": [
+            1086,
+            564,
+            135,
+            56
+        ],
+        "expected": "领完",
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",

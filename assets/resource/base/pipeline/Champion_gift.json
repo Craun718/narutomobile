@@ -47,11 +47,13 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 300,
+        "timeout": 10000,
         "next": [
             "champion_gift_to_event",
             "champion_gift_in_event",
             "champion_gift_to_event_center"
-        ]
+        ],
+        "on_error": "back_main_screen_and_stop"
     },
     "champion_gift_to_event": {
         "recognition": "TemplateMatch",

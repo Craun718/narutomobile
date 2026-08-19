@@ -58,10 +58,10 @@ cd narutomobile
 
 ---
 
-## 4. 下载 OCR（文字识别）资源文件 [ppocr_v6.zip](https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip) 解压到 `assets/resource/model/ocr/` 目录下，确保路径如下
+## 4. 下载 OCR（文字识别）资源文件 [ppocr_v6.zip](https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip) 解压到 `assets/resource/base/model/ocr/` 目录下，确保路径如下
 
 ```bash
-   assets/resource/model/ocr/
+   assets/resource/base/model/ocr/
    ├── det.onnx
    ├── keys.txt
    └── rec.onnx

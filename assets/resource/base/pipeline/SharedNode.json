@@ -103,16 +103,14 @@
         "focus": "[color:darkgray]离开当前队伍[/color]"
     },
     "confirm_tip": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            303,
-            263,
-            696,
-            456
+            483,
+            367,
+            308,
+            153
         ],
-        "expected": [
-            "确定"
-        ],
+        "template": "SharedNode/confirm.png",
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 500,
@@ -562,6 +560,7 @@
             "close_notice",
             "back_main_screen"
         ],
+        "on_error": "check_main_screen",
         "focus": "关闭气泡弹窗"
     },
     "ensure_to_close": {

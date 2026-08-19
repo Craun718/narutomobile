@@ -27,8 +27,8 @@
             53,
             45
         ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
+        "post_wait_freezes": 300,
+        "post_delay": 100,
         "next": [
             "activity_check_in_activity",
             "activity_entry"
@@ -48,8 +48,44 @@
             "外卖"
         ],
         "pre_delay": 0,
+        "post_delay": 200,
+        "next": [
+            "activity_check_in_ramen",
+            "activity_to_ramen"
+        ]
+    },
+    "activity_to_ramen": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            0,
+            261,
+            288
+        ],
+        "expected": [
+            "一乐",
+            "外卖"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
         "post_wait_freezes": 300,
         "post_delay": 0,
+        "next": [
+            "activity_check_in_ramen",
+            "activity_to_ramen"
+        ]
+    },
+    "activity_check_in_ramen": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            368,
+            41,
+            180,
+            153
+        ],
+        "template": "Activity/ramen_interface.png",
+        "pre_delay": 0,
+        "post_delay": 200,
         "next": [
             "check_no_energy",
             "[JumpBack]get_ramen"
@@ -141,6 +177,7 @@
         "post_delay": 0,
         "next": [
             "[JumpBack]mouthly_signature",
+            "[JumpBack]mouthly_retroactive_signature",
             "mouthly_signature_done",
             "mouthly_sign_tab"
         ]
@@ -170,8 +207,7 @@
         ],
         "expected": [
             "已签到",
-            "活跃度",
-            "补签"
+            "活跃度"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -179,6 +215,19 @@
             "check_mouthly_signature_title",
             "mouthly_signature_title_done"
         ]
+    },
+    "mouthly_retroactive_signature": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            1101,
+            530,
+            172,
+            91
+        ],
+        "template": "Activity/retroactive_sign.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 0
     },
     "mouthly_signature_title_done": {
         "recognition": "OCR",
@@ -243,8 +292,25 @@
         "next": [
             "click_privilege_store",
             "[JumpBack]click_normal_store",
-            "store_enter"
+            "store_enter",
+            "[JumpBack]swipe_for_find_shop",
+            "shop_find_shop_parent_shop_end"
         ]
+    },
+    "store_find_shop_end": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            19,
+            137,
+            187,
+            496
+        ],
+        "template": "Shop/play_methon_parent_shop.png",
+        "method": 10001,
+        "threshold": 0.95,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "shop_done"
     },
     "click_normal_store": {
         "recognition": "OCR",

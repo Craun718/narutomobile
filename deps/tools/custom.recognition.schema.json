@@ -17,7 +17,8 @@
                 "CheckGetCopperRoll",
                 "CheckGetCopperCount",
                 "CheckBuyEnergyCount",
-                "Shopping"
+                "Shopping",
+                "SwitchAccountFindTargetArea"
             ]
         },
         "custom_recognition_param": {
@@ -60,6 +61,12 @@
                 },
                 {
                     "$ref": "#/$defs/CheckBuyEnergyCountParam"
+                },
+                {
+                    "$ref": "#/$defs/ShoppingParam"
+                },
+                {
+                    "$ref": "#/$defs/SwitchAccountFindTargetAreaParam"
                 }
             ]
         }
@@ -159,6 +166,18 @@
             "type": "object",
             "description": "检测购买体力次数",
             "markdownDescription": "检测购买体力次数,读取固定ROI招财次数,识别失败视为66;第一次识别次数-目前识别次数>=传入次数时通过,否则失败.",
+            "properties": {}
+        },
+        "ShoppingParam": {
+            "type": "object",
+            "description": "商店兑换",
+            "markdownDescription": "兑换币>=商品价格*商品数量通过,否则失败.",
+            "properties": {}
+        },
+        "SwitchAccountFindTargetAreaParam": {
+            "type": "object",
+            "description": "切换账号找目标区",
+            "markdownDescription": "当前界面有目标区通过,否则失败.",
             "properties": {}
         }
     }

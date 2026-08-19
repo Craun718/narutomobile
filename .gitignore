@@ -469,6 +469,10 @@ install/debug/maa.log
 .nicegui/storage-general.json
 .venv
 
+# MaaFwApp 打包中间产物
+Android/pi-root/
+Android/agent-dist/
+
 config
 assets/resource/model/ocr
 assets/resource/base/model/ocr

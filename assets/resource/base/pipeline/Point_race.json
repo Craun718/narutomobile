@@ -150,7 +150,9 @@
         "next": [
             "point_race_loading",
             "point_race_unchallengeable",
-            "point_race_challenge_limit"
+            "point_race_challenge_limit",
+            "point_race_skip",
+            "point_race_challenge_finished"
         ],
         "on_error": [
             "back_main_screen_and_stop"

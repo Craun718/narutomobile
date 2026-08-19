@@ -457,7 +457,8 @@
             82
         ],
         "expected": [
-            "村口"
+            "村口",
+            "村□"
         ],
         "action": "Click",
         "post_wait_freezes": 400,
@@ -513,7 +514,8 @@
             82
         ],
         "expected": [
-            "村口"
+            "村口",
+            "村□"
         ],
         "action": "Click",
         "post_wait_freezes": 400,
@@ -598,7 +600,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "confirm_naruto_club_sign",
-            "naruto_club_sign"
+            "naruto_club_sign",
+            "sign_done"
         ],
         "focus": "[color:DeepSkyBlue]进行签到[/color]"
     },
@@ -618,7 +621,8 @@
         "post_wait_freezes": 500,
         "next": [
             "roger_naruto_club_sign",
-            "confirm_naruto_club_sign"
+            "confirm_naruto_club_sign",
+            "sign_done"
         ],
         "focus": "[color:DeepSkyBlue]确认签到[/color]"
     },
@@ -639,7 +643,8 @@
             "feed_pig",
             "without_feed_pig",
             "roger_naruto_club_sign",
-            "check_club_mission_done"
+            "check_club_mission_done",
+            "sign_done"
         ],
         "focus": "[color:DeepSkyBlue]收到签到提醒[/color]"
     },
@@ -926,7 +931,7 @@
         ],
         "template": "Naruto_club/mission_submit.png",
         "method": 10001,
-        "threshold": 0.98,
+        "threshold": 0.95,
         "pre_wait_freezes": 300,
         "pre_delay": 0,
         "action": "Click",
@@ -951,6 +956,7 @@
         "focus": "[color:DarkGoldenRod]土豆[/color]"
     },
     "naruto_club_back_post": {
+        "max_hit": 9,
         "recognition": "OCR",
         "expected": [
             "后退"
@@ -958,6 +964,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "check_main_screen",
             "benefit_station",
             "naruto_club_back_post"
         ],
@@ -1003,7 +1010,10 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "confirm_club_first_award"
+            "confirm_club_first_award",
+            "roger_club_first_award",
+            "club_first_award_done",
+            "club_first_award"
         ],
         "focus": "[color:DeepSkyBlue]领取第一个奖励[/color]"
     },
@@ -1042,7 +1052,8 @@
         "post_delay": 5000,
         "timeout": 10000,
         "next": [
-            "roger_club_first_award"
+            "roger_club_first_award",
+            "club_first_award_done"
         ],
         "on_error": [
             "naruto_club_in_loop_wheel"
@@ -1091,7 +1102,8 @@
         "timeout": 15000,
         "next": [
             "confirm_club_second_award",
-            "club_second_award"
+            "club_second_award",
+            "club_second_award_done"
         ],
         "on_error": "award_kale",
         "focus": "[color:DeepSkyBlue]领取第二个奖励[/color]"
