@@ -433,3 +433,61 @@ class SecondaryPasswordAction(CustomAction):
 
     def run(self, context: Context, argv: CustomAction.RunArg) -> CustomAction.RunResult:
         return CustomAction.RunResult(success=True)
+
+@AgentServer.custom_action("ClickWithConsent")
+class ClickWithConsent(CustomAction):
+    """
+    带用户授权校验的点击动作。
+    只有当 custom_action_param 等于 "我同意" 时才执行点击。
+    """
+    def run(
+        self,
+        context: Context,
+        argv: CustomAction.RunArg,
+    ) -> CustomAction.RunResult:
+        # 1. 校验用户授权
+        # 注意：从 pipeline_override 传递的 JSON 字符串可能被额外包裹引号
+        consent = argv.custom_action_param
+        # 去除可能的首尾空格和引号（JSON 字符串常会带引号）
+        if isinstance(consent, str):
+            consent = consent.strip().strip('"').strip("'")
+        
+        logger.info(f"收到授权文本: '{consent}'")
+        
+        if consent != "我同意":
+            logger.error(f"未经授权（输入为“{consent}”），禁止执行协议勾选动作！")
+            context.tasker.post_stop()
+            return CustomAction.RunResult(success=False)
+        
+        # 2. 授权通过，执行点击逻辑
+        node_name = argv.node_name  # "agree_agreement"
+        image = context.tasker.controller.cached_image
+        if image is None:
+            logger.error("无法获取截图")
+            return CustomAction.RunResult(success=False)
+        
+        # 使用节点自身的 recognition 配置来识别
+        reco_detail = context.run_recognition(node_name, image, {})
+        if reco_detail is None or not reco_detail.hit:
+            logger.error("未识别到协议勾选框（万代图标）")
+            return CustomAction.RunResult(success=False)
+        
+        best_box = reco_detail.best_result.box
+        if best_box is None:
+            logger.error("识别结果无有效 box")
+            return CustomAction.RunResult(success=False)
+        
+        # 原 target_offset 为 [9, -45, -17, -20]
+        x, y, w, h = best_box
+        click_x = x + 9
+        click_y = y - 45
+        
+        # 确保点击坐标在屏幕内
+        resolution = context.tasker.controller.resolution
+        click_x = max(0, min(click_x, resolution[0] - 1))
+        click_y = max(0, min(click_y, resolution[1] - 1))
+        
+        logger.info(f"执行协议勾选点击，坐标: ({click_x}, {click_y})")
+        context.tasker.controller.post_click(click_x, click_y).wait()
+        
+        return CustomAction.RunResult(success=True)
