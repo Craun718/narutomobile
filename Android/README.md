@@ -45,7 +45,7 @@ python Android/MaaFwApp/scripts/setup_maa_framework.py --tag v5.12.3
 
 CI：
 
-- `.github/workflows/android.yml`：相关路径的日常 push / PR 构建 Debug 包
+- `.github/workflows/android.yml`：相关路径的日常 push / PR 构建 Debug 包，并同步构建 Release 包
 - `.github/workflows/android-release.yml`：手动运行时只构建 Android Release Artifact，不创建 GitHub Release
 - `.github/workflows/release.yml`：推送 `v*` tag 后统一并行构建桌面端和 Android，并创建公开 GitHub Release
 
