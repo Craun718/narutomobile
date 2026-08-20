@@ -31,7 +31,8 @@ permissions:
   contents: read
 
 jobs:
-  apk:
+  debug:
+    name: Debug APK
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -98,3 +99,12 @@ jobs:
           name: MaaAutoNaruto-android-arm64-${{ github.sha }}
           path: Android/MaaFwApp/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+
+  release:
+    name: Release APK
+    permissions:
+      contents: read
+    uses: ./.github/workflows/android-release.yml
+    with:
+      version: ${{ github.sha }}
+    secrets: inherit
