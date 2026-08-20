@@ -706,7 +706,7 @@
         },
         "协议确认": {
             "type": "input",
-            "description": "如果您不同意启用协议自动勾选选项详情中的DISCLAIMER.md,请不要输入“我同意”,并请立即停止使用并销毁本工具的全部副本",
+            "description": "如果您不同意启用协议自动勾选选项详情中MaaAutoNaruto的DISCLAIMER.md,请不要输入“我同意”,并请立即停止使用并销毁本工具的全部副本",
             "inputs": [
                 {
                     "name": "consent_text",
