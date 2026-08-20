@@ -35,6 +35,6 @@ agent:
         MAAFW_BINARY_PATH: "{nativeLibs}"
 
 app:
-  id: maanaruto
+  id: man
   label: MaaAutoNaruto
   icon: ../docs/imgs/logo.png
