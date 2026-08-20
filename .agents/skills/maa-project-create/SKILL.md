@@ -5,6 +5,10 @@ description: Create, extend, diagnose, and update MaaFramework application proje
 
 # Maa Project Create
 
+## 官方兼容性核对
+
+创建或更新项目涉及 MaaFramework schema、runtime、binding 兼容性或依赖版本时，通过 `$maa-wiki` 定位官方来源后再执行 `update` 或解释报告。`create-maa-project` 的报告是执行结果，不是 MaaFramework 官方契约本身。
+
 Use `create-maa-project` as the project lifecycle engine. Do not reproduce its templates or manually imitate its managed-file behavior.
 
 ## Route the request

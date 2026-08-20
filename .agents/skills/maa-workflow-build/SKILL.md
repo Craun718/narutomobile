@@ -25,6 +25,7 @@ Read [references/task-contract.md](references/task-contract.md) before finalizin
 - Invoke `$maa-pipeline-option` only when the task contract requires a user-facing toggle, selector, checkbox, switch, or input. Do not create options merely because the skill is available.
 - Run `$maa-pipeline-testing` after each coherent implementation increment and again against the integrated end-to-end flow. Use its evidence to route a failure back to the specialist or orchestrator phase that owns the defect.
 - Treat `$maa-cli-operate` as an execution backend for repeatable checks or guarded runtime operations, not a mandatory business phase.
+- Treat `$maa-wiki` as an official-knowledge reference provider. Use it when the task contract, design, or acceptance criteria depend on MaaFramework documentation, schema, API, binding, release, or semantic-change facts; navigate to original sources before treating those facts as authoritative.
 
 Do not treat the specialists as a fixed `guide -> generate -> option -> testing` sequence. Call only the capability required by the current task state, then return its artifacts and evidence to this control loop.
 

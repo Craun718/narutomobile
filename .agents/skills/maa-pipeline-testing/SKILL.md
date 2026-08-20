@@ -5,6 +5,10 @@ description: "Test and validate MaaFramework Pipeline JSON, recognition nodes, a
 
 # Pipeline Testing Skill
 
+## 官方依据核对
+
+测试命令、schema 字段或 MaaFramework API 行为以原始官方来源为准。涉及版本差异、binding 兼容性或语义变化时，通过 `$maa-wiki` 定位官方文档、schema 与源码后再下结论；测试通过不能替代对官方契约的核对。
+
 如果用户要求验收一个尚未定义目标状态和完成条件的端到端自动化需求，先交给 `$maa-workflow-build` 建立任务契约；已有契约时，再用本 skill 为其中的验收条件收集测试证据。
 
 ## 项目初始化接力

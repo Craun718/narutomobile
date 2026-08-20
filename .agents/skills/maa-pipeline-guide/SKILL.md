@@ -5,6 +5,10 @@ description: Universal Pipeline JSON 编写指南。基于 MaaFramework Pipeline
 
 # Universal Pipeline 编写指南
 
+## 官方知识核对
+
+本指南中的 Pipeline 约定是工作经验和社区规范，不能替代 pinned 版本的官方协议、schema 或源码。当字段语义、默认值、版本差异或 API 行为存在疑问时，通过 `$maa-wiki` 定位 MaaLLMWiki catalog 中的原始来源，再以官方文档、`tools/pipeline.schema.json` 或 MaaFramework 源码为准。
+
 如果用户提出的是尚未定义起始状态、安全边界和验收条件的端到端自动化目标，先交给 `$maa-workflow-build` 建立任务契约与状态机；已有契约时，再用本 skill 处理 Pipeline 设计、修改或审查。
 
 ## 项目初始化接力
