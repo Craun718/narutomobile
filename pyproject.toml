@@ -26,6 +26,7 @@ index-url = "https://mirrors.cloud.tencent.com/pypi/simple"
 [tool.ruff]
 target-version = "py312"
 line-length = 120
+extend-exclude = [".agents"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
