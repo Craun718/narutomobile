@@ -91,10 +91,10 @@
     "headhunt_whole_ninja": {
         "recognition": "TemplateMatch",
         "roi": [
-            654,
-            592,
-            251,
-            113
+            400,
+            458,
+            614,
+            261
         ],
         "template": "SharedNode/confirm.png",
         "pre_delay": 0,
