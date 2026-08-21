@@ -487,7 +487,7 @@ class SwitchAccountFindTargetArea(CustomRecognition):
         target_area = param.get("expected", "521")
         area_roi = context.run_recognition("switch_account_target_area_roi", argv.image)
         for result in area_roi.all_results:
-            box = tuple(result.box)
+            box = list(result.box)
             reco_detail = context.run_recognition("custom_ocr", argv.image, {"custom_ocr": {"roi": box}})
             if reco_detail and reco_detail.hit:
                 try:

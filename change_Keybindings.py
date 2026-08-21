@@ -4,7 +4,7 @@ from pathlib import Path
 
 # ==============================================================================
 # ============================ 【核心路径配置 - 请修改这里】 ============================
-# 兼容 Python 3.12+，路径使用原始字符串避免转义问题
+# 兼容 Python 3.13+，路径使用原始字符串避免转义问题
 # ==============================================================================
 # 默认键位配置文件路径
 DEFAULT_KEYBINDINGS_PATH = r"default_Keybindings.json"
@@ -60,7 +60,7 @@ def load_keybindings(keybind_path: str) -> dict:
 def replace_swipes_data(data: dict | list, key_mapping: dict) -> None:
     """
     递归遍历JSON数据，替换所有swipes数组中的技能位置信息
-    兼容Python 3.12+，递归逻辑无版本兼容性问题
+    兼容Python 3.13+，递归逻辑无版本兼容性问题
     :param data: 要处理的JSON数据（字典或列表）
     :param key_mapping: 技能位置映射字典
     """
@@ -97,7 +97,7 @@ def replace_keybindings(keybind_path: str, keybind_type: str) -> None:
     :param keybind_type: 键位类型（用于提示，如"默认"、"自定义"）
     """
     print(f"\n{'=' * 60}")
-    print(f"          开始替换 {keybind_type} 键位（兼容Python 3.12+）")
+    print(f"          开始替换 {keybind_type} 键位（兼容Python 3.13+）")
     print(f"{'=' * 60}")
 
     try:
@@ -132,7 +132,7 @@ def replace_keybindings(keybind_path: str, keybind_type: str) -> None:
 def show_menu() -> None:
     """显示交互菜单，让用户选择替换类型"""
     print("\n" + "=" * 60)
-    print("          技能键位替换工具 (兼容 Python 3.12+)")
+    print("          技能键位替换工具 (兼容 Python 3.13+)")
     print("=" * 60)
     print("📂 配置文件路径：")
     print(f"  默认键位：{DEFAULT_KEYBINDINGS_PATH}")
@@ -150,8 +150,8 @@ def main():
     """主函数：处理用户交互和核心逻辑"""
     # 验证Python版本
     python_version = sys.version_info
-    if python_version < (3, 12):
-        print(f"⚠️  警告：当前Python版本为 {python_version.major}.{python_version.minor}，建议使用3.12及以上版本！")
+    if python_version < (3, 13):
+        print(f"⚠️  警告：当前Python版本为 {python_version.major}.{python_version.minor}，建议使用3.13及以上版本！")
         print("   程序仍会尝试运行，但可能存在兼容性问题。")
         input("\n按Enter键继续...")
 
