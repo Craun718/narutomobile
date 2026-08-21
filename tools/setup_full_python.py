@@ -4,7 +4,7 @@ from zipfile import ZipFile
 
 from utils import download
 
-default_version = "3.12.9"
+default_version = "3.13.15"
 default_arch = "amd64"
 default_tmp_dir = "tmp"
 default_install_path = "install"

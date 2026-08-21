@@ -58,16 +58,16 @@
     },
     "select_summer_plan": {
         "recognition": "OCR",
-        "expected": [
-            "夏日",
-            "储金",
-            "计划开启"
-        ],
         "roi": [
             730,
             93,
             224,
             56
+        ],
+        "expected": [
+            "夏日",
+            "储金",
+            "计划开启"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -132,15 +132,15 @@
     },
     "summer_plan_done": {
         "recognition": "OCR",
-        "expected": [
-            "高价值",
-            "特殊钱币"
-        ],
         "roi": [
             360,
             177,
             919,
             180
+        ],
+        "expected": [
+            "高价值",
+            "特殊钱币"
         ],
         "pre_delay": 0,
         "post_delay": 0,

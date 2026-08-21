@@ -29,7 +29,7 @@ def main() -> int:
         return 1
 
     sys.path.insert(0, str(REPO / "tools" / "ci"))
-    from configure import configure_ocr_model
+    from configure import configure_ocr_model  # pyright: ignore[reportMissingImports]
 
     configure_ocr_model()
 
