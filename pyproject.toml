@@ -2,7 +2,7 @@
 name = "maaautonaruto"
 version = "1.1.13"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "json-with-comments>=1.2.10",
     "loguru>=0.7.3",
@@ -24,7 +24,7 @@ dev = [
 index-url = "https://mirrors.cloud.tencent.com/pypi/simple"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 line-length = 120
 extend-exclude = [".agents"]
 
@@ -42,7 +42,7 @@ indent-style = "space"
 [tool.pyright]
 include = ["agent", "tools"]
 extraPaths = ["agent"]
-pythonVersion = "3.12"
+pythonVersion = "3.13"
 typeCheckingMode = "basic"
 reportMissingTypeStubs = "none"
 reportAttributeAccessIssue = "none"
