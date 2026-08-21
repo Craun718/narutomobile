@@ -113,8 +113,22 @@
         "post_delay": 300,
         "next": [
             "summer_plan_done",
+            "[JumpBack]summer_plan_confirm",
             "summer_plan_get"
         ]
+    },
+    "summer_plan_confirm": {
+        "recognition": "TemplateMatch",
+        "template": "SharedNode/confirm.png",
+        "roi": [
+            518,
+            515,
+            234,
+            140
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300
     },
     "summer_plan_done": {
         "recognition": "OCR",
