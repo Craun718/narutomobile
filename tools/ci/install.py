@@ -113,7 +113,7 @@ def install_resource(version):
 
 
 def install_chores():
-    for file in ["README.md", "LICENSE", "requirements.txt", "CONTACT"]:
+    for file in ["README.md", "LICENSE", "requirements.txt", "CONTACT", "DISCLAIMER.md"]:
         shutil.copy2(
             working_dir / file,
             install_path,
