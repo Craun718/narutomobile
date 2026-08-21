@@ -23,7 +23,7 @@ exclude:
 #     --require pillow==11.0.0 --extra-index-url https://chaquo.com/pypi-13.1/
 agent:
   sourceDir: agent-dist
-  abi: [arm64-v8a]
+  abi: [arm64-v8a, x86_64]
   runtimes:
     - location: bundle
       executable: bin/python3
