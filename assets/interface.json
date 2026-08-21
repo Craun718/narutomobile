@@ -821,13 +821,6 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "easy_season_plus_end": {
-                            "next": [
-                                "easy_season_plus_end_to_easy_helper",
-                                "easy_season_plus_end_to_easy_share",
-                                "back_main_screen_and_stop"
-                            ]
-                        },
                         "easy_season_plus_energy_done": {
                             "next": [
                                 "easy_season_plus_sweep_card",
