@@ -95,8 +95,8 @@ def install_resource(version):
     )
 
     shutil.copytree(
-        working_dir / "assets" / "task",
-        install_path / "task",
+        working_dir / "assets" / "tasks",
+        install_path / "tasks",
         dirs_exist_ok=True,
     )
 
