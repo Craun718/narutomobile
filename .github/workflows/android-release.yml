@@ -151,9 +151,14 @@ jobs:
         shell: bash
         run: |
           mkdir -p android-artifacts
-          for apk in Android/MaaFwApp/app/build/outputs/apk/release/*.apk; do
-            cp "$apk" "android-artifacts/MaaAutoNaruto-android-${{ matrix.abi }}-${{ needs.meta.outputs.tag }}.apk"
-          done
+          apk_file=$(find Android/MaaFwApp/app/build/outputs -name "*.apk" | head -n 1)
+          if [ -z "$apk_file" ]; then
+            echo "APK file not found! Listing build outputs for debug:"
+            find Android/MaaFwApp/app/build/outputs -type f | head -n 100
+            exit 1
+          fi
+          cp "$apk_file" "android-artifacts/MaaAutoNaruto-android-${{ matrix.abi }}-${{ needs.meta.outputs.tag }}.apk"
+          echo "Copied $apk_file to android-artifacts/"
 
       - uses: actions/upload-artifact@v7
         with:
