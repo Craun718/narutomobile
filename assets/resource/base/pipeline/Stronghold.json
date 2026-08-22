@@ -191,22 +191,22 @@
     },
     "stronghold_personal_point_award": {
         "recognition": "OCR",
-        "expected": "个人积分",
         "roi": [
             494,
             85,
             288,
             86
         ],
+        "expected": "个人积分",
         "pre_delay": 0,
         "action": "Click",
-        "post_delay": 300,
         "target": [
             74,
             643,
             61,
             39
-        ]
+        ],
+        "post_delay": 300
     },
     "stronghold_in_stronghold": {
         "recognition": "OCR",
