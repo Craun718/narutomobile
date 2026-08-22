@@ -180,12 +180,33 @@
             "攻",
             "击"
         ],
+        "pre_delay": 0,
         "action": "Click",
+        "post_delay": 300,
         "next": [
             "stronghold_in_stronghold",
             "[JumpBack]stronghold_to_fight"
         ],
         "focus": "[color:DeepSkyBlue]进入火要塞[/color]"
+    },
+    "stronghold_personal_point_award": {
+        "recognition": "OCR",
+        "expected": "个人积分",
+        "roi": [
+            494,
+            85,
+            288,
+            86
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "target": [
+            74,
+            643,
+            61,
+            39
+        ]
     },
     "stronghold_in_stronghold": {
         "recognition": "OCR",
@@ -201,7 +222,7 @@
             "战力",
             "名称"
         ],
-        "pre_delay": 0,
+        "pre_delay": 100,
         "action": "Swipe",
         "begin": [
             283,
@@ -220,7 +241,8 @@
         "timeout": 30000,
         "next": [
             "stronghold_in_match",
-            "[JumpBack]stronghold_in_stronghold",
+            "[JumpBack]stronghold_personal_point_award",
+            "stronghold_in_stronghold",
             "[JumpBack]stronghold_fighting",
             "[JumpBack]stronghold_match_win",
             "stronghold_finished",
@@ -307,8 +329,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "stronghold_winner_decided",
             "[JumpBack]stronghold_click_All_skill",
+            "stronghold_winner_decided",
             "[JumpBack]battle_tips",
             "stronghold_in_stronghold",
             "[JumpBack]stronghold_match_win",
@@ -412,17 +434,15 @@
         "focus": "[color:DeepSkyBlue]进入要塞结算[/color]"
     },
     "stronghold_click_All_skill": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            496,
-            0,
-            229,
-            108
+            580,
+            4,
+            118,
+            59
         ],
-        "expected": [
-            "第",
-            "回"
-        ],
+        "template": "Stronghold/fight.png",
+        "green_mask": true,
         "pre_delay": 0,
         "action": "MultiSwipe",
         "swipes": [
