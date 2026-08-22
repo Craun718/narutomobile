@@ -267,7 +267,9 @@
         "post_wait_freezes": 200,
         "next": [
             "easy_season_plus_in_easy_season",
-            "easy_season_plus_back_easy_season"
+            "easy_season_plus_back_easy_season",
+            "easy_season_enter",
+            "easy_season_done"
         ]
     },
     "easy_season_plus_in_easy_season": {
