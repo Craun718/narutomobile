@@ -119,13 +119,13 @@
     },
     "summer_plan_confirm": {
         "recognition": "TemplateMatch",
-        "template": "SharedNode/confirm.png",
         "roi": [
             518,
             515,
             234,
             140
         ],
+        "template": "SharedNode/confirm.png",
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 300
