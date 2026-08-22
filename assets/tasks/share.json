@@ -9,6 +9,9 @@
                 "分享后直接返回游戏",
                 "分享策略"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
     ],

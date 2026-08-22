@@ -2,7 +2,10 @@
     "task": [
         {
             "name": "关闭火影手游APP",
-            "entry": "exit_naruto"
+            "entry": "exit_naruto",
+            "group": [
+                "daily"
+            ]
         }
     ]
 }

@@ -16,6 +16,9 @@
                 "串行连点器(beta)",
                 "切换预设"
             ],
+            "group": [
+                "daily"
+            ],
             "pipeline_override": {
                 "ninja_guide_to_funtion_entry": {
                     "next": [
@@ -80,7 +83,7 @@
                     "label": "周胜胜利次数",
                     "description": "输入需要的打赢次数,最大999",
                     "pipeline_type": "int",
-                    "default": "999",
+                    "default": "1",
                     "verify": "^[1-9]\\d{0,2}$"
                 }
             ],

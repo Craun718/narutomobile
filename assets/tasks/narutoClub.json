@@ -8,6 +8,9 @@
                 "喂豚豚",
                 "金币助手"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true,
             "description": "该任务并不稳定,如遇卡顿可能需要人工接管"
         }

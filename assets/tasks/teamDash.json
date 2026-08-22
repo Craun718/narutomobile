@@ -7,6 +7,9 @@
                 "借组织助战",
                 "小队突袭处理自动战斗"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true,
             "description": "组织里有人用和自己一样忍者时,建议关闭借组织助战"
         }

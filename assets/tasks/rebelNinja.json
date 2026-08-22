@@ -11,6 +11,9 @@
                 "叛忍玩法未开启时退出",
                 "忍界指引寻找叛忍"
             ],
+            "group": [
+                "weekly"
+            ],
             "description": "尽量开启只显示自己,防止目标被遮挡,可以在叛忍地图打开;部分选项是首领功能,[size:15][color:tomato]需要二级密码,你需要非常小心,MaaAutoNaruto不会对任何损失负责[/color][/size]"
         }
     ],

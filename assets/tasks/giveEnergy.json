@@ -6,6 +6,9 @@
             "option": [
                 "选择账号好友送体力"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
     ],

@@ -4,6 +4,9 @@
             "name": "Debug",
             "entry": "debug",
             "description": "用于调试，<b>日常使用请勿开启！</b>",
+            "group": [
+                "external"
+            ],
             "option": [
                 "display_pointer_location",
                 "display_touch"

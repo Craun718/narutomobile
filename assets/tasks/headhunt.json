@@ -3,6 +3,9 @@
         {
             "name": "免费招募",
             "entry": "headhunt",
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
     ]

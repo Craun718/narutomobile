@@ -9,6 +9,9 @@
                 "从奖励中心进入",
                 "忍界指引寻找任务集会所"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
     ],

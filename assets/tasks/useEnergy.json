@@ -6,6 +6,9 @@
             "option": [
                 "精英副本一键全选"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
     ],

@@ -3,6 +3,9 @@
         {
             "name": "组织",
             "entry": "group",
+            "group": [
+                "daily"
+            ],
             "default_check": true,
             "description": "包含祈福签到和领奖，追击晓组织领奖。",
             "option": [

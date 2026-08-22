@@ -6,6 +6,9 @@
             "option": [
                 "冒险副本一直推关"
             ],
+            "group": [
+                "progression"
+            ],
             "description": "不会打高级关卡,忍者不要特效太多的(包括大招文字)"
         }
     ],

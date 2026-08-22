@@ -3,8 +3,10 @@
         {
             "name": "活跃宝箱",
             "entry": "liveness_award",
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
-    ],
-    "option": {}
+    ]
 }

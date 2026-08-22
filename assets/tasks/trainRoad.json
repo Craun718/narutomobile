@@ -3,6 +3,10 @@
         {
             "name": "修行之路",
             "entry": "shugyou_no_michi",
+            "group": [
+                "weekly",
+                "progression"
+            ],
             "default_check": true,
             "description": "推关无法处理自动战斗不起效,时间停止等bug",
             "option": [

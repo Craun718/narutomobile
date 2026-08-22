@@ -6,6 +6,9 @@
             "option": [
                 "选择小游戏"
             ],
+            "group": [
+                "event"
+            ],
             "description": "小游戏可以主页进,也可以从有小游戏名的功能入口界面进"
         }
     ],
@@ -16,7 +19,7 @@
             "cases": [
                 {
                     "name": "夏日回馈(beta)",
-                    "description": "夏日计划签到",
+                    "description": "不会选择,只会签到",
                     "pipeline_override": {
                         "mini_game": {
                             "next": "summer_plan"

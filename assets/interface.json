@@ -37,9 +37,34 @@
         {
             "name": "daily",
             "label": "日常任务"
+        },
+        {
+            "name": "weekly",
+            "label": "周常任务"
+        },
+        {
+            "name": "event",
+            "label": "活动任务"
+        },
+        {
+            "name": "progression",
+            "label": "开荒任务"
+        },
+        {
+            "name": "redeem",
+            "label": "商店任务"
+        },
+        {
+            "name": "external",
+            "label": "游戏外任务"
         }
     ],
     "import": [
+        "tasks/preset/common.json",
+        "tasks/preset/daily.json",
+        "tasks/preset/schedule.json",
+        "tasks/preset/miniGame.json",
+        "tasks/preset/external.json",
         "tasks/startUp.json",
         "tasks/easyHelepr.json",
         "tasks/easySeason.json",
@@ -81,8 +106,9 @@
         "tasks/miniGame.json",
         "tasks/blackMarketMerchant.json",
         "tasks/Debug.json",
-        "tasks/cleanupLogs",
+        "tasks/cleanupLogs.json",
         "tasks/complete.json",
+        "tasks/standaloneMiniGame.json",
         "tasks/ninjaGuide.json",
         "tasks/sharedOption.json"
     ]

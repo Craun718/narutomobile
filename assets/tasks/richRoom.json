@@ -6,6 +6,9 @@
             "option": [
                 "丰饶开大"
             ],
+            "group": [
+                "daily"
+            ],
             "default_check": true
         }
     ],
