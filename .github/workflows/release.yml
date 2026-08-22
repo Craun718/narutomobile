@@ -91,10 +91,16 @@ jobs:
           pattern: MaaAutoNaruto-linux-*-${{ github.ref_name }}
           path: release-assets/desktop
 
-      - name: Download Android APK
+      - name: Download Android APK (arm64-v8a)
         uses: actions/download-artifact@v8
         with:
-          name: MaaAutoNaruto-android-release-${{ github.ref_name }}
+          name: MaaAutoNaruto-android-arm64-v8a-${{ github.ref_name }}
+          path: release-assets/android
+
+      - name: Download Android APK (x86_64)
+        uses: actions/download-artifact@v8
+        with:
+          name: MaaAutoNaruto-android-x86_64-${{ github.ref_name }}
           path: release-assets/android
 
       - name: Download changelog
