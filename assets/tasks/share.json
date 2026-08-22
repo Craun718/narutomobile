@@ -1,0 +1,116 @@
+{
+    "task": [
+        {
+            "name": "每日分享",
+            "entry": "share",
+            "description": "由于社交软件版本多,设备延迟差异大.分享任务可能需要你调整选项到自己适合的配置,或者让拉起的社交软件是横版(平板版)并使用加速策略",
+            "option": [
+                "主页面进行每日分享",
+                "分享后直接返回游戏",
+                "分享策略"
+            ],
+            "default_check": true
+        }
+    ],
+    "option": {
+        "主页面进行每日分享": {
+            "type": "switch",
+            "description": "不去奖励中心查看是否分享,而是在主页面直接进行分享",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "share": {
+                            "next": [
+                                "share_start_in_main_screen",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "分享后直接返回游戏": {
+            "description": "开启后不会关闭社交软件而是直接返回火影,如果容易卡顿不要开这个",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "share_back_to_natuto": {
+                            "enabled": true
+                        },
+                        "ninja_book_share_back_to_natuto": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "分享策略": {
+            "description": "加速方式对社交软件的版本和启动速度有一定要求,需要启动速度较快",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "维稳",
+                    "option": [
+                        "分享等待社交软件启动时间"
+                    ]
+                },
+                {
+                    "name": "加速"
+                }
+            ]
+        },
+        "分享等待社交软件启动时间": {
+            "description": "一般只有当你的社交软件启动很慢的时候,才需要使用自定义选项,输入为自己设备启动qq时间(单位毫秒)",
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "等待时间",
+                    "label": "等待时间",
+                    "description": "输入等待时间,最大99999",
+                    "pipeline_type": "int",
+                    "default": "5000",
+                    "verify": "^[1-9]\\d{0,4}$"
+                }
+            ],
+            "pipeline_override": {
+                "try_share_to_qq": {
+                    "post_delay": "{等待时间}",
+                    "next": [
+                        "share_back_to_natuto",
+                        "close_qq_app"
+                    ]
+                },
+                "try_share_to_wechat": {
+                    "post_delay": "{等待时间}",
+                    "next": [
+                        "share_back_to_natuto",
+                        "close_wechat_app"
+                    ]
+                },
+                "ninja_book_share_to_wechat": {
+                    "post_delay": "{等待时间}",
+                    "next": [
+                        "ninja_book_share_back_to_natuto",
+                        "close_ninja_book_wechat_share"
+                    ]
+                },
+                "ninja_book_share_to_qq": {
+                    "post_delay": "{等待时间}",
+                    "next": [
+                        "ninja_book_share_back_to_natuto",
+                        "close_ninja_book_qq_share"
+                    ]
+                }
+            }
+        }
+    }
+}

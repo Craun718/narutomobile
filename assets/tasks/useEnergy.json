@@ -1,0 +1,35 @@
+{
+    "task": [
+        {
+            "name": "刷体力(精英副本)",
+            "entry": "use_energy",
+            "option": [
+                "精英副本一键全选"
+            ],
+            "default_check": true
+        }
+    ],
+    "option": {
+        "精英副本一键全选": {
+            "type": "switch",
+            "description": "开启后会勾选一键全选后再扫荡",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "use_energy_ez_sweep_entry": {
+                            "next": [
+                                "use_energy_check_one_key_select",
+                                "use_energy_check_not_one_key_select",
+                                "[JumpBack]use_energy_ez_sweep_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "task": [
+        {
+            "name": "邮箱",
+            "entry": "mail",
+            "default_check": true
+        }
+    ]
+}

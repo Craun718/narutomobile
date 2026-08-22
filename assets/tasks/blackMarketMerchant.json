@@ -1,0 +1,35 @@
+{
+    "task": [
+        {
+            "name": "黑市商人[二级密码](beta)",
+            "entry": "black_market_merchant",
+            "option": [
+                "黑市忍具之尘购买数量",
+                "忍界指引寻找黑市商人",
+                "从奖励中心进入"
+            ],
+            "description": "这个黑市商人是奸商,你需要在战力指导的陪同下使用这个功能;可以调一下只显示自己,关闭称号等,防止黑市商人被遮挡;[size:15][color:tomato]需要二级密码,你需要非常小心,MaaAutoNaruto不会对任何损失负责[/color][/size]"
+        }
+    ],
+    "option": {
+        "黑市忍具之尘购买数量": {
+            "type": "input",
+            "description": "注意可能因为OCR识别不到而失败,你确定要无视风险,继续使用吗",
+            "inputs": [
+                {
+                    "name": "购买数量",
+                    "label": "购买数量",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                }
+            ],
+            "pipeline_override": {
+                "black_market_merchant_check_gear_dust_quantity": {
+                    "expected": "{购买数量}",
+                    "threshold": 0
+                }
+            }
+        }
+    }
+}

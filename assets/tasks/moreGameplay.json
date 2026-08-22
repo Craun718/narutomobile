@@ -1,0 +1,251 @@
+{
+    "task": [
+        {
+            "name": "更多玩法(beta)",
+            "entry": "more_gameplay",
+            "option": [
+                "从奖励中心进入",
+                "百忍",
+                "绝迹战场",
+                "大蛇丸试炼",
+                "更多玩法打满奖励停止",
+                "百忍打满任务停止",
+                "打满奖励停止并领取奖励",
+                "百忍未开放时操作",
+                "百忍是否使用连点器战斗",
+                "更多玩法在开战页面开始"
+            ],
+            "description": "需要已经适配的主题或者在决斗场页面开启任务;也可以开启从奖励中心进入;目前适配百忍,绝迹和大蛇丸"
+        }
+    ],
+    "option": {
+        "百忍": {
+            "type": "switch",
+            "description": "百忍虽好,可是有开放时间限制的哦",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_hundred_ninja_gameplay": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "more_gameplay_hundred_ninja_gameplay": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "百忍未开放时操作": {
+            "type": "select",
+            "description": "其中无限等待选项会10秒尝试静入一次",
+            "cases": [
+                {
+                    "name": "尝试其他的玩法"
+                },
+                {
+                    "name": "直接返回主界面并结束任务",
+                    "pipeline_override": {
+                        "hundred_ninja_not_open": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "无限等待到开放",
+                    "pipeline_override": {
+                        "hundred_ninja_not_open": {
+                            "next": [
+                                "more_gameplay_hundred_ninja_gameplay",
+                                "more_gameplay_trace_vanish",
+                                "more_gameplay_orochimaru_trial",
+                                "[JumpBack]swipe_for_select_more_gameplay",
+                                "back_main_screen_and_stop"
+                            ]
+                        },
+                        "more_gameplay_hundred_ninja_gameplay": {
+                            "post_delay": 10000
+                        }
+                    }
+                }
+            ]
+        },
+        "绝迹战场": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_trace_vanish": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "more_gameplay_trace_vanish": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "大蛇丸试炼": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_orochimaru_trial": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "more_gameplay_orochimaru_trial": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "更多玩法打满奖励停止": {
+            "type": "switch",
+            "description": "打到2100分停止",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_go_fight": {
+                            "action": "DoNothing",
+                            "next": [
+                                "more_gameplay_check_point"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "百忍打满任务停止": {
+            "type": "switch",
+            "description": "打到2100分停止,不包括成就奖励",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "hundred_ninja_match": {
+                            "action": "DoNothing",
+                            "next": [
+                                "hundred_ninja_check_point"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "打满奖励停止并领取奖励": {
+            "type": "switch",
+            "description": "会领取百忍和更多玩法的奖励",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay_complete": {
+                            "next": [
+                                "more_gameplay_award",
+                                "more_gameplay_award_done"
+                            ]
+                        },
+                        "hundred_ninja_complete": {
+                            "next": [
+                                "hundred_ninja_award",
+                                "hundred_ninja_award_done"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "百忍是否使用连点器战斗": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "hundred_ninja_selcet_ninja": {
+                            "next": [
+                                "hundred_ninja_confirm_selcet_ninja",
+                                "[JumpBack]hundred_ninja_selcet_ninja",
+                                "hundred_ninja_fight"
+                            ]
+                        },
+                        "hundred_ninja_confirm_selcet_ninja": {
+                            "next": [
+                                "hundred_ninja_fight",
+                                "[JumpBack]hundred_ninja_selcet_ninja"
+                            ]
+                        },
+                        "hundred_ninja_check_no_fight": {
+                            "next": [
+                                "hundred_ninja_confirm_game_over",
+                                "hundred_ninja_windfall",
+                                "hundred_ninja_fight",
+                                "[JumpBack]wait_5_second"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "hundred_ninja_check_fight": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ]
+        },
+        "更多玩法在开战页面开始": {
+            "type": "switch",
+            "description": "这个选项可以在更多玩法加载不出图片的时候用",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "more_gameplay": {
+                            "next": [
+                                "hundred_ninja_match",
+                                "more_gameplay_in_trace_vanish",
+                                "more_gameplay_in_duel_field",
+                                "[JumpBack]more_gameplay_entry",
+                                "[JumpBack]back_main_screen"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

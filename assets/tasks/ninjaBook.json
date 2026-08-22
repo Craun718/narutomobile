@@ -1,0 +1,145 @@
+{
+    "task": [
+        {
+            "name": "忍法帖",
+            "entry": "ninja_book",
+            "option": [
+                "领取体验卡宝箱",
+                "是否领取奖励",
+                "分享后直接返回游戏",
+                "分享策略",
+                "跳过分享",
+                "宝匣挑战",
+                "忍法帖礼盒"
+            ],
+            "description": "[size:15][color:tomato]微信忍法帖分享部分设备可能会出现无法退出的情况,这种情况不保证能正常处理[/color][/size]由于社交软件版本多,设备延迟差异大.分享任务可能需要你调整选项到自己适合的配置,或者让拉起的社交软件是横版(平板版)并使用加速策略",
+            "default_check": true
+        }
+    ],
+    "option": {
+        "领取体验卡宝箱": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "get_ninja_book_award": {
+                            "template": [
+                                "Ninja_book/box_waiting.png",
+                                "Ninja_book/copper_60_waiting.png",
+                                "Ninja_book/fame_waiting.png",
+                                "Ninja_book/gold_waiting.png",
+                                "Ninja_book/star_waiting.png",
+                                "Ninja_book/energe_waiting.png",
+                                "Ninja_book/soul_waiting.png",
+                                "Ninja_book/box_waiting.png",
+                                "Ninja_book/wooden_spike_roll_waiting.png",
+                                "Ninja_book/seal_roll_waiting.png",
+                                "Ninja_book/defence_roll_waiting.png",
+                                "Ninja_book/title_waiting.png",
+                                "Ninja_book/exchange_token_waiting.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "是否领取奖励": {
+            "type": "select",
+            "description": "默认不领取奖励,方便卡超影,体力,体验卡",
+            "default_case": "否",
+            "cases": [
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "ninja_book_award_undone": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ]
+                        },
+                        "ninja_book_award_selected": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "是"
+                }
+            ]
+        },
+        "跳过分享": {
+            "type": "switch",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "ninja_book_undone": {
+                            "next": [
+                                "ninja_book_mission_undone",
+                                "ninja_book_mission_done"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "宝匣挑战": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "check_no_treasure_box_award": {
+                            "next": [
+                                "get_treasure_box_award",
+                                "treasure_box_challenge",
+                                "[JumpBack]get_treasure_box_award_one_key"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍法帖礼盒": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "treasure_box_undone": {
+                            "expected": [
+                                "礼"
+                            ]
+                        },
+                        "ninja_book_check_in_treasure_box_access_method": {
+                            "roi": [
+                                550,
+                                125,
+                                118,
+                                41
+                            ],
+                            "expected": [
+                                "每日活跃度"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

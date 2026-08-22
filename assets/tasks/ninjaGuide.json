@@ -1,0 +1,700 @@
+{
+    "option": {
+        "忍界指引寻找排行榜": {
+            "type": "select",
+            "description": "这个选项不需要选择",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "leaderboard_in_leaderboard",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "排行榜"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "leaderboard_in_leaderboard",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找任务集会所": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "check_in_mission_office",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "集会所"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "check_in_mission_office",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找积分赛": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "point_race_challenge_enter",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "积分赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "point_race_challenge_enter",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找修行之路": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "修行",
+                                "之路"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "修行",
+                                "之路"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "train_road_entry",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "修行",
+                                "之路"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "修行",
+                                "之路"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "train_road_entry",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找秘境": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_create_room",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_create_room",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找黑市商人": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "black_market_merchant_create_room",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "black_market_merchant_create_room",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找周胜": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑",
+                                    "忍"
+                                ],
+                                [
+                                    "双",
+                                    "忍"
+                                ],
+                                [
+                                    "米",
+                                    "术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑",
+                                    "忍"
+                                ],
+                                [
+                                    "双",
+                                    "忍"
+                                ],
+                                [
+                                    "米",
+                                    "术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑",
+                                    "忍"
+                                ],
+                                [
+                                    "双",
+                                    "忍"
+                                ],
+                                [
+                                    "米",
+                                    "术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "忍术对战"
+                            ],
+                            "replace": [
+                                [
+                                    "丑",
+                                    "忍"
+                                ],
+                                [
+                                    "双",
+                                    "忍"
+                                ],
+                                [
+                                    "米",
+                                    "术"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "打排位": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "goto_duel_field_by_guide": {
+                            "custom_action_param": {
+                                "entry_name": "忍术对战"
+                            },
+                            "focus": "[color:DeepSkyBlue]进入忍术对战[/color]"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "goto_duel_field_by_guide": {
+                            "custom_action_param": {
+                                "entry_name": "段位赛"
+                            },
+                            "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
+                        },
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "段位赛"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找要塞": {
+            "type": "select",
+            "description": "这个选项不需要选择",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "roi": [
+                                120,
+                                68,
+                                98,
+                                585
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "stronghold_gameplay",
+                                "no_group",
+                                "ninja_guide_to_funtion_entry",
+                                "stronghold_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "stronghold_gameplay",
+                                "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry",
+                                "stronghold_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找天地": {
+            "type": "select",
+            "description": "这个选项不需要选择",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "roi": [
+                                120,
+                                68,
+                                98,
+                                585
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "sky_ground_gameplay",
+                                "no_group",
+                                "ninja_guide_to_funtion_entry",
+                                "sky_ground_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "sky_ground_gameplay",
+                                "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry",
+                                "sky_ground_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找叛忍": {
+            "type": "select",
+            "description": "这个选项不需要选择",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "roi": [
+                                120,
+                                68,
+                                98,
+                                585
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "rebel_ninja_gameplay",
+                                "no_group",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "rebel_ninja_gameplay",
+                                "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "忍界指引寻找冠军送礼": {
+            "type": "select",
+            "description": "这个选项不需要选择",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "忍者大赛"
+                            ],
+                            "replace": [
+                                [
+                                    "丑",
+                                    "忍"
+                                ],
+                                [
+                                    "双",
+                                    "忍"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "忍者大赛"
+                            ],
+                            "replace": [
+                                [
+                                    "丑",
+                                    "忍"
+                                ],
+                                [
+                                    "双",
+                                    "忍"
+                                ]
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "champion_gift_to_event_center",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "忍者大赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "忍者大赛"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "champion_gift_to_event_center",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

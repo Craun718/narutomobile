@@ -1,0 +1,286 @@
+{
+    "task": [
+        {
+            "name": "进入火影",
+            "entry": "start_up",
+            "option": [
+                "设置启动超时时间",
+                "启动超时后行为",
+                "账号属性",
+                "允许MAN管理qq和火影信息",
+                "拒绝qq获取火影信息",
+                "am_start启动",
+                "启用协议自动勾选"
+            ],
+            "group": [
+                "daily"
+            ],
+            "description": "软件会关闭公告气泡;连点器任务可能不兼容**雷电模拟器**;如果此任务经常失败可以在[开始游戏按钮界面]或者[无公告游戏主界面]开启任务",
+            "default_check": true
+        },
+        {
+            "name": "切换账号(beta)",
+            "entry": "switch_account",
+            "option": [
+                "账号切换范围",
+                "目标区",
+                "目标社交媒体账号",
+                "允许MAN管理qq和火影信息",
+                "账号属性",
+                "拒绝qq获取火影信息",
+                "切换账号后行为",
+                "启用协议自动勾选"
+            ],
+            "description": "请在主页开始任务;需要拉起的qq是横版(平板版)界面;微信在模拟器上登录会封微信账号,只能扫码登录,所以不支持切微信账号"
+        }
+    ],
+    "option": {
+        "设置启动超时时间": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "20S",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "timeout": 20000
+                        }
+                    }
+                },
+                {
+                    "name": "10S",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "timeout": 10000
+                        }
+                    }
+                },
+                {
+                    "name": "30S",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "timeout": 30000
+                        }
+                    }
+                },
+                {
+                    "name": "45S",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "timeout": 45000
+                        }
+                    }
+                }
+            ],
+            "description": "超时时间计时从游戏启动到腾讯游戏界面结束,所以不用担心时间太短会反复重启"
+        },
+        "启动超时后行为": {
+            "type": "select",
+            "description": "最多只会尝试启动火影5次",
+            "cases": [
+                {
+                    "name": "启动火影",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "on_error": [
+                                "start_up"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "什么都不做"
+                },
+                {
+                    "name": "重启火影",
+                    "pipeline_override": {
+                        "start_naruto": {
+                            "on_error": [
+                                "restart_naruto"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "账号属性": {
+            "type": "select",
+            "description": "切换到的账号的类型;注意要确保自己调出的登录界面是横屏的",
+            "default_case": "安卓QQ",
+            "cases": [
+                {
+                    "name": "安卓QQ"
+                },
+                {
+                    "name": "苹果QQ",
+                    "pipeline_override": {
+                        "switch_account_switch_social_media_account": {
+                            "roi": [
+                                755,
+                                501,
+                                108,
+                                81
+                            ],
+                            "template": "SharedNode/ios_qq_login.png"
+                        },
+                        "start_up_switch_social_media_account": {
+                            "roi": [
+                                755,
+                                501,
+                                108,
+                                81
+                            ],
+                            "template": "SharedNode/ios_qq_login.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "允许MAN管理qq和火影信息": {
+            "type": "switch",
+            "description": "开启后man默认会自动帮你同意:火影获取qq信息,qq获取火影信息;如需要提前选择所有人不可见",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "agree_log_in": {
+                            "enabled": false
+                        },
+                        "agree_info": {
+                            "enabled": false
+                        },
+                        "refuse_info": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "agree_log_in": {
+                            "enabled": true
+                        },
+                        "agree_info": {
+                            "enabled": true
+                        },
+                        "refuse_info": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "拒绝qq获取火影信息": {
+            "type": "switch",
+            "description": "开启允许MAN管理qq和火影信息才会生效;在qq申请界面,拒绝qq获取火影信息;在低分辨率,卡顿等情况下不生效",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "before_game": {
+                            "next": [
+                                "click_start_game",
+                                "[JumpBack]start_up_loading",
+                                "[JumpBack]close_teenager_page",
+                                "[JumpBack]refuse_info",
+                                "[JumpBack]agree_log_in",
+                                "check_agreement",
+                                "agree_agreement",
+                                "[JumpBack]agreement_not_agree"
+                            ]
+                        },
+                        "start_up_switch_social_media_account": {
+                            "next": [
+                                "click_start_game",
+                                "[JumpBack]start_up_loading",
+                                "[JumpBack]close_teenager_page",
+                                "[JumpBack]refuse_info",
+                                "[JumpBack]agree_log_in"
+                            ]
+                        },
+                        "switch_account_find_target_qq_account": {
+                            "next": [
+                                "switch_account_to_switch_area",
+                                "[JumpBack]refuse_info",
+                                "[JumpBack]agree_log_in"
+                            ]
+                        },
+                        "agree_agreement": {
+                            "next": [
+                                "check_agreement",
+                                "agree_agreement",
+                                "[JumpBack]refuse_info",
+                                "[JumpBack]agree_log_in",
+                                "click_start_game",
+                                "[JumpBack]close_teenager_page"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "am_start启动": {
+            "type": "switch",
+            "description": "用不了monkey指令的模拟器,如雷电部分版本;开启后换成am start启动",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "start_up": {
+                            "action": "Shell",
+                            "cmd": "am start -n com.tencent.KiHan/com.itop.gcloud.msdk.core.policy.MSDKPolicyActivity.Substitute0"
+                        }
+                    }
+                }
+            ]
+        },
+        "启用协议自动勾选": {
+            "type": "switch",
+            "default_case": "No",
+            "description": "./DISCLAIMER.md",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "agree_agreement": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "协议确认"
+                    ]
+                }
+            ]
+        },
+        "协议确认": {
+            "type": "input",
+            "description": "如果您不同意启用协议自动勾选选项详情中MaaAutoNaruto的DISCLAIMER.md,请不要输入“我同意”,并请立即停止使用并销毁本工具的全部副本",
+            "inputs": [
+                {
+                    "name": "consent_text",
+                    "label": "必须输入“我同意”",
+                    "default": "",
+                    "verify": "^我同意$",
+                    "pattern_msg": "必须输入“我同意”"
+                }
+            ],
+            "pipeline_override": {
+                "agree_agreement": {
+                    "action": "Custom",
+                    "custom_action": "ClickWithConsent",
+                    "custom_action_param": "{consent_text}"
+                }
+            }
+        }
+    }
+}

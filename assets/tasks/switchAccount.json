@@ -1,0 +1,108 @@
+{
+    "task": [
+        {
+            "name": "切换账号(beta)",
+            "entry": "switch_account",
+            "option": [
+                "账号切换范围",
+                "目标区",
+                "目标社交媒体账号",
+                "允许MAN管理qq和火影信息",
+                "账号属性",
+                "拒绝qq获取火影信息",
+                "切换账号后行为",
+                "启用协议自动勾选"
+            ],
+            "description": "请在主页开始任务;需要拉起的qq是横版(平板版)界面;微信在模拟器上登录会封微信账号,只能扫码登录,所以不支持切微信账号"
+        }
+    ],
+    "option": {
+        "账号切换范围": {
+            "type": "select",
+            "description": "因为最终用户协议(EULA),换社交媒体账号时,你必须手动同意协议;",
+            "cases": [
+                {
+                    "name": "换区"
+                },
+                {
+                    "name": "换社交媒体账号",
+                    "pipeline_override": {
+                        "switch_account_already_in_target_area": {
+                            "enabled": false
+                        },
+                        "switch_account_in_before_game": {
+                            "next": "switch_account_to_switch_social_media_account"
+                        },
+                        "check_agreement": {
+                            "next": "switch_account_switch_social_media_account"
+                        }
+                    }
+                }
+            ]
+        },
+        "目标区": {
+            "type": "input",
+            "description": "需要切换的目标区",
+            "inputs": [
+                {
+                    "name": "区序号",
+                    "label": "区序号",
+                    "description": "需要切换的目标区的区序号",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^([1-9]\\d{0,4}|100000)$"
+                }
+            ],
+            "pipeline_override": {
+                "switch_account_already_in_target_area": {
+                    "expected": [
+                        "{区序号}"
+                    ]
+                },
+                "switch_account_find_target_area": {
+                    "custom_recognition_param": {
+                        "expected": "{区序号}"
+                    }
+                }
+            }
+        },
+        "目标社交媒体账号": {
+            "type": "input",
+            "description": "需要切换的目标社交媒体账号,子串即可,注意可能因为OCR识别不到而失败,此时输入容易识别的账号名子串",
+            "inputs": [
+                {
+                    "name": "账号名/账号",
+                    "label": "账号名/账号",
+                    "description": "需要切换的目标账号的账号名或者账号",
+                    "pipeline_type": "string",
+                    "default": "MaaAutoNaruto"
+                }
+            ],
+            "pipeline_override": {
+                "switch_account_find_target_qq_account": {
+                    "expected": [
+                        "{账号名/账号}"
+                    ]
+                }
+            }
+        },
+        "切换账号后行为": {
+            "type": "select",
+            "description": "切换后行为的行为;开启点击开始游戏后,切换账号之后的任务不需要进入火影任务",
+            "cases": [
+                {
+                    "name": "点击开始游戏"
+                },
+                {
+                    "name": "什么都不做",
+                    "pipeline_override": {
+                        "switch_account_in_start_game": {
+                            "action": "StopTask",
+                            "next": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

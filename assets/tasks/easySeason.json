@@ -1,0 +1,72 @@
+{
+    "task": [
+        {
+            "name": "轻松季(beta)",
+            "entry": "easy_season",
+            "option": [
+                "轻松季扫荡",
+                "秘境翻饰品牌",
+                "秘境翻忍具牌",
+                "秘境忍具每次只翻一张"
+            ]
+        }
+    ],
+    "option": {
+        "轻松季扫荡": {
+            "type": "switch",
+            "description": "轻松季领取扫荡卡,并扫荡",
+            "default_case": "Yes",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "easy_season_plus_energy_done": {
+                            "next": [
+                                "easy_season_plus_sweep_card",
+                                "easy_season_plus_back_to_easy_season_plus",
+                                "back_main_screen_and_stop"
+                            ]
+                        },
+                        "secret_realm_celebreate": {
+                            "next": [
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "easy_season_plus_back_to_easy_season_plus"
+                            ]
+                        },
+                        "secret_realm_celebreate_1": {
+                            "next": [
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "easy_season_plus_back_to_easy_season_plus"
+                            ]
+                        },
+                        "secret_realm_win": {
+                            "next": [
+                                "secret_realm_fight",
+                                "secret_realm_flip_without_card",
+                                "[JumpBack]secret_realm_flip_has_accessory_card",
+                                "[JumpBack]secret_realm_gear_card",
+                                "secret_realm_celebreate",
+                                "secret_realm_celebreate_1",
+                                "[JumpBack]secret_realm_win",
+                                "secret_realm_check_in_main"
+                            ]
+                        },
+                        "secret_realm_check_in_main": {
+                            "next": [
+                                "easy_season_enter",
+                                "easy_season_done",
+                                "easy_season_may_be_in_more",
+                                "[JumpBack]back_main_screen"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        }
+    }
+}

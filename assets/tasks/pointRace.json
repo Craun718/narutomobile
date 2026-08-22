@@ -1,0 +1,136 @@
+{
+    "task": [
+        {
+            "name": "积分赛",
+            "entry": "point_race",
+            "description": "领取当日奖励,挑战逻辑是挑战战力比自己低的,并不保证取胜",
+            "option": [
+                "积分赛强制战斗",
+                "积分赛跨服",
+                "积分赛战斗",
+                "积分赛挑战次数",
+                "积分赛失败后再战",
+                "从奖励中心进入",
+                "忍界指引寻找积分赛"
+            ],
+            "default_check": true
+        }
+    ],
+    "option": {
+        "积分赛强制战斗": {
+            "type": "switch",
+            "description": "开启后将无视战力差距直接进行挑战",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "point_race_challenge": {
+                            "recognition": {
+                                "param": {
+                                    "custom_recognition_param": {
+                                        "fource_battle": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "point_race_challenge": {
+                            "recognition": {
+                                "param": {
+                                    "custom_recognition_param": {
+                                        "fource_battle": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "积分赛失败后再战": {
+            "description": "胜败乃兵家常事界面的操作",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "point_race_direct_hit_quit": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ],
+                            "focus": "[color:DeepSkyBlue]积分赛失败[/color]"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes"
+                }
+            ]
+        },
+        "积分赛跨服": {
+            "description": "进行积分赛跨服挑战",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "wait_for_select_opponent": {
+                            "next": [
+                                "point_race_cross_server"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "积分赛战斗": {
+            "description": "是否寻找对手挑战,关闭后只会领取奖励",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "point_race_challenge_enter": {
+                            "action": "DoNothing",
+                            "next": [
+                                "point_race_quit",
+                                "point_race_challenge_enter"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "积分赛挑战次数": {
+            "description": "积分赛挑战次数设置",
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "积分赛挑战次数",
+                    "label": "积分赛挑战次数",
+                    "description": "输入需要的挑战次数,最大999",
+                    "pipeline_type": "int",
+                    "default": "1",
+                    "verify": "^[1-9]\\d{0,2}$"
+                }
+            ],
+            "pipeline_override": {
+                "point_race_check_overflow": {
+                    "custom_recognition_param": {
+                        "max_hit": "{积分赛挑战次数}"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "task": [
+        {
+            "name": "心悦会员",
+            "entry": "joy_club",
+            "description": "只会领取游戏内的周度礼包"
+        }
+    ]
+}

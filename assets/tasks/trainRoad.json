@@ -1,0 +1,34 @@
+{
+    "task": [
+        {
+            "name": "修行之路",
+            "entry": "shugyou_no_michi",
+            "default_check": true,
+            "description": "推关无法处理自动战斗不起效,时间停止等bug",
+            "option": [
+                "修行之路自动推关",
+                "从奖励中心进入",
+                "忍界指引寻找修行之路"
+            ]
+        }
+    ],
+    "option": {
+        "修行之路自动推关": {
+            "type": "switch",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "train_road_entry": {
+                            "next": "shugyou_no_michi_auto_push"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

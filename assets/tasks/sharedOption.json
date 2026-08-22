@@ -1,0 +1,76 @@
+{
+    "option": {
+        "从奖励中心进入": {
+            "type": "switch",
+            "description": "开启后选项所在任务从奖励中心进入,注意确保奖励中心对应任务以及对应任务相关选项可以进入",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "group": {
+                            "next": [
+                                "group_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "shugyou_no_michi": {
+                            "next": [
+                                "train_road_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "mission_office": {
+                            "next": [
+                                "mission_office_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "weekly_win": {
+                            "next": [
+                                "weekly_win_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "point_race": {
+                            "next": [
+                                "point_race_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "secret_realm": {
+                            "next": [
+                                "secret_realm_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "black_market_merchant": {
+                            "next": [
+                                "black_market_merchant_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "more_gameplay": {
+                            "next": [
+                                "more_gameplay_in_center_enter",
+                                "more_gameplay_in_duel_field",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

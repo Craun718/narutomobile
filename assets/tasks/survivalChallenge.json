@@ -1,0 +1,9 @@
+{
+    "task": [
+        {
+            "name": "生存挑战",
+            "entry": "survival_challenge",
+            "default_check": true
+        }
+    ]
+}

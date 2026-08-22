@@ -1,0 +1,164 @@
+{
+    "task": [
+        {
+            "name": "天地",
+            "entry": "sky_ground",
+            "option": [
+                "天地选择战场",
+                "守擂后游走避战",
+                "你的名字",
+                "天地选择额外奖励柱子",
+                "天地挑战",
+                "无限循环找柱子",
+                "天地玩法未开启时退出",
+                "忍界指引寻找天地"
+            ],
+            "description": "非常建议不要开挑战和额外奖励柱子,如果人多会很超雄,可能导致巨大压力"
+        }
+    ],
+    "option": {
+        "天地选择战场": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "天战场",
+                    "pipeline_override": {
+                        "ground_battlefield": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "地战场",
+                    "pipeline_override": {
+                        "sky_battlefield": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "守擂后游走避战": {
+            "type": "switch",
+            "description": "需要输入自己的ID,子串即可,可能识别失败依旧游走,名字和别人类似可能会不动",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "sky_ground_on_column": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "你的名字": {
+            "type": "input",
+            "description": "为上面的选项提供ID,只需要子串,识别ID成功时,不会点空柱子避战",
+            "inputs": [
+                {
+                    "name": "你的名字",
+                    "label": "输入游戏名",
+                    "pipeline_type": "string",
+                    "default": "MaaAutoNaruto"
+                }
+            ],
+            "pipeline_override": {
+                "sky_ground_on_column": {
+                    "expected": "{你的名字}"
+                }
+            }
+        },
+        "天地选择额外奖励柱子": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "sky_ground_to_award_column": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes"
+                }
+            ]
+        },
+        "天地挑战": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "sky_ground_to_fight_column": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes"
+                }
+            ]
+        },
+        "无限循环找柱子": {
+            "type": "switch",
+            "description": "测试功能无限寻找空柱子,实际上会寻找UINT_MAX(4294967295)次",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "left_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        },
+                        "right_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        },
+                        "up_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        },
+                        "down_swipe_for_empty_column": {
+                            "max_hit": 4294967295
+                        }
+                    }
+                }
+            ]
+        },
+        "天地玩法未开启时退出": {
+            "type": "switch",
+            "description": "开启会在识别到玩法未开启的时候退出",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "group_mode_not_open": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "sky_ground_mode": {
+                            "max_hit": 5
+                        },
+                        "sky_ground_battlefield_selection": {
+                            "next": [
+                                "sky_battlefield",
+                                "ground_battlefield",
+                                "sky_ground_settlement",
+                                "sky_ground_not_open"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "task": [
+        {
+            "name": "组织",
+            "entry": "group",
+            "default_check": true,
+            "description": "包含祈福签到和领奖，追击晓组织领奖。",
+            "option": [
+                "从奖励中心进入",
+                "忍界指引寻找组织"
+            ]
+        }
+    ],
+    "option": {
+        "忍界指引寻找组织": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "roi": [
+                                120,
+                                68,
+                                98,
+                                585
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "group_gameplay_undone",
+                                "group_gameplay_done",
+                                "no_group",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "group_gameplay_undone",
+                                "group_gameplay_done",
+                                "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

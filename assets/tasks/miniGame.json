@@ -1,0 +1,252 @@
+{
+    "task": [
+        {
+            "name": "小游戏",
+            "entry": "mini_game",
+            "option": [
+                "选择小游戏"
+            ],
+            "description": "小游戏可以主页进,也可以从有小游戏名的功能入口界面进"
+        }
+    ],
+    "option": {
+        "选择小游戏": {
+            "type": "select",
+            "description": "请尽量不要滥用这个功能影响其他人游戏体验",
+            "cases": [
+                {
+                    "name": "夏日回馈(beta)",
+                    "description": "夏日计划签到",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "summer_plan"
+                        }
+                    }
+                },
+                {
+                    "name": "送好礼摇铃",
+                    "description": "不会选择,只会签到",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "fine_gift_bell"
+                        }
+                    }
+                },
+                {
+                    "name": "奥义图大富翁(beta)",
+                    "description": "请在[送奥义]界面开启,不会自动领取宝箱和做网页活动",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "get_aoyi_picture"
+                        }
+                    }
+                },
+                {
+                    "name": "冠军送礼",
+                    "option": [
+                        "忍界指引寻找冠军送礼"
+                    ],
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "champion_gift"
+                        }
+                    }
+                },
+                {
+                    "name": "山中花店",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "flower_shop"
+                        }
+                    }
+                },
+                {
+                    "name": "抢红包",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "red_envelope"
+                        }
+                    }
+                },
+                {
+                    "name": "木叶小吃店",
+                    "option": [
+                        "木叶小吃店不选蓝红色奖励"
+                    ],
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "konoha_snack_shop"
+                        }
+                    }
+                },
+                {
+                    "name": "决斗场托管一把",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "timeout": 10000,
+                            "next": "weekly_win_match_fighting"
+                        }
+                    }
+                },
+                {
+                    "name": "合成赠礼",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "craft_gift"
+                        }
+                    }
+                },
+                {
+                    "name": "新春邮局",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "spring_festival_post_office"
+                        }
+                    }
+                },
+                {
+                    "name": "问答游戏(挂机)",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "konoha_question_and_answer"
+                        }
+                    }
+                },
+                {
+                    "name": "忍道交锋(beta)",
+                    "description": "刷不出来8个S箱",
+                    "option": [
+                        "忍道交锋刷什么"
+                    ],
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "nindao_clash"
+                        }
+                    }
+                },
+                {
+                    "name": "聚宝试炼领取奖励",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "treasure_gathering_trial"
+                        }
+                    }
+                },
+                {
+                    "name": "羁绊追寻",
+                    "option": [
+                        "羁绊追寻自动退出"
+                    ],
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "find_bonds"
+                        }
+                    }
+                }
+            ]
+        },
+        "忍道交锋刷什么": {
+            "description": "要刷的箱子等级,遇到低于期望等级的箱子会刷新",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "4倍S箱",
+                    "pipeline_override": {
+                        "nindao_clash_check_recognition_area": {
+                            "next": [
+                                "[JumpBack]nindao_clash_get_award",
+                                "nindao_clash_gold_4",
+                                "nindao_clash_gold_8",
+                                "[JumpBack]nindao_clash_refresh",
+                                "nindao_clash_without_red_point",
+                                "[JumpBack]nindao_clash_anime_on"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "A箱子",
+                    "pipeline_override": {
+                        "nindao_clash_check_recognition_area": {
+                            "next": [
+                                "[JumpBack]nindao_clash_get_award",
+                                "nindao_clash_mid",
+                                "nindao_clash_gold_4",
+                                "nindao_clash_gold_8",
+                                "[JumpBack]nindao_clash_refresh",
+                                "nindao_clash_without_red_point",
+                                "[JumpBack]nindao_clash_anime_on"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "最逊的那个",
+                    "pipeline_override": {
+                        "nindao_clash_check_recognition_area": {
+                            "next": [
+                                "[JumpBack]nindao_clash_get_award",
+                                "nindao_clash_low",
+                                "nindao_clash_mid",
+                                "nindao_clash_gold_4",
+                                "nindao_clash_gold_8",
+                                "[JumpBack]nindao_clash_refresh",
+                                "nindao_clash_without_red_point",
+                                "[JumpBack]nindao_clash_anime_on"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "羁绊追寻自动退出": {
+            "description": "羁绊追寻剩余数字离图片太近不好识别,建议关闭自动退出",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "find_bonds_card_flip_loop": {
+                            "next": [
+                                "find_bonds_card_flip_win",
+                                "[JumpBack]find_bonds_card_flip_loop"
+                            ]
+                        },
+                        "find_bonds_card_flip_start": {
+                            "next": [
+                                "find_bonds_card_flip_loop"
+                            ]
+                        },
+                        "find_bonds_without_card_flip_win": {
+                            "next": [
+                                "find_bonds_card_flip_loop"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes"
+                }
+            ]
+        },
+        "木叶小吃店不选蓝红色奖励": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "konoha_snack_mid": {
+                            "enabled": false
+                        },
+                        "konoha_snack_high": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
