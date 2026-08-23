@@ -8,9 +8,12 @@ include:
   - interface.json
   - resource/**
   - agent/**
+  - tasks/**
   - docs/imgs/logo.png
+  - docs/game_agreement/**
   - CONTACT
   - LICENSE
+  - DISCLAIMER.md
 
 # announcement 的 md 只给桌面端看；识别用的图和模型都在 resource/base 里，别挖
 exclude:
