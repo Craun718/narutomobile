@@ -481,3 +481,6 @@ temp
 
 # Node.js
 .pnpm-store/v11/index.db
+
+# macOS
+.DS_Store
