@@ -97,6 +97,10 @@ jobs:
           name: MaaAutoNaruto-android-release-${{ github.ref_name }}
           path: release-assets/android
 
+      - name: Rename APK
+        run: |
+          mv release-assets/android/app-release.apk "release-assets/android/MaaAutoNaruto-android-${{ github.ref_name }}.apk"
+
       - name: Download changelog
         uses: actions/download-artifact@v8
         with:
