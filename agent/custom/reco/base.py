@@ -357,8 +357,8 @@ class MissionOfficeStrategy(CustomRecognition):
     策略
     目前刷新上限 ROI: [1004,614,27,27]
     可接受任务 ROI: [1003,648,22,28]
-    判断公式：(目前刷新上限 - 9) * 1.5 >= 可接受任务
-    也就是期望是一次刷新能刷1.5个神秘箱子任务,我是直接用9/6,可能不准
+    判断公式：(目前刷新上限 - 9) * 3 >= 可接受任务
+    也就是期望是一次刷新能刷3个神秘箱子任务,紫箱子比较转
     """
 
     # 资源上限 识别ROI
@@ -392,7 +392,7 @@ class MissionOfficeStrategy(CustomRecognition):
 
         logger.info(f"[MissionOfficeStrategy] 识别结果：刷新上限={max_resource},可接取={current_resource}")
 
-        condition = (max_resource - 9) * 1.5 >= current_resource
+        condition = (max_resource - 9) * 3 >= current_resource
         if condition:
             logger.info("[MissionOfficeStrategy] 公式条件成立，返回识别通过(贪心策略)")
             return CustomRecognition.AnalyzeResult(box=Rect(0, 0, 1, 1), detail={})
