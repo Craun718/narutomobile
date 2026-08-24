@@ -100,43 +100,11 @@
                     "enabled": false
                 },
                 {
-                    "name": "要塞",
-                    "enabled": false
-                },
-                {
-                    "name": "天地",
-                    "enabled": false
-                },
-                {
-                    "name": "叛忍(beta)",
-                    "enabled": false
-                },
-                {
-                    "name": "更多玩法(beta)",
-                    "enabled": false
-                },
-                {
                     "name": "小游戏",
                     "enabled": false
                 },
                 {
                     "name": "心悦会员",
-                    "enabled": false
-                },
-                {
-                    "name": "冒险副本",
-                    "enabled": false
-                },
-                {
-                    "name": "精英副本",
-                    "enabled": false
-                },
-                {
-                    "name": "修罗副本",
-                    "enabled": false
-                },
-                {
-                    "name": "黑市商人[二级密码](beta)",
                     "enabled": false
                 },
                 {
