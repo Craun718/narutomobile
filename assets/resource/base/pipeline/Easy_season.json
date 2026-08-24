@@ -132,6 +132,7 @@
         "next": [
             "easy_season_one_key_done",
             "easy_season_no_gold_sweep",
+            "confirm_easy_season_one_key",
             "[JumpBack]easy_season_one_key"
         ],
         "focus": "[color:DeepSkyBlue]打开轻松季[/color]"
@@ -304,7 +305,7 @@
         "action": "Click",
         "post_delay": 200,
         "next": [
-            "easy_season_plus_select",
+            "easy_season_plus_in_season_plus",
             "easy_season_plus"
         ]
     },
@@ -317,6 +318,21 @@
             321
         ],
         "template": "Easy_season/plus_select.png",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "easy_season_plus_in_season_plus"
+        ]
+    },
+    "easy_season_plus_in_season_plus": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            170,
+            316,
+            106,
+            108
+        ],
+        "template": "Easy_season/in_plus.png",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -451,18 +467,17 @@
     "easy_season_plus_end_to_easy_season_select": {
         "recognition": "TemplateMatch",
         "roi": [
-            0,
-            140,
-            202,
-            321
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
             "easy_season_plus_sweep_card",
             "easy_season_plus_find_team_sweep_card_event",
-            "easy_season_plus_back_to_easy_season_plus",
             "back_main_screen_and_stop"
         ]
     },
@@ -470,12 +485,12 @@
         "max_hit": 6,
         "recognition": "TemplateMatch",
         "roi": [
-            0,
-            140,
-            202,
-            321
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "pre_delay": 0,
         "action": "Swipe",
         "begin": [
@@ -682,12 +697,12 @@
     "easy_season_plus_back_to_easy_season_plus": {
         "recognition": "TemplateMatch",
         "roi": [
-            12,
-            137,
-            192,
-            318
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "method": 10001,
         "threshold": 0.95,
         "next": [
@@ -749,12 +764,12 @@
         "max_hit": 6,
         "recognition": "TemplateMatch",
         "roi": [
-            0,
-            140,
-            202,
-            321
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "pre_delay": 0,
         "action": "Swipe",
         "begin": [
@@ -776,12 +791,12 @@
     "easy_season_plus_back_plus_select_from_secret_realm_celebreate": {
         "recognition": "TemplateMatch",
         "roi": [
-            0,
-            140,
-            202,
-            321
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "method": 10001,
         "threshold": 0.95,
         "pre_delay": 0,
@@ -898,12 +913,12 @@
     "easy_season_plus_find_team_dash_back_to_main": {
         "recognition": "TemplateMatch",
         "roi": [
-            0,
-            140,
-            202,
-            321
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -953,12 +968,12 @@
         "max_hit": 6,
         "recognition": "TemplateMatch",
         "roi": [
-            0,
-            140,
-            202,
-            321
+            170,
+            316,
+            106,
+            108
         ],
-        "template": "Easy_season/plus_select.png",
+        "template": "Easy_season/in_plus.png",
         "pre_delay": 0,
         "action": "Swipe",
         "begin": [
