@@ -748,7 +748,8 @@
             51
         ],
         "expected": [
-            "不足"
+            "不足",
+            "通关"
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -938,7 +939,8 @@
             51
         ],
         "expected": [
-            "上限"
+            "上限",
+            "通关"
         ],
         "pre_delay": 0,
         "post_delay": 0,
