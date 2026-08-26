@@ -14,7 +14,7 @@
         "recognition": "Custom",
         "custom_recognition": "CheckIsAndroid",
         "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]",
-        "next": "back_main_screen"
+        "next": "back_main_screen_and_stop"
     },
     "share_in_center_enter": {
         "recognition": "TemplateMatch",
