@@ -10,8 +10,8 @@ on:
     types: [released]
 
 jobs:
-  mirrorchyan:
-    runs-on: macos-latest
+  mirrorchyan_mfa:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -47,8 +47,31 @@ jobs:
           os: ${{ matrix.os }}
           arch: ${{ matrix.arch }}
 
+  # mirrorchyan_maafwApp:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       os: [android]
+  #       arch: [arm64]
+  #   steps:
+  #     - id: uploading
+  #       uses: MirrorChyan/uploading-action@v1
+  #       with:
+  #         filetype: latest-release
+  #         filename: "MaaAutoNaruto-${{ matrix.os }}-${{ matrix.arch }}-*.apk"
+  #         mirrorchyan_rid: MaaAutoNaruto
+  #         tag: ${{ inputs.tag }}
+
+  #         owner: duorua
+  #         repo: narutomobile
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         upload_token: ${{ secrets.MirrorChyanUploadToken }}
+  #         os: ${{ matrix.os }}
+  #         arch: ${{ matrix.arch }}
+
   mirrorchyan_res:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - id: uploading
         uses: MirrorChyan/uploading-action@v1
