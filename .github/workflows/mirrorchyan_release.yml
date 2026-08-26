@@ -39,7 +39,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [android]
-        arch: [universal]
+        arch: [arm64]
     steps:
       - id: uploading
         uses: MirrorChyan/uploading-action@v1
