@@ -3,11 +3,18 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "is_android_then_no_share",
             "share_in_center_enter",
             "share_ac_entry",
             "[JumpBack]back_main_screen_before_task"
         ],
         "focus": "[color:DeepSkyBlue]进入分享任务[/color]"
+    },
+    "is_android_then_no_share": {
+        "recognition": "Custom",
+        "custom_recognition": "CheckIsAndroid",
+        "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]",
+        "next": "back_main_screen"
     },
     "share_in_center_enter": {
         "recognition": "TemplateMatch",
