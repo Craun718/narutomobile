@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 
+from loguru import Logger
 from loguru import logger as _logger
 
 from utils import debug_dir
@@ -9,7 +10,7 @@ from utils import debug_dir
 log_dir = debug_dir / "custom"
 
 
-def setup_logger(log_dir: Path = log_dir, console_level: str = "INFO"):
+def setup_logger(log_dir: Path = log_dir, console_level: str = "INFO") -> Logger:
     """
     Set up the logger with optional file logging.
 
