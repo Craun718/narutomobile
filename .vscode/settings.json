@@ -17,23 +17,15 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "/interface.json"
+                "/assets/interface.json"
             ],
-            "url": "./tools/schema/interface.schema.json"
+            "url": "/deps/tools/interface.schema.json"
         },
         {
             "fileMatch": [
-                "/tasks/*.json"
+                "/assets/resource/**/*.json"
             ],
-            "url": "./tools/schema/interface_import.schema.json"
-        },
-        {
-            "fileMatch": [
-                "/resource/*/default_pipeline.json",
-                "/resource/*/pipeline/*.json",
-                "/resource/*/pipeline/**/*.json"
-            ],
-            "url": "./tools/schema/pipeline.schema.json"
+            "url": "/deps/tools/pipeline.schema.json"
         }
     ]
 }
