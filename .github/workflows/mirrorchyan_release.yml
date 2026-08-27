@@ -15,14 +15,28 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [win, macos, linux]
-        arch: [x86_64, aarch64]
+        include:
+          - os: win
+            arch: x86_64
+            filename: "MaaAutoNaruto-win-x86_64-*.zip"
+          - os: linux
+            arch: x86_64
+            filename: "MaaAutoNaruto-linux-x86_64-*.zip"
+          - os: macos
+            arch: x86_64
+            filename: "MaaAutoNaruto-macos-x86_64-*.zip"
+          - os: macos
+            arch: aarch64
+            filename: "MaaAutoNaruto-macos-aarch64-*.zip"
+          - os: android
+            arch: ""
+            filename: "MaaAutoNaruto-android-*.apk"
     steps:
       - id: uploading
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: "MaaAutoNaruto-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
+          filename: ${{ matrix.filename }}
           mirrorchyan_rid: MaaAutoNaruto
           tag: ${{ inputs.tag }}
 
