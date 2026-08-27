@@ -13,8 +13,8 @@
     "is_android_then_no_share": {
         "recognition": "Custom",
         "custom_recognition": "CheckIsAndroid",
-        "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]",
-        "next": "back_main_screen_and_stop"
+        "next": "back_main_screen_and_stop",
+        "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]"
     },
     "share_in_center_enter": {
         "recognition": "TemplateMatch",

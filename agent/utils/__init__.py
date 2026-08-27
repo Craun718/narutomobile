@@ -1,5 +1,5 @@
 import json
-import os
+import os  # noqa: F401
 from base64 import b64decode
 from datetime import datetime
 from pathlib import Path
