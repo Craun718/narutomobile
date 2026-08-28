@@ -1,0 +1,39 @@
+name: auto-merge-dependabot
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions: {}
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    # 只处理 Dependabot 自己提的 PR（防止误触发其他 PR）
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # patch / minor / 非 major（包括带 :security 后缀的）都自动 squash merge
+      - name: Enable auto-merge for non-major updates
+        if: |
+          steps.meta.outputs.update-type != 'version-update:semver-major' &&
+          steps.meta.outputs.update-type != ''
+        run: |
+          gh pr merge --auto --squash "$PR_URL"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+
+      # major 版本单独走一条提示，方便在 Actions 面板里看到
+      - name: Skip auto-merge for major version updates
+        if: steps.meta.outputs.update-type == 'version-update:semver-major'
+        run: |
+          echo "::warning::Skipping major version bump for ${{ github.event.pull_request.html_url }} — manual review required."
