@@ -750,10 +750,13 @@
         "method": 10001,
         "threshold": 0.95,
         "next": [
+            "easy_season_plus_sweep_card",
             "easy_season_plus_sweep_card_event_done",
             "easy_season_plus_find_sweep_card_event",
             "easy_season_plus_end",
-            "[JumpBack]swipe_for_easy_season_plus_find_sweep_card_event"
+            "[JumpBack]swipe_for_easy_season_plus_find_sweep_card_event",
+            "easy_season_plus_back_to_easy_season_plus",
+            "easy_season_plus_end_to_easy_season"
         ]
     },
     "easy_season_plus_find_sweep_card_event": {
