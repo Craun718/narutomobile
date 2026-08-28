@@ -18,7 +18,8 @@
                 "CheckGetCopperCount",
                 "CheckBuyEnergyCount",
                 "Shopping",
-                "SwitchAccountFindTargetArea"
+                "SwitchAccountFindTargetArea",
+                "CheckIsAndroid"
             ]
         },
         "custom_recognition_param": {

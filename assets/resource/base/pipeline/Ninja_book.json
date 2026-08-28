@@ -1107,11 +1107,18 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
+            "ninja_book_is_android_then_no_share",
             "ninja_book_share_to_qq",
             "ninja_book_share_to_wechat",
             "[JumpBack]ninja_book_share"
         ],
         "focus": "[color:darkgray]进入分享页面[/color]"
+    },
+    "ninja_book_is_android_then_no_share":{
+        "recognition": "Custom",
+        "custom_recognition": "CheckIsAndroid",
+        "next": "close_ninja_book_leaderboard",
+        "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]"
     },
     "close_ninja_book_leaderboard": {
         "recognition": "TemplateMatch",
