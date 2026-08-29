@@ -94,6 +94,12 @@ def install_resource(version):
         dirs_exist_ok=True,
     )
 
+    shutil.copytree(
+        working_dir / "assets" / "tasks",
+        install_path / "tasks",
+        dirs_exist_ok=True,
+    )
+
     shutil.copy2(
         working_dir / "assets" / "interface.json",
         install_path,
@@ -113,7 +119,7 @@ def install_resource(version):
 
 
 def install_chores():
-    for file in ["README.md", "LICENSE", "requirements.txt", "CONTACT"]:
+    for file in ["README.md", "LICENSE", "requirements.txt", "CONTACT", "DISCLAIMER.md"]:
         shutil.copy2(
             working_dir / file,
             install_path,

@@ -1,0 +1,40 @@
+{
+    "task": [
+        {
+            "name": "任务集会所(beta)",
+            "entry": "mission_office",
+            "description": "遇到忍者不足无法出发,这种情况不好安排超影刷新,会进入结束任务流程,建议忍者少的检查一下",
+            "option": [
+                "任务集会所超影处理(beta)",
+                "从奖励中心进入",
+                "忍界指引寻找任务集会所"
+            ],
+            "group": [
+                "daily"
+            ],
+            "default_check": true
+        }
+    ],
+    "option": {
+        "任务集会所超影处理(beta)": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "check_no_mission_office_award": {
+                            "next": [
+                                "[JumpBack]celebrate_mission_office_award",
+                                "mission_office_above_kage",
+                                "mission_office_get_mission"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

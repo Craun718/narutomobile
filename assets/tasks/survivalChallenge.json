@@ -1,0 +1,12 @@
+{
+    "task": [
+        {
+            "name": "生存挑战",
+            "entry": "survival_challenge",
+            "group": [
+                "daily"
+            ],
+            "default_check": true
+        }
+    ]
+}

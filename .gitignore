@@ -415,7 +415,7 @@ FodyWeavers.xsd
 **/.vscode/*
 .vscode/*
 !.vscode/settings.json
-# !.vscode/tasks.json
+!.vscode/tasks.json
 # !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
@@ -469,6 +469,10 @@ install/debug/maa.log
 .nicegui/storage-general.json
 .venv
 
+# MaaFwApp 打包中间产物
+Android/pi-root/
+Android/agent-dist/
+
 config
 assets/resource/model/ocr
 assets/resource/base/model/ocr
@@ -478,9 +482,5 @@ temp
 # Node.js
 .pnpm-store/v11/index.db
 
-
-# Android
-## 仅由 tool/generator_pi_profile.py 生成，不需要提交
-pi-profile.yaml
-
-.android-build/
+# macOS
+.DS_Store

@@ -1,0 +1,150 @@
+{
+    "task": [
+        {
+            "name": "叛忍(beta)",
+            "entry": "rebel_ninja",
+            "option": [
+                "叛忍敌人等级",
+                "叛忍只显示自己",
+                "叛忍难度",
+                "叛忍开双倍",
+                "叛忍玩法未开启时退出",
+                "忍界指引寻找叛忍"
+            ],
+            "group": [
+                "weekly"
+            ],
+            "description": "尽量开启只显示自己,防止目标被遮挡,可以在叛忍地图打开;还不能打首领;部分选项是首领功能,[size:15][color:tomato]需要二级密码,你需要非常小心,MaaAutoNaruto不会对任何损失负责[/color][/size]"
+        }
+    ],
+    "option": {
+        "叛忍敌人等级": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "高级"
+                },
+                {
+                    "name": "中级",
+                    "pipeline_override": {
+                        "rebel_ninja_find_back_enemy": {
+                            "expected": [
+                                "中级"
+                            ]
+                        },
+                        "rebel_ninja_in_battlefield": {
+                            "next": [
+                                "rebel_ninja_mid_enemy",
+                                "[JumpBack]rebel_ninja_find_enemy"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "低级",
+                    "pipeline_override": {
+                        "rebel_ninja_find_back_enemy": {
+                            "expected": [
+                                "低级"
+                            ]
+                        },
+                        "rebel_ninja_in_battlefield": {
+                            "next": [
+                                "rebel_ninja_low_enemy",
+                                "[JumpBack]rebel_ninja_find_enemy"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "叛忍只显示自己": {
+            "description": "活跃组织使用,还在测试",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "rebel_ninja_only_me": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "叛忍难度": {
+            "type": "select",
+            "description": "首领功能",
+            "cases": [
+                {
+                    "name": "困难"
+                },
+                {
+                    "name": "普通",
+                    "pipeline_override": {
+                        "rebel_ninja_double_mode_checked": {
+                            "next": [
+                                "rebel_ninja_easy_mode",
+                                "rebel_ninja_easy_mode_checked"
+                            ]
+                        },
+                        "rebel_ninja_single_mode_checked": {
+                            "next": [
+                                "rebel_ninja_easy_mode",
+                                "rebel_ninja_easy_mode_checked"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "叛忍开双倍": {
+            "type": "switch",
+            "description": "首领功能",
+            "cases": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "rebel_ninja_double_mode": {
+                            "next": [
+                                "rebel_ninja_single_mode",
+                                "rebel_ninja_single_mode_checked",
+                                "rebel_ninja_summon_member"
+                            ]
+                        },
+                        "rebel_ninja_without_not_open": {
+                            "next": [
+                                "rebel_ninja_single_mode",
+                                "rebel_ninja_single_mode_checked",
+                                "rebel_ninja_summon_member"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "叛忍玩法未开启时退出": {
+            "type": "switch",
+            "description": "开启会在识别到玩法未开启的时候退出",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "rebel_ninja_without_not_open": {
+                            "next": "back_main_screen_and_stop"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

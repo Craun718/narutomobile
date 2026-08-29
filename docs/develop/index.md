@@ -15,7 +15,7 @@
 
 1. **安装 VSCode** - 代码编辑器
 2. **安装 Git** - 版本控制工具
-3. **安装 Python** - 开发语言（**≥3.12**，推荐使用 **Python 3.12.9** 版本）
+3. **安装 Python** - 开发语言（**≥3.13**，推荐使用 **Python 3.13.15** 版本）
 
 ### 1.3 可选开发工具
 
@@ -35,8 +35,8 @@
 访问华为云镜像站下载 Python：
 
 > [!NOTE]
-> **镜像地址：** [https://repo.huaweicloud.com/python/3.12.9/](https://repo.huaweicloud.com/python/3.12.9/)
-> **推荐下载：** [https://repo.huaweicloud.com/python/3.12.9/python-3.12.9-amd64.exe](https://repo.huaweicloud.com/python/3.12.9/python-3.12.9-amd64.exe)
+> **镜像地址：** [https://repo.huaweicloud.com/python/3.13.15/](https://repo.huaweicloud.com/python/3.13.15/)
+> **推荐下载：** [https://repo.huaweicloud.com/python/3.13.15/python-3.13.15-amd64.exe](https://repo.huaweicloud.com/python/3.13.15/python-3.13.15-amd64.exe)
 
 ### 2.2 安装 Python
 

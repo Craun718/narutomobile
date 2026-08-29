@@ -1,43 +1,31 @@
 {
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.jsonc": "jsonc"
+    },
+    "files.eol": "\n",
     "json.schemas": [
         {
             "fileMatch": [
-                "/assets/resource/**/*.json",
-                "/install/resource/**/*.json"
-            ],
-            "url": "/deps/tools/pipeline.schema.json"
-        },
-        {
-            "fileMatch": [
-                "/assets/interface.json",
-                "/install/interface.json"
+                "/assets/interface.json"
             ],
             "url": "/deps/tools/interface.schema.json"
         },
         {
             "fileMatch": [
-                "/install/config/maa_pi_config.json"
+                "/assets/resource/**/*.json"
             ],
-            "url": "/deps/tools/interface_config.schema.json"
+            "url": "/deps/tools/pipeline.schema.json"
         }
-    ],
-    "files.associations": {
-        "*.json": "jsonc"
-    },
-    "[jsonc]": {
-        "editor.formatOnSave": true,
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4,
-        "editor.indentSize": "tabSize"
-    },
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit"
-        }
-    },
-    "ruff.line-length": 120,
-    "files.insertFinalNewline": true
+    ]
 }

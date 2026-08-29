@@ -1,0 +1,37 @@
+{
+    "task": [
+        {
+            "name": "送体力",
+            "entry": "give_energy",
+            "option": [
+                "选择账号好友送体力"
+            ],
+            "group": [
+                "daily"
+            ],
+            "default_check": true
+        }
+    ],
+    "option": {
+        "选择账号好友送体力": {
+            "description": "在没有游戏好友的时候,给qq或者微信好友送体力",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "energy_entry": {
+                            "next": [
+                                "give_energy_account_friend",
+                                "energy_entry"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

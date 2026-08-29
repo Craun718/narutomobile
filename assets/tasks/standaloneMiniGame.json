@@ -1,0 +1,108 @@
+{
+    "task": [
+        {
+            "name": "夏日回馈(beta)",
+            "entry": "summer_plan",
+            "group": [
+                "event"
+            ],
+            "description": "不会选择,只会签到"
+        },
+        {
+            "name": "送好礼摇铃",
+            "entry": "fine_gift_bell",
+            "group": [
+                "event"
+            ],
+            "description": "不会选择,只会签到"
+        },
+        {
+            "name": "奥义图大富翁(beta)",
+            "entry": "get_aoyi_picture",
+            "group": [
+                "event"
+            ],
+            "description": "请在[送奥义]界面开启,不会自动领取宝箱和做网页活动"
+        },
+        {
+            "name": "山中花店",
+            "entry": "flower_shop",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "抢红包",
+            "entry": "red_envelope",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "木叶小吃店",
+            "entry": "konoha_snack_shop",
+            "option": [
+                "木叶小吃店不选蓝红色奖励"
+            ],
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "决斗场托管一把",
+            "entry": "weekly_win_match_fighting",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "合成赠礼",
+            "entry": "craft_gift",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "新春邮局",
+            "entry": "spring_festival_post_office",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "问答游戏(挂机)",
+            "entry": "konoha_question_and_answer",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "忍道交锋(beta)",
+            "entry": "nindao_clash",
+            "group": [
+                "event"
+            ],
+            "option": [
+                "忍道交锋刷什么"
+            ],
+            "description": "刷不出来8个S箱,所以没做8个s箱的选项"
+        },
+        {
+            "name": "聚宝试炼领取奖励",
+            "entry": "treasure_gathering_trial",
+            "group": [
+                "event"
+            ]
+        },
+        {
+            "name": "羁绊追寻",
+            "entry": "find_bonds",
+            "option": [
+                "羁绊追寻自动退出"
+            ],
+            "group": [
+                "event"
+            ]
+        }
+    ]
+}

@@ -1,15 +1,21 @@
+from __future__ import annotations
+
 import sys
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from loguru import logger as _logger
 
 from utils import debug_dir
 
+if TYPE_CHECKING:
+    import loguru
+
 # 默认日志目录使用绝对路径
 log_dir = debug_dir / "custom"
 
 
-def setup_logger(log_dir: Path = log_dir, console_level: str = "INFO"):
+def setup_logger(log_dir: Path = log_dir, console_level: str = "INFO") -> loguru.Logger:
     """
     Set up the logger with optional file logging.
 

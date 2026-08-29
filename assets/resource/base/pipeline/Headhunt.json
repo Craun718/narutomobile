@@ -91,10 +91,10 @@
     "headhunt_whole_ninja": {
         "recognition": "TemplateMatch",
         "roi": [
-            654,
-            592,
-            251,
-            113
+            400,
+            458,
+            614,
+            261
         ],
         "template": "SharedNode/confirm.png",
         "pre_delay": 0,
@@ -313,6 +313,7 @@
         "focus": "[color:DeepSkyBlue]绝密宝匣已完成[/color]"
     },
     "top_secret_treasure_box_log": {
+        "max_hit": 20,
         "recognition": "TemplateMatch",
         "roi": [
             1210,
@@ -330,6 +331,7 @@
             "top_secret_treasure_box_copper",
             "top_secret_treasure_box_log"
         ],
+        "on_error": "back_main_screen_and_stop",
         "focus": "[color:DeepSkyBlue]进入绝密宝匣奖励记录[/color]"
     },
     "top_secret_treasure_box_copper": {
@@ -360,10 +362,10 @@
     "top_secret_treasure_box_without_copper": {
         "recognition": "OCR",
         "roi": [
-            484,
-            316,
-            299,
-            80
+            423,
+            337,
+            440,
+            43
         ],
         "expected": "没有可领取",
         "pre_delay": 0,

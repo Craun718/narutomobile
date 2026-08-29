@@ -1,0 +1,12 @@
+{
+    "task": [
+        {
+            "name": "邮箱",
+            "entry": "mail",
+            "group": [
+                "daily"
+            ],
+            "default_check": true
+        }
+    ]
+}

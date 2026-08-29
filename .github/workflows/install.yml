@@ -6,8 +6,6 @@ env:
 
 on:
   push:
-    tags:
-      - "v*"
     branches:
       - "**"
     paths:
@@ -22,18 +20,36 @@ on:
       - "assets/**"
       - "**.py"
   workflow_dispatch:
+    inputs:
+      version:
+        description: Artifact version (leave empty to use the CI version)
+        required: false
+        type: string
+  workflow_call:
+    inputs:
+      version:
+        description: Version used in artifact names
+        required: true
+        type: string
+
+permissions:
+  contents: read
 
 jobs:
   meta:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - id: set_tag
         run: |
-          # 检查标签格式
-          is_release=${{ startsWith(github.ref, 'refs/tags/v') }}
+          requested_version="${{ inputs.version }}"
+          if [[ -n "$requested_version" ]]; then
+            echo "tag=$requested_version" | tee -a "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           tag=$(git describe --tags --match "v*" ${{ github.ref }} || true)
           if [[ $tag != v* ]]; then
             tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
@@ -43,26 +59,13 @@ jobs:
             tag=$(date "+$tag-%y%m%d-$(git rev-parse --short HEAD)")
           fi
 
-          if ! $($is_release) ; then
-            prefix=${tag%-*-*}
-            suffix=${tag#$prefix-}
-            tag="$prefix-ci.$suffix"
-          fi
+          prefix=${tag%-*-*}
+          suffix=${tag#$prefix-}
+          tag="$prefix-ci.$suffix"
 
-          # 检查是否为预发布版本
-          is_prerelease=false
-          if [[ $tag =~ .*alpha.* || $tag =~ .*beta.* || $tag =~ .*rc.* || $tag =~ .*dev.* || $tag =~ .*-ci.* ]]; then
-            is_prerelease=true
-            echo "This is a pre-release version"
-          fi
-
-          echo tag=$tag | tee -a $GITHUB_OUTPUT
-          echo is_release=$is_release | tee -a $GITHUB_OUTPUT
-          echo is_prerelease=$is_prerelease | tee -a $GITHUB_OUTPUT
+          echo "tag=$tag" | tee -a "$GITHUB_OUTPUT"
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
-      is_release: ${{ steps.set_tag.outputs.is_release }}
-      is_prerelease: ${{ steps.set_tag.outputs.is_prerelease }}
 
   install:
     needs: meta
@@ -91,11 +94,11 @@ jobs:
       fail-fast: false
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
+          python-version: "3.13.15"
 
       - name: Download MFAAvalonia
         if: matrix.os != 'android'
@@ -230,66 +233,9 @@ jobs:
         if: matrix.os == 'macos'
         shell: bash
         run: |
-          python3 tools/ci/download_deps.py --deps-dir ./install/python/lib/python3.12/site-packages --os ${{ matrix.os }} --arch ${{ matrix.arch }}
+          python3 tools/ci/download_deps.py --deps-dir ./install/python/lib/python3.13/site-packages --os ${{ matrix.os }} --arch ${{ matrix.arch }}
 
       - uses: actions/upload-artifact@v7
         with:
           name: MaaAutoNaruto-${{ matrix.os }}-${{ matrix.arch }}-${{ needs.meta.outputs.tag }}
           path: "install"
-
-  changelog:
-    name: Generate changelog
-    needs: meta
-    runs-on: ubuntu-latest
-    outputs:
-      release_body: ${{ steps.git-cliff.outputs.content }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@v4
-        id: git-cliff
-        with:
-          config: .github/cliff.toml
-          # 正式版：使用 tag-pattern 只匹配正式版标签，包含所有从上一个正式版以来的提交
-          # 预发布版：正常生成，只包含从上一个标签以来的提交
-          args: >-
-            -vv --latest --strip header
-            ${{ needs.meta.outputs.is_prerelease == 'false' && '--tag-pattern "^v[0-9]+\\.[0-9]+\\.[0-9]+$"' || '' }}
-        env:
-          OUTPUT: CHANGES.md
-          GITHUB_REPO: ${{ github.repository }}
-
-  release:
-    if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, install, changelog]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          path: assets
-
-      - run: |
-          cd assets
-          for f in *; do
-            (cd $f && zip -r ../$f.zip .)
-          done
-
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: assets/*
-          tag_name: ${{ needs.meta.outputs.tag }}
-          body: ${{ needs.changelog.outputs.release_body }}
-          draft: false
-          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
-
-      - name: Trigger MirrorChyanUploading
-        shell: bash
-        run: |
-          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release.yml -f tag=${{ needs.meta.outputs.tag }}
-          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release_note.yml -f tag=${{ needs.meta.outputs.tag }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

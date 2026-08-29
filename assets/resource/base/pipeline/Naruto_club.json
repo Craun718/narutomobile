@@ -1009,12 +1009,14 @@
         "pre_wait_freezes": 300,
         "action": "Click",
         "post_wait_freezes": 300,
+        "timeout": 10000,
         "next": [
             "confirm_club_first_award",
             "roger_club_first_award",
             "club_first_award_done",
             "club_first_award"
         ],
+        "on_error": "naruto_club_in_loop_wheel",
         "focus": "[color:DeepSkyBlue]领取第一个奖励[/color]"
     },
     "club_first_award_on_error": {
@@ -1031,9 +1033,11 @@
         "pre_wait_freezes": 300,
         "action": "Click",
         "post_wait_freezes": 300,
+        "timeout": 10000,
         "next": [
             "confirm_club_first_award"
         ],
+        "on_error": "naruto_club_in_loop_wheel",
         "focus": "[color:DeepSkyBlue]第二次领取第一个奖励[/color]"
     },
     "confirm_club_first_award": {

@@ -1,0 +1,65 @@
+{
+    "task": [
+        {
+            "name": "小队突袭",
+            "entry": "team_dash",
+            "option": [
+                "借组织助战",
+                "小队突袭处理自动战斗"
+            ],
+            "group": [
+                "daily"
+            ],
+            "default_check": true,
+            "description": "组织里有人用和自己一样忍者时,建议关闭借组织助战"
+        }
+    ],
+    "option": {
+        "借组织助战": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "team_dash_invite_page": {
+                            "next": [
+                                "team_dash_invite_ninja",
+                                "[JumpBack]can_not_invite",
+                                "dash_or_exit",
+                                "retry_failed"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "team_dash_invite_page": {
+                            "next": [
+                                "dash_or_exit",
+                                "retry_failed"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "小队突袭处理自动战斗": {
+            "type": "switch",
+            "description": "似乎有的账号小队突袭默认不开启自动战斗,此时开启这个选项",
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "team_dash_not_in_auto_battle": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes"
+                }
+            ]
+        }
+    }
+}
