@@ -408,7 +408,8 @@
         ],
         "action": "Click",
         "next": [
-            "sky_ground_selected_roll"
+            "sky_ground_selected_roll",
+            "sky_ground_select_roll"
         ],
         "focus": "[color:DeepSkyBlue]识别密卷[/color]"
     },
