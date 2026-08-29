@@ -1591,6 +1591,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "mission_office_complete",
+            "mission_office_safe_strategy",
             "back_main_screen_and_stop"
         ]
     },
