@@ -10,14 +10,29 @@ on:
     types: [edited]
 
 jobs:
-  mirrorchyan:
-    runs-on: macos-latest
+  mirrorchyan_mfa:
+    runs-on: ubuntu-latest
 
     steps:
       - id: uploading
         uses: MirrorChyan/release-note-action@v1
         with:
           mirrorchyan_rid: MaaAutoNaruto
+          version_name: ${{ inputs.tag }}
+
+          owner: duorua
+          repo: narutomobile
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  mirrorchyan_MaaFwApp:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: uploading
+        uses: MirrorChyan/release-note-action@v1
+        with:
+          mirrorchyan_rid: MaaAutoNaruto-MaaFwApp
           version_name: ${{ inputs.tag }}
 
           owner: duorua

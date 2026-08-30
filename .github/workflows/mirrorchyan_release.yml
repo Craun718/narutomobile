@@ -33,7 +33,7 @@ jobs:
           os: ${{ matrix.os }}
           arch: ${{ matrix.arch }}
 
-  mirrorchyan_maafwApp:
+  mirrorchyan_MaaFwApp:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
