@@ -7,7 +7,7 @@
             "nindao_clash_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍道交锋任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入忍道交锋任务</font>"
     },
     "nindao_clash_entry": {
         "recognition": "TemplateMatch",
@@ -34,7 +34,7 @@
             "nindao_clash_not_in_main_screen",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]进入活动[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入活动</font>"
     },
     "nindao_clash_not_in_main_screen": {
         "pre_delay": 0,
@@ -62,7 +62,7 @@
         ],
         "duration": 200,
         "post_delay": 700,
-        "focus": "[color:DeepSkyBlue]前往忍道交锋[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">前往忍道交锋</font>"
     },
     "find_nindao_clash": {
         "recognition": "OCR",
@@ -91,7 +91,7 @@
             "select_nindao_clash",
             "find_nindao_clash"
         ],
-        "focus": "[color:DeepSkyBlue]找到忍界交锋[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">找到忍界交锋</font>"
     },
     "select_nindao_clash": {
         "recognition": "Or",
@@ -125,7 +125,7 @@
             "nindao_clash_undone",
             "nindao_clash_without_red_point"
         ],
-        "focus": "[color:DeepSkyBlue]选中忍界交锋[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">选中忍界交锋</font>"
     },
     "nindao_clash_undone": {
         "recognition": "TemplateMatch",
@@ -305,7 +305,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]忍道交锋到达尽头[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍道交锋到达尽头</font>"
     },
     "nindao_clash_low": {
         "recognition": "TemplateMatch",
@@ -357,7 +357,7 @@
             "nindao_clash_sweep",
             "nindao_clash_go"
         ],
-        "focus": "[color:DeepSkyBlue]发现四倍金箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">发现四倍金箱</font>"
     },
     "nindao_clash_gold_8": {
         "recognition": "TemplateMatch",
@@ -375,7 +375,7 @@
             "nindao_clash_sweep",
             "nindao_clash_go"
         ],
-        "focus": "[color:DeepSkyBlue]发现八倍金箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">发现八倍金箱</font>"
     },
     "nindao_clash_refresh": {
         "recognition": "TemplateMatch",

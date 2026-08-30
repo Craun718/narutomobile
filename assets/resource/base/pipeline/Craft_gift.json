@@ -7,7 +7,7 @@
             "craft_gift_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入合成赠礼任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入合成赠礼任务</font>"
     },
     "craft_gift_entry": {
         "recognition": "TemplateMatch",
@@ -35,7 +35,7 @@
             "[JumpBack]swipes_for_craft_gift",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]进入合成赠礼活动[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入合成赠礼活动</font>"
     },
     "swipes_for_craft_gift": {
         "max_hit": 5,
@@ -63,7 +63,7 @@
         ],
         "duration": 200,
         "post_delay": 700,
-        "focus": "[color:DeepSkyBlue]前往合成赠礼[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">前往合成赠礼</font>"
     },
     "find_craft_gift": {
         "recognition": "OCR",
@@ -84,7 +84,7 @@
             "craft_gift_start",
             "[JumpBack]find_craft_gift"
         ],
-        "focus": "[color:DeepSkyBlue]找到合成赠礼[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">找到合成赠礼</font>"
     },
     "craft_gift_start": {
         "recognition": "TemplateMatch",
@@ -100,7 +100,7 @@
         "next": [
             "craft_gift_exchange"
         ],
-        "focus": "[color:DeepSkyBlue]进入合成赠礼游戏[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入合成赠礼游戏</font>"
     },
     "craft_gift_exchange": {
         "recognition": "OCR",

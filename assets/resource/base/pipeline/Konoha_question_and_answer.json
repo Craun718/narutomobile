@@ -7,7 +7,7 @@
             "konoha_question_and_answer_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入问答子任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入问答子任务</font>"
     },
     "konoha_question_and_answer_entry": {
         "recognition": "TemplateMatch",
@@ -50,7 +50,7 @@
         "next": [
             "konoha_question_and_answer_match"
         ],
-        "focus": "[color:DeepSkyBlue]进入问答游戏[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入问答游戏</font>"
     },
     "find_konoha_konoha_question_and_answer": {
         "recognition": "OCR",
@@ -71,7 +71,7 @@
             "konoha_question_and_answer_start",
             "[JumpBack]find_konoha_konoha_question_and_answer"
         ],
-        "focus": "[color:DeepSkyBlue]找到木叶问答[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">找到木叶问答</font>"
     },
     "swipes_for_konoha_question_and_answer": {
         "max_hit": 5,

@@ -7,7 +7,7 @@
             "[JumpBack]advanture_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入冒险副本任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本任务</font>"
     },
     "advanture_entry": {
         "recognition": "TemplateMatch",
@@ -20,7 +20,7 @@
         "template": "Advanture/advanture_entry.png",
         "action": "Click",
         "post_delay": 3000,
-        "focus": "[color:DeepSkyBlue]进入冒险副本入口[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本入口</font>"
     },
     "advanture_in_level_roll": {
         "recognition": "TemplateMatch",
@@ -36,7 +36,7 @@
             "advanture_check_no_next_roll",
             "[JumpBack]advanture_to_next_roll"
         ],
-        "focus": "[color:DeepSkyBlue]已经在冒险副本[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">已经在冒险副本</font>"
     },
     "advanture_check_no_next_roll": {
         "recognition": "TemplateMatch",
@@ -60,7 +60,7 @@
             "advanture_new_level_undone",
             "naruto_journey_new_level_undone"
         ],
-        "focus": "[color:DeepSkyBlue]确定没有下一个章节[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确定没有下一个章节</font>"
     },
     "advanture_to_next_roll": {
         "recognition": "TemplateMatch",
@@ -79,7 +79,7 @@
             82
         ],
         "post_delay": 900,
-        "focus": "[color:DeepSkyBlue]进入冒险副本下一个章节[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本下一个章节</font>"
     },
     "advanture_new_level_undone": {
         "recognition": "TemplateMatch",
@@ -98,7 +98,7 @@
             "level_not_enough",
             "advanture_new_level_undone"
         ],
-        "focus": "[color:DeepSkyBlue]进入冒险副本新关卡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本新关卡</font>"
     },
     "level_not_enough": {
         "recognition": "TemplateMatch",
@@ -128,7 +128,7 @@
             "[JumpBack]get_red_envelope",
             "naruto_journey_new_level_undone"
         ],
-        "focus": "[color:DeepSkyBlue]进入冒险副本鸣人征程新关卡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本鸣人征程新关卡</font>"
     },
     "advanture_go_fight": {
         "recognition": "TemplateMatch",
@@ -153,7 +153,7 @@
             "advanture_go_fight",
             "[JumpBack]advanture_skip_dialogue"
         ],
-        "focus": "[color:DeepSkyBlue]开始战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">开始战斗</font>"
     },
     "advanture_skip_dialogue": {
         "recognition": "TemplateMatch",
@@ -185,7 +185,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:tomato]高级任务无法自动战斗[/color]"
+        "focus": "<font color=\"tomato\">高级任务无法自动战斗</font>"
     },
     "advanture_anime": {
         "recognition": "Or",
@@ -236,7 +236,7 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 300,
-        "focus": "[color:DeepSkyBlue]剧情动画[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">剧情动画</font>"
     },
     "advanture_anime_skip": {
         "recognition": "OCR",
@@ -274,7 +274,7 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 300,
-        "focus": "[color:DeepSkyBlue]过场动画上黑框[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">过场动画上黑框</font>"
     },
     "advanture_in_fight": {
         "recognition": "OCR",
@@ -311,7 +311,7 @@
             "[JumpBack]advanture_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入战斗</font>"
     },
     "has_stop_button": {
         "recognition": "TemplateMatch",
@@ -393,7 +393,7 @@
         "action": "Click",
         "post_delay": 0,
         "timeout": 30000,
-        "focus": "[color:DeepSkyBlue]开启自动战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">开启自动战斗</font>"
     },
     "advanture_win": {
         "recognition": "TemplateMatch",
@@ -410,7 +410,7 @@
             "quit_advanture_battle_from_win",
             "advanture_win"
         ],
-        "focus": "[color:DeepSkyBlue]胜利啦[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">胜利啦</font>"
     },
     "advanture_new_function_unlock": {
         "recognition": "OCR",
@@ -470,7 +470,7 @@
             "advanture_not_in_lost",
             "advanture_lost"
         ],
-        "focus": "[color:tomato]胜败乃兵家常事[/color]"
+        "focus": "<font color=\"tomato\">胜败乃兵家常事</font>"
     },
     "advanture_skip_revive": {
         "recognition": "OCR",
@@ -503,7 +503,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:tomato]胜败乃兵家常事[/color]"
+        "focus": "<font color=\"tomato\">胜败乃兵家常事</font>"
     },
     "advanture_daily_award_unlock": {
         "recognition": "OCR",

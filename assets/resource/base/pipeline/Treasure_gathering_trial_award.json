@@ -55,7 +55,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]聚宝试炼奖励已领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">聚宝试炼奖励已领取</font>"
     },
     "treasure_gathering_trial_box": {
         "recognition": "TemplateMatch",

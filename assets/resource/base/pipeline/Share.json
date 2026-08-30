@@ -8,13 +8,13 @@
             "share_ac_entry",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入分享任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入分享任务</font>"
     },
     "is_android_then_no_share": {
         "recognition": "Custom",
         "custom_recognition": "CheckIsAndroid",
         "next": "back_main_screen_and_stop",
-        "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]"
+        "focus": "<font color=\"darkorange\">不支持在安卓上进行分享，请使用模拟器！</font>"
     },
     "share_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -33,7 +33,7 @@
             "share_ac_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
     },
     "share_not_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -51,7 +51,7 @@
             "share_in_center_enter",
             "share_not_in_center_enter"
         ],
-        "focus": "[color:DeepSkyBlue]奖励中心有奖励没领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
     },
     "share_ac_entry": {
         "recognition": "TemplateMatch",
@@ -74,7 +74,7 @@
             "share_not_in_center_enter",
             "share_ac_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入奖励中心[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入奖励中心</font>"
     },
     "share_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -104,7 +104,7 @@
             "share_ac_entry_undone",
             "[JumpBack]share_entry"
         ],
-        "focus": "[color:DeepSkyBlue]分享未完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">分享未完成</font>"
     },
     "share_ac_done": {
         "recognition": "TemplateMatch",
@@ -120,7 +120,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]分享已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">分享已完成</font>"
     },
     "share_entry": {
         "recognition": "TemplateMatch",
@@ -144,7 +144,7 @@
         ],
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:darkgray]尝试进入用户主页[/color]"
+        "focus": "<font color=\"darkgray\">尝试进入用户主页</font>"
     },
     "try_share": {
         "recognition": "TemplateMatch",
@@ -165,7 +165,7 @@
             "[JumpBack]share_close_weekly_ninja_title",
             "try_share"
         ],
-        "focus": "[color:DeepSkyBlue]点击分享按钮[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击分享按钮</font>"
     },
     "try_share_to_wechat": {
         "recognition": "TemplateMatch",
@@ -185,7 +185,7 @@
             "share_back_to_natuto",
             "close_wechat_app"
         ],
-        "focus": "[color:DeepSkyBlue]微信分享[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">微信分享</font>"
     },
     "try_share_to_qq": {
         "recognition": "TemplateMatch",
@@ -206,7 +206,7 @@
             "share_back_to_natuto",
             "close_qq_app"
         ],
-        "focus": "[color:DeepSkyBlue]qq分享[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">qq分享</font>"
     },
     "share_back_to_natuto": {
         "enabled": false,
@@ -239,7 +239,7 @@
             "share_in_main_screen",
             "close_share_top_bar"
         ],
-        "focus": "[color:DeepSkyBlue]关闭微信[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭微信</font>"
     },
     "close_qq_app": {
         "pre_delay": 1000,
@@ -251,7 +251,7 @@
             "share_in_main_screen",
             "close_share_top_bar"
         ],
-        "focus": "[color:DeepSkyBlue]关闭qq[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭qq</font>"
     },
     "close_share_top_bar": {
         "recognition": "TemplateMatch",
@@ -277,7 +277,7 @@
             "share_in_main_screen",
             "close_share_top_bar"
         ],
-        "focus": "[color:DeepSkyBlue]关闭顶部栏[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭顶部栏</font>"
     },
     "share_in_main_screen": {
         "recognition": "TemplateMatch",
@@ -321,7 +321,7 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:darkgray]关闭周榜更新下一步提示[/color]"
+        "focus": "<font color=\"darkgray\">关闭周榜更新下一步提示</font>"
     },
     "share_close_weekly_ninja_title": {
         "recognition": "TemplateMatch",
@@ -336,7 +336,7 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:darkgray]关闭周榜更新提示[/color]"
+        "focus": "<font color=\"darkgray\">关闭周榜更新提示</font>"
     },
     "share_start_in_main_screen": {
         "recognition": "TemplateMatch",

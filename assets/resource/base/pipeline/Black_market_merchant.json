@@ -10,7 +10,7 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入秘境子任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入秘境子任务</font>"
     },
     "open_black_market_merchant_by_guide": {
         "recognition": "Custom",
@@ -46,7 +46,7 @@
             "ac_entry_mission_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
     },
     "black_market_merchant_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -192,7 +192,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:tomato]找不到黑市商人[/color]"
+        "focus": "<font color=\"tomato\">找不到黑市商人</font>"
     },
     "black_market_merchant_in_black_market_merchant": {
         "recognition": "TemplateMatch",
@@ -347,7 +347,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:tomato]道具不足[/color]"
+        "focus": "<font color=\"tomato\">道具不足</font>"
     },
     "black_market_merchant_add_gear_dust_quantity": {
         "recognition": "TemplateMatch",

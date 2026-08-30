@@ -6,7 +6,7 @@
             "mail_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入领取邮箱奖励任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入领取邮箱奖励任务</font>"
     },
     "mail_entry": {
         "next": [
@@ -20,7 +20,7 @@
         "template": "Mail/mail_done.png",
         "threshold": 0.9,
         "action": "StopTask",
-        "focus": "[color:DeepSkyBlue]无邮箱奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">无邮箱奖励</font>"
     },
     "open_mail": {
         "recognition": "TemplateMatch",
@@ -43,7 +43,7 @@
             "get_mail_award",
             "open_mail"
         ],
-        "focus": "[color:DeepSkyBlue]打开邮箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">打开邮箱</font>"
     },
     "get_mail_award": {
         "recognition": "OCR",
@@ -60,6 +60,6 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]领取邮箱奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取邮箱奖励</font>"
     }
 }

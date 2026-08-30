@@ -8,7 +8,7 @@
             "easy_helper_done",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入轻松助手任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入轻松助手任务</font>"
     },
     "easy_helper_done": {
         "recognition": "TemplateMatch",
@@ -25,7 +25,7 @@
         "pre_delay": 0,
         "action": "StopTask",
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]轻松助手已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">轻松助手已完成</font>"
     },
     "easy_helper_enter": {
         "recognition": "TemplateMatch",
@@ -46,7 +46,7 @@
             "easy_helper_one_key",
             "[JumpBack]easy_helper_daily"
         ],
-        "focus": "[color:DeepSkyBlue]进入轻松助手[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入轻松助手</font>"
     },
     "easy_helper_daily": {
         "recognition": "TemplateMatch",
@@ -60,7 +60,7 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 700,
-        "focus": "[color:DeepSkyBlue]点击一键审批[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击一键审批</font>"
     },
     "easy_helper_one_key": {
         "recognition": "TemplateMatch",
@@ -83,7 +83,7 @@
             "easy_helper_no_gold_sweep",
             "[JumpBack]easy_helper_one_key"
         ],
-        "focus": "[color:DeepSkyBlue]打开轻松助手[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">打开轻松助手</font>"
     },
     "easy_helper_one_key_done": {
         "recognition": "OCR",
@@ -123,7 +123,7 @@
             "easy_helper_one_key_done",
             "confirm_easy_helper_one_key"
         ],
-        "focus": "[color:DeepSkyBlue]不进行金币扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">不进行金币扫荡</font>"
     },
     "confirm_easy_helper_one_key": {
         "recognition": "OCR",
@@ -150,7 +150,7 @@
             "confirm_easy_helper_one_key",
             "confirm_easy_helper_one_key_done"
         ],
-        "focus": "[color:DeepSkyBlue]一键审批[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">一键审批</font>"
     },
     "confirm_easy_helper_one_key_done": {
         "recognition": "TemplateMatch",
@@ -167,7 +167,7 @@
             "easy_helper_log_on_award_undone",
             "easy_helper_log_on_award_done"
         ],
-        "focus": "[color:DeepSkyBlue]确认一键审批已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认一键审批已完成</font>"
     },
     "easy_helper_log_on_award_undone": {
         "recognition": "TemplateMatch",
@@ -187,7 +187,7 @@
             "easy_helper_check_in_log_on_award",
             "[JumpBack]easy_helper_log_on_award_undone"
         ],
-        "focus": "[color:DeepSkyBlue]轻松助手奖励未领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">轻松助手奖励未领取</font>"
     },
     "easy_helper_check_in_log_on_award": {
         "recognition": "TemplateMatch",
@@ -225,7 +225,7 @@
             "easy_helper_privilege_undone",
             "easy_helper_privilege_done"
         ],
-        "focus": "[color:DeepSkyBlue]轻松助手奖励已领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">轻松助手奖励已领取</font>"
     },
     "get_easy_helper_without_log_on_award": {
         "recognition": "TemplateMatch",
@@ -258,7 +258,7 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]领取签到奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取签到奖励</font>"
     },
     "easy_helper_privilege_done": {
         "recognition": "TemplateMatch",
@@ -277,7 +277,7 @@
         "next": [
             "easy_helper_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]轻松特权已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">轻松特权已完成</font>"
     },
     "easy_helper_privilege_undone": {
         "recognition": "TemplateMatch",
@@ -297,7 +297,7 @@
             "easy_helper_sweep",
             "easy_helper_privilege_undone"
         ],
-        "focus": "[color:DeepSkyBlue]轻松特权未完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">轻松特权未完成</font>"
     },
     "easy_helper_sweep": {
         "recognition": "TemplateMatch",
@@ -334,7 +334,7 @@
         "next": [
             "easy_helper_team_dash_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]检查能否进行扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检查能否进行扫荡</font>"
     },
     "get_easy_helper_sweep": {
         "recognition": "TemplateMatch",
@@ -358,7 +358,7 @@
             "secret_realm_old_settlement",
             "easy_season_plus_find_sweep_card_event"
         ],
-        "focus": "[color:DeepSkyBlue]点击扫荡按钮[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击扫荡按钮</font>"
     },
     "easy_helper_can_not_sweep": {
         "recognition": "OCR",
@@ -417,7 +417,7 @@
             "check_no_easy_helper_sweep",
             "[JumpBack]get_easy_helper_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]返回扫荡界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">返回扫荡界面</font>"
     },
     "easy_helper_celebrate_sweep": {
         "recognition": "TemplateMatch",
@@ -433,7 +433,7 @@
         "action": "Click",
         "post_wait_freezes": 100,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]领取扫荡奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取扫荡奖励</font>"
     },
     "easy_helper_team_dash_sweep": {
         "pre_delay": 0,
@@ -461,7 +461,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]领取扫荡奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取扫荡奖励</font>"
     },
     "get_easy_helper_team_dash_sweep": {
         "recognition": "TemplateMatch",
@@ -481,7 +481,7 @@
             "confirm_easy_helper_team_dash_sweep",
             "[JumpBack]easy_helper_back_to_team_dash_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]开始小队扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">开始小队扫荡</font>"
     },
     "confirm_easy_helper_team_dash_sweep": {
         "recognition": "TemplateMatch",
@@ -500,7 +500,7 @@
             "check_easy_helper_back_to_team_dash_sweep",
             "[JumpBack]easy_helper_back_to_team_dash_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]继续扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">继续扫荡</font>"
     },
     "check_easy_helper_back_to_team_dash_sweep": {
         "recognition": "TemplateMatch",
@@ -519,7 +519,7 @@
         "next": [
             "easy_helper_team_dash_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]检测返回图标[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测返回图标</font>"
     },
     "easy_helper_back_to_team_dash_sweep": {
         "recognition": "TemplateMatch",
@@ -535,6 +535,6 @@
         "action": "Click",
         "post_wait_freezes": 100,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]返回小队扫荡界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">返回小队扫荡界面</font>"
     }
 }

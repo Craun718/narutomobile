@@ -8,7 +8,7 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入任务集会所任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入任务集会所任务</font>"
     },
     "mission_office_in_ninja_guide": {
         "recognition": "Custom",
@@ -24,7 +24,7 @@
             "check_in_mission_office",
             "[JumpBack]ninja_guide_to_funtion_retry"
         ],
-        "focus": "[color:DeepSkyBlue]检测是否已在忍界指引[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测是否已在忍界指引</font>"
     },
     "check_in_mission_office": {
         "recognition": "TemplateMatch",
@@ -41,7 +41,7 @@
             "check_no_mission_office_award",
             "[JumpBack]get_mission_office_award"
         ],
-        "focus": "[color:DeepSkyBlue]已在任务集会所[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">已在任务集会所</font>"
     },
     "check_no_mission_office_award": {
         "recognition": "TemplateMatch",
@@ -60,7 +60,7 @@
             "mission_office_get_mission",
             "[JumpBack]celebrate_mission_office_award"
         ],
-        "focus": "[color:DeepSkyBlue]检测有没有任务集会所奖励可领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测有没有任务集会所奖励可领取</font>"
     },
     "get_mission_office_award": {
         "recognition": "TemplateMatch",
@@ -80,7 +80,7 @@
             "[JumpBack]celebrate_mission_office_award",
             "get_mission_office_award"
         ],
-        "focus": "[color:DeepSkyBlue]领取任务集会所奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取任务集会所奖励</font>"
     },
     "confirm_mission_office_award": {
         "recognition": "OCR",
@@ -102,7 +102,7 @@
             "check_no_mission_office_award",
             "[JumpBack]get_mission_office_award"
         ],
-        "focus": "[color:DeepSkyBlue]确认领取任务集会所奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认领取任务集会所奖励</font>"
     },
     "celebrate_mission_office_award": {
         "recognition": "TemplateMatch",
@@ -121,7 +121,7 @@
             "check_no_mission_office_award",
             "[JumpBack]get_mission_office_award"
         ],
-        "focus": "[color:DeepSkyBlue]关闭任务集会所奖励界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭任务集会所奖励界面</font>"
     },
     "mission_office_get_mission": {
         "recognition": "TemplateMatch",
@@ -143,7 +143,7 @@
             "[JumpBack]mission_office_complete",
             "[JumpBack]take_mission_done"
         ],
-        "focus": "[color:DeepSkyBlue]接任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">接任务</font>"
     },
     "mission_office_complete": {
         "recognition": "OCR",
@@ -161,7 +161,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]任务已领完[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务已领完</font>"
     },
     "mission_office_3_advance_mission": {
         "recognition": "TemplateMatch",
@@ -190,7 +190,7 @@
             "mission_office_recommended_team",
             "[JumpBack]mission_office_3_advance_mission"
         ],
-        "focus": "[color:DeepSkyBlue]接高级任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">接高级任务</font>"
     },
     "mission_office_recommended_team": {
         "recognition": "TemplateMatch",
@@ -210,7 +210,7 @@
             "mission_office_no_recommended_team",
             "[JumpBack]mission_office_recommended_team"
         ],
-        "focus": "[color:DeepSkyBlue]使用推荐配队[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">使用推荐配队</font>"
     },
     "mission_office_no_recommended_team": {
         "recognition": "OCR",
@@ -291,7 +291,7 @@
             "mission_office_recommended_team",
             "[JumpBack]mission_office_3_mission"
         ],
-        "focus": "[color:DeepSkyBlue]接三人任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">接三人任务</font>"
     },
     "mission_office_Sharingan_mission": {
         "recognition": "TemplateMatch",
@@ -346,7 +346,7 @@
             "mission_office_recommended_team",
             "[JumpBack]mission_office_relation_mission"
         ],
-        "focus": "[color:DeepSkyBlue]接羁绊任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">接羁绊任务</font>"
     },
     "take_mission_office_relation_mission": {
         "pre_delay": 0,
@@ -681,7 +681,7 @@
             "select_ninja_for_solo_mission_by_frame",
             "[JumpBack]mission_office_solo_mission"
         ],
-        "focus": "[color:DeepSkyBlue]接单人任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">接单人任务</font>"
     },
     "tack_mission_office_solo_mission": {
         "pre_delay": 0,
@@ -1189,7 +1189,7 @@
             "mission_office_greedy_strategy",
             "mission_office_safe_strategy"
         ],
-        "focus": "[color:DeepSkyBlue]任务集会所超影模式[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务集会所超影模式</font>"
     },
     "mission_office_greedy_strategy": {
         "recognition": "Custom",
@@ -1405,7 +1405,7 @@
             "mission_office_above_kage_recommended_team_check",
             "[JumpBack]mission_office_above_kage_recommended_team"
         ],
-        "focus": "[color:DeepSkyBlue]使用推荐配队[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">使用推荐配队</font>"
     },
     "mission_office_above_kage_no_recommended_team": {
         "recognition": "OCR",
@@ -1542,7 +1542,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]任务已经接取完毕[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务已经接取完毕</font>"
     },
     "above_kage_take_mission_done": {
         "recognition": "TemplateMatch",
@@ -1559,7 +1559,7 @@
             "mission_office_gold_refresh",
             "mission_office_above_kage_refresh"
         ],
-        "focus": "[color:DeepSkyBlue]任务已经接取完毕[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务已经接取完毕</font>"
     },
     "mission_office_above_kage_refresh": {
         "recognition": "TemplateMatch",
@@ -1577,7 +1577,7 @@
         "next": [
             "check_mission_office_reflash_done"
         ],
-        "focus": "[color:DeepSkyBlue]任务集会所超影刷新[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务集会所超影刷新</font>"
     },
     "mission_office_gold_refresh": {
         "recognition": "TemplateMatch",
@@ -1613,7 +1613,7 @@
             "ac_entry_mission_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
     },
     "mission_office_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -1639,6 +1639,6 @@
             "check_in_mission_office",
             "[JumpBack]mission_office_ac_entry_undone"
         ],
-        "focus": "[color:DeepSkyBlue]任务集会所未完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务集会所未完成</font>"
     }
 }

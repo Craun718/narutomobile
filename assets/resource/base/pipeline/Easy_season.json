@@ -7,7 +7,7 @@
             "easy_season_may_be_in_more",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入轻松季任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入轻松季任务</font>"
     },
     "easy_season_done": {
         "recognition": "TemplateMatch",
@@ -22,7 +22,7 @@
         "method": 10001,
         "threshold": 0.95,
         "action": "StopTask",
-        "focus": "[color:DeepSkyBlue]轻松季已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">轻松季已完成</font>"
     },
     "easy_season_enter": {
         "recognition": "TemplateMatch",
@@ -43,7 +43,7 @@
             "easy_season_in_easy_season",
             "easy_season_to_easy_helper"
         ],
-        "focus": "[color:DeepSkyBlue]进入轻松季[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入轻松季</font>"
     },
     "easy_season_in_easy_season": {
         "recognition": "TemplateMatch",
@@ -95,7 +95,7 @@
             "easy_season_in_easy_helper",
             "easy_season_to_easy_helper"
         ],
-        "focus": "[color:DeepSkyBlue]点击轻松季[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击轻松季</font>"
     },
     "easy_season_easy_helper_not_open": {
         "recognition": "TemplateMatch",
@@ -135,7 +135,7 @@
             "confirm_easy_season_one_key",
             "[JumpBack]easy_season_one_key"
         ],
-        "focus": "[color:DeepSkyBlue]打开轻松季[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">打开轻松季</font>"
     },
     "easy_season_one_key_done": {
         "recognition": "OCR",
@@ -172,7 +172,7 @@
             "easy_season_one_key_done",
             "confirm_easy_season_one_key"
         ],
-        "focus": "[color:DeepSkyBlue]不进行金币扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">不进行金币扫荡</font>"
     },
     "confirm_easy_season_one_key": {
         "recognition": "TemplateMatch",
@@ -231,7 +231,7 @@
             "easy_season_in_more",
             "easy_season_may_be_in_more"
         ],
-        "focus": "[color:DeepSkyBlue]进入轻松季[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入轻松季</font>"
     },
     "easy_season_plus_to_easy_season": {
         "recognition": "TemplateMatch",

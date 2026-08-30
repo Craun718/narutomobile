@@ -65,7 +65,7 @@
                             "next": [
                                 "back_main_screen_and_stop"
                             ],
-                            "focus": "[color:DeepSkyBlue]积分赛失败[/color]"
+                            "focus": "<font color=\"DeepSkyBlue\">积分赛失败</font>"
                         }
                     }
                 },

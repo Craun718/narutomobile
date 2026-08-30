@@ -8,7 +8,7 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入冠军送礼任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入冠军送礼任务</font>"
     },
     "go_into_champion_gift": {
         "recognition": {
@@ -33,7 +33,7 @@
             "champion_gift_to_event_center",
             "[JumpBack]ninja_guide_to_funtion_retry"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍者大赛[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入忍者大赛</font>"
     },
     "champion_gift_to_event_center": {
         "recognition": "TemplateMatch",
@@ -188,6 +188,6 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "[color:DeepSkyBlue]冠军送礼完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">冠军送礼完成</font>"
     }
 }

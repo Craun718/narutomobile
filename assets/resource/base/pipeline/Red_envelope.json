@@ -6,7 +6,7 @@
             "[JumpBack]get_red_envelope",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入抢红包任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入抢红包任务</font>"
     },
     "red_envelope_to_activity": {
         "recognition": "TemplateMatch",
@@ -30,7 +30,7 @@
             "red_envelope_check_in_activity",
             "red_envelope_to_activity"
         ],
-        "focus": "[color:DeepSkyBlue]进入活动[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入活动</font>"
     },
     "red_envelope_check_in_activity": {
         "recognition": "OCR",
@@ -47,7 +47,7 @@
         "next": [
             "swipes_for_red_envelope"
         ],
-        "focus": "[color:DeepSkyBlue]进入活动[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入活动</font>"
     },
     "swipes_for_red_envelope": {
         "action": "Swipe",
@@ -70,7 +70,7 @@
             "swipes_for_red_envelope",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]寻找红包任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">寻找红包任务</font>"
     },
     "red_envelope_entry": {
         "max_hit": 5,
@@ -90,7 +90,7 @@
             "check_selected_red_envelope",
             "[JumpBack]red_envelope_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入红包任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入红包任务</font>"
     },
     "check_selected_red_envelope": {
         "recognition": "TemplateMatch",
@@ -104,7 +104,7 @@
         "next": [
             "red_envelope_to_fire_work"
         ],
-        "focus": "[color:DeepSkyBlue]确认选中红包任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认选中红包任务</font>"
     },
     "red_envelope_to_fire_work": {
         "recognition": "OCR",
@@ -125,7 +125,7 @@
             "[JumpBack]red_envelope_to_fire_work",
             "[JumpBack]get_red_envelope"
         ],
-        "focus": "[color:DeepSkyBlue]进入烟花界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入烟花界面</font>"
     },
     "red_envelope_in_fire_work": {
         "recognition": "OCR",
@@ -135,7 +135,7 @@
         "next": [
             "red_envelope_clicker_1"
         ],
-        "focus": "[color:DeepSkyBlue]确认在烟花界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认在烟花界面</font>"
     },
     "red_envelope_clicker_1": {
         "action": "Click",
@@ -148,7 +148,7 @@
         "next": [
             "red_envelope_clicker_2"
         ],
-        "focus": "[color:DeepSkyBlue]抢红包连点器[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">抢红包连点器</font>"
     },
     "red_envelope_clicker_2": {
         "action": "Click",
@@ -176,7 +176,7 @@
             "without_red_envelope",
             "[JumpBack]get_red_envelope"
         ],
-        "focus": "[color:DeepSkyBlue]领取红包雨[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取红包雨</font>"
     },
     "without_red_envelope": {
         "recognition": "TemplateMatch",
@@ -188,6 +188,6 @@
         ],
         "template": "Red_envelope/christmas_stocking.png",
         "inverse": true,
-        "focus": "[color:DeepSkyBlue]离开红包雨[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">离开红包雨</font>"
     }
 }

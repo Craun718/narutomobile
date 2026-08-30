@@ -5,7 +5,7 @@
         "next": [
             "ninja_book_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍法帖任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入忍法帖任务</font>"
     },
     "ninja_book_entry": {
         "pre_delay": 0,
@@ -31,7 +31,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖已完成</font>"
     },
     "ninja_book_undone": {
         "recognition": "TemplateMatch",
@@ -54,7 +54,7 @@
             "[JumpBack]hit_to_enter_ninja_book_x",
             "[JumpBack]ninja_book_skip"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖未完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖未完成</font>"
     },
     "ninja_book_skip": {
         "recognition": "OCR",
@@ -85,7 +85,7 @@
             "位置"
         ],
         "action": "Click",
-        "focus": "[color:DeepSkyBlue]忍法帖忍者展示[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖忍者展示</font>"
     },
     "hit_to_enter_ninja_book_x": {
         "recognition": "TemplateMatch",
@@ -99,7 +99,7 @@
         "green_mask": true,
         "threshold": 0.68,
         "action": "Click",
-        "focus": "[color:DeepSkyBlue]忍法帖忍者展示[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖忍者展示</font>"
     },
     "ninja_book_share_to_qq": {
         "recognition": "TemplateMatch",
@@ -120,7 +120,7 @@
             "ninja_book_share_back_to_natuto",
             "close_ninja_book_qq_share"
         ],
-        "focus": "[color:DeepSkyBlue]qq分享[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">qq分享</font>"
     },
     "close_ninja_book_qq_share": {
         "pre_delay": 1000,
@@ -131,7 +131,7 @@
             "ninja_book_quit_x",
             "ninja_book_close_share_top_bar"
         ],
-        "focus": "[color:DeepSkyBlue]关闭qq分享[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭qq分享</font>"
     },
     "ninja_book_share_to_wechat": {
         "recognition": "TemplateMatch",
@@ -152,7 +152,7 @@
             "ninja_book_share_back_to_natuto",
             "close_ninja_book_wechat_share"
         ],
-        "focus": "[color:DeepSkyBlue]微信分享[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">微信分享</font>"
     },
     "close_ninja_book_wechat_share": {
         "pre_delay": 1000,
@@ -168,7 +168,7 @@
             "ninja_book_close_share_top_bar",
             "ninja_book_share_without_x"
         ],
-        "focus": "[color:DeepSkyBlue]关闭分享[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭分享</font>"
     },
     "ninja_book_close_share_top_bar": {
         "max_hit": 5,
@@ -198,7 +198,7 @@
             "ninja_book_close_share_top_bar",
             "ninja_book_share_without_x"
         ],
-        "focus": "[color:DeepSkyBlue]关闭顶部栏[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭顶部栏</font>"
     },
     "ninja_book_quit_x": {
         "recognition": "TemplateMatch",
@@ -240,7 +240,7 @@
         "next": [
             "ninja_book_cancel_quit"
         ],
-        "focus": "[color:DarkGoldenRod]没有退出的地方[/color]"
+        "focus": "<font color=\"DarkGoldenRod\">没有退出的地方</font>"
     },
     "ninja_book_cancel_quit": {
         "recognition": "TemplateMatch",
@@ -330,7 +330,7 @@
         "next": [
             "ninja_book_mission_award"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖任务未完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖任务未完成</font>"
     },
     "ninja_book_mission_award": {
         "pre_delay": 0,
@@ -370,7 +370,7 @@
             "ninja_book_without_level_up_page",
             "close_ninja_book_level_up_page"
         ],
-        "focus": "[color:DeepSkyBlue]关闭升级界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭升级界面</font>"
     },
     "ninja_book_without_level_up_page": {
         "recognition": "OCR",
@@ -409,7 +409,7 @@
             "ninja_book_liveness_done",
             "[JumpBack]close_ninja_book_liveness_detail"
         ],
-        "focus": "[color:DeepSkyBlue]检查有没有任务奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检查有没有任务奖励</font>"
     },
     "get_ninja_book_mission_award": {
         "recognition": "OCR",
@@ -426,7 +426,7 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]领取忍法帖任务奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取忍法帖任务奖励</font>"
     },
     "get_ninja_book_mission_award_one_key": {
         "recognition": "OCR",
@@ -443,7 +443,7 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]一键领取忍法帖任务奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">一键领取忍法帖任务奖励</font>"
     },
     "ninja_book_liveness_done": {
         "recognition": "TemplateMatch",
@@ -465,7 +465,7 @@
             "ninja_book_award_selected",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖活跃度奖励已领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖活跃度奖励已领取</font>"
     },
     "ninja_book_liveness_undone": {
         "recognition": "TemplateMatch",
@@ -485,7 +485,7 @@
             "check_selected_ninja_book_liveness",
             "[JumpBack]ninja_book_liveness_undone"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖活跃度奖励未领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖活跃度奖励未领取</font>"
     },
     "check_selected_ninja_book_liveness": {
         "recognition": "TemplateMatch",
@@ -510,7 +510,7 @@
             "[JumpBack]close_ninja_book_level_up_page_when_liveness",
             "[JumpBack]close_ninja_book_liveness_detail"
         ],
-        "focus": "[color:DeepSkyBlue]确认已经选中活跃度奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认已经选中活跃度奖励</font>"
     },
     "close_ninja_book_liveness_detail": {
         "recognition": "TemplateMatch",
@@ -531,7 +531,7 @@
         ],
         "post_wait_freezes": 500,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]关闭活跃度详情[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭活跃度详情</font>"
     },
     "ninja_book_liveness_award": {
         "recognition": "TemplateMatch",
@@ -549,7 +549,7 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 3000,
-        "focus": "[color:DeepSkyBlue]领取活跃度奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取活跃度奖励</font>"
     },
     "check_no_ninja_book_liveness_award": {
         "recognition": "TemplateMatch",
@@ -574,7 +574,7 @@
             "ninja_book_award_selected",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]没有可领取的活跃度奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">没有可领取的活跃度奖励</font>"
     },
     "treasure_box_undone": {
         "recognition": "OCR",
@@ -595,7 +595,7 @@
             "treasure_box_in_treasure_box",
             "[JumpBack]treasure_box_undone"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣未领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣未领取</font>"
     },
     "treasure_box_in_treasure_box": {
         "recognition": "TemplateMatch",
@@ -634,7 +634,7 @@
             "ninja_book_award_selected",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣可抽奖[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣可抽奖</font>"
     },
     "treasure_box_access_method_undone": {
         "recognition": "TemplateMatch",
@@ -653,7 +653,7 @@
             "ninja_book_check_in_treasure_box_access_method",
             "[JumpBack]treasure_box_access_method_undone"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣可领取或挑战[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣可领取或挑战</font>"
     },
     "ninja_book_check_in_treasure_box_access_method": {
         "recognition": "OCR",
@@ -674,7 +674,7 @@
             "check_no_treasure_box_award",
             "[JumpBack]get_treasure_box_award"
         ],
-        "focus": "[color:DeepSkyBlue]进入宝匣获取方式[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入宝匣获取方式</font>"
     },
     "get_treasure_box_award": {
         "recognition": "TemplateMatch",
@@ -705,7 +705,7 @@
             "get_treasure_box_award",
             "check_no_treasure_box_award"
         ],
-        "focus": "[color:DeepSkyBlue]领取宝匣奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取宝匣奖励</font>"
     },
     "check_no_treasure_box_award": {
         "recognition": "TemplateMatch",
@@ -725,7 +725,7 @@
             "ninja_book_award_selected",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]检查还有没有宝匣奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检查还有没有宝匣奖励</font>"
     },
     "get_treasure_box_award_one_key": {
         "recognition": "TemplateMatch",
@@ -747,7 +747,7 @@
             "get_treasure_box_award_without_one_key",
             "[JumpBack]get_treasure_box_award_one_key"
         ],
-        "focus": "[color:DeepSkyBlue]一键领取宝匣奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">一键领取宝匣奖励</font>"
     },
     "get_treasure_box_award_without_one_key": {
         "recognition": "TemplateMatch",
@@ -783,7 +783,7 @@
             "treasure_box_celebrate",
             "[JumpBack]treasure_box_challenge"
         ],
-        "focus": "[color:DeepSkyBlue]前往宝匣挑战[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">前往宝匣挑战</font>"
     },
     "treasure_box_celebrate": {
         "recognition": "OCR",
@@ -805,7 +805,7 @@
             "treasure_box_without_celebrate",
             "treasure_box_celebrate"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣扫荡完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣扫荡完成</font>"
     },
     "treasure_box_without_celebrate": {
         "recognition": "OCR",
@@ -827,7 +827,7 @@
             "ninja_book_award_undone",
             "ninja_book_award_selected"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣扫荡完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣扫荡完成</font>"
     },
     "treasure_box_sweep": {
         "recognition": "OCR",
@@ -855,7 +855,7 @@
             "ninja_book_award_selected",
             "[JumpBack]treasure_box_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]前往宝匣挑战[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">前往宝匣挑战</font>"
     },
     "treasure_box_challenge_confirm_ninja": {
         "recognition": "OCR",
@@ -876,7 +876,7 @@
             "treasure_box_challenge_without_confirm_ninja",
             "treasure_box_challenge_confirm_ninja"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣挑战确认忍者[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣挑战确认忍者</font>"
     },
     "treasure_box_challenge_without_confirm_ninja": {
         "recognition": "OCR",
@@ -909,7 +909,7 @@
             "资源加载"
         ],
         "post_delay": 1000,
-        "focus": "[color:DeepSkyBlue]宝匣挑战加载中[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣挑战加载中</font>"
     },
     "treasure_box_challenge_in_fight": {
         "recognition": "TemplateMatch",
@@ -949,7 +949,7 @@
             "treasure_box_challenge_quit",
             "treasure_box_challenge_in_fight"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣不在战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣不在战斗</font>"
     },
     "treasure_box_challenge_quit": {
         "recognition": "OCR",
@@ -971,7 +971,7 @@
             "treasure_box_challenge_out_quit",
             "treasure_box_challenge_quit"
         ],
-        "focus": "[color:DeepSkyBlue]宝匣退出战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">宝匣退出战斗</font>"
     },
     "treasure_box_challenge_out_quit": {
         "recognition": "OCR",
@@ -1015,7 +1015,7 @@
         ],
         "post_wait_freezes": 600,
         "post_delay": 0,
-        "focus": "[color:darkgray]关闭领取活跃度奖励时的升级界面[/color]"
+        "focus": "<font color=\"darkgray\">关闭领取活跃度奖励时的升级界面</font>"
     },
     "ninja_book_leaderboard": {
         "recognition": "TemplateMatch",
@@ -1035,7 +1035,7 @@
             "ninja_book_leaderboard_like_done",
             "[JumpBack]ninja_book_leaderboard"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍法帖排行榜界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入忍法帖排行榜界面</font>"
     },
     "ninja_book_leaderboard_like_done": {
         "recognition": "TemplateMatch",
@@ -1051,7 +1051,7 @@
         "next": [
             "ninja_book_share"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍法帖排行榜界面已点赞[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入忍法帖排行榜界面已点赞</font>"
     },
     "ninja_book_leaderboard_like_undone": {
         "recognition": "TemplateMatch",
@@ -1067,7 +1067,7 @@
             "ninja_book_share",
             "[JumpBack]close_ninja_book_level_up_page_when_like"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖排行榜点赞[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖排行榜点赞</font>"
     },
     "close_ninja_book_level_up_page_when_like": {
         "recognition": "OCR",
@@ -1090,7 +1090,7 @@
         ],
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]关闭出现在排行榜点赞后的升级界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭出现在排行榜点赞后的升级界面</font>"
     },
     "ninja_book_share": {
         "recognition": "OCR",
@@ -1112,13 +1112,13 @@
             "ninja_book_share_to_wechat",
             "[JumpBack]ninja_book_share"
         ],
-        "focus": "[color:darkgray]进入分享页面[/color]"
+        "focus": "<font color=\"darkgray\">进入分享页面</font>"
     },
     "ninja_book_is_android_then_no_share": {
         "recognition": "Custom",
         "custom_recognition": "CheckIsAndroid",
         "next": "close_ninja_book_leaderboard",
-        "focus": "[color:darkorange]不支持在安卓上进行分享，请使用模拟器！[/color]"
+        "focus": "<font color=\"darkorange\">不支持在安卓上进行分享，请使用模拟器！</font>"
     },
     "close_ninja_book_leaderboard": {
         "recognition": "TemplateMatch",
@@ -1138,7 +1138,7 @@
             "ninja_book_mission_done",
             "[JumpBack]close_ninja_book_leaderboard"
         ],
-        "focus": "[color:DeepSkyBlue]关闭忍法帖排行榜[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭忍法帖排行榜</font>"
     },
     "ninja_book_award_undone": {
         "max_hit": 4,
@@ -1161,7 +1161,7 @@
             "[JumpBack]ninja_book_award_undone",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖奖励未领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖奖励未领取</font>"
     },
     "ninja_book_award_selected": {
         "max_hit": 3,
@@ -1184,7 +1184,7 @@
             "ninja_book_award_swip_to_left",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]忍法帖奖励未领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">忍法帖奖励未领取</font>"
     },
     "ninja_book_award_swip_to_left": {
         "action": "Swipe",
@@ -1207,7 +1207,7 @@
             "[JumpBack]get_ninja_book_award",
             "[JumpBack]ninja_book_award_swipe_to_right"
         ],
-        "focus": "[color:DeepSkyBlue]左滑动到忍法帖奖励前部[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">左滑动到忍法帖奖励前部</font>"
     },
     "top_level_award": {
         "recognition": "OCR",
@@ -1223,7 +1223,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]滑动到忍法帖165级[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">滑动到忍法帖165级</font>"
     },
     "ninja_book_award_swipe_to_right": {
         "recognition": "TemplateMatch",
@@ -1252,7 +1252,7 @@
             86
         ],
         "duration": 500,
-        "focus": "[color:DeepSkyBlue]右滑领取忍法帖奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">右滑领取忍法帖奖励</font>"
     },
     "check_no_ninja_book_award_red_point": {
         "recognition": "TemplateMatch",
@@ -1274,7 +1274,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]检查没有忍法帖奖励红点[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检查没有忍法帖奖励红点</font>"
     },
     "get_ninja_book_award": {
         "recognition": "TemplateMatch",
@@ -1304,7 +1304,7 @@
         "next": [
             "confirm_ninja_book_award"
         ],
-        "focus": "[color:DeepSkyBlue]领取忍法帖奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取忍法帖奖励</font>"
     },
     "confirm_ninja_book_award": {
         "recognition": "TemplateMatch",
@@ -1317,7 +1317,7 @@
         "template": "Ninja_book/get_award.png",
         "action": "Click",
         "post_wait_freezes": 200,
-        "focus": "[color:DeepSkyBlue]确认领取忍法帖奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认领取忍法帖奖励</font>"
     },
     "treasure_box_click_All_skill": {
         "recognition": "TemplateMatch",

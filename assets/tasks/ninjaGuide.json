@@ -421,7 +421,7 @@
                             "custom_action_param": {
                                 "entry_name": "忍术对战"
                             },
-                            "focus": "[color:DeepSkyBlue]进入忍术对战[/color]"
+                            "focus": "<font color=\"DeepSkyBlue\">进入忍术对战</font>"
                         }
                     }
                 },
@@ -432,7 +432,7 @@
                             "custom_action_param": {
                                 "entry_name": "段位赛"
                             },
-                            "focus": "[color:DeepSkyBlue]进入段位赛[/color]"
+                            "focus": "<font color=\"DeepSkyBlue\">进入段位赛</font>"
                         },
                         "ninja_guide_find_funtion_entry": {
                             "expected": [

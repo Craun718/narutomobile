@@ -7,7 +7,7 @@
             "[JumpBack]more_gameplay_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]开始更多玩法任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">开始更多玩法任务</font>"
     },
     "more_gameplay_in_duel_field": {
         "recognition": "OCR",
@@ -29,7 +29,7 @@
             "[JumpBack]weekly_win_mouthly_award",
             "more_gameplay_to_select_gameplay"
         ],
-        "focus": "[color:DeepSkyBlue]已在决斗场界面[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">已在决斗场界面</font>"
     },
     "more_gameplay_entry": {
         "recognition": "TemplateMatch",
@@ -46,7 +46,7 @@
             "more_gameplay_in_duel_field",
             "more_gameplay_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入决斗场[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入决斗场</font>"
     },
     "more_gameplay_to_select_gameplay": {
         "recognition": "OCR",
@@ -167,7 +167,7 @@
             "[JumpBack]swipe_for_select_more_gameplay",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:darkorange]百忍还没开,尝试玩别的[/color]"
+        "focus": "<font color=\"darkorange\">百忍还没开,尝试玩别的</font>"
     },
     "more_gameplay_trace_vanish": {
         "enabled": true,
@@ -487,7 +487,7 @@
             "more_gameplay_without_match_win",
             "[JumpBack]more_gameplay_match_win"
         ],
-        "focus": "[color:DeepSkyBlue]敌人退出了,你获胜[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">敌人退出了,你获胜</font>"
     },
     "more_gameplay_without_match_win": {
         "recognition": "TemplateMatch",
@@ -507,7 +507,7 @@
             "more_gameplay_trace_vanish_choose_ninja",
             "more_gameplay_trace_vanish_confirm_fight"
         ],
-        "focus": "[color:DeepSkyBlue]回到战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">回到战斗</font>"
     },
     "more_gameplay_trace_vanish_confirm_selcet_ninja": {
         "recognition": "TemplateMatch",
@@ -527,7 +527,7 @@
             "[JumpBack]more_gameplay_trace_vanish_confirm_selcet_ninja",
             "more_gameplay_in_trace_vanish"
         ],
-        "focus": "[color:DeepSkyBlue]绝迹战场确定选忍者[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">绝迹战场确定选忍者</font>"
     },
     "more_gameplay_trace_vanish_without_confirm_selcet_ninja": {
         "recognition": "TemplateMatch",
@@ -581,7 +581,7 @@
             "[JumpBack]more_gameplay_All_skill",
             "more_gameplay_go_fight"
         ],
-        "focus": "[color:DeepSkyBlue]绝迹战场战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">绝迹战场战斗</font>"
     },
     "more_gameplay_trace_vanish_check_no_fight": {
         "recognition": "TemplateMatch",
@@ -601,7 +601,7 @@
             "[JumpBack]more_gameplay_trace_vanish_check_no_fight",
             "more_gameplay_go_fight"
         ],
-        "focus": "[color:DeepSkyBlue]绝迹战场战斗结束[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">绝迹战场战斗结束</font>"
     },
     "more_gameplay_All_skill": {
         "recognition": "TemplateMatch",
@@ -733,7 +733,7 @@
             "ac_entry_mission_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
     },
     "more_gameplay_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -759,6 +759,6 @@
             "more_gameplay_in_select_gameplay",
             "more_gameplay_ac_entry_undone"
         ],
-        "focus": "[color:DeepSkyBlue]可以进入更多玩法[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">可以进入更多玩法</font>"
     }
 }

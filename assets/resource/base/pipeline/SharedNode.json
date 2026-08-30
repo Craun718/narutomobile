@@ -54,7 +54,7 @@
         "on_error": [
             "retry_failed"
         ],
-        "focus": "[color:darkgray]尝试返回主页面[/color]"
+        "focus": "<font color=\"darkgray\">尝试返回主页面</font>"
     },
     "group_notice": {
         "recognition": "Or",
@@ -100,7 +100,7 @@
         "post_wait_freezes": 500,
         "post_delay": 0,
         "next": "confirm_tip",
-        "focus": "[color:darkgray]离开当前队伍[/color]"
+        "focus": "<font color=\"darkgray\">离开当前队伍</font>"
     },
     "confirm_tip": {
         "recognition": "TemplateMatch",
@@ -206,7 +206,7 @@
         ],
         "template": "Startup/friend_rank.png",
         "action": "Click",
-        "focus": "[color:DeepSkyBlue]关闭好友排名[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭好友排名</font>"
     },
     "close_chat": {
         "recognition": "TemplateMatch",
@@ -311,7 +311,7 @@
         ],
         "template": "SharedNode/center_entry_end.png",
         "next": "back_main_screen_and_stop",
-        "focus": "[color:DeepSkyBlue]当前任务已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">当前任务已完成</font>"
     },
     "weekly_sign": {
         "recognition": "TemplateMatch",
@@ -324,7 +324,7 @@
         "template": "SharedNode/weekly_sign.png",
         "action": "Click",
         "post_wait_freezes": 100,
-        "focus": "[color:DeepSkyBlue]进行周度签到[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进行周度签到</font>"
     },
     "im_come_back": {
         "recognition": "OCR",
@@ -340,7 +340,7 @@
         "next": [
             "im_come_back_award"
         ],
-        "focus": "[color:DeepSkyBlue]点击我回来了[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击我回来了</font>"
     },
     "im_come_back_award": {
         "recognition": "OCR",
@@ -352,7 +352,7 @@
         ],
         "expected": "领取礼物",
         "action": "Click",
-        "focus": "[color:DeepSkyBlue]点击领取礼物[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击领取礼物</font>"
     },
     "text_notice": {
         "recognition": "Or",
@@ -482,7 +482,7 @@
         "template": "Naruto_club/close_club_button.png",
         "action": "Click",
         "post_delay": 1000,
-        "focus": "[color:DeepSkyBlue]关闭情报社[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭情报社</font>"
     },
     "debug_stop": {
         "action": "StopTask"
@@ -668,7 +668,7 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:darkgray]游戏等级提升[/color]"
+        "focus": "<font color=\"darkgray\">游戏等级提升</font>"
     },
     "ninja_guide_to_funtion_retry": {
         "recognition": "OCR",
@@ -686,7 +686,7 @@
     },
     "unknow_error": {
         "action": "StopTask",
-        "focus": "[color:tomato]未知原因导致卡死。[/color]"
+        "focus": "<font color=\"tomato\">未知原因导致卡死。</font>"
     },
     "retry_failed": {
         "pre_delay": 0,
@@ -695,7 +695,7 @@
             "try_back_main_screen",
             "back_main_screen_failed"
         ],
-        "focus": "[color:tomato]超过重试次数!返回主页并结束任务。[/color]"
+        "focus": "<font color=\"tomato\">超过重试次数!返回主页并结束任务。</font>"
     },
     "try_back_main_screen": {
         "max_hit": 1,
@@ -708,18 +708,18 @@
         "action": "Custom",
         "custom_action": "StopTaskList",
         "post_delay": 0,
-        "focus": "[color:tomato]尝试返回主界面失败!任务中断![/color]"
+        "focus": "<font color=\"tomato\">尝试返回主界面失败!任务中断!</font>"
     },
     "exit_naruto": {
         "action": "StopApp",
         "package": "com.tencent.KiHan",
-        "focus": "[color:DeepSkyBlue]关闭火影忍者手游APP[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">关闭火影忍者手游APP</font>"
     },
     "battle_failed": {
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "[color:tomato]战斗失败！[/color]",
+        "focus": "<font color=\"tomato\">战斗失败！</font>",
         "$doc": "如果不是要结束任务不要往这里走"
     },
     "ac_entry_mission_done": {
@@ -732,7 +732,7 @@
         ],
         "template": "SharedNode/center_entry_end.png",
         "next": "back_main_screen_and_stop",
-        "focus": "[color:DeepSkyBlue]任务已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">任务已完成</font>"
     },
     "ninja_guide_in_ninja_guide": {
         "recognition": "TemplateMatch",
@@ -751,7 +751,7 @@
             "up_swipe_for_ninja_guide_find_funtion_entry_end",
             "[JumpBack]up_swipe_for_ninja_guide_find_funtion_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入忍界指引[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入忍界指引</font>"
     },
     "up_swipe_for_ninja_guide_find_funtion_entry_end": {
         "recognition": "OCR",
@@ -867,7 +867,7 @@
             "ninja_guide_in_funtion_entry",
             "ninja_guide_find_funtion_entry"
         ],
-        "focus": "[color:DeepSkyBlue]找到功能入口[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">找到功能入口</font>"
     },
     "ninja_guide_in_funtion_entry": {
         "recognition": "OCR",
@@ -886,7 +886,7 @@
             "ninja_guide_to_funtion_entry",
             "ninja_guide_to_funtion_entry_not_open"
         ],
-        "focus": "[color:DeepSkyBlue]选中功能入口[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">选中功能入口</font>"
     },
     "ninja_guide_to_funtion_entry": {
         "recognition": "OCR",
@@ -919,7 +919,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]功能还没解锁[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">功能还没解锁</font>"
     },
     "ninja_guide_returning_player": {
         "recognition": "OCR",
@@ -938,7 +938,7 @@
             "ninja_guide_returning_player_to_ninja_guide",
             "ninja_guide_returning_player_in_ninja_guide"
         ],
-        "focus": "[color:DeepSkyBlue]进入回归版忍界指引[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入回归版忍界指引</font>"
     },
     "ninja_guide_returning_player_to_ninja_guide": {
         "recognition": "TemplateMatch",
@@ -1089,7 +1089,7 @@
             "ninja_guide_returning_player_in_funtion_entry",
             "ninja_guide_returning_player_find_funtion_entry"
         ],
-        "focus": "[color:DeepSkyBlue]找到功能入口[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">找到功能入口</font>"
     },
     "ninja_guide_returning_player_in_funtion_entry": {
         "recognition": "OCR",
@@ -1108,7 +1108,7 @@
             "ninja_guide_returning_player_to_funtion_entry",
             "ninja_guide_returning_player_to_funtion_entry_not_open"
         ],
-        "focus": "[color:DeepSkyBlue]选中功能入口[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">选中功能入口</font>"
     },
     "ninja_guide_returning_player_to_funtion_entry": {
         "recognition": "OCR",
@@ -1141,7 +1141,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]功能还没解锁[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">功能还没解锁</font>"
     },
     "game_resource_loading": {
         "recognition": "OCR",
@@ -1206,7 +1206,7 @@
             "incorrect_secondary_password",
             "secondary_password"
         ],
-        "focus": "[color:pink]开始输入二级密码[/color]"
+        "focus": "<font color=\"pink\">开始输入二级密码</font>"
     },
     "input_secondary_password": {
         "recognition": "OCR",
@@ -1260,7 +1260,7 @@
         "pre_delay": 0,
         "action": "StopTask",
         "post_delay": 0,
-        "focus": "[color:tomato]密码有误[/color]"
+        "focus": "<font color=\"tomato\">密码有误</font>"
     },
     "confirm_secondary_password": {
         "max_hit": 5,
@@ -1320,7 +1320,7 @@
             "without_pay_to_stronger_tip",
             "pay_to_stronger_tip"
         ],
-        "focus": "[color:pink]提升V等级提示[/color]"
+        "focus": "<font color=\"pink\">提升V等级提示</font>"
     },
     "without_pay_to_stronger_tip": {
         "recognition": "TemplateMatch",
@@ -1334,6 +1334,6 @@
         "inverse": true,
         "pre_delay": 0,
         "post_delay": 0,
-        "focus": "[color:pink]提升V等级提示[/color]"
+        "focus": "<font color=\"pink\">提升V等级提示</font>"
     }
 }

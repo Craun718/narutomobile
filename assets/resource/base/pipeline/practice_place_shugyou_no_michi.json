@@ -8,7 +8,7 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入修行之路[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入修行之路</font>"
     },
     "go_into_shugyou_no_michi_by_guide": {
         "recognition": "Or",
@@ -95,7 +95,7 @@
             "confirm_train_road_sweep",
             "[JumpBack]train_road_unsweep"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路未扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">修行之路未扫荡</font>"
     },
     "train_road_sweeping": {
         "recognition": "OCR",
@@ -111,7 +111,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路扫荡中[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">修行之路扫荡中</font>"
     },
     "train_road_award": {
         "recognition": "OCR",
@@ -131,7 +131,7 @@
         "next": [
             "confirm_train_road_award"
         ],
-        "focus": "[color:DeepSkyBlue]领取修行之路奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取修行之路奖励</font>"
     },
     "confirm_train_road_award": {
         "recognition": "OCR",
@@ -151,7 +151,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认修行之路奖励</font>"
     },
     "train_road_unreset": {
         "max_hit": 5,
@@ -173,7 +173,7 @@
             "confirm_train_road_reset",
             "train_road_unreset"
         ],
-        "focus": "[color:DeepSkyBlue]重置修行之路[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">重置修行之路</font>"
     },
     "above_kage_confirm_train_road_reset": {
         "recognition": "TemplateMatch",
@@ -192,7 +192,7 @@
         "next": [
             "above_kage_confirm_train_road_award"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路超影重置[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">修行之路超影重置</font>"
     },
     "above_kage_confirm_train_road_award": {
         "recognition": "TemplateMatch",
@@ -211,7 +211,7 @@
         "next": [
             "confirm_train_road_award"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路超影重置[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认修行之路超影重置</font>"
     },
     "confirm_train_road_reset": {
         "recognition": "TemplateMatch",
@@ -232,7 +232,7 @@
             "above_kage_confirm_train_road_reset",
             "confirm_train_road_reset"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路重置[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认修行之路重置</font>"
     },
     "confirm_train_road_sweep": {
         "recognition": "OCR",
@@ -253,7 +253,7 @@
             "without_confirm_train_road_sweep",
             "confirm_train_road_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路扫荡[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认修行之路扫荡</font>"
     },
     "without_confirm_train_road_sweep": {
         "recognition": "OCR",
@@ -288,7 +288,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路已完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">修行之路已完成</font>"
     },
     "shugyou_no_michi_auto_push": {
         "recognition": "TemplateMatch",
@@ -668,6 +668,6 @@
             "train_road_entry",
             "train_road_ac_entry_undone"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路未完成[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">修行之路未完成</font>"
     }
 }

@@ -5,7 +5,7 @@
             "find_bonds_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入羁绊追寻任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入羁绊追寻任务</font>"
     },
     "find_bonds_entry": {
         "recognition": "TemplateMatch",
@@ -31,7 +31,7 @@
             "[JumpBack]swipes_for_find_bonds",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]进入活动[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入活动</font>"
     },
     "swipes_for_find_bonds": {
         "max_hit": 5,
@@ -50,7 +50,7 @@
         ],
         "duration": 200,
         "post_delay": 700,
-        "focus": "[color:DeepSkyBlue]前往羁绊搜寻[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">前往羁绊搜寻</font>"
     },
     "find_find_bonds": {
         "recognition": "OCR",
@@ -69,7 +69,7 @@
             "find_bonds_card_flip_start",
             "[JumpBack]find_find_bonds"
         ],
-        "focus": "[color:DeepSkyBlue]找到羁绊追寻[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">找到羁绊追寻</font>"
     },
     "find_bonds_card_flip_start": {
         "recognition": "OCR",
@@ -86,7 +86,7 @@
             "find_bonds_without_enough_token",
             "find_bonds_card_flip_loop"
         ],
-        "focus": "[color:DeepSkyBlue]进入翻牌游戏[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入翻牌游戏</font>"
     },
     "find_bonds_without_enough_token": {
         "recognition": {
@@ -99,7 +99,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]检测翻牌卷数量不足5则退出,足够则继续翻牌[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">检测翻牌卷数量不足5则退出,足够则继续翻牌</font>"
     },
     "find_bonds_card_flip_loop": {
         "recognition": {
@@ -115,7 +115,7 @@
             "find_bonds_without_enough_token",
             "[JumpBack]find_bonds_card_flip_loop"
         ],
-        "focus": "[color:DeepSkyBlue]自动翻牌中[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">自动翻牌中</font>"
     },
     "find_bonds_card_flip_win": {
         "recognition": "TemplateMatch",
@@ -138,7 +138,7 @@
             "find_bonds_without_card_flip_win",
             "[JumpBack]find_bonds_card_flip_win"
         ],
-        "focus": "[color:DeepSkyBlue]翻牌胜利[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">翻牌胜利</font>"
     },
     "find_bonds_without_card_flip_win": {
         "recognition": "TemplateMatch",

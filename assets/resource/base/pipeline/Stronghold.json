@@ -9,7 +9,7 @@
             "stronghold_in_map",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入要塞任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入要塞任务</font>"
     },
     "stronghold_entry": {
         "recognition": "Or",
@@ -53,7 +53,7 @@
             "no_group",
             "stronghold_entry"
         ],
-        "focus": "[color:DeepSkyBlue]组织主界面入口[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">组织主界面入口</font>"
     },
     "stronghold_gameplay": {
         "recognition": "TemplateMatch",
@@ -80,7 +80,7 @@
             "stronghold_mode",
             "[JumpBack]swipe_for_stronghold_mode"
         ],
-        "focus": "[color:DeepSkyBlue]确认选中组织玩法按钮[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认选中组织玩法按钮</font>"
     },
     "stronghold_mode": {
         "recognition": "TemplateMatch",
@@ -104,7 +104,7 @@
             "[JumpBack]stronghold_mode",
             "group_mode_not_open"
         ],
-        "focus": "[color:DeepSkyBlue]进入要塞[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入要塞</font>"
     },
     "stronghold_in_map": {
         "recognition": "TemplateMatch",
@@ -121,7 +121,7 @@
             "stronghold_end",
             "stronghold_to_fire_stronghold"
         ],
-        "focus": "[color:DeepSkyBlue]在要塞地图[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">在要塞地图</font>"
     },
     "swipe_for_stronghold_mode": {
         "recognition": "TemplateMatch",
@@ -147,7 +147,7 @@
         ],
         "duration": 300,
         "post_delay": 800,
-        "focus": "[color:DeepSkyBlue]寻找要塞[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">寻找要塞</font>"
     },
     "stronghold_to_fire_stronghold": {
         "recognition": "TemplateMatch",
@@ -166,7 +166,7 @@
             "stronghold_to_fight",
             "[JumpBack]stronghold_to_fire_stronghold"
         ],
-        "focus": "[color:DeepSkyBlue]点击火要塞[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">点击火要塞</font>"
     },
     "stronghold_to_fight": {
         "recognition": "OCR",
@@ -187,7 +187,7 @@
             "stronghold_in_stronghold",
             "[JumpBack]stronghold_to_fight"
         ],
-        "focus": "[color:DeepSkyBlue]进入火要塞[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入火要塞</font>"
     },
     "stronghold_personal_point_award": {
         "recognition": "OCR",
@@ -248,7 +248,7 @@
             "stronghold_finished",
             "[JumpBack]stronghold_substitution"
         ],
-        "focus": "[color:darkgray]在要塞中，向右走[/color]"
+        "focus": "<font color=\"darkgray\">在要塞中，向右走</font>"
     },
     "stronghold_in_match": {
         "recognition": "OCR",
@@ -292,7 +292,7 @@
             "[JumpBack]stronghold_match_win",
             "stronghold_finished"
         ],
-        "focus": "[color:DeepSkyBlue]敌人退出了,你获胜[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">敌人退出了,你获胜</font>"
     },
     "stronghold_without_match_win": {
         "recognition": "OCR",
@@ -312,7 +312,7 @@
             "stronghold_in_stronghold",
             "stronghold_finished"
         ],
-        "focus": "[color:DeepSkyBlue]回到战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">回到战斗</font>"
     },
     "stronghold_fighting": {
         "recognition": "OCR",
@@ -336,7 +336,7 @@
             "[JumpBack]stronghold_match_win",
             "stronghold_finished"
         ],
-        "focus": "[color:DeepSkyBlue]开始战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">开始战斗</font>"
     },
     "stronghold_winner_decided": {
         "recognition": "TemplateMatch",
@@ -378,7 +378,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]要塞到时间了[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">要塞到时间了</font>"
     },
     "stronghold_battle_end": {
         "recognition": "OCR",
@@ -403,7 +403,7 @@
             "stronghold_end",
             "[JumpBack]stronghold_battle_end"
         ],
-        "focus": "[color:DeepSkyBlue]战斗结束[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">战斗结束</font>"
     },
     "stronghold_substitution": {
         "recognition": "TemplateMatch",
@@ -431,7 +431,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]进入要塞结算[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入要塞结算</font>"
     },
     "stronghold_click_All_skill": {
         "recognition": "TemplateMatch",
@@ -576,6 +576,6 @@
             }
         ],
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]连点器战斗[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">连点器战斗</font>"
     }
 }

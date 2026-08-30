@@ -7,7 +7,7 @@
             "liveness_award_in_center_enter",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入活跃度宝箱任务[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">进入活跃度宝箱任务</font>"
     },
     "liveness_award_undone": {
         "recognition": "TemplateMatch",
@@ -63,7 +63,7 @@
             "liveness_award_in_center_enter",
             "liveness_award_not_in_center_enter"
         ],
-        "focus": "[color:DeepSkyBlue]奖励中心有奖励没领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
     },
     "liveness_award_done": {
         "pre_delay": 0,
@@ -72,7 +72,7 @@
             "weekly_liveness_award_undone",
             "weekly_liveness_award_done"
         ],
-        "focus": "[color:DeepSkyBlue]活跃度宝箱已领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">活跃度宝箱已领取</font>"
     },
     "get_liveness_award": {
         "recognition": "TemplateMatch",
@@ -93,7 +93,7 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]领取活跃度宝箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
     },
     "liveness_award_box_1_done": {
         "recognition": "TemplateMatch",
@@ -136,7 +136,7 @@
             "liveness_award_box_1_done",
             "get_liveness_award_box_1"
         ],
-        "focus": "[color:DeepSkyBlue]领取活跃度宝箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
     },
     "liveness_award_box_2_done": {
         "recognition": "TemplateMatch",
@@ -179,7 +179,7 @@
             "liveness_award_box_2_done",
             "get_liveness_award_box_2"
         ],
-        "focus": "[color:DeepSkyBlue]领取活跃度宝箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
     },
     "liveness_award_box_3_done": {
         "recognition": "TemplateMatch",
@@ -222,7 +222,7 @@
             "liveness_award_box_3_done",
             "get_liveness_award_box_3"
         ],
-        "focus": "[color:DeepSkyBlue]领取活跃度宝箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
     },
     "liveness_award_box_4_done": {
         "recognition": "TemplateMatch",
@@ -263,7 +263,7 @@
             "liveness_award_box_4_done",
             "get_liveness_award_box_4"
         ],
-        "focus": "[color:DeepSkyBlue]领取活跃度宝箱[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
     },
     "liveness_award_box_1_locked": {
         "recognition": "TemplateMatch",
@@ -371,7 +371,7 @@
             "confirm_weekly_liveness_award",
             "weekly_liveness_award_undone"
         ],
-        "focus": "[color:DeepSkyBlue]周度500活跃奖励可领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">周度500活跃奖励可领取</font>"
     },
     "confirm_weekly_liveness_award": {
         "recognition": "TemplateMatch",
@@ -386,7 +386,7 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]确认领取周度500活跃奖励[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">确认领取周度500活跃奖励</font>"
     },
     "weekly_liveness_award_done": {
         "recognition": "TemplateMatch",
@@ -401,6 +401,6 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]周度500活跃奖励不可领取[/color]"
+        "focus": "<font color=\"DeepSkyBlue\">周度500活跃奖励不可领取</font>"
     }
 }
