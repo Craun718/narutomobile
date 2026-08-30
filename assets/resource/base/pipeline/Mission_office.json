@@ -206,8 +206,8 @@
         "post_wait_freezes": 200,
         "post_delay": 0,
         "next": [
-            "mission_office_recommended_team_check",
             "mission_office_no_recommended_team",
+            "mission_office_recommended_team_check",
             "[JumpBack]mission_office_recommended_team"
         ],
         "focus": "[color:DeepSkyBlue]使用推荐配队[/color]"
@@ -221,6 +221,7 @@
             214
         ],
         "expected": [
+            "无法",
             "推荐",
             "已经没有",
             "可用忍者",
@@ -233,25 +234,17 @@
         ]
     },
     "mission_office_recommended_team_check": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            20,
-            505,
-            390,
-            165
+            32,
+            175,
+            580,
+            172
         ],
-        "expected": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "需要"
+        "template": [
+            "Mission_office/star.png"
         ],
+        "green_mask": true,
         "pre_delay": 0,
         "post_wait_freezes": 400,
         "post_delay": 0,
@@ -1416,6 +1409,7 @@
             214
         ],
         "expected": [
+            "无法",
             "推荐",
             "已经没有",
             "可用忍者",
