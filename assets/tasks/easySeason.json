@@ -30,6 +30,9 @@
                                 "back_main_screen_and_stop"
                             ]
                         },
+                        "easy_season_plus_end_to_sweep": {
+                            "enabled": true
+                        },
                         "secret_realm_celebreate": {
                             "next": [
                                 "secret_realm_celebreate",

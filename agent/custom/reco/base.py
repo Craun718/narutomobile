@@ -8,6 +8,7 @@ from maa.define import Rect
 from numpy import ndarray
 from utils.counter import counter
 from utils.logger import logger
+from utils.utils import is_android
 
 from ..utils import get_digit_count
 
@@ -496,4 +497,16 @@ class SwitchAccountFindTargetArea(CustomRecognition):
                         return CustomRecognition.AnalyzeResult(box=box, detail={})
                 except (AttributeError, ValueError, TypeError):
                     continue
+        return CustomRecognition.AnalyzeResult(box=None, detail={})
+
+
+@AgentServer.custom_recognition("CheckIsAndroid")
+class CheckIsAndroid(CustomRecognition):
+    """
+    是否在安卓环境中运行
+    """
+
+    def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg) -> CustomRecognition.AnalyzeResult:
+        if is_android:
+            return CustomRecognition.AnalyzeResult(box=Rect(0, 0, 1, 1), detail={})
         return CustomRecognition.AnalyzeResult(box=None, detail={})

@@ -338,6 +338,7 @@
         "next": [
             "easy_season_plus_find_energy",
             "easy_season_plus_energy_done",
+            "easy_season_plus_end_to_sweep",
             "easy_season_plus_end",
             "[JumpBack]swipe_for_easy_season_plus_find_energy"
         ]
@@ -374,6 +375,46 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "easy_season_plus_end_to_sweep",
+            "back_main_screen_and_stop"
+        ]
+    },
+    "easy_season_plus_end_to_sweep": {
+        "enabled": false,
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    167,
+                    476,
+                    1112,
+                    120
+                ],
+                "expected": [
+                    "未开启",
+                    "已结束"
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    891,
+                    629,
+                    268,
+                    90
+                ],
+                "template": "Easy_season/sweep_card_enter.png",
+                "method": 10001,
+                "threshold": 0.7,
+                "pre_delay": 0
+            }
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "easy_season_plus_end_to_easy_helper",
+            "easy_season_plus_end_to_easy_share",
             "back_main_screen_and_stop"
         ]
     },
@@ -460,7 +501,7 @@
         "action": "Click",
         "post_delay": 200,
         "next": [
-            "easy_season_plus_end_to_easy_season_select",
+            "easy_season_plus_back_to_easy_season_plus",
             "easy_season_plus_end_to_easy_season"
         ]
     },
@@ -556,7 +597,10 @@
             1114,
             140
         ],
-        "template": "Easy_season/ramen_done.png",
+        "template": [
+            "Easy_season/ramen_have_done.png",
+            "Easy_season/ramen_done.png"
+        ],
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -706,10 +750,13 @@
         "method": 10001,
         "threshold": 0.95,
         "next": [
+            "easy_season_plus_sweep_card",
             "easy_season_plus_sweep_card_event_done",
             "easy_season_plus_find_sweep_card_event",
             "easy_season_plus_end",
-            "[JumpBack]swipe_for_easy_season_plus_find_sweep_card_event"
+            "[JumpBack]swipe_for_easy_season_plus_find_sweep_card_event",
+            "easy_season_plus_back_to_easy_season_plus",
+            "easy_season_plus_end_to_easy_season"
         ]
     },
     "easy_season_plus_find_sweep_card_event": {

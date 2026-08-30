@@ -240,22 +240,6 @@
             "back_main_screen_and_stop"
         ]
     },
-    "rich_room_finished": {
-        "recognition": "OCR",
-        "roi": [
-            465,
-            646,
-            355,
-            61
-        ],
-        "expected": [
-            "点击"
-        ],
-        "next": [
-            "back_main_screen_and_stop"
-        ],
-        "focus": "[color:DeepSkyBlue]丰饶之间完成[/color]"
-    },
     "challenge_rich_room": {
         "recognition": "TemplateMatch",
         "roi": [
@@ -272,9 +256,267 @@
         "post_delay": 0,
         "next": [
             "rich_room_finished",
+            "rich_room_ninja_expire",
             "rich_room_in_fight",
             "challenge_rich_room",
             "check_main_screen_and_stop"
+        ]
+    },
+
+    "rich_room_finished": {
+        "recognition": "OCR",
+        "roi": [
+            465,
+            646,
+            355,
+            61
+        ],
+        "expected": [
+            "点击"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "back_main_screen_and_stop",
+        "focus": "[color:DeepSkyBlue]丰饶之间完成[/color]"
+    },
+    "rich_room_ninja_expire": {
+        "recognition": "OCR",
+        "roi": [
+            471,
+            286,
+            362,
+            125
+        ],
+        "expected": [
+            "限时",
+            "过期"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "rich_room_lineup"
+    },
+    "rich_room_lineup": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            1103,
+            572,
+            176,
+            147
+        ],
+        "template": "SharedNode/lineup.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "rich_room_in_lineup",
+            "rich_room_lineup"
+        ],
+        "focus": "[color:DeepSkyBlue]丰饶之间调整阵容[/color]"
+    },
+    "rich_room_in_lineup": {
+        "recognition": "OCR",
+        "roi": [
+            800,
+            88,
+            165,
+            51
+        ],
+        "expected": [
+            "查看",
+            "信息"
+        ],
+        "pre_delay": 0,
+        "post_delay": 300,
+        "next": "rich_room_select_ninja"
+    },
+    "rich_room_select_ninja": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            795,
+            132,
+            434,
+            390
+        ],
+        "template": "Sky_ground/ninja_star.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 400,
+        "post_delay": 300,
+        "next": [
+            "rich_room_selected_ninja",
+            "rich_room_select_ninja"
+        ]
+    },
+    "rich_room_selected_ninja": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            131,
+            135,
+            210,
+            177
+        ],
+        "template": "Sky_ground/no_ninja.png",
+        "inverse": true,
+        "pre_delay": 0,
+        "post_wait_freezes": 400,
+        "post_delay": 300,
+        "next": [
+            "rich_room_to_select_summon",
+            "rich_room_in_select_summon"
+        ]
+    },
+    "rich_room_to_select_summon": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            615,
+            175,
+            266,
+            253
+        ],
+        "template": "Sky_ground/summon.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "rich_room_in_select_summon",
+            "[JumpBack]rich_room_to_select_summon"
+        ]
+    },
+    "rich_room_in_select_summon": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            615,
+            175,
+            266,
+            253
+        ],
+        "template": "Sky_ground/summon_selected.png",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "rich_room_summon_done",
+            "[JumpBack]rich_room_select_summon"
+        ]
+    },
+    "rich_room_select_summon": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            790,
+            137,
+            439,
+            407
+        ],
+        "template": [
+            "battle/通灵"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300
+    },
+    "rich_room_summon_done": {
+        "recognition": "OCR",
+        "roi": [
+            0,
+            446,
+            398,
+            216
+        ],
+        "expected": "未选择",
+        "inverse": true,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "rich_room_to_select_roll",
+            "rich_room_in_select_roll"
+        ]
+    },
+    "rich_room_to_select_roll": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            679,
+            333,
+            143,
+            138
+        ],
+        "template": "Sky_ground/roll.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "rich_room_in_select_roll",
+            "[JumpBack]rich_room_to_select_roll"
+        ],
+        "focus": "[color:DeepSkyBlue]选择秘卷[/color]"
+    },
+    "rich_room_in_select_roll": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            666,
+            254,
+            160,
+            244
+        ],
+        "template": "Sky_ground/roll_selected.png",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "rich_room_selected_roll",
+            "rich_room_select_roll"
+        ],
+        "focus": "[color:DeepSkyBlue]开始选择密卷[/color]"
+    },
+    "rich_room_select_roll": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            797,
+            135,
+            432,
+            385
+        ],
+        "template": [
+            "battle/秘卷"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "rich_room_selected_roll",
+            "rich_room_select_roll"
+        ],
+        "focus": "[color:DeepSkyBlue]识别密卷[/color]"
+    },
+    "rich_room_selected_roll": {
+        "recognition": "OCR",
+        "roi": [
+            387,
+            535,
+            377,
+            148
+        ],
+        "expected": "未选择",
+        "inverse": true,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "rich_room_confirm_set",
+        "focus": "[color:DeepSkyBlue]完成选择密卷[/color]"
+    },
+    "rich_room_confirm_set": {
+        "recognition": "OCR",
+        "roi": [
+            804,
+            471,
+            328,
+            209
+        ],
+        "expected": [
+            "确认"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "challenge_rich_room",
+            "rich_room_confirm_set"
         ]
     },
     "rich_room_peace": {

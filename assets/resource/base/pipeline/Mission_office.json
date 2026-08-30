@@ -1482,6 +1482,7 @@
         "next": [
             "mission_office_gold_refresh",
             "above_kage_take_mission_done",
+            "mission_office_complete",
             "check_mission_office_reflash_done"
         ]
     },
@@ -1590,6 +1591,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "mission_office_complete",
+            "mission_office_safe_strategy",
             "back_main_screen_and_stop"
         ]
     },

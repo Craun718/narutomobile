@@ -579,9 +579,6 @@
             "Weekly_win/substitution_10th.png"
         ],
         "threshold": 0.9,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 2000,
         "next": [
             "weekly_win_substitution",
             "weekly_win_match_fighting",

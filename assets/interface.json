@@ -61,7 +61,6 @@
     ],
     "import": [
         "tasks/preset/common.json",
-        "tasks/preset/daily.json",
         "tasks/preset/schedule.json",
         "tasks/preset/miniGame.json",
         "tasks/preset/external.json",
