@@ -8,7 +8,9 @@
             "fine_gift_bell_all",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入送好礼摇铃任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入送好礼摇铃任务</font>"
+        }
     },
     "fine_gift_bell_entry": {
         "recognition": "TemplateMatch",
@@ -36,7 +38,9 @@
             "[JumpBack]swipes_for_fine_gift_bell",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入活动</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入活动</font>"
+        }
     },
     "find_fine_gift_bell": {
         "recognition": "OCR",
@@ -56,7 +60,9 @@
             "fine_gift_bell_all",
             "find_fine_gift_bell"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">找到送好礼摇铃</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">找到送好礼摇铃</font>"
+        }
     },
     "select_fine_gift_bell": {
         "recognition": "TemplateMatch",
@@ -74,7 +80,9 @@
             "fine_gift_get_voucher_done",
             "fine_gift_bell_all"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选中送好礼摇铃</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选中送好礼摇铃</font>"
+        }
     },
     "swipes_for_fine_gift_bell": {
         "max_hit": 5,
@@ -94,7 +102,9 @@
         ],
         "duration": 200,
         "post_delay": 700,
-        "focus": "<font color=\"DeepSkyBlue\">前往送好礼摇铃</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">前往送好礼摇铃</font>"
+        }
     },
     "fine_gift_get_voucher": {
         "recognition": "OCR",
@@ -224,7 +234,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">礼卷不足</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">礼卷不足</font>"
+        }
     },
     "fine_gift_bell_all": {
         "recognition": "OCR",
@@ -238,6 +250,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">礼卷不足</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">礼卷不足</font>"
+        }
     }
 }

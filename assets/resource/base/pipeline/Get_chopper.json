@@ -7,7 +7,9 @@
             "[JumpBack]award_center_enter",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入铜币招财任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入铜币招财任务</font>"
+        }
     },
     "get_copper_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -26,7 +28,9 @@
             "get_copper_ac_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        }
     },
     "get_copper_not_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -44,7 +48,9 @@
             "get_copper_in_center_enter",
             "get_copper_not_in_center_enter"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
+        }
     },
     "get_copper_ac_entry": {
         "recognition": "TemplateMatch",
@@ -67,7 +73,9 @@
             "get_copper_not_in_center_enter",
             "get_copper_ac_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入奖励中心</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入奖励中心</font>"
+        }
     },
     "get_copper_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -128,7 +136,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">铜币招财已完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">铜币招财已完成</font>"
+        }
     },
     "start_copper": {
         "recognition": "OCR",
@@ -144,7 +154,9 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 500,
-        "focus": "<font color=\"DeepSkyBlue\">进行招财</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进行招财</font>"
+        }
     },
     "check_free_copper_done": {
         "recognition": "OCR",
@@ -160,7 +172,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">免费铜币招财完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">免费铜币招财完成</font>"
+        }
     },
     "get_copper_with_secondary_password": {
         "pre_delay": 0,
@@ -171,7 +185,9 @@
             "free_copper_close_secondary_password",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"pink\">进入二级密码功能</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"pink\">进入二级密码功能</font>"
+        }
     },
     "free_copper_close_secondary_password": {
         "max_hit": 1,

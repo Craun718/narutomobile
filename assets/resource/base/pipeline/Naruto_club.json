@@ -6,7 +6,9 @@
             "click_club_icon",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入情报社任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入情报社任务</font>"
+        }
     },
     "click_club_icon": {
         "recognition": "TemplateMatch",
@@ -30,7 +32,9 @@
             "[JumpBack]without_naruto_club",
             "unknow_error"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">点击情报社</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">点击情报社</font>"
+        }
     },
     "without_naruto_club": {
         "max_hit": 10,
@@ -61,7 +65,9 @@
         "next": [
             "confirm_naruto_club_too_many_people"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">情报社访问人数过多</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">情报社访问人数过多</font>"
+        }
     },
     "confirm_naruto_club_too_many_people": {
         "recognition": "OCR",
@@ -114,7 +120,9 @@
             "[JumpBack]surf_post_try_reflash_to_follow",
             "try_esc"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">从没有话题的地狱回来了</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">从没有话题的地狱回来了</font>"
+        }
     },
     "surf_post_try_reflash_in_follow": {
         "recognition": "TemplateMatch",
@@ -178,7 +186,9 @@
         "next": [
             "club_like_mission"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检测是否开始话题冲浪</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测是否开始话题冲浪</font>"
+        }
     },
     "surf_post": {
         "max_hit": 8,
@@ -196,7 +206,9 @@
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 500,
-        "focus": "<font color=\"DeepSkyBlue\">选择有评论话题</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择有评论话题</font>"
+        }
     },
     "club_like_mission": {
         "next": [
@@ -223,7 +235,9 @@
             "cancel_club_has_follow",
             "cancel_club_follow"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">取消误关注</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">取消误关注</font>"
+        }
     },
     "cancel_club_has_follow": {
         "recognition": "OCR",
@@ -251,7 +265,9 @@
             "[JumpBack]cancel_club_follow",
             "[JumpBack]swipe_for_club_like"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第一个点赞任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第一个点赞任务</font>"
+        }
     },
     "swipe_for_club_like": {
         "action": "Swipe",
@@ -269,7 +285,9 @@
         ],
         "post_delay": 1500,
         "timeout": 1000,
-        "focus": "<font color=\"DeepSkyBlue\">滑动点赞</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">滑动点赞</font>"
+        }
     },
     "no_comment_now": {
         "recognition": "OCR",
@@ -284,7 +302,9 @@
             "surf_post_try_reflash_comment",
             "unknow_error"
         ],
-        "focus": "<font color=\"red\">暂无评论可供点赞</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"red\">暂无评论可供点赞</font>"
+        }
     },
     "second_like": {
         "recognition": "TemplateMatch",
@@ -298,7 +318,9 @@
             "[JumpBack]cancel_club_follow",
             "[JumpBack]swipe_for_club_like"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第二个点赞任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第二个点赞任务</font>"
+        }
     },
     "third_like": {
         "recognition": "TemplateMatch",
@@ -312,7 +334,9 @@
             "[JumpBack]cancel_club_follow",
             "[JumpBack]swipe_for_club_like"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第三个点赞任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第三个点赞任务</font>"
+        }
     },
     "fourth_like": {
         "recognition": "TemplateMatch",
@@ -325,7 +349,9 @@
             "scroll",
             "fourth_like"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第四个点赞任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第四个点赞任务</font>"
+        }
     },
     "surf_post_try_reflash_comment": {
         "max_hit": 3,
@@ -348,7 +374,9 @@
             "surf_post_try_reflash",
             "unknow_error"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">没有评论的世界还有什么意义</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">没有评论的世界还有什么意义</font>"
+        }
     },
     "close_surf_post": {
         "recognition": "OCR",
@@ -367,7 +395,9 @@
             "scroll",
             "close_surf_post"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭话题</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭话题</font>"
+        }
     },
     "scroll": {
         "recognition": "OCR",
@@ -387,7 +417,9 @@
             "close_scroll",
             "scroll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入卷轴</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入卷轴</font>"
+        }
     },
     "close_scroll": {
         "recognition": "OCR",
@@ -407,7 +439,9 @@
             "ninja_station",
             "close_scroll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭卷轴</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭卷轴</font>"
+        }
     },
     "ninja_station": {
         "recognition": "OCR",
@@ -426,7 +460,9 @@
             "close_ninja_station",
             "ninja_station"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入忍者站</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入忍者站</font>"
+        }
     },
     "close_ninja_station": {
         "recognition": "OCR",
@@ -446,7 +482,9 @@
             "village_entry",
             "close_ninja_station"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭忍者站</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭忍者站</font>"
+        }
     },
     "village_entry": {
         "recognition": "OCR",
@@ -466,7 +504,9 @@
             "close_village_entry",
             "village_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入村口</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入村口</font>"
+        }
     },
     "close_village_entry": {
         "max_hit": 5,
@@ -487,7 +527,9 @@
             "close_village_entry",
             "without_benefit_station"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭村口</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭村口</font>"
+        }
     },
     "without_benefit_station": {
         "recognition": "TemplateMatch",
@@ -503,7 +545,9 @@
         "next": [
             "try_flash_benefit_station_by_village_entry"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">可以把福利站还给我吗</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">可以把福利站还给我吗</font>"
+        }
     },
     "try_flash_benefit_station_by_village_entry": {
         "recognition": "OCR",
@@ -522,7 +566,9 @@
         "next": [
             "try_flash_benefit_station_close_village_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入村口刷新福利站</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入村口刷新福利站</font>"
+        }
     },
     "try_flash_benefit_station_close_village_entry": {
         "max_hit": 5,
@@ -544,7 +590,9 @@
         "on_error": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭村口</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭村口</font>"
+        }
     },
     "benefit_station": {
         "recognition": "TemplateMatch",
@@ -563,7 +611,9 @@
             "sign_done",
             "benefit_station"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入福利站</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入福利站</font>"
+        }
     },
     "sign_done": {
         "recognition": "OCR",
@@ -582,7 +632,9 @@
             "without_feed_pig",
             "check_club_mission_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">签到已经完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">签到已经完成</font>"
+        }
     },
     "naruto_club_sign": {
         "recognition": "OCR",
@@ -603,7 +655,9 @@
             "naruto_club_sign",
             "sign_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进行签到</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进行签到</font>"
+        }
     },
     "confirm_naruto_club_sign": {
         "recognition": "OCR",
@@ -624,7 +678,9 @@
             "confirm_naruto_club_sign",
             "sign_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认签到</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认签到</font>"
+        }
     },
     "roger_naruto_club_sign": {
         "recognition": "OCR",
@@ -646,7 +702,9 @@
             "check_club_mission_done",
             "sign_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">收到签到提醒</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">收到签到提醒</font>"
+        }
     },
     "without_feed_pig": {
         "recognition": "OCR",
@@ -657,7 +715,9 @@
         "next": [
             "check_club_mission_done"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">大事不妙雷霆猪</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">大事不妙雷霆猪</font>"
+        }
     },
     "feed_pig": {
         "recognition": "OCR",
@@ -676,7 +736,9 @@
             "feed_pig_work",
             "feed_pig"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">喂豚豚</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">喂豚豚</font>"
+        }
     },
     "feed_pig_work": {
         "recognition": "OCR",
@@ -693,13 +755,17 @@
         "on_error": [
             "feed_pig_not_found"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">已进入喂豚豚</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">已进入喂豚豚</font>"
+        }
     },
     "feed_pig_not_found": {
         "next": [
             "close_feed_pig"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">无法找到喂豚豚按钮</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">无法找到喂豚豚按钮</font>"
+        }
     },
     "weekly_feed_pig": {
         "max_hit": 5,
@@ -715,7 +781,9 @@
             "feed_pig_done",
             "close_feed_pig"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">点击喂豚豚</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">点击喂豚豚</font>"
+        }
     },
     "feed_pig_done": {
         "recognition": "OCR",
@@ -727,7 +795,9 @@
         "next": [
             "close_feed_pig"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">喂豚豚已完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">喂豚豚已完成</font>"
+        }
     },
     "confirm_feed_pig": {
         "recognition": "OCR",
@@ -739,7 +809,9 @@
         "next": [
             "close_feed_pig"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认喂豚豚</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认喂豚豚</font>"
+        }
     },
     "close_feed_pig": {
         "action": "ClickKey",
@@ -748,7 +820,9 @@
         "next": [
             "check_club_mission_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭喂豚豚</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭喂豚豚</font>"
+        }
     },
     "check_club_mission_done": {
         "next": [
@@ -791,13 +865,17 @@
             "gold_helper_done",
             "glod_helper_not_found"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">上滑动去金币助手</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">上滑动去金币助手</font>"
+        }
     },
     "glod_helper_not_found": {
         "next": [
             "swipe_for_club_submit"
         ],
-        "focus": "<font color=\"red\">没有找到金币助手任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"red\">没有找到金币助手任务</font>"
+        }
     },
     "gold_helper_undone": {
         "recognition": "TemplateMatch",
@@ -814,7 +892,9 @@
         "next": [
             "close_gold_helper"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">金币助手未完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">金币助手未完成</font>"
+        }
     },
     "gold_helper_wait": {
         "recognition": "TemplateMatch",
@@ -823,7 +903,9 @@
         "next": [
             "swipe_for_club_submit"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">可以领取金币助手活跃度奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">可以领取金币助手活跃度奖励</font>"
+        }
     },
     "gold_helper_done": {
         "recognition": "TemplateMatch",
@@ -832,7 +914,9 @@
         "next": [
             "swipe_for_club_submit"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">金币助手已完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">金币助手已完成</font>"
+        }
     },
     "close_gold_helper": {
         "action": "ClickKey",
@@ -843,7 +927,9 @@
             "swipe_for_club_submit",
             "[JumpBack]close_gold_helper"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭金币助手</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭金币助手</font>"
+        }
     },
     "swipe_for_club_submit": {
         "recognition": "OCR",
@@ -895,7 +981,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DarkGoldenRod\">这里已经空了,可能是系统繁忙,退出请报社</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">这里已经空了,可能是系统繁忙,退出请报社</font>"
+        }
     },
     "check_club_all_submit": {
         "max_hit": 5,
@@ -919,7 +1007,9 @@
         "on_error": [
             "try_esc"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检测任务是否已经全部提交</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测任务是否已经全部提交</font>"
+        }
     },
     "club_submit": {
         "recognition": "TemplateMatch",
@@ -953,7 +1043,9 @@
         "next": [
             "naruto_club_back_post"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">土豆</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">土豆</font>"
+        }
     },
     "naruto_club_back_post": {
         "max_hit": 9,
@@ -968,14 +1060,18 @@
             "benefit_station",
             "naruto_club_back_post"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">退回话题</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">退回话题</font>"
+        }
     },
     "start_qq": {
         "pre_delay": 1000,
         "action": "StartApp",
         "package": "com.tencent.mobileqq",
         "post_delay": 1000,
-        "focus": "<font color=\"DeepSkyBlue\">打开qq</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">打开qq</font>"
+        }
     },
     "club_first_award_done": {
         "recognition": "TemplateMatch",
@@ -993,7 +1089,9 @@
             "club_second_award_done",
             "[JumpBack]club_second_award"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第一个奖励已领取</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第一个奖励已领取</font>"
+        }
     },
     "club_first_award": {
         "max_hit": 3,
@@ -1017,7 +1115,9 @@
             "club_first_award"
         ],
         "on_error": "naruto_club_in_loop_wheel",
-        "focus": "<font color=\"DeepSkyBlue\">领取第一个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取第一个奖励</font>"
+        }
     },
     "club_first_award_on_error": {
         "max_hit": 3,
@@ -1038,7 +1138,9 @@
             "confirm_club_first_award"
         ],
         "on_error": "naruto_club_in_loop_wheel",
-        "focus": "<font color=\"DeepSkyBlue\">第二次领取第一个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第二次领取第一个奖励</font>"
+        }
     },
     "confirm_club_first_award": {
         "recognition": "OCR",
@@ -1062,7 +1164,9 @@
         "on_error": [
             "naruto_club_in_loop_wheel"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认领取第一个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认领取第一个奖励</font>"
+        }
     },
     "roger_club_first_award": {
         "recognition": "OCR",
@@ -1090,7 +1194,9 @@
         "next": [
             "naruto_club_back_post"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">意志坚定</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">意志坚定</font>"
+        }
     },
     "club_second_award": {
         "recognition": "TemplateMatch",
@@ -1110,7 +1216,9 @@
             "club_second_award_done"
         ],
         "on_error": "award_kale",
-        "focus": "<font color=\"DeepSkyBlue\">领取第二个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取第二个奖励</font>"
+        }
     },
     "confirm_club_second_award": {
         "recognition": "OCR",
@@ -1131,7 +1239,9 @@
             "confirm_club_second_award",
             "club_second_award_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认领取第二个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认领取第二个奖励</font>"
+        }
     },
     "roger_club_second_award": {
         "recognition": "OCR",
@@ -1166,14 +1276,18 @@
         "on_error": [
             "no_third_award"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第二个奖励已领取</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第二个奖励已领取</font>"
+        }
     },
     "no_third_award": {
         "recognition": "DirectHit",
         "next": [
             "close_naruto_club"
         ],
-        "focus": "<font color=\"red\">无法领取第三奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"red\">无法领取第三奖励</font>"
+        }
     },
     "club_third_award": {
         "max_hit": 3,
@@ -1194,7 +1308,9 @@
             "[JumpBack]club_third_award",
             "club_third_award_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">领取第三个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取第三个奖励</font>"
+        }
     },
     "confirm_club_third_award": {
         "recognition": "OCR",
@@ -1214,7 +1330,9 @@
             "confirm_club_third_award",
             "club_third_award_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认领取第三个奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认领取第三个奖励</font>"
+        }
     },
     "roger_club_third_award": {
         "recognition": "OCR",
@@ -1248,7 +1366,9 @@
         "next": [
             "close_naruto_club"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">第三个奖励已领取</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第三个奖励已领取</font>"
+        }
     },
     "close_naruto_club": {
         "recognition": "TemplateMatch",
@@ -1263,7 +1383,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">关闭情报社</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭情报社</font>"
+        }
     },
     "shut_qq": {
         "pre_delay": 0,
@@ -1285,7 +1407,9 @@
     },
     "award_kale": {
         "action": "StopTask",
-        "focus": "<font color=\"DarkGoldenRod\">当前操作超时，疑似遇到真投入</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">当前操作超时，疑似遇到真投入</font>"
+        }
     },
     "try_esc": {
         "max_hit": 1,

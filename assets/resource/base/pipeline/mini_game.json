@@ -1,6 +1,8 @@
 {
     "mini_game": {
         "next": "treasure_gathering_trial_award",
-        "focus": "<font color=\"DeepSkyBlue\">进入小游戏</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入小游戏</font>"
+        }
     }
 }

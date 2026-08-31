@@ -8,7 +8,9 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入天地任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入天地任务</font>"
+        }
     },
     "sky_ground_entry": {
         "recognition": "Or",
@@ -52,7 +54,9 @@
             "no_group",
             "sky_ground_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">组织主界面入口</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">组织主界面入口</font>"
+        }
     },
     "sky_ground_gameplay": {
         "recognition": "TemplateMatch",
@@ -85,7 +89,9 @@
             "sky_ground_mode",
             "[JumpBack]swipe_for_sky_ground_mode"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认选中组织玩法按钮</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认选中组织玩法按钮</font>"
+        }
     },
     "sky_ground_mode": {
         "recognition": "TemplateMatch",
@@ -109,7 +115,9 @@
             "[JumpBack]sky_ground_mode",
             "group_mode_not_open"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入天地模式</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入天地模式</font>"
+        }
     },
     "group_mode_not_open": {
         "recognition": "OCR",
@@ -144,7 +152,9 @@
         ],
         "duration": 300,
         "post_delay": 800,
-        "focus": "<font color=\"DeepSkyBlue\">寻找天地模式</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">寻找天地模式</font>"
+        }
     },
     "sky_ground_battlefield_selection": {
         "recognition": "OCR",
@@ -166,7 +176,9 @@
             "ground_battlefield",
             "sky_ground_settlement"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择战场</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择战场</font>"
+        }
     },
     "sky_ground_settlement": {
         "recognition": "OCR",
@@ -183,7 +195,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">天地战场结束</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">天地战场结束</font>"
+        }
     },
     "sky_ground_not_open": {
         "recognition": "OCR",
@@ -200,7 +214,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">天地战场未开始</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">天地战场未开始</font>"
+        }
     },
     "sky_battlefield": {
         "recognition": "TemplateMatch",
@@ -219,7 +235,9 @@
             "sky_ground_to_column",
             "[JumpBack]sky_battlefield"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择天战场</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择天战场</font>"
+        }
     },
     "ground_battlefield": {
         "recognition": "TemplateMatch",
@@ -237,7 +255,9 @@
             "sky_ground_confirm_set",
             "[JumpBack]ground_battlefield"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择地战场</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择地战场</font>"
+        }
     },
     "sky_ground_confirm_battlefield_selection": {
         "recognition": "OCR",
@@ -257,7 +277,9 @@
             "sky_ground_select_ninja",
             "[JumpBack]sky_ground_confirm_battlefield_selection"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认战场选择</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认战场选择</font>"
+        }
     },
     "sky_ground_select_ninja": {
         "recognition": "TemplateMatch",
@@ -274,7 +296,9 @@
             "sky_ground_selected_ninja",
             "[JumpBack]sky_ground_select_ninja"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择忍者</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择忍者</font>"
+        }
     },
     "sky_ground_recommended_ninja": {
         "recognition": "TemplateMatch",
@@ -291,7 +315,9 @@
             "sky_ground_selected_ninja",
             "[JumpBack]sky_ground_recommended_ninja"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择推荐忍者</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择推荐忍者</font>"
+        }
     },
     "sky_ground_selected_ninja": {
         "recognition": "TemplateMatch",
@@ -308,7 +334,9 @@
             "sky_ground_to_select_summon",
             "sky_ground_in_select_summon"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认选中忍者</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认选中忍者</font>"
+        }
     },
     "sky_ground_to_select_summon": {
         "recognition": "TemplateMatch",
@@ -324,7 +352,9 @@
             "sky_ground_in_select_summon",
             "[JumpBack]sky_ground_to_select_summon"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择通灵</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择通灵</font>"
+        }
     },
     "sky_ground_in_select_summon": {
         "recognition": "TemplateMatch",
@@ -339,7 +369,9 @@
             "sky_ground_summon_done",
             "[JumpBack]sky_ground_select_summon"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">开始选择通灵</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始选择通灵</font>"
+        }
     },
     "sky_ground_select_summon": {
         "recognition": "TemplateMatch",
@@ -353,7 +385,9 @@
             "battle/通灵"
         ],
         "action": "Click",
-        "focus": "<font color=\"DeepSkyBlue\">识别通灵</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">识别通灵</font>"
+        }
     },
     "sky_ground_summon_done": {
         "recognition": "OCR",
@@ -369,7 +403,9 @@
             "sky_ground_to_select_roll",
             "sky_ground_in_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">完成选择通灵</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">完成选择通灵</font>"
+        }
     },
     "sky_ground_to_select_roll": {
         "recognition": "TemplateMatch",
@@ -385,7 +421,9 @@
             "sky_ground_in_select_roll",
             "[JumpBack]sky_ground_to_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择秘卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择秘卷</font>"
+        }
     },
     "sky_ground_in_select_roll": {
         "recognition": "TemplateMatch",
@@ -393,7 +431,9 @@
         "next": [
             "sky_ground_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">开始选择密卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始选择密卷</font>"
+        }
     },
     "sky_ground_select_roll": {
         "recognition": "TemplateMatch",
@@ -411,7 +451,9 @@
             "sky_ground_selected_roll",
             "sky_ground_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">识别密卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">识别密卷</font>"
+        }
     },
     "sky_ground_selected_roll": {
         "recognition": "OCR",
@@ -426,7 +468,9 @@
         "next": [
             "sky_ground_confirm_set"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">完成选择密卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">完成选择密卷</font>"
+        }
     },
     "sky_ground_confirm_set": {
         "recognition": "OCR",
@@ -448,7 +492,9 @@
             "left_swipe_for_empty_column",
             "up_swipe_for_empty_column"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认配置</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认配置</font>"
+        }
     },
     "sky_ground_group_encouragement": {
         "recognition": "OCR",
@@ -468,7 +514,9 @@
             "left_swipe_for_empty_column",
             "up_swipe_for_empty_column"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">组织激励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">组织激励</font>"
+        }
     },
     "sky_ground_to_column": {
         "recognition": "TemplateMatch",
@@ -495,7 +543,9 @@
             "down_swipe_for_empty_column",
             "sky_ground_in_main"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">前往空柱子</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">前往空柱子</font>"
+        }
     },
     "sky_ground_to_award_column": {
         "recognition": "TemplateMatch",
@@ -583,7 +633,9 @@
             "[JumpBack]sky_ground_in_fight",
             "sky_ground_in_main"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">右滑选择空柱子</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">右滑选择空柱子</font>"
+        }
     },
     "left_swipe_for_empty_column": {
         "max_hit": 1,
@@ -621,7 +673,9 @@
             "[JumpBack]sky_ground_in_fight",
             "sky_ground_in_main"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">左滑选择空柱子</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">左滑选择空柱子</font>"
+        }
     },
     "down_swipe_for_empty_column": {
         "max_hit": 1,
@@ -659,7 +713,9 @@
             "[JumpBack]sky_ground_in_fight",
             "sky_ground_in_main"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">下滑选择空柱子</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">下滑选择空柱子</font>"
+        }
     },
     "up_swipe_for_empty_column": {
         "max_hit": 1,
@@ -697,7 +753,9 @@
             "[JumpBack]sky_ground_in_fight",
             "sky_ground_in_main"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">上滑选择空柱子</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">上滑选择空柱子</font>"
+        }
     },
     "sky_ground_get_bead": {
         "recognition": "TemplateMatch",
@@ -706,7 +764,9 @@
             0.9
         ],
         "action": "Click",
-        "focus": "<font color=\"DeepSkyBlue\">抢经验球</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">抢经验球</font>"
+        }
     },
     "sky_ground_check_no_bead": {
         "recognition": "TemplateMatch",
@@ -715,7 +775,9 @@
             0.9
         ],
         "inverse": true,
-        "focus": "<font color=\"DeepSkyBlue\">确认没有经验求</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认没有经验求</font>"
+        }
     },
     "sky_ground_in_main": {
         "recognition": "TemplateMatch",
@@ -779,7 +841,9 @@
             "sky_ground_in_main",
             "win_to_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">战斗胜利</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">战斗胜利</font>"
+        }
     },
     "sky_ground_fail": {
         "recognition": "TemplateMatch",
@@ -798,7 +862,9 @@
             "sky_ground_confirm_new_set",
             "[JumpBack]sky_ground_fail"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">战斗失败</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">战斗失败</font>"
+        }
     },
     "sky_ground_confirm_new_set": {
         "recognition": "OCR",
@@ -817,7 +883,9 @@
             "sky_ground_in_main",
             "[JumpBack]sky_ground_confirm_new_set"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认配置</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认配置</font>"
+        }
     },
     "sky_ground_end": {
         "recognition": "OCR",
@@ -851,7 +919,9 @@
             "sky_ground_end_confirm_back_main_screen",
             "[JumpBack]sky_ground_end_back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">天地开始回主页面</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">天地开始回主页面</font>"
+        }
     },
     "sky_ground_end_confirm_back_main_screen": {
         "recognition": "OCR",
@@ -870,7 +940,9 @@
             "sky_ground_end_not_in_main",
             "[JumpBack]sky_ground_end_confirm_back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">天地确认回主页面</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">天地确认回主页面</font>"
+        }
     },
     "sky_ground_end_not_in_main": {
         "recognition": "TemplateMatch",

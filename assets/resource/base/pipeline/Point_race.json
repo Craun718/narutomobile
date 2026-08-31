@@ -8,7 +8,9 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入积分赛任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入积分赛任务</font>"
+        }
     },
     "go_into_point_race": {
         "recognition": {
@@ -33,7 +35,9 @@
             "point_race_challenge_enter",
             "[JumpBack]ninja_guide_to_funtion_retry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入积分赛</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入积分赛</font>"
+        }
     },
     "point_race_challenge_enter": {
         "recognition": "TemplateMatch",
@@ -61,7 +65,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">积分赛挑战次数已用完</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">积分赛挑战次数已用完</font>"
+        }
     },
     "wait_for_select_opponent": {
         "recognition": "TemplateMatch",
@@ -78,7 +84,9 @@
             "point_race_challenge",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">开始选择对手</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始选择对手</font>"
+        }
     },
     "point_race_cross_server": {
         "recognition": "TemplateMatch",
@@ -157,7 +165,9 @@
         "on_error": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入积分赛战斗</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入积分赛战斗</font>"
+        }
     },
     "point_race_loading": {
         "recognition": "OCR",
@@ -197,7 +207,9 @@
             "point_race_challenge_finished",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DarkGoldenRod\">鸣佐</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">鸣佐</font>"
+        }
     },
     "point_race_quit": {
         "recognition": "TemplateMatch",
@@ -207,7 +219,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">不进行挑战直接退出</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">不进行挑战直接退出</font>"
+        }
     },
     "point_race_skip": {
         "recognition": "OCR",
@@ -278,7 +292,9 @@
             "point_race_challenge_enter",
             "point_race_direct_hit_quit"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">积分赛失败,再战</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">积分赛失败,再战</font>"
+        }
     },
     "point_race_get_challenge_button": {
         "recognition": "OCR",
@@ -311,7 +327,9 @@
             "ac_entry_mission_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        }
     },
     "point_race_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -337,6 +355,8 @@
             "point_race_challenge_enter",
             "point_race_ac_entry_undone"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">积分赛未完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">积分赛未完成</font>"
+        }
     }
 }

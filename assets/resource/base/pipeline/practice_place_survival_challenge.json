@@ -7,7 +7,9 @@
             "[JumpBack]award_center_enter",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入生存挑战任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入生存挑战任务</font>"
+        }
     },
     "survival_challenge_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -26,7 +28,9 @@
             "survival_challenge_ac_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        }
     },
     "survival_challenge_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -52,7 +56,9 @@
             "survival_challenge_in_survival_challenge",
             "survival_challenge_ac_entry_undone"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入生存挑战</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入生存挑战</font>"
+        }
     },
     "survival_challenge_in_survival_challenge": {
         "recognition": "TemplateMatch",
@@ -85,7 +91,9 @@
         "next": [
             "survival_challenge_confirm_above_kage"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">生存挑战超影服务触发</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">生存挑战超影服务触发</font>"
+        }
     },
     "survival_challenge_confirm_above_kage": {
         "recognition": "OCR",
@@ -151,7 +159,9 @@
         "post_wait_freezes": 200,
         "post_delay": 0,
         "next": "survival_challenge_yesterday_award_1",
-        "focus": "<font color=\"DeepSkyBlue\">尝试领取昨日奖励</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">尝试领取昨日奖励</font>"
+        }
     },
     "survival_challenge_yesterday_award_1": {
         "recognition": "TemplateMatch",
@@ -189,7 +199,9 @@
             "survival_challenge_above_kage",
             "start_survival_challenge_sweep"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">生存挑战已重置</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">生存挑战已重置</font>"
+        }
     },
     "survival_challenge_reset_undone": {
         "recognition": "TemplateMatch",
@@ -213,7 +225,9 @@
         "next": [
             "confirm_survival_challenge_reset"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">生存挑战未重置</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">生存挑战未重置</font>"
+        }
     },
     "confirm_survival_challenge_reset": {
         "recognition": "TemplateMatch",
@@ -232,7 +246,9 @@
         "next": [
             "survival_challenge_confirm_tp"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认生存挑战重置</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认生存挑战重置</font>"
+        }
     },
     "survival_challenge_confirm_tp": {
         "recognition": "TemplateMatch",
@@ -250,7 +266,9 @@
         "next": [
             "survival_challenge_confirm_tp_1"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">生存挑战传送</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">生存挑战传送</font>"
+        }
     },
     "survival_challenge_confirm_tp_1": {
         "recognition": "TemplateMatch",
@@ -308,7 +326,9 @@
         "on_error": [
             "retry_failed"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入生存挑战扫荡任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入生存挑战扫荡任务</font>"
+        }
     },
     "check_survival_challenge_done": {
         "recognition": "OCR",
@@ -340,7 +360,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">扫荡券不足</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">扫荡券不足</font>"
+        }
     },
     "survival_challenge_sweep_ready": {
         "recognition": "OCR",
@@ -386,7 +408,9 @@
             "survival_challenge_sweep_confirm",
             "survival_challenge_ninja_select_confirm"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认进行生存挑战</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认进行生存挑战</font>"
+        }
     },
     "survival_challenge_ninja_select_confirm": {
         "recognition": "TemplateMatch",
@@ -458,7 +482,9 @@
         "on_error": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认生存挑战挑战卷提示</font>",
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认生存挑战挑战卷提示</font>"
+        },
         "$doc": "这里设置了post_wait_freezes,所以timeout可以调的很短"
     },
     "survival_challenge_check_done": {
@@ -526,7 +552,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">生存挑战卷用完了</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">生存挑战卷用完了</font>"
+        }
     },
     "wait_for_survival_challenge_sweep_complete": {
         "recognition": "TemplateMatch",
@@ -540,6 +568,8 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">生存挑战扫荡完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">生存挑战扫荡完成</font>"
+        }
     }
 }

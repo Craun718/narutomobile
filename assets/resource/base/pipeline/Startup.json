@@ -8,7 +8,9 @@
         "next": [
             "start_naruto"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">火影忍者，启动！</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">火影忍者，启动！</font>"
+        }
     },
     "start_naruto": {
         "timeout": 30000,
@@ -27,7 +29,9 @@
         "next": [
             "start_up"
         ],
-        "focus": "<font color=\"tomato\">重启火影</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"tomato\">重启火影</font>"
+        }
     },
     "splash_screen": {
         "recognition": "OCR",
@@ -89,7 +93,9 @@
         "pre_wait_freezes": 500,
         "pre_delay": 0,
         "action": "Click",
-        "focus": "<font color=\"DeepSkyBlue\">尝试关闭青少年界面</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">尝试关闭青少年界面</font>"
+        }
     },
     "close_before_game_notice": {
         "recognition": "TemplateMatch",
@@ -102,7 +108,9 @@
         "template": "Startup/x.png",
         "action": "Click",
         "post_delay": 500,
-        "focus": "<font color=\"DeepSkyBlue\">关闭游戏前公告</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭游戏前公告</font>"
+        }
     },
     "agree_log_in": {
         "recognition": "OCR",
@@ -122,7 +130,9 @@
             "empty_number",
             "agree_log_in"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认登录</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认登录</font>"
+        }
     },
     "without_agree_log_in": {
         "recognition": "OCR",
@@ -142,7 +152,9 @@
         "expected": "位数不足",
         "action": "Custom",
         "custom_action": "StopTaskList",
-        "focus": "<font color=\"tomato\">当前没有可登录的账号</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"tomato\">当前没有可登录的账号</font>"
+        }
     },
     "agree_info": {
         "recognition": "OCR",
@@ -156,7 +168,9 @@
         "pre_delay": 0,
         "action": "Click",
         "post_delay": 1500,
-        "focus": "<font color=\"DeepSkyBlue\">确认同意信息</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认同意信息</font>"
+        }
     },
     "refuse_info": {
         "recognition": "OCR",
@@ -176,7 +190,9 @@
             "refuse_info",
             "click_start_game"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确认同意信息</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认同意信息</font>"
+        }
     },
     "confirm_refuse_info": {
         "recognition": "OCR",
@@ -189,7 +205,9 @@
         "expected": "确定",
         "action": "Click",
         "post_delay": 1000,
-        "focus": "<font color=\"DeepSkyBlue\">确认同意信息</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认同意信息</font>"
+        }
     },
     "click_start_game": {
         "recognition": "TemplateMatch",
@@ -209,7 +227,9 @@
             "click_start_game",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">点击开始游戏</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">点击开始游戏</font>"
+        }
     },
     "before_game_loading_1": {
         "recognition": "TemplateMatch",
@@ -257,7 +277,9 @@
             "[JumpBack]without_before_game_black_screen",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">加载结束</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">加载结束</font>"
+        }
     },
     "without_before_game_black_screen": {
         "max_hit": 10,
@@ -391,6 +413,8 @@
         "template": "SharedNode/android_qq_login.png",
         "pre_delay": 0,
         "post_delay": 300,
-        "focus": "<font color=\"tomato\">由于最终用户协议(EULA),你必须手动同意协议</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"tomato\">由于最终用户协议(EULA),你必须手动同意协议</font>"
+        }
     }
 }

@@ -7,7 +7,9 @@
             "joy_club_enter",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入心悦俱乐部子任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入心悦俱乐部子任务</font>"
+        }
     },
     "joy_club_enter": {
         "recognition": "TemplateMatch",

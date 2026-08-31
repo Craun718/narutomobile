@@ -55,7 +55,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">聚宝试炼奖励已领取</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">聚宝试炼奖励已领取</font>"
+        }
     },
     "treasure_gathering_trial_box": {
         "recognition": "TemplateMatch",

@@ -7,7 +7,9 @@
             "[JumpBack]elite_instance_to_level_roll",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入精英副本任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入精英副本任务</font>"
+        }
     },
     "elite_instance_entry": {
         "recognition": "TemplateMatch",
@@ -25,7 +27,9 @@
             "[JumpBack]elite_instance_to_level_roll",
             "[JumpBack]elite_instance_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本入口</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入冒险副本入口</font>"
+        }
     },
     "elite_instance_in_level_roll": {
         "recognition": "TemplateMatch",
@@ -40,7 +44,9 @@
         "next": [
             "elite_instance_to_elite_instance"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">已经在冒险副本</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">已经在冒险副本</font>"
+        }
     },
     "elite_instance_to_elite_instance": {
         "recognition": "TemplateMatch",
@@ -87,7 +93,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">全部关卡已经完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">全部关卡已经完成</font>"
+        }
     },
     "elite_instance_new_level_undone": {
         "recognition": "TemplateMatch",
@@ -102,7 +110,9 @@
         "next": [
             "elite_instance_go_fight"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入精英副本新关卡</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入精英副本新关卡</font>"
+        }
     },
     "elite_instance_go_fight": {
         "recognition": "TemplateMatch",
@@ -121,7 +131,9 @@
             "use_energy_not_enough_sign",
             "elite_instance_go_fight"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">开始战斗</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始战斗</font>"
+        }
     },
     "elite_instance_in_fight": {
         "recognition": "TemplateMatch",
@@ -141,7 +153,9 @@
             "elite_instance_not_in_fight",
             "[JumpBack]elite_instance_check_not_in_auto_fight"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">战斗中</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">战斗中</font>"
+        }
     },
     "elite_instance_has_stop_button": {
         "recognition": "TemplateMatch",
@@ -207,7 +221,9 @@
             "elite_instance_not_in_fight",
             "[JumpBack]elite_instance_not_in_auto_fight"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">打开自动战斗</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">打开自动战斗</font>"
+        }
     },
     "elite_instance_not_in_fight": {
         "recognition": "TemplateMatch",
@@ -228,7 +244,9 @@
             "elite_instance_lock",
             "elite_instance_in_fight"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">不在战斗</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">不在战斗</font>"
+        }
     },
     "elite_instance_not_in_auto_fight": {
         "recognition": "TemplateMatch",
@@ -242,7 +260,9 @@
         "next": [
             "elite_instance_auto_fight"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">不在自动战斗</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">不在自动战斗</font>"
+        }
     },
     "elite_instance_win": {
         "recognition": "TemplateMatch",
@@ -261,7 +281,9 @@
             "[JumpBack]elite_instance_win",
             "elite_instance_rank_up"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">胜利啦</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">胜利啦</font>"
+        }
     },
     "elite_instance_lost": {
         "recognition": "OCR",
@@ -279,7 +301,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"tomato\">胜败乃兵家常事</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"tomato\">胜败乃兵家常事</font>"
+        }
     },
     "elite_instance_lock": {
         "recognition": "OCR",
@@ -298,7 +322,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"tomato\">下一关未解锁</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"tomato\">下一关未解锁</font>"
+        }
     },
     "elite_instance_rank_up": {
         "recognition": "OCR",
@@ -320,7 +346,9 @@
             "elite_instance_to_elite_instance",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"tomato\">升级了</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"tomato\">升级了</font>"
+        }
     },
     "elite_instance_to_level_roll": {
         "recognition": "OCR",

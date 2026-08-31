@@ -7,7 +7,9 @@
             "konoha_snack_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入木叶小吃店任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入木叶小吃店任务</font>"
+        }
     },
     "konoha_snack_entry": {
         "recognition": "TemplateMatch",
@@ -35,7 +37,9 @@
             "[JumpBack]swipes_for_konoha_snack",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入木叶小吃店活动</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入木叶小吃店活动</font>"
+        }
     },
     "swipes_for_konoha_snack": {
         "max_hit": 5,
@@ -63,7 +67,9 @@
         ],
         "duration": 200,
         "post_delay": 700,
-        "focus": "<font color=\"DeepSkyBlue\">前往木叶小吃店</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">前往木叶小吃店</font>"
+        }
     },
     "find_konoha_snack": {
         "recognition": "OCR",
@@ -84,7 +90,9 @@
             "konoha_snack_start",
             "[JumpBack]find_konoha_snack"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">找到木叶小吃店</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">找到木叶小吃店</font>"
+        }
     },
     "konoha_snack_start": {
         "recognition": "OCR",
@@ -108,7 +116,9 @@
             "[JumpBack]konoha_snack_get",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入投喂游戏</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入投喂游戏</font>"
+        }
     },
     "konoha_snack_hashirma": {
         "recognition": "TemplateMatch",
@@ -136,7 +146,9 @@
             "konoha_snack_get",
             "[JumpBack]konoha_snack_start"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">太好了是柱间,我们有救了</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">太好了是柱间,我们有救了</font>"
+        }
     },
     "konoha_snack_high": {
         "recognition": "TemplateMatch",
@@ -164,7 +176,9 @@
             "konoha_snack_get",
             "[JumpBack]konoha_snack_start"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">火之高兴</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">火之高兴</font>"
+        }
     },
     "konoha_snack_low": {
         "recognition": "TemplateMatch",
@@ -192,7 +206,9 @@
             "konoha_snack_get",
             "[JumpBack]konoha_snack_start"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">过牌</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">过牌</font>"
+        }
     },
     "konoha_snack_mid": {
         "recognition": "TemplateMatch",
@@ -220,7 +236,9 @@
             "konoha_snack_get",
             "[JumpBack]konoha_snack_start"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">忧郁蓝调</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">忧郁蓝调</font>"
+        }
     },
     "konoha_snack_get": {
         "recognition": "OCR",

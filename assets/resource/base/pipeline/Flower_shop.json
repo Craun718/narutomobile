@@ -7,7 +7,9 @@
             "flower_shop_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入花店任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入花店任务</font>"
+        }
     },
     "flower_shop_entry": {
         "recognition": "TemplateMatch",
@@ -35,7 +37,9 @@
             "[JumpBack]swipes_for_flower_shop",
             "[JumpBack]back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入活动</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入活动</font>"
+        }
     },
     "find_flower_shop": {
         "recognition": "OCR",
@@ -54,7 +58,9 @@
             "select_flower_shop",
             "find_flower_shop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">找到花店</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">找到花店</font>"
+        }
     },
     "select_flower_shop": {
         "recognition": "TemplateMatch",
@@ -71,7 +77,9 @@
             "flower_shop_undone",
             "flower_shop_done"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选中花店</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选中花店</font>"
+        }
     },
     "swipes_for_flower_shop": {
         "max_hit": 5,
@@ -91,7 +99,9 @@
         ],
         "duration": 200,
         "post_delay": 700,
-        "focus": "<font color=\"DeepSkyBlue\">前往花店</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">前往花店</font>"
+        }
     },
     "flower_shop_undone": {
         "recognition": "TemplateMatch",
@@ -110,7 +120,9 @@
             "flower_shop_in_select_flower",
             "flower_shop_to_select_flower"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">可以种花</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">可以种花</font>"
+        }
     },
     "flower_shop_in_select_flower": {
         "recognition": "TemplateMatch",
@@ -126,7 +138,9 @@
         "next": [
             "flower_shop_in_choose_flower"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">在选花界面</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">在选花界面</font>"
+        }
     },
     "flower_shop_to_select_flower": {
         "recognition": "TemplateMatch",
@@ -145,7 +159,9 @@
             "flower_shop_in_select_flower",
             "[JumpBack]flower_shop_to_select_flower"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">去选花</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">去选花</font>"
+        }
     },
     "flower_shop_in_choose_flower": {
         "recognition": {
@@ -164,7 +180,9 @@
             "flower_shop_check_select_flower",
             "[JumpBack]flower_shop_in_choose_flower"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">寻找可以种的花</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">寻找可以种的花</font>"
+        }
     },
     "flower_shop_check_select_flower": {
         "recognition": "TemplateMatch",
@@ -200,7 +218,9 @@
             "flower_shop_done",
             "[JumpBack]flower_shop_confirm_choose_flower"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">确定种花</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确定种花</font>"
+        }
     },
     "flower_shop_not_select_flower": {
         "recognition": "OCR",

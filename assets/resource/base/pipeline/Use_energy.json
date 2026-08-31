@@ -6,7 +6,9 @@
             "use_energy_by_ninja_piece",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入使用体力任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入使用体力任务</font>"
+        }
     },
     "use_energy_by_ninja_piece": {
         "recognition": "TemplateMatch",
@@ -33,7 +35,9 @@
             "elite_entry",
             "[JumpBack]use_energy_by_ninja_piece"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">刷忍者碎片</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">刷忍者碎片</font>"
+        }
     },
     "elite_entry": {
         "recognition": "TemplateMatch",
@@ -52,7 +56,9 @@
             "use_energy_ez_sweep_entry",
             "elite_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入精英副本</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入精英副本</font>"
+        }
     },
     "use_energy_ez_sweep_entry": {
         "recognition": "TemplateMatch",
@@ -71,7 +77,9 @@
             "use_energy_ez_sweep",
             "[JumpBack]use_energy_ez_sweep_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">便捷扫荡</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">便捷扫荡</font>"
+        }
     },
     "use_energy_ez_sweep": {
         "max_hit": 5,
@@ -118,7 +126,9 @@
             "use_energy_ez_sweep",
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">继续扫荡</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">继续扫荡</font>"
+        }
     },
     "use_energy_not_enough_sign": {
         "recognition": "TemplateMatch",
@@ -139,7 +149,9 @@
         ],
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">体力不足</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">体力不足</font>"
+        }
     },
     "use_energy_finish": {
         "recognition": "TemplateMatch",
@@ -157,7 +169,9 @@
             "use_energy_finished",
             "use_energy_finish"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">扫荡完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">扫荡完成</font>"
+        }
     },
     "use_energy_finished": {
         "recognition": "TemplateMatch",
@@ -170,7 +184,9 @@
         "template": "Use_energy/sweep_finish.png",
         "inverse": true,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">扫荡完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">扫荡完成</font>"
+        }
     },
     "use_energy_finish_1": {
         "recognition": "OCR",
@@ -187,7 +203,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">扫荡完成或者没有选中扫荡副本</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">扫荡完成或者没有选中扫荡副本</font>"
+        }
     },
     "use_energy_check_one_key_select": {
         "recognition": "TemplateMatch",

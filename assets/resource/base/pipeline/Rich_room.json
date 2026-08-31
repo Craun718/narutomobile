@@ -7,7 +7,9 @@
             "rich_room_ac_entry",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入丰饶之间任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入丰饶之间任务</font>"
+        }
     },
     "rich_room_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -26,7 +28,9 @@
             "award_center_find_end",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        }
     },
     "rich_room_not_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -44,7 +48,9 @@
             "rich_room_in_center_enter",
             "rich_room_not_in_center_enter"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
+        }
     },
     "rich_room_ac_entry": {
         "recognition": "TemplateMatch",
@@ -67,7 +73,9 @@
             "rich_room_not_in_center_enter",
             "rich_room_ac_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入奖励中心</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入奖励中心</font>"
+        }
     },
     "rich_room_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -93,7 +101,9 @@
             "rich_room_in_rich_room",
             "rich_room_ac_entry_undone"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">丰饶之间未完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">丰饶之间未完成</font>"
+        }
     },
     "rich_room_in_rich_room": {
         "recognition": "OCR",
@@ -277,7 +287,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "<font color=\"DeepSkyBlue\">丰饶之间完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">丰饶之间完成</font>"
+        }
     },
     "rich_room_ninja_expire": {
         "recognition": "OCR",
@@ -311,7 +323,9 @@
             "rich_room_in_lineup",
             "rich_room_lineup"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">丰饶之间调整阵容</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">丰饶之间调整阵容</font>"
+        }
     },
     "rich_room_in_lineup": {
         "recognition": "OCR",
@@ -446,7 +460,9 @@
             "rich_room_in_select_roll",
             "[JumpBack]rich_room_to_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择秘卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择秘卷</font>"
+        }
     },
     "rich_room_in_select_roll": {
         "recognition": "TemplateMatch",
@@ -463,7 +479,9 @@
             "rich_room_selected_roll",
             "rich_room_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">开始选择密卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始选择密卷</font>"
+        }
     },
     "rich_room_select_roll": {
         "recognition": "TemplateMatch",
@@ -483,7 +501,9 @@
             "rich_room_selected_roll",
             "rich_room_select_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">识别密卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">识别密卷</font>"
+        }
     },
     "rich_room_selected_roll": {
         "recognition": "OCR",
@@ -498,7 +518,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "rich_room_confirm_set",
-        "focus": "<font color=\"DeepSkyBlue\">完成选择密卷</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">完成选择密卷</font>"
+        }
     },
     "rich_room_confirm_set": {
         "recognition": "OCR",
@@ -531,7 +553,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">检查是否和平</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检查是否和平</font>"
+        }
     },
     "rich_room_in_fight": {
         "recognition": "TemplateMatch",

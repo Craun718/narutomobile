@@ -7,7 +7,9 @@
             "asura_instance_in_level_roll",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入修罗副本任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入修罗副本任务</font>"
+        }
     },
     "asura_instance_entry": {
         "recognition": "TemplateMatch",
@@ -25,7 +27,9 @@
             "asura_instance_in_level_roll",
             "[JumpBack]asura_instance_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入冒险副本入口</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入冒险副本入口</font>"
+        }
     },
     "asura_instance_in_level_roll": {
         "recognition": "TemplateMatch",
@@ -42,7 +46,9 @@
         "next": [
             "asura_instance_to_asura_instance"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">已经在冒险副本</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">已经在冒险副本</font>"
+        }
     },
     "asura_instance_to_asura_instance": {
         "recognition": "TemplateMatch",
@@ -61,7 +67,9 @@
             "asura_instance_in_asura_instance",
             "[JumpBack]asura_instance_to_asura_instance"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">去在修罗副本</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">去在修罗副本</font>"
+        }
     },
     "asura_instance_in_asura_instance": {
         "recognition": "TemplateMatch",
@@ -78,6 +86,8 @@
             "advanture_check_no_next_roll",
             "[JumpBack]advanture_to_next_roll"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">已在修罗副本</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">已在修罗副本</font>"
+        }
     }
 }

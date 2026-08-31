@@ -8,7 +8,9 @@
             "give_energy_done",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入送体力任务</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入送体力任务</font>"
+        }
     },
     "energy_entry": {
         "recognition": "TemplateMatch",
@@ -31,7 +33,9 @@
             "sent_energy",
             "energy_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">进入送体力界面</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入送体力界面</font>"
+        }
     },
     "give_energy_account_friend": {
         "recognition": "OCR",
@@ -57,7 +61,9 @@
             "give_energy_in_account_friend",
             "give_energy_account_friend"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择账号好友</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择账号好友</font>"
+        }
     },
     "give_energy_in_account_friend": {
         "recognition": "TemplateMatch",
@@ -76,7 +82,9 @@
             "sent_energy",
             "energy_entry"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">选择账号好友</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择账号好友</font>"
+        }
     },
     "give_energy_done": {
         "recognition": "TemplateMatch",
@@ -92,7 +100,9 @@
         "pre_delay": 0,
         "action": "StopTask",
         "post_delay": 0,
-        "focus": "<font color=\"DeepSkyBlue\">送体力已完成</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">送体力已完成</font>"
+        }
     },
     "sent_energy": {
         "recognition": "OCR",
@@ -109,7 +119,9 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": "get_energy",
-        "focus": "<font color=\"DeepSkyBlue\">送体力</font>"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">送体力</font>"
+        }
     },
     "get_energy": {
         "recognition": "OCR",
@@ -129,7 +141,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "<font color=\"DeepSkyBlue\">领取好友送的体力</font>",
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取好友送的体力</font>"
+        },
         "$doc": "一键领取体力后不需要点确定"
     }
 }
