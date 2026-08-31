@@ -7,7 +7,9 @@
             "team_dash_ac_entry",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入小队突袭任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入小队突袭任务</font>"
+        }
     },
     "team_dash_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -27,7 +29,9 @@
             "team_dash_ac_done",
             "[JumpBack]swipe_for_award_center_find"
         ],
-        "focus": "[color:DeepSkyBlue]检测是否已在奖励中心[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测是否已在奖励中心</font>"
+        }
     },
     "team_dash_not_in_center_enter": {
         "recognition": "TemplateMatch",
@@ -45,7 +49,9 @@
             "team_dash_in_center_enter",
             "team_dash_not_in_center_enter"
         ],
-        "focus": "[color:DeepSkyBlue]奖励中心有奖励没领取[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">奖励中心有奖励没领取</font>"
+        }
     },
     "team_dash_ac_entry": {
         "recognition": "TemplateMatch",
@@ -68,7 +74,9 @@
             "team_dash_not_in_center_enter",
             "team_dash_ac_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入奖励中心[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入奖励中心</font>"
+        }
     },
     "team_dash_ac_entry_undone": {
         "recognition": "TemplateMatch",
@@ -96,7 +104,9 @@
             "team_dash_group_help_done",
             "team_dash_ac_entry_undone"
         ],
-        "focus": "[color:DeepSkyBlue]小队突袭未完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">小队突袭未完成</font>"
+        }
     },
     "team_dash_ac_done": {
         "recognition": "TemplateMatch",
@@ -110,7 +120,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "[color:DeepSkyBlue]小队突袭已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">小队突袭已完成</font>"
+        }
     },
     "team_dash_group_help_undone": {
         "recognition": "TemplateMatch",
@@ -131,7 +143,9 @@
             "team_dash_my_help_done",
             "team_dash_group_help_undone"
         ],
-        "focus": "[color:DeepSkyBlue]进入组织助战[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入组织助战</font>"
+        }
     },
     "team_dash_not_in_group": {
         "recognition": "TemplateMatch",
@@ -158,7 +172,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "dash_or_exit",
-        "focus": "[color:DeepSkyBlue]选择组织助战[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">选择组织助战</font>"
+        }
     },
     "team_dash_my_help_done": {
         "recognition": "TemplateMatch",
@@ -173,7 +189,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "team_dash_invite_page",
-        "focus": "[color:DeepSkyBlue]我的助战已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">我的助战已完成</font>"
+        }
     },
     "team_dash_my_help_undone": {
         "recognition": "TemplateMatch",
@@ -193,7 +211,9 @@
             "team_dash_my_help_award",
             "team_dash_my_help_undone"
         ],
-        "focus": "[color:DeepSkyBlue]我的助战未完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">我的助战未完成</font>"
+        }
     },
     "team_dash_my_help_award": {
         "recognition": "TemplateMatch",
@@ -207,7 +227,9 @@
         "pre_delay": 0,
         "action": "Click",
         "next": "close_my_help",
-        "focus": "[color:DeepSkyBlue]领取我的助战奖励[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取我的助战奖励</font>"
+        }
     },
     "close_my_help": {
         "recognition": "And",
@@ -246,7 +268,9 @@
             "team_dash_invite_page",
             "[JumpBack]close_my_help"
         ],
-        "focus": "[color:DeepSkyBlue]关闭我的助战[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭我的助战</font>"
+        }
     },
     "team_dash_invite_page": {
         "recognition": "TemplateMatch",
@@ -265,7 +289,9 @@
             "dash_or_exit",
             "retry_failed"
         ],
-        "focus": "[color:DeepSkyBlue]进入助战邀请界面[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入助战邀请界面</font>"
+        }
     },
     "team_dash_invite_ninja": {
         "recognition": "TemplateMatch",
@@ -281,7 +307,9 @@
         "post_wait_freezes": 200,
         "post_delay": 0,
         "next": "dash_or_exit",
-        "focus": "[color:DeepSkyBlue]邀请组织助战忍者[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">邀请组织助战忍者</font>"
+        }
     },
     "can_not_invite": {
         "max_hit": 5,
@@ -304,7 +332,9 @@
             1,
             1
         ],
-        "focus": "[color:darkgray]当前页面没有可邀请的助战忍者[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">当前页面没有可邀请的助战忍者</font>"
+        }
     },
     "dash_or_exit": {
         "pre_wait_freezes": 300,
@@ -346,7 +376,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "close_team_dash",
-        "focus": "[color:darkgray]达到今日收益上限[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">达到今日收益上限</font>"
+        }
     },
     "team_dash_auto_fight": {
         "max_hit": 10,
@@ -379,7 +411,9 @@
             "team_dash_auto_fight_retry_failed",
             "unknow_error"
         ],
-        "focus": "[color:DeepSkyBlue]小队突袭自动战斗[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">小队突袭自动战斗</font>"
+        }
     },
     "team_dash_same_ninja": {
         "recognition": "OCR",
@@ -513,7 +547,9 @@
             "team_dash_matching",
             "dash_or_exit"
         ],
-        "focus": "[color:DeepSkyBlue]点击继续战斗[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">点击继续战斗</font>"
+        }
     },
     "team_dash_matching": {
         "recognition": "OCR",
@@ -568,7 +604,9 @@
             "team_dash_do_not_remind_gold",
             "team_dash_keep_fight"
         ],
-        "focus": "[color:DeepSkyBlue]点击本周不再提醒[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">点击本周不再提醒</font>"
+        }
     },
     "check_in_team_dash_sweep": {
         "recognition": "OCR",
@@ -603,7 +641,9 @@
             "check_in_team_dash_sweep",
             "[JumpBack]team_dash_sweep_win"
         ],
-        "focus": "没有检测到自动战斗"
+        "focus": {
+            "Node.Action.Starting": "没有检测到自动战斗"
+        }
     },
     "team_dash_in_auto_battle": {
         "recognition": "OCR",
@@ -673,7 +713,9 @@
             "check_in_team_dash_sweep",
             "[JumpBack]team_dash_sweep_win"
         ],
-        "focus": "开启自动战斗",
+        "focus": {
+            "Node.Action.Starting": "开启自动战斗"
+        },
         "$doc": "好像老区没有默认开自动战斗"
     },
     "team_dash_sweep_win": {
@@ -689,7 +731,9 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]胜利退出[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">胜利退出</font>"
+        }
     },
     "check_not_in_team_dash_sweep": {
         "recognition": "TemplateMatch",
@@ -705,7 +749,9 @@
         "next": [
             "dash_or_exit"
         ],
-        "focus": "[color:DeepSkyBlue]检测不在进行小队突袭战斗[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测不在进行小队突袭战斗</font>"
+        }
     },
     "team_dash_above_kage_sweep": {
         "recognition": "TemplateMatch",
@@ -728,7 +774,9 @@
             "team_dash_above_kage_sweep",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]超影扫荡[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">超影扫荡</font>"
+        }
     },
     "team_dash_above_kage_quit": {
         "recognition": "Or",
@@ -788,7 +836,9 @@
         "on_error": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]关闭小队突袭[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭小队突袭</font>"
+        }
     },
     "close_team_dash_out_team_sign": {
         "recognition": "OCR",
@@ -809,7 +859,9 @@
             "close_team_dash_without_out_team_sign",
             "close_team_dash_out_team_sign"
         ],
-        "focus": "[color:DeepSkyBlue]确认退队[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认退队</font>"
+        }
     },
     "close_team_dash_without_out_team_sign": {
         "recognition": "OCR",
@@ -843,7 +895,9 @@
         "threshold": 0.9,
         "pre_delay": 0,
         "post_delay": 0,
-        "focus": "[color:pink]勾选4倍奖励[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"pink\">勾选4倍奖励</font>"
+        }
     },
     "team_dash_check_not_4x_reward": {
         "recognition": "TemplateMatch",
@@ -883,6 +937,8 @@
             "dash_or_exit",
             "team_dash_confirm_4x_select"
         ],
-        "focus": "[color:pink]点击确认勾选4倍奖励[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"pink\">点击确认勾选4倍奖励</font>"
+        }
     }
 }

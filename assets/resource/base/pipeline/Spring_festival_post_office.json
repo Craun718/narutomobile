@@ -8,7 +8,9 @@
             "spring_festival_post_office_event_done",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入新春邮局任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入新春邮局任务</font>"
+        }
     },
     "spring_festival_post_office_event_done": {
         "recognition": "TemplateMatch",
@@ -22,7 +24,9 @@
         "green_mask": true,
         "threshold": 0.9,
         "action": "StopTask",
-        "focus": "[color:DeepSkyBlue]新春邮局已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">新春邮局已完成</font>"
+        }
     },
     "spring_festival_post_office_event_enter": {
         "recognition": "TemplateMatch",
@@ -60,7 +64,9 @@
             "spring_festival_post_office_enter",
             "spring_festival_post_office_done"
         ],
-        "focus": "[color:DeepSkyBlue]进入贺新春主界面[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入贺新春主界面</font>"
+        }
     },
     "spring_festival_post_office_done": {
         "recognition": "TemplateMatch",
@@ -76,7 +82,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]新春邮局已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">新春邮局已完成</font>"
+        }
     },
     "spring_festival_post_office_enter": {
         "recognition": "TemplateMatch",
@@ -597,7 +605,9 @@
             "spring_festival_post_office_card_pack",
             "spring_festival_post_office_gacha"
         ],
-        "focus": "[color:DeepSkyBlue]新春邮局抽卡[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">新春邮局抽卡</font>"
+        }
     },
     "spring_festival_post_office_gacha_done": {
         "recognition": "TemplateMatch",
@@ -616,7 +626,9 @@
             "spring_festival_post_office_back_in_post_office_1",
             "spring_festival_post_office_back_to_post_office_1"
         ],
-        "focus": "[color:DeepSkyBlue]新春邮局抽卡已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">新春邮局抽卡已完成</font>"
+        }
     },
     "spring_festival_post_office_card_pack": {
         "recognition": "TemplateMatch",

@@ -6,7 +6,9 @@
             "headhunt_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入招募任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入招募任务</font>"
+        }
     },
     "headhunt_entry": {
         "recognition": "TemplateMatch",
@@ -63,7 +65,9 @@
             "headhunt_recruit_enter",
             "[JumpBack]swipe_for_headhunt_recruit_enter"
         ],
-        "focus": "[color:DeepSkyBlue]没有免费高级招募[/color]",
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">没有免费高级招募</font>"
+        },
         "$doc": "因为高招有动画,所以这里不设post_wait_freezes"
     },
     "free_headhunt_waiting": {
@@ -86,7 +90,9 @@
             "free_headhunt_waiting",
             "[JumpBack]headhunt_whole_ninja"
         ],
-        "focus": "[color:DeepSkyBlue]有免费高级招募[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">有免费高级招募</font>"
+        }
     },
     "headhunt_whole_ninja": {
         "recognition": "TemplateMatch",
@@ -101,7 +107,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]整卡![/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">整卡!</font>"
+        }
     },
     "free_headhunt_fake": {
         "recognition": "OCR",
@@ -118,7 +126,9 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 0,
-        "focus": "[color:DarkGoldenRod]什么,情报是假的[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">什么,情报是假的</font>"
+        }
     },
     "confirm_free_headhunt": {
         "max_hit": 5,
@@ -138,7 +148,9 @@
             "without_confirm_free_headhunt",
             "confirm_free_headhunt"
         ],
-        "focus": "[color:DeepSkyBlue]确认免费高级招募[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认免费高级招募</font>"
+        }
     },
     "without_confirm_free_headhunt": {
         "recognition": "TemplateMatch",
@@ -153,7 +165,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [],
-        "focus": "[color:DeepSkyBlue]完成免费高级招募[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">完成免费高级招募</font>"
+        }
     },
     "swipe_for_headhunt_recruit_enter": {
         "max_hit": 3,
@@ -206,7 +220,9 @@
             "headhunt_recruit_no_free",
             "[JumpBack]headhunt_recruit"
         ],
-        "focus": "[color:DeepSkyBlue]进入普通招募[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入普通招募</font>"
+        }
     },
     "headhunt_recruit_no_free": {
         "recognition": "TemplateMatch",
@@ -227,7 +243,9 @@
             "top_secret_treasure_box_undone",
             "top_secret_treasure_box_done"
         ],
-        "focus": "[color:DeepSkyBlue]免费普通招募已使用[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">免费普通招募已使用</font>"
+        }
     },
     "headhunt_recruit": {
         "recognition": "TemplateMatch",
@@ -251,7 +269,9 @@
             "headhunt_recruit",
             "[JumpBack]headhunt_whole_ninja"
         ],
-        "focus": "[color:DeepSkyBlue]进行免费普通招募[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进行免费普通招募</font>"
+        }
     },
     "confirm_headhunt_recruit": {
         "recognition": "OCR",
@@ -292,7 +312,9 @@
             "top_secret_treasure_box_log",
             "top_secret_treasure_box_undone"
         ],
-        "focus": "[color:DeepSkyBlue]绝密宝匣未完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">绝密宝匣未完成</font>"
+        }
     },
     "top_secret_treasure_box_done": {
         "recognition": "TemplateMatch",
@@ -310,7 +332,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]绝密宝匣已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">绝密宝匣已完成</font>"
+        }
     },
     "top_secret_treasure_box_log": {
         "max_hit": 20,
@@ -332,7 +356,9 @@
             "top_secret_treasure_box_log"
         ],
         "on_error": "back_main_screen_and_stop",
-        "focus": "[color:DeepSkyBlue]进入绝密宝匣奖励记录[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入绝密宝匣奖励记录</font>"
+        }
     },
     "top_secret_treasure_box_copper": {
         "max_hit": 5,

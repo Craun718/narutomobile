@@ -5,7 +5,9 @@
             "[JumpBack]hundred_ninja_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入百忍任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入百忍任务</font>"
+        }
     },
     "hundred_ninja_entry": {
         "recognition": "TemplateMatch",
@@ -16,7 +18,9 @@
         "next": [
             "hundred_ninja_more_game_entry"
         ],
-        "focus": "[color:DeepSkyBlue]进入决斗场[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入决斗场</font>"
+        }
     },
     "hundred_ninja_more_game_entry": {
         "recognition": "OCR",
@@ -34,7 +38,9 @@
         "next": [
             "hundred_ninja_icon"
         ],
-        "focus": "[color:DeepSkyBlue]进入更多玩法[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入更多玩法</font>"
+        }
     },
     "hundred_ninja_icon": {
         "recognition": "TemplateMatch",
@@ -47,7 +53,9 @@
         "template": "Hundred_ninja/entry.png",
         "action": "Click",
         "post_wait_freezes": 1000,
-        "focus": "[color:DeepSkyBlue]进入百忍对决[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入百忍对决</font>"
+        }
     },
     "hundred_ninja_match": {
         "recognition": "TemplateMatch",
@@ -503,7 +511,9 @@
         "next": [
             "hundred_ninja_entrance_animation"
         ],
-        "focus": "[color:DeepSkyBlue]匹配结束[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">匹配结束</font>"
+        }
     },
     "hundred_ninja_entrance_animation": {
         "recognition": "OCR",
@@ -523,7 +533,9 @@
             "hundred_ninja_out_entrance_animation",
             "hundred_ninja_entrance_animation"
         ],
-        "focus": "[color:DeepSkyBlue]百忍进场动画[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">百忍进场动画</font>"
+        }
     },
     "hundred_ninja_out_entrance_animation": {
         "recognition": "OCR",
@@ -545,7 +557,9 @@
             "hundred_ninja_selcet_ninja",
             "[JumpBack]wait_5_second"
         ],
-        "focus": "[color:DeepSkyBlue]离开百忍进场动画[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">离开百忍进场动画</font>"
+        }
     },
     "hundred_ninja_selcet_ninja": {
         "recognition": "TemplateMatch",
@@ -567,7 +581,9 @@
             "[JumpBack]hundred_ninja_selcet_ninja",
             "hundred_ninja_check_fight"
         ],
-        "focus": "[color:DeepSkyBlue]进入百忍选忍者[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入百忍选忍者</font>"
+        }
     },
     "hundred_ninja_battle_tips": {
         "recognition": "TemplateMatch",
@@ -581,7 +597,9 @@
         "next": [
             "hundred_ninja_tips_confirm"
         ],
-        "focus": "[color:DeepSkyBlue]战斗异常提示[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">战斗异常提示</font>"
+        }
     },
     "hundred_ninja_tips_confirm": {
         "recognition": "OCR",
@@ -630,7 +648,9 @@
             "hundred_ninja_battle_tips",
             "[JumpBack]hundred_ninja_selcet_ninja"
         ],
-        "focus": "[color:DeepSkyBlue]百忍对决确定选忍者[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">百忍对决确定选忍者</font>"
+        }
     },
     "hundred_ninja_fight": {
         "recognition": "TemplateMatch",
@@ -649,7 +669,9 @@
             "[JumpBack]hundred_ninja_click_All_skill",
             "[JumpBack]wait_5_second"
         ],
-        "focus": "[color:DeepSkyBlue]百忍对决战斗[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">百忍对决战斗</font>"
+        }
     },
     "hundred_ninja_check_fight": {
         "recognition": "TemplateMatch",
@@ -668,7 +690,9 @@
             "[JumpBack]hundred_ninja_check_fight",
             "[JumpBack]wait_5_second"
         ],
-        "focus": "[color:DeepSkyBlue]百忍对决战斗[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">百忍对决战斗</font>"
+        }
     },
     "wait_5_second": {
         "post_delay": 5000
@@ -691,7 +715,9 @@
             "hundred_ninja_check_fight",
             "[JumpBack]wait_5_second"
         ],
-        "focus": "[color:DeepSkyBlue]检测百忍对决不在战斗[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检测百忍对决不在战斗</font>"
+        }
     },
     "hundred_ninja_windfall": {
         "recognition": "OCR",
@@ -711,7 +737,9 @@
             "[JumpBack]hundred_ninja_windfall",
             "[JumpBack]wait_5_second"
         ],
-        "focus": "[color:DeepSkyBlue]赢了![/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">赢了!</font>"
+        }
     },
     "hundred_ninja_confirm_game_over": {
         "recognition": "OCR",
@@ -731,7 +759,9 @@
             "hundred_ninja_match",
             "[JumpBack]hundred_ninja_confirm_game_over"
         ],
-        "focus": "[color:DeepSkyBlue]百忍对决战斗结束[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">百忍对决战斗结束</font>"
+        }
     },
     "hundred_ninja_click_All_skill": {
         "recognition": "TemplateMatch",

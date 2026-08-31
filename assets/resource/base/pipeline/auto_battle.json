@@ -12,7 +12,9 @@
         "next": [
             "click_attack_2.5s"
         ],
-        "focus": "[color:darkgray]使用一技能[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">使用一技能</font>"
+        }
     },
     "click_skill_2": {
         "pre_delay": 0,
@@ -27,7 +29,9 @@
         "next": [
             "click_attack_2.5s"
         ],
-        "focus": "[color:darkgray]使用二技能[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">使用二技能</font>"
+        }
     },
     "click_Ult_and_attack_3s": {
         "recognition": "DirectHit",
@@ -70,7 +74,9 @@
         "next": [
             "summon_and_roll"
         ],
-        "focus": "[color:darkgray]奥义和普攻[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">奥义和普攻</font>"
+        }
     },
     "click_attack_2.5s": {
         "recognition": "DirectHit",
@@ -90,7 +96,9 @@
         ],
         "duration": 2500,
         "post_delay": 0,
-        "focus": "[color:darkgray]普攻[/color]",
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">普攻</font>"
+        },
         "$doc": "attack"
     },
     "move_to_left": {
@@ -111,7 +119,9 @@
         ],
         "duration": 500,
         "post_delay": 0,
-        "focus": "[color:darkgray]向左走[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">向左走</font>"
+        }
     },
     "move_to_right": {
         "recognition": "DirectHit",
@@ -131,7 +141,9 @@
         ],
         "duration": 500,
         "post_delay": 0,
-        "focus": "[color:darkgray]向右走[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">向右走</font>"
+        }
     },
     "move_to_up": {
         "recognition": "DirectHit",
@@ -151,7 +163,9 @@
         ],
         "duration": 500,
         "post_delay": 0,
-        "focus": "[color:darkgray]向上走[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">向上走</font>"
+        }
     },
     "move_to_down": {
         "recognition": "DirectHit",
@@ -171,7 +185,9 @@
         ],
         "duration": 500,
         "post_delay": 0,
-        "focus": "[color:darkgray]向下走[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">向下走</font>"
+        }
     },
     "summon_and_roll": {
         "recognition": "DirectHit",
@@ -211,7 +227,9 @@
             }
         ],
         "post_delay": 0,
-        "focus": "[color:darkgray]通灵或密卷[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"darkgray\">通灵或密卷</font>"
+        }
     },
     "click_All_skill": {
         "recognition": "TemplateMatch",

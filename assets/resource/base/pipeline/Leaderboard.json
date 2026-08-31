@@ -8,7 +8,9 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入排行榜任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入排行榜任务</font>"
+        }
     },
     "ninja_guide_to_leaderboard": {
         "recognition": "Custom",
@@ -48,7 +50,9 @@
             "[JumpBack]click_thumb",
             "retry_failed"
         ],
-        "focus": "[color:DeepSkyBlue]在排行榜中[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">在排行榜中</font>"
+        }
     },
     "click_thumb": {
         "max_hit": 5,
@@ -90,6 +94,8 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]点赞完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">点赞完成</font>"
+        }
     }
 }
