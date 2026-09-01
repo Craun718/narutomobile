@@ -21,9 +21,6 @@
             "description": "不去奖励中心查看是否分享,而是在主页面直接进行分享",
             "cases": [
                 {
-                    "name": "No"
-                },
-                {
                     "name": "Yes",
                     "pipeline_override": {
                         "share": {
@@ -33,6 +30,9 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "No"
                 }
             ]
         },
