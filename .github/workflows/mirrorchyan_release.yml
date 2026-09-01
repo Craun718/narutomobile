@@ -33,29 +33,26 @@ jobs:
           os: ${{ matrix.os }}
           arch: ${{ matrix.arch }}
 
-  # 有新的rid之后上传maafwApp
-  # mirrorchyan_maafwApp:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       os: [android]
-  #       arch: [arm64]
-  #   steps:
-  #     - id: uploading
-  #       uses: MirrorChyan/uploading-action@v1
-  #       with:
-  #         filetype: latest-release
-  #         filename: "MaaAutoNaruto-${{ matrix.os }}-${{ matrix.arch }}-*.apk"
-  #         mirrorchyan_rid: MaaAutoNaruto
-  #         tag: ${{ inputs.tag }}
+  mirrorchyan_MaaFwApp:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [android]
+    steps:
+      - id: uploading
+        uses: MirrorChyan/uploading-action@v1
+        with:
+          filetype: latest-release
+          filename: "MaaAutoNaruto-${{ matrix.os }}-*.apk"
+          mirrorchyan_rid: MaaAutoNaruto-MaaFwApp
+          tag: ${{ inputs.tag }}
 
-  #         owner: duorua
-  #         repo: narutomobile
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         upload_token: ${{ secrets.MirrorChyanUploadToken }}
-  #         os: ${{ matrix.os }}
-  #         arch: ${{ matrix.arch }}
+          owner: duorua
+          repo: narutomobile
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+          os: ${{ matrix.os }}
 
   mirrorchyan_res:
     runs-on: ubuntu-latest

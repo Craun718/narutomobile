@@ -15,14 +15,18 @@
         "action": "Shell",
         "cmd": "settings put system show_touches 0",
         "next": "hide_pointer_location",
-        "focus": "关闭触控显示"
+        "focus": {
+            "Node.Action.Starting": "关闭触控显示"
+        }
     },
     "show_touches": {
         "enabled": false,
         "max_hit": 1,
         "action": "Shell",
         "cmd": "settings put system show_touches 1",
-        "focus": "开启触控显示"
+        "focus": {
+            "Node.Action.Starting": "开启触控显示"
+        }
     },
     "set_pointer_location": {
         "next": [
@@ -35,14 +39,18 @@
         "max_hit": 1,
         "action": "Shell",
         "cmd": "settings put system pointer_location 0",
-        "focus": "隐藏指针位置"
+        "focus": {
+            "Node.Action.Starting": "隐藏指针位置"
+        }
     },
     "show_pointer_location": {
         "enabled": false,
         "max_hit": 1,
         "action": "Shell",
         "cmd": "settings put system pointer_location 1",
-        "focus": "显示指针位置"
+        "focus": {
+            "Node.Action.Starting": "显示指针位置"
+        }
     },
     "others_settings": {
         "action": "StopTask"

@@ -8,7 +8,9 @@
             "[JumpBack]open_ninja_guide",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入修行之路[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入修行之路</font>"
+        }
     },
     "go_into_shugyou_no_michi_by_guide": {
         "recognition": "Or",
@@ -50,7 +52,9 @@
             "train_road_entry",
             "[JumpBack]ninja_guide_to_funtion_retry"
         ],
-        "focus": "进入修行之路"
+        "focus": {
+            "Node.Action.Starting": "进入修行之路"
+        }
     },
     "train_road_entry": {
         "recognition": "OCR",
@@ -95,7 +99,9 @@
             "confirm_train_road_sweep",
             "[JumpBack]train_road_unsweep"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路未扫荡[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">修行之路未扫荡</font>"
+        }
     },
     "train_road_sweeping": {
         "recognition": "OCR",
@@ -111,7 +117,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路扫荡中[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">修行之路扫荡中</font>"
+        }
     },
     "train_road_award": {
         "recognition": "OCR",
@@ -131,7 +139,9 @@
         "next": [
             "confirm_train_road_award"
         ],
-        "focus": "[color:DeepSkyBlue]领取修行之路奖励[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取修行之路奖励</font>"
+        }
     },
     "confirm_train_road_award": {
         "recognition": "OCR",
@@ -151,7 +161,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路奖励[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认修行之路奖励</font>"
+        }
     },
     "train_road_unreset": {
         "max_hit": 5,
@@ -173,7 +185,9 @@
             "confirm_train_road_reset",
             "train_road_unreset"
         ],
-        "focus": "[color:DeepSkyBlue]重置修行之路[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">重置修行之路</font>"
+        }
     },
     "above_kage_confirm_train_road_reset": {
         "recognition": "TemplateMatch",
@@ -192,7 +206,9 @@
         "next": [
             "above_kage_confirm_train_road_award"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路超影重置[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">修行之路超影重置</font>"
+        }
     },
     "above_kage_confirm_train_road_award": {
         "recognition": "TemplateMatch",
@@ -211,7 +227,9 @@
         "next": [
             "confirm_train_road_award"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路超影重置[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认修行之路超影重置</font>"
+        }
     },
     "confirm_train_road_reset": {
         "recognition": "TemplateMatch",
@@ -232,7 +250,9 @@
             "above_kage_confirm_train_road_reset",
             "confirm_train_road_reset"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路重置[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认修行之路重置</font>"
+        }
     },
     "confirm_train_road_sweep": {
         "recognition": "OCR",
@@ -253,7 +273,9 @@
             "without_confirm_train_road_sweep",
             "confirm_train_road_sweep"
         ],
-        "focus": "[color:DeepSkyBlue]确认修行之路扫荡[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认修行之路扫荡</font>"
+        }
     },
     "without_confirm_train_road_sweep": {
         "recognition": "OCR",
@@ -288,7 +310,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路已完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">修行之路已完成</font>"
+        }
     },
     "shugyou_no_michi_auto_push": {
         "recognition": "TemplateMatch",
@@ -333,7 +357,9 @@
         ],
         "action": "Click",
         "post_delay": 0,
-        "focus": "传送到前方关卡"
+        "focus": {
+            "Node.Action.Starting": "传送到前方关卡"
+        }
     },
     "shugyou_no_michi_go_to_war": {
         "recognition": "TemplateMatch",
@@ -356,7 +382,9 @@
             "shugyou_no_michi_go_to_war",
             "shugyou_no_michi_try_go_to_war"
         ],
-        "focus": "进入战斗"
+        "focus": {
+            "Node.Action.Starting": "进入战斗"
+        }
     },
     "shugyou_no_michi_go_to_war_done": {
         "recognition": "OCR",
@@ -374,7 +402,9 @@
         "next": [
             "back_main_screen_and_stop"
         ],
-        "focus": "修行之路全部关卡已经完成"
+        "focus": {
+            "Node.Action.Starting": "修行之路全部关卡已经完成"
+        }
     },
     "shugyou_no_michi_try_go_to_war": {
         "recognition": "TemplateMatch",
@@ -470,7 +500,9 @@
             "wait_for_battle_again",
             "shugyou_no_michi_quit"
         ],
-        "focus": "没有检测到自动战斗"
+        "focus": {
+            "Node.Action.Starting": "没有检测到自动战斗"
+        }
     },
     "click_auto_battle": {
         "recognition": "Or",
@@ -530,7 +562,9 @@
             "wait_for_battle_again",
             "shugyou_no_michi_quit"
         ],
-        "focus": "开启自动战斗"
+        "focus": {
+            "Node.Action.Starting": "开启自动战斗"
+        }
     },
     "fail_in_shugyou_no_michi": {
         "recognition": "TemplateMatch",
@@ -548,7 +582,9 @@
         "next": [
             "shugyou_no_michi_quit"
         ],
-        "focus": "战斗失败"
+        "focus": {
+            "Node.Action.Starting": "战斗失败"
+        }
     },
     "shugyou_no_michi_quit": {
         "recognition": "OCR",
@@ -668,6 +704,8 @@
             "train_road_entry",
             "train_road_ac_entry_undone"
         ],
-        "focus": "[color:DeepSkyBlue]修行之路未完成[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">修行之路未完成</font>"
+        }
     }
 }

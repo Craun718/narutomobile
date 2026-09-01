@@ -6,7 +6,9 @@
             "activity_entry",
             "[JumpBack]back_main_screen"
         ],
-        "focus": "[color:DeepSkyBlue]进入活动任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入活动任务</font>"
+        }
     },
     "activity_entry": {
         "recognition": "TemplateMatch",
@@ -195,7 +197,9 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "post_delay": 0,
-        "focus": "[color:DeepSkyBlue]进行月度签到[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进行月度签到</font>"
+        }
     },
     "mouthly_signature_done": {
         "recognition": "OCR",
@@ -343,7 +347,9 @@
             "privilege_points",
             "click_privilege_store"
         ],
-        "focus": "[color:DarkGray]进入特权商店[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGray\">进入特权商店</font>"
+        }
     },
     "privilege_points": {
         "recognition": "TemplateMatch",
@@ -403,7 +409,9 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
-        "focus": "[color:DarkGoldenRod]没有充值按钮[/color]",
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">没有充值按钮</font>"
+        },
         "$doc": "遇到真投入什么字也没有"
     },
     "get_copper_in_privilege_points": {

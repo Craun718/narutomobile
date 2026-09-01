@@ -6,7 +6,9 @@
             "buy_energy_in_main_screen",
             "[JumpBack]back_main_screen_before_task"
         ],
-        "focus": "[color:DeepSkyBlue]进入购买体力任务[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入购买体力任务</font>"
+        }
     },
     "buy_energy_in_main_screen": {
         "recognition": "TemplateMatch",
@@ -121,7 +123,9 @@
             "[JumpBack]pay_to_stronger_tip",
             "back_main_screen_and_stop"
         ],
-        "focus": "[color:pink]检查购买体力次数[/color]"
+        "focus": {
+            "Node.Action.Starting": "<font color=\"pink\">检查购买体力次数</font>"
+        }
     },
     "try_buy_energy": {
         "recognition": "TemplateMatch",

@@ -2,7 +2,9 @@
     "complete": {
         "pre_delay": 0,
         "post_delay": 0,
-        "focus": "OK",
+        "focus": {
+            "Node.Action.Starting": "OK"
+        },
         "$doc": "用来标记全部任务已经完成,和auto_mas配合"
     },
     "cleanup_maafw_bak_logs": {

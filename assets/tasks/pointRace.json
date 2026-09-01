@@ -65,7 +65,9 @@
                             "next": [
                                 "back_main_screen_and_stop"
                             ],
-                            "focus": "[color:DeepSkyBlue]积分赛失败[/color]"
+                            "focus": {
+                                "Node.Action.Starting": "<font color=\"DeepSkyBlue\">积分赛失败</font>"
+                            }
                         }
                     }
                 },

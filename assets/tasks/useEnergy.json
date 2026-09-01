@@ -18,9 +18,6 @@
             "description": "开启后会勾选一键全选后再扫荡",
             "cases": [
                 {
-                    "name": "No"
-                },
-                {
                     "name": "Yes",
                     "pipeline_override": {
                         "use_energy_ez_sweep_entry": {
@@ -31,6 +28,9 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "No"
                 }
             ]
         }
