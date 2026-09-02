@@ -16,5 +16,10 @@
         },
         "post_delay": 0,
         "$doc": "清理maafw备份日志,以及debug/custom、on_error、vision下的图像和日志"
+    },
+    "tip": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "$doc": "教学任务"
     }
 }
