@@ -215,14 +215,22 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 0,
-        "timeout": 2000,
+        "timeout": 5000,
         "next": [
             "headhunt_recruit_no_free",
             "[JumpBack]headhunt_recruit"
         ],
+        "on_error": "headhunt_recruit_enter_retry",
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入普通招募</font>"
         }
+    },
+    "headhunt_recruit_enter_retry": {  
+        "max_hit": 3,  
+        "next": [
+            "headhunt_recruit_enter"
+        ],
+        "on_error": "back_main_screen_and_stop"  
     },
     "headhunt_recruit_no_free": {
         "recognition": "TemplateMatch",
