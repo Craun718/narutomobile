@@ -218,7 +218,8 @@
         "timeout": 5000,
         "next": [
             "headhunt_recruit_no_free",
-            "[JumpBack]headhunt_recruit"
+            "[JumpBack]headhunt_recruit",
+            "headhunt_recruit_enter"
         ],
         "on_error": "headhunt_recruit_enter_retry",
         "focus": {

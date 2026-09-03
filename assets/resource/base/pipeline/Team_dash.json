@@ -587,6 +587,9 @@
         "next": [
             "check_in_team_dash_sweep",
             "team_dash_loading"
+        ],
+        "on_error": [
+            "team_dash"
         ]
     },
     "team_dash_do_not_remind_gold": {
