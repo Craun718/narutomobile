@@ -730,7 +730,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "back_main_screen_and_stop"
+            "easy_season_plus_to_team_sweep_card",
+            "easy_season_plus_close_claim_interface"
         ]
     },
     "easy_season_plus_close_claim_interface": {
@@ -929,7 +930,8 @@
         "next": [
             "easy_season_plus_find_team_dash_can_not_sweep",
             "easy_season_plus_find_team_dash_cancel_gold",
-            "easy_season_plus_find_team_sweep_card_event"
+            "easy_season_plus_find_team_sweep_card_event",
+            "easy_season_plus_find_team_dash_back"
         ]
     },
     "easy_season_plus_find_team_dash_cancel_gold": {
