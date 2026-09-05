@@ -929,7 +929,8 @@
         "next": [
             "easy_season_plus_find_team_dash_can_not_sweep",
             "easy_season_plus_find_team_dash_cancel_gold",
-            "easy_season_plus_find_team_sweep_card_event"
+            "easy_season_plus_find_team_sweep_card_event",
+            "easy_season_plus_find_team_dash_back"
         ]
     },
     "easy_season_plus_find_team_dash_cancel_gold": {
