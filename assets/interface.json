@@ -105,6 +105,7 @@
         "tasks/miniGame.json",
         "tasks/blackMarketMerchant.json",
         "tasks/Debug.json",
+        "tasks/tip.json",
         "tasks/cleanupLogs.json",
         "tasks/complete.json",
         "tasks/standaloneMiniGame.json",
