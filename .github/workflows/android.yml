@@ -81,7 +81,7 @@ jobs:
       - name: Fetch MaaFramework native libs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python Android/MaaFwApp/scripts/setup_maa_framework.py --abi ${{ matrix.abi }} --tag v5.12.3
+        run: python Android/MaaFwApp/scripts/setup_maa_framework.py --abi ${{ matrix.abi }} --tag v5.13.0-beta.5
 
       - name: Pack agent runtime
         env:

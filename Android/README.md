@@ -8,7 +8,7 @@
 ```bash
 git submodule update --init Android/MaaFwApp
 python tools/prepare_android_pi.py
-python Android/MaaFwApp/scripts/setup_maa_framework.py --abi arm64-v8a --tag v5.12.3
+python Android/MaaFwApp/scripts/setup_maa_framework.py --abi arm64-v8a --tag v5.13.0-beta.5
 python Android/MaaFwApp/scripts/build_agent_bundle.py --out Android/agent-dist \
     --requirements requirements.txt \
     --exclude pillow --exclude win32-setctime --exclude colorama --exclude jeepney \
@@ -35,7 +35,7 @@ python tools/prepare_android_pi.py
 ./Android/MaaFwApp/gradlew.bat -p Android/MaaFwApp :app:installDebug
 
 # 正式包：release 固定打 arm64-v8a + x86_64，so 也要两个 ABI
-python Android/MaaFwApp/scripts/setup_maa_framework.py --tag v5.12.3
+python Android/MaaFwApp/scripts/setup_maa_framework.py --tag v5.13.0-beta.5
 ./Android/MaaFwApp/gradlew.bat -p Android/MaaFwApp :app:assembleRelease
 ```
 
