@@ -597,10 +597,10 @@
     "benefit_station": {
         "recognition": "TemplateMatch",
         "roi": [
-            735,
-            221,
-            61,
-            83
+            716,
+            60,
+            113,
+            343
         ],
         "template": "Naruto_club/benefit_station.png",
         "action": "Click",
