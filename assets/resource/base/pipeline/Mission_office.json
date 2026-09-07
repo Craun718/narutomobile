@@ -1583,11 +1583,13 @@
         "template": "Mission_office/main_page_done.png",
         "pre_delay": 0,
         "post_delay": 0,
+        "timeout": 10000,
         "next": [
             "mission_office_gold_refresh",
             "mission_office_above_kage_refresh",
             "mission_office_complete"
         ],
+        "on_error": "back_main_screen_and_stop",
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">任务已经接取完毕</font>"
         }
