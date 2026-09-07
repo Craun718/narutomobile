@@ -117,10 +117,16 @@ jobs:
           chmod +x gradlew
           ./gradlew --no-daemon :app:assembleDebug
 
+      - name: Rename debug APK
+        working-directory: Android/MaaFwApp
+        run: |
+          mv app/build/outputs/apk/debug/app-debug.apk \
+            "app/build/outputs/apk/debug/MaaAutoNaruto-android-${{ matrix.abi }}-${{ github.sha }}.apk"
+
       - uses: actions/upload-artifact@v7
         with:
           name: MaaAutoNaruto-android-${{ matrix.abi }}-${{ github.sha }}
-          path: Android/MaaFwApp/app/build/outputs/apk/debug/app-debug.apk
+          path: Android/MaaFwApp/app/build/outputs/apk/debug/MaaAutoNaruto-android-${{ matrix.abi }}-${{ github.sha }}.apk
           if-no-files-found: error
 
   release:
