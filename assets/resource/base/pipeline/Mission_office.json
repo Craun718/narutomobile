@@ -1585,7 +1585,8 @@
         "post_delay": 0,
         "next": [
             "mission_office_gold_refresh",
-            "mission_office_above_kage_refresh"
+            "mission_office_above_kage_refresh",
+            "mission_office_complete"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">任务已经接取完毕</font>"
@@ -1612,6 +1613,7 @@
         }
     },
     "mission_office_gold_refresh": {
+        "max_hit": 3,
         "recognition": "TemplateMatch",
         "roi": [
             1069,
