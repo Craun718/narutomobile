@@ -33,6 +33,8 @@ body = """
     ## 未发布
 {% endif %}\
 
+> **man安卓版正在内测中,当前问题较多,非测试人员使用请注意**\
+
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
     {% for commit in commits
