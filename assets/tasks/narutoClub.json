@@ -12,7 +12,7 @@
                 "daily"
             ],
             "default_check": true,
-            "description": "该任务并不稳定,如遇卡顿可能需要人工接管"
+            "description": "该任务并不稳定,如遇卡顿可能需要人工接管;确认MFA不会在喂豚豚和金币助手闪退后开启再对应选项,闪退bug成因还在寻找"
         }
     ],
     "option": {
