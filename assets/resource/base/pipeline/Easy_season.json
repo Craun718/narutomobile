@@ -375,6 +375,7 @@
         "next": "back_main_screen_and_stop"
     },
     "easy_season_plus_end": {
+        "max_hit": 3,
         "recognition": "OCR",
         "roi": [
             167,
@@ -768,10 +769,14 @@
             "easy_season_plus_sweep_card",
             "easy_season_plus_sweep_card_event_done",
             "easy_season_plus_find_sweep_card_event",
+            "easy_season_plus_team_sweep_card_event_done",
+            "easy_season_plus_find_team_sweep_card_event",
             "easy_season_plus_end",
+            "easy_season_plus_complete",
             "[JumpBack]swipe_for_easy_season_plus_find_sweep_card_event",
             "easy_season_plus_back_to_easy_season_plus",
-            "easy_season_plus_end_to_easy_season"
+            "easy_season_plus_end_to_easy_season",
+            "back_main_screen_and_stop"
         ]
     },
     "easy_season_plus_find_sweep_card_event": {
