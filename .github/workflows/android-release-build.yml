@@ -1,4 +1,4 @@
-name: android-release
+name: android-release-build
 
 on:
   workflow_dispatch:
@@ -13,6 +13,10 @@ on:
         description: Version used in artifact names
         required: true
         type: string
+      distribution:
+        description: Artifact distribution
+        required: true
+        type: string
     secrets:
       ANDROID_KEYSTORE_BASE64:
         required: false
@@ -24,11 +28,15 @@ on:
         required: false
 
 concurrency:
-  group: android-release-${{ github.workflow }}-${{ github.ref }}
+  group: android-release-build-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
   contents: read
+
+env:
+  APK_ARTIFACT_NAME: MaaAutoNaruto-android-${{ inputs.distribution || 'internal' }}-release-${{ inputs.version || github.ref_name }}
+  MAPPING_ARTIFACT_NAME: MaaAutoNaruto-android-${{ inputs.distribution || 'internal' }}-release-mapping-${{ inputs.version || github.ref_name }}
 
 jobs:
   apk:
@@ -74,6 +82,11 @@ jobs:
       - name: Prepare PI tree
         run: python tools/prepare_android_pi.py
 
+      - name: Configure app identity
+        env:
+          DISTRIBUTION: ${{ inputs.distribution || 'internal' }}
+        run: python tools/configure_android_app_identity.py --distribution "$DISTRIBUTION"
+
       - name: Fetch MaaFramework native libs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -112,14 +125,26 @@ jobs:
           chmod +x gradlew
           ./gradlew --no-daemon :app:assembleRelease
 
+      - name: Rename release APK
+        working-directory: Android/MaaFwApp
+        shell: bash
+        run: |
+          apk_dir="app/build/outputs/apk/release"
+          apks=("$apk_dir"/*.apk)
+          if (( ${#apks[@]} != 1 )) || [[ ! -f "${apks[0]}" ]]; then
+            echo "Expected exactly one release APK in $apk_dir" >&2
+            exit 1
+          fi
+          mv "${apks[0]}" "$apk_dir/${APK_ARTIFACT_NAME}.apk"
+
       - uses: actions/upload-artifact@v7
         with:
-          name: MaaAutoNaruto-android-release-${{ inputs.version || github.ref_name }}
-          path: Android/MaaFwApp/app/build/outputs/apk/release/*.apk
+          name: ${{ env.APK_ARTIFACT_NAME }}
+          path: Android/MaaFwApp/app/build/outputs/apk/release/${{ env.APK_ARTIFACT_NAME }}.apk
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v7
         with:
-          name: MaaAutoNaruto-android-mapping-${{ inputs.version || github.ref_name }}
+          name: ${{ env.MAPPING_ARTIFACT_NAME }}
           path: Android/MaaFwApp/app/build/outputs/mapping/release/mapping.txt
           if-no-files-found: error
