@@ -45,9 +45,9 @@ python Android/MaaFwApp/scripts/setup_maa_framework.py --tag v5.13.0-beta.5
 
 CI：
 
-- `.github/workflows/android.yml`：相关路径的日常 push / PR 构建 Debug 包，并同步构建 Release 包
-- `.github/workflows/android-release.yml`：手动运行时只构建 Android Release Artifact，不创建 GitHub Release
-- `.github/workflows/release.yml`：推送 `v*` tag 后统一并行构建桌面端和 Android，并创建公开 GitHub Release
+- `.github/workflows/android-ci.yml`：相关路径的日常 push / PR 构建 `internal` Debug 包和 `internal` Release 包
+- `.github/workflows/android-release-build.yml`：手动运行时只构建 `internal` Android Release Artifact，不创建 GitHub Release
+- `.github/workflows/release.yml`：推送 `v*` tag 后统一并行构建桌面端和 Android `public` 包，并创建公开 GitHub Release
 
 Android Release 会把 APK 与 `mapping.txt` 分别上传为 Actions Artifact；统一公开发版只包含 APK，不公开 mapping。未配置签名 Secrets 时 workflow 会给出警告并成功生成 unsigned Release APK。
 

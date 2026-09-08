@@ -1,13 +1,15 @@
-name: android
+name: android-ci
 
 on:
   push:
     branches:
       - "**"
     paths:
-      - ".github/workflows/android.yml"
+      - ".github/workflows/android-ci.yml"
+      - ".github/workflows/android-release-build.yml"
       - "Android/**"
       - "tools/prepare_android_pi.py"
+      - "tools/configure_android_app_identity.py"
       - "assets/**"
       - "agent/**"
       - "requirements.txt"
@@ -15,9 +17,11 @@ on:
     branches:
       - "**"
     paths:
-      - ".github/workflows/android.yml"
+      - ".github/workflows/android-ci.yml"
+      - ".github/workflows/android-release-build.yml"
       - "Android/**"
       - "tools/prepare_android_pi.py"
+      - "tools/configure_android_app_identity.py"
       - "assets/**"
       - "agent/**"
       - "requirements.txt"
@@ -32,7 +36,7 @@ permissions:
 
 jobs:
   debug:
-    name: Debug APK (${{ matrix.abi }})
+    name: internal-debug (${{ matrix.abi }})
     runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
@@ -78,24 +82,8 @@ jobs:
       - name: Prepare PI tree
         run: python tools/prepare_android_pi.py
 
-      # Only this runner's checkout is modified; the reusable release workflow starts clean.
-      - name: Use internal-test app identity
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          profile = Path("Android/profile.yaml")
-          text = profile.read_text()
-          replacements = {
-              "  id: man\n": "  id: man.ci\n",
-              "  label: MAN\n": "  label: MAN 内测版\n",
-          }
-          for old, new in replacements.items():
-              if text.count(old) != 1:
-                  raise SystemExit(f"expected exactly one {old.strip()!r} in {profile}")
-              text = text.replace(old, new)
-          profile.write_text(text)
-          PY
+      - name: Use internal app identity
+        run: python tools/configure_android_app_identity.py --distribution internal
 
       - name: Fetch MaaFramework native libs
         env:
@@ -121,19 +109,20 @@ jobs:
         working-directory: Android/MaaFwApp
         run: |
           mv app/build/outputs/apk/debug/app-debug.apk \
-            "app/build/outputs/apk/debug/MaaAutoNaruto-android-${{ matrix.abi }}-${{ github.sha }}.apk"
+            "app/build/outputs/apk/debug/MaaAutoNaruto-android-internal-debug-${{ matrix.abi }}-${{ github.sha }}.apk"
 
       - uses: actions/upload-artifact@v7
         with:
-          name: MaaAutoNaruto-android-${{ matrix.abi }}-${{ github.sha }}
-          path: Android/MaaFwApp/app/build/outputs/apk/debug/MaaAutoNaruto-android-${{ matrix.abi }}-${{ github.sha }}.apk
+          name: MaaAutoNaruto-android-internal-debug-${{ matrix.abi }}-${{ github.sha }}
+          path: Android/MaaFwApp/app/build/outputs/apk/debug/MaaAutoNaruto-android-internal-debug-${{ matrix.abi }}-${{ github.sha }}.apk
           if-no-files-found: error
 
   release:
-    name: Release APK
+    name: internal-release
     permissions:
       contents: read
-    uses: ./.github/workflows/android-release.yml
+    uses: ./.github/workflows/android-release-build.yml
     with:
       version: ${{ github.sha }}
+      distribution: internal
     secrets: inherit

@@ -21,11 +21,13 @@ jobs:
       version: ${{ github.ref_name }}
 
   android:
+    name: public-release
     permissions:
       contents: read
-    uses: ./.github/workflows/android-release.yml
+    uses: ./.github/workflows/android-release-build.yml
     with:
       version: ${{ github.ref_name }}
+      distribution: public
     secrets: inherit
 
   changelog:
@@ -94,13 +96,8 @@ jobs:
       - name: Download Android APK
         uses: actions/download-artifact@v8
         with:
-          name: MaaAutoNaruto-android-release-${{ github.ref_name }}
+          name: MaaAutoNaruto-android-public-release-${{ github.ref_name }}
           path: release-assets/android
-
-      - name: Rename APK
-        run: |
-          mv "release-assets/android/MaaAutoNaruto-android-release-${{ github.ref_name }}.apk" \
-            "release-assets/android/MaaAutoNaruto-android-${{ github.ref_name }}.apk"
 
       - name: Download changelog
         uses: actions/download-artifact@v8
