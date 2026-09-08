@@ -30,6 +30,9 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  APK_ARTIFACT_NAME: MaaAutoNaruto-android-release-${{ inputs.version || github.ref_name }}
+
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -112,10 +115,22 @@ jobs:
           chmod +x gradlew
           ./gradlew --no-daemon :app:assembleRelease
 
+      - name: Rename release APK
+        working-directory: Android/MaaFwApp
+        shell: bash
+        run: |
+          apk_dir="app/build/outputs/apk/release"
+          apks=("$apk_dir"/*.apk)
+          if (( ${#apks[@]} != 1 )) || [[ ! -f "${apks[0]}" ]]; then
+            echo "Expected exactly one release APK in $apk_dir" >&2
+            exit 1
+          fi
+          mv "${apks[0]}" "$apk_dir/${APK_ARTIFACT_NAME}.apk"
+
       - uses: actions/upload-artifact@v7
         with:
-          name: MaaAutoNaruto-android-release-${{ inputs.version || github.ref_name }}
-          path: Android/MaaFwApp/app/build/outputs/apk/release/*.apk
+          name: ${{ env.APK_ARTIFACT_NAME }}
+          path: Android/MaaFwApp/app/build/outputs/apk/release/${{ env.APK_ARTIFACT_NAME }}.apk
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v7
