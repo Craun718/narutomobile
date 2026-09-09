@@ -327,7 +327,6 @@ def get_digit_count(context: Context, image: ndarray, roi: list[int], default=No
         return default, source_text
 
     value = int(nums[0])
-    logger.info(f" ROI{roi} 解析到的纯数字:{value}")
     return value, source_text
 
 
