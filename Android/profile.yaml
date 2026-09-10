@@ -37,6 +37,10 @@ agent:
         LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
         MAAFW_BINARY_PATH: "{nativeLibs}"
 
+update:
+  # Android APK 在 Mirror酱 是独立资源，和桌面端的 MaaAutoNaruto 分开上传
+  mirrorchyanRid: MaaAutoNaruto-MaaFwApp
+
 app:
   id: man
   label: MAN
