@@ -3,7 +3,6 @@
 import argparse
 from pathlib import Path
 
-
 PUBLIC_ID = "man"
 PUBLIC_LABEL = "MAN"
 INTERNAL_ID = "man.ci"
