@@ -111,7 +111,11 @@ jobs:
           shopt -s nullglob
           for directory in release-assets/desktop/*; do
             name=$(basename "$directory")
-            (cd "$directory" && zip -r "../../../$name.zip" .)
+            if [[ "$name" == MaaAutoNaruto-macos-* ]]; then
+              (cd "$directory" && tar -czf "../../../$name.tar.gz" .)
+            else
+              (cd "$directory" && zip -r "../../../$name.zip" .)
+            fi
           done
 
       - name: Detect prerelease
@@ -134,6 +138,7 @@ jobs:
           overwrite_files: true
           fail_on_unmatched_files: true
           files: |
+            MaaAutoNaruto-*.tar.gz
             MaaAutoNaruto-*.zip
             release-assets/android/*.apk
 
