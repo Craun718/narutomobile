@@ -111,7 +111,7 @@ jobs:
           shopt -s nullglob
           for directory in release-assets/desktop/*; do
             name=$(basename "$directory")
-            if [[ "$name" == MaaAutoNaruto-macos-* ]]; then
+            if [[ "$name" == MaaAutoNaruto-macos-* || "$name" == MaaAutoNaruto-linux-* ]]; then
               (cd "$directory" && tar -czf "../../../$name.tar.gz" .)
             else
               (cd "$directory" && zip -r "../../../$name.zip" .)
