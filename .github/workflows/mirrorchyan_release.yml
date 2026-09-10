@@ -22,7 +22,7 @@ jobs:
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: "MaaAutoNaruto-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
+          filename: "MaaAutoNaruto-${{ matrix.os }}-${{ matrix.arch }}-*.${{ matrix.os == 'macos' && 'tar.gz' || 'zip' }}"
           mirrorchyan_rid: MaaAutoNaruto
           tag: ${{ inputs.tag }}
 
