@@ -7,7 +7,7 @@
             "[JumpBack]back_main_screen"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入使用体力任务</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入刷体力(精英副本)任务</font>"
         }
     },
     "use_energy_by_ninja_piece": {

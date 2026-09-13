@@ -19,7 +19,9 @@
                 "CheckBuyEnergyCount",
                 "Shopping",
                 "SwitchAccountFindTargetArea",
-                "CheckIsAndroid"
+                "CheckIsAndroid",
+                "NodeRecognitionResultRegister",
+                "UseEnergyCheckGear"
             ]
         },
         "custom_recognition_param": {
@@ -68,6 +70,15 @@
                 },
                 {
                     "$ref": "#/$defs/SwitchAccountFindTargetAreaParam"
+                },
+                {
+                    "$ref": "#/$defs/CheckIsAndroidParam"
+                },
+                {
+                    "$ref": "#/$defs/NodeRecognitionResultRegisterParam"
+                },
+                {
+                    "$ref": "#/$defs/UseEnergyCheckGear"
                 }
             ]
         }
@@ -179,6 +190,24 @@
             "type": "object",
             "description": "切换账号找目标区",
             "markdownDescription": "当前界面有目标区通过,否则失败.",
+            "properties": {}
+        },
+        "CheckIsAndroidParam": {
+            "type": "object",
+            "description": "检查是否是安卓设备,区分真机和模拟器",
+            "markdownDescription": "如果当前是安卓机,返回通过",
+            "properties": {}
+        },
+        "NodeRecognitionResultRegisterParam": {
+            "type": "object",
+            "description": "节点识别结果寄存器",
+            "markdownDescription": "如果识别结果非None,返回通过",
+            "properties": {}
+        },
+        "UseEnergyCheckGear": {
+            "type": "object",
+            "description": "刷体力(做装备)检查是否进入对应装备的制作界面",
+            "markdownDescription": "如果当前识别和寄存器的结果有双向字串返回通过",
             "properties": {}
         }
     }

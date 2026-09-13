@@ -1,0 +1,394 @@
+{
+    "use_energy_forge_gear": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "use_energy_in_forge_gear",
+            "use_energy_forge_gear_in_main",
+            "[JumpBack]back_main_screen"
+        ],
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入刷体力(做装备)任务</font>"
+        }
+    },
+    "use_energy_forge_gear_in_main": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            219,
+            604,
+            130,
+            115
+        ],
+        "template": "Use_energy_forge_gear/parent_entry.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "use_energy_forge_gear_entry",
+            "use_energy_forge_gear_in_main"
+        ]
+    },
+    "use_energy_forge_gear_entry": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            46,
+            515,
+            93,
+            88
+        ],
+        "template": "Use_energy_forge_gear/entry.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "use_energy_in_forge_gear",
+            "use_energy_forge_gear_entry"
+        ]
+    },
+    "use_energy_in_forge_gear": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            328,
+            150
+        ],
+        "template": "Use_energy_forge_gear/in_forge_gear.png",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "use_energy_find_gear"
+    },
+    "use_energy_find_gear": {
+        "max_hit": 5,
+        "recognition": "Custom",
+        "custom_recognition": "NodeRecognitionResultRegister",
+        "custom_recognition_param": {
+            "node": "use_energy_check_gear_recognition"
+        },
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            165,
+            224,
+            34,
+            29
+        ],
+        "post_delay": 0,
+        "timeout": 5000,
+        "next": [
+            "use_energy_check_gear",
+            "use_energy_find_gear"
+        ],
+        "on_error": "back_main_screen_and_stop"
+    },
+    "use_energy_check_gear_recognition": {
+        "recognition": "OCR",
+        "roi": [
+            108,
+            290,
+            145,
+            32
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "use_energy_check_gear_recognition_1": {
+        "recognition": "OCR",
+        "roi": [
+            790,
+            106,
+            348,
+            51
+        ],
+        "replace": [
+            "胄",
+            "冑"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0
+    },
+    "use_energy_check_gear": {
+        "max_hit": 5,
+        "recognition": "Custom",
+        "custom_recognition": "UseEnergyCheckGear",
+        "custom_recognition_param": {
+            "node": "use_energy_check_gear_recognition_1",
+            "key": "use_energy_check_gear_recognition"
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "timeout": 5000,
+        "next": [
+            "use_energy_forge_gear_in_sweep",
+            "use_energy_forge_gear_to_sweep",
+            "use_energy_forge_gear_advance"
+        ],
+        "on_error": "back_main_screen_and_stop"
+    },
+    "use_energy_forge_gear_to_sweep": {
+        "recognition": "OCR",
+        "roi": [
+            704,
+            471,
+            525,
+            32
+        ],
+        "expected": [
+            "可装备",
+            "可合成",
+            "可扫荡"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "use_energy_forge_gear_in_sweep",
+            "use_energy_forge_gear_equip",
+            "use_energy_forge_gear_to_sweep"
+        ]
+    },
+    "use_energy_forge_gear_in_sweep": {
+        "recognition": "OCR",
+        "roi": [
+            578,
+            165,
+            310,
+            106
+        ],
+        "expected": [
+            "获取",
+            "途径"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "use_energy_forge_gear_one_key_sweep",
+            "use_energy_forge_gear_craft",
+            "use_energy_forge_gear_equip"
+        ]
+    },
+    "use_energy_forge_gear_one_key_sweep": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            335,
+            527,
+            197,
+            69
+        ],
+        "template": "SharedNode/one_key_sweep.png",
+        "method": 10001,
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "use_energy_forge_gear_in_sweep_interface",
+            "use_energy_forge_gear_one_key_sweep"
+        ]
+    },
+    "use_energy_forge_gear_in_sweep_interface": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            714,
+            495,
+            51,
+            51
+        ],
+        "template": [
+            "Use_energy_forge_gear/not_check.png",
+            "Use_energy_forge_gear/check.png"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "use_energy_forge_gear_in_sweep_interface_not_check",
+            "use_energy_forge_gear_in_sweep_interface_check"
+        ]
+    },
+    "use_energy_forge_gear_in_sweep_interface_not_check": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            714,
+            495,
+            51,
+            51
+        ],
+        "template": "Use_energy_forge_gear/not_check.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "use_energy_forge_gear_in_sweep_interface_not_check",
+            "use_energy_forge_gear_in_sweep_interface_check"
+        ]
+    },
+    "use_energy_forge_gear_in_sweep_interface_check": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            714,
+            495,
+            51,
+            51
+        ],
+        "template": "Use_energy_forge_gear/check.png",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "use_energy_forge_gear_in_sweep_interface_start_sweep"
+    },
+    "use_energy_forge_gear_in_sweep_interface_start_sweep": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            782,
+            480,
+            170,
+            71
+        ],
+        "template": "SharedNode/start_sweep.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "use_energy_not_enough_sign",
+            "[JumpBack]use_energy_forge_gear_sweeping",
+            "use_energy_forge_gear_in_sweep_interface_enough"
+        ]
+    },
+    "use_energy_forge_gear_sweeping": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            780,
+            562,
+            185,
+            81
+        ],
+        "template": "SharedNode/keep_sweep.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "use_energy_forge_gear_in_sweep_interface_enough": {
+        "recognition": "OCR",
+        "roi": [
+            681,
+            491,
+            79,
+            37
+        ],
+        "expected": "已足够",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "use_energy_forge_gear_quit_sweep_interface"
+    },
+    "use_energy_forge_gear_quit_sweep_interface": {
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            857,
+            569,
+            41,
+            37
+        ],
+        "post_delay": 0,
+        "next": [
+            "use_energy_forge_gear_in_sweep_interface_enough",
+            "use_energy_forge_gear_craft",
+            "use_energy_forge_gear_one_key_sweep"
+        ]
+    },
+    "use_energy_forge_gear_craft": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            331,
+            520,
+            209,
+            81
+        ],
+        "template": "Use_energy_forge_gear/craft.png",
+        "method": 10001,
+        "threshold": 0.95,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "use_energy_forge_gear_equip",
+            "use_energy_forge_gear_craft"
+        ]
+    },
+    "use_energy_forge_gear_equip": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            287,
+            480,
+            390,
+            135
+        ],
+        "template": "SharedNode/equip.png",
+        "method": 10001,
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "use_energy_forge_gear_without_equip",
+            "use_energy_forge_gear_equip"
+        ]
+    },
+    "use_energy_forge_gear_without_equip": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            595,
+            538,
+            85,
+            46
+        ],
+        "template": "SharedNode/equip.png",
+        "method": 10001,
+        "threshold": 0.9,
+        "inverse": true,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "use_energy_forge_gear_in_sweep",
+            "use_energy_forge_gear_to_sweep",
+            "use_energy_forge_gear_advance"
+        ]
+    },
+    "use_energy_forge_gear_advance": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            1091,
+            520,
+            152,
+            64
+        ],
+        "template": "SharedNode/advance.png",
+        "method": 10001,
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "post_delay": 300,
+        "next": [
+            "use_energy_forge_gear_without_advance",
+            "use_energy_forge_gear_advance"
+        ]
+    },
+    "use_energy_forge_gear_without_advance": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            1091,
+            520,
+            152,
+            64
+        ],
+        "template": "SharedNode/advance.png",
+        "method": 10001,
+        "threshold": 0.9,
+        "inverse": true,
+        "pre_delay": 0,
+        "post_delay": 300,
+        "next": [
+            "use_energy_forge_gear_in_sweep",
+            "use_energy_forge_gear_to_sweep",
+            "use_energy_forge_gear_advance"
+        ]
+    }
+}
