@@ -62,11 +62,6 @@ def main() -> int:
         dest_logo.mkdir(parents=True, exist_ok=True)
         shutil.copy2(logo_png, dest_logo / "logo.png")
 
-    docs_game_agreement = REPO / "docs" / "game_agreement"
-    if docs_game_agreement.is_dir():
-        (DEST / "docs").mkdir(parents=True, exist_ok=True)
-        copy_tree(docs_game_agreement, DEST / "docs" / "game_agreement")
-
     files = sum(1 for p in DEST.rglob("*") if p.is_file())
     print(f"{files} files -> {DEST}")
     return 0
