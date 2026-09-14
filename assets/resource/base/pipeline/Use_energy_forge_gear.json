@@ -161,11 +161,13 @@
         ],
         "pre_delay": 0,
         "post_delay": 0,
+        "timeout": 5000,
         "next": [
             "use_energy_forge_gear_one_key_sweep",
             "use_energy_forge_gear_craft",
             "use_energy_forge_gear_equip"
-        ]
+        ],
+        "on_error": "use_energy_forge_gear_to_sweep"
     },
     "use_energy_forge_gear_one_key_sweep": {
         "recognition": "TemplateMatch",
@@ -250,7 +252,8 @@
         "next": [
             "use_energy_not_enough_sign",
             "[JumpBack]use_energy_forge_gear_sweeping",
-            "use_energy_forge_gear_in_sweep_interface_enough"
+            "use_energy_forge_gear_in_sweep_interface_enough",
+            "use_energy_forge_gear_in_sweep_interface_start_sweep"
         ]
     },
     "use_energy_forge_gear_sweeping": {
@@ -327,10 +330,10 @@
         "threshold": 0.9,
         "pre_delay": 0,
         "action": "Click",
-        "post_delay": 300,
+        "post_delay": 500,
         "next": [
-            "use_energy_forge_gear_without_equip",
-            "use_energy_forge_gear_equip"
+            "use_energy_forge_gear_equip",
+            "use_energy_forge_gear_without_equip"
         ]
     },
     "use_energy_forge_gear_without_equip": {
@@ -365,6 +368,7 @@
         "method": 10001,
         "threshold": 0.9,
         "pre_delay": 0,
+        "action": "Click",
         "post_delay": 300,
         "next": [
             "use_energy_forge_gear_without_advance",
