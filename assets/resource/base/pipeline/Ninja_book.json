@@ -583,7 +583,8 @@
             170
         ],
         "template": [
-            "Ninja_book/liveness_waiting.png"
+            "Ninja_book/liveness_waiting.png",
+            "Ninja_book/liveness_waiting_plus.png"
         ],
         "method": 10001,
         "threshold": 0.95,
