@@ -97,6 +97,7 @@
         },
         "宝匣挑战": {
             "type": "switch",
+            "description": "不会自动抽卡",
             "cases": [
                 {
                     "name": "No"
@@ -117,6 +118,7 @@
         },
         "忍法帖礼盒": {
             "type": "switch",
+            "description": "不会自动抽卡",
             "cases": [
                 {
                     "name": "No"
