@@ -1405,7 +1405,7 @@
         ],
         "threshold": 0.85,
         "action": "Click",
-        "timeout": 1000,
+        "timeout": 8000,
         "next": [
             "confirm_ninja_book_award"
         ],
