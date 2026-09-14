@@ -52,6 +52,7 @@
         "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
+            "ninja_book_is_android_then_no_share",
             "ninja_book_leaderboard",
             "ninja_book_undone",
             "[JumpBack]hit_to_enter_ninja_book",
@@ -1191,7 +1192,6 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "ninja_book_is_android_then_no_share",
             "ninja_book_share_to_qq",
             "ninja_book_share_to_wechat",
             "[JumpBack]ninja_book_share"
@@ -1203,7 +1203,10 @@
     "ninja_book_is_android_then_no_share": {
         "recognition": "Custom",
         "custom_recognition": "CheckIsAndroid",
-        "next": "close_ninja_book_leaderboard",
+        "next": [
+            "ninja_book_mission_undone",
+            "ninja_book_mission_done"
+        ],
         "focus": {
             "Node.Action.Starting": "<font color=\"darkorange\">不支持在安卓上进行分享，请使用模拟器！</font>"
         }
