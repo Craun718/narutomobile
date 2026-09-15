@@ -4,7 +4,7 @@ import re
 from maa.agent.agent_server import AgentServer
 from maa.context import Context
 from maa.custom_recognition import CustomRecognition
-from maa.define import Rect
+from maa.define import RecognitionDetail, Rect
 from numpy import ndarray
 from utils.counter import counter
 from utils.logger import logger
@@ -525,4 +525,78 @@ class CheckIsAndroid(CustomRecognition):
                 },
             )
             return CustomRecognition.AnalyzeResult(box=Rect(0, 0, 1, 1), detail={})
+        return CustomRecognition.AnalyzeResult(box=None, detail={})
+
+
+@AgentServer.custom_recognition("NodeRecognitionResultRegister")
+class NodeRecognitionResultRegister(CustomRecognition):
+    """
+    节点识别结果寄存器,储存一个节点的识别结果
+    """
+
+    storage: dict[str, RecognitionDetail] = {}
+
+    def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg) -> CustomRecognition.AnalyzeResult:
+        param = json.loads(argv.custom_recognition_param)
+        node = param.get("node")
+        key = param.get("key", node)
+
+        info = context.run_recognition(node, argv.image)
+        NodeRecognitionResultRegister.storage[key] = info
+        # print(NodeRecognitionResultRegister.storage)
+
+        if info is None:
+            return CustomRecognition.AnalyzeResult(box=None, detail={})
+        return CustomRecognition.AnalyzeResult(box=Rect(0, 0, 1, 1), detail={})
+
+    @classmethod
+    def get(cls, key: str) -> RecognitionDetail | None:
+        return cls.storage.get(key)
+
+    @classmethod
+    def clear(cls, node: str) -> None:
+        cls.storage.pop(node, None)
+
+
+def get_all_texts(info: RecognitionDetail | None) -> set[str]:
+    if info is None:
+        return set()
+    return {r.text.strip() for r in (info.filtered_results or []) if getattr(r, "text", None)}
+
+
+def find_substring_pairs(
+    ta: set[str],
+    tb: set[str],
+) -> set[tuple[str, str]]:
+    """
+    刷体力(做装备)识别结果配对,如果两个结果是双向字串就返回成功
+    """
+    return {(x, y) for x in ta for y in tb if x in y or y in x}
+
+
+@AgentServer.custom_recognition("UseEnergyCheckGear")
+class UseEnergyCheckGear(CustomRecognition):
+    def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg) -> CustomRecognition.AnalyzeResult:
+        param = json.loads(argv.custom_recognition_param)
+        node = param.get("node")
+        ref_key = param.get("key", node)
+
+        current = context.run_recognition(node, argv.image)
+        ref = NodeRecognitionResultRegister.get(ref_key)
+
+        ref_texts = get_all_texts(ref)
+        cur_texts = get_all_texts(current)
+        common = find_substring_pairs(ref_texts, cur_texts)
+
+        if common:
+            NodeRecognitionResultRegister.clear(ref_key)
+            logger.info(f"[UseEnergyCheckGear] 匹配: {common}")
+            return CustomRecognition.AnalyzeResult(
+                box=Rect(0, 0, 1, 1),
+                detail={"matched": [f"{a} ~ {b}" for a, b in common]},
+            )
+
+        logger.warning("[UseEnergyCheckGear] 未匹配")
+        logger.warning(f"  ref     ({ref_key}): {sorted(ref_texts)}")
+        logger.warning(f"  current ({node}): {sorted(cur_texts)}")
         return CustomRecognition.AnalyzeResult(box=None, detail={})

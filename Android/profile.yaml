@@ -10,7 +10,6 @@ include:
   - agent/**
   - tasks/**
   - docs/imgs/logo.png
-  - docs/game_agreement/**
   - CONTACT
   - LICENSE
   - DISCLAIMER.md

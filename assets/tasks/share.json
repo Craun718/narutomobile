@@ -25,6 +25,7 @@
                     "pipeline_override": {
                         "share": {
                             "next": [
+                                "is_android_then_no_share",
                                 "share_start_in_main_screen",
                                 "[JumpBack]back_main_screen_before_task"
                             ]

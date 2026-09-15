@@ -46,7 +46,7 @@ def main() -> int:
 
     copy_tree(REPO / "agent", DEST / "agent")
 
-    for name in ("LICENSE", "CONTACT"):
+    for name in ("LICENSE", "CONTACT", "DISCLAIMER.md"):
         src = REPO / name
         if src.is_file():
             shutil.copy2(src, DEST / name)

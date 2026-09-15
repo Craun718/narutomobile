@@ -119,7 +119,8 @@
             "liveness_award_box_2_done",
             "liveness_award_box_2_locked",
             "get_liveness_award_box_2",
-            "[JumpBack]liveness_award_background"
+            "[JumpBack]liveness_award_background",
+            "[JumpBack]liveness_award_detail"
         ]
     },
     "get_liveness_award_box_1": {
@@ -142,7 +143,8 @@
         "post_delay": 0,
         "next": [
             "liveness_award_box_1_done",
-            "get_liveness_award_box_1"
+            "get_liveness_award_box_1",
+            "[JumpBack]liveness_award_detail"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
@@ -164,7 +166,8 @@
             "liveness_award_box_3_done",
             "liveness_award_box_3_locked",
             "get_liveness_award_box_3",
-            "[JumpBack]liveness_award_background"
+            "[JumpBack]liveness_award_background",
+            "[JumpBack]liveness_award_detail"
         ]
     },
     "get_liveness_award_box_2": {
@@ -187,7 +190,8 @@
         "post_delay": 0,
         "next": [
             "liveness_award_box_2_done",
-            "get_liveness_award_box_2"
+            "get_liveness_award_box_2",
+            "[JumpBack]liveness_award_detail"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
@@ -209,7 +213,8 @@
             "liveness_award_box_4_done",
             "liveness_award_box_4_locked",
             "get_liveness_award_box_4",
-            "[JumpBack]liveness_award_background"
+            "[JumpBack]liveness_award_background",
+            "[JumpBack]liveness_award_detail"
         ]
     },
     "get_liveness_award_box_3": {
@@ -232,7 +237,8 @@
         "post_delay": 0,
         "next": [
             "liveness_award_box_3_done",
-            "get_liveness_award_box_3"
+            "get_liveness_award_box_3",
+            "[JumpBack]liveness_award_detail"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
@@ -275,7 +281,8 @@
         "post_delay": 0,
         "next": [
             "liveness_award_box_4_done",
-            "get_liveness_award_box_4"
+            "get_liveness_award_box_4",
+            "[JumpBack]liveness_award_detail"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取活跃度宝箱</font>"
@@ -356,6 +363,42 @@
             "weekly_liveness_award_undone",
             "weekly_liveness_award_done"
         ]
+    },
+    "liveness_award_detail": {
+        "recognition": "OCR",
+        "roi": [
+            602,
+            174,
+            74,
+            41
+        ],
+        "expected": "奖励",
+        "pre_delay": 0,
+        "action": "Click",
+        "target": [
+            279,
+            661,
+            66,
+            34
+        ],
+        "post_delay": 300,
+        "next": [
+            "liveness_award_without_detail",
+            "liveness_award_detail"
+        ]
+    },
+    "liveness_award_without_detail": {
+        "recognition": "OCR",
+        "roi": [
+            602,
+            174,
+            74,
+            41
+        ],
+        "expected": "奖励",
+        "inverse": true,
+        "pre_delay": 0,
+        "post_delay": 0
     },
     "liveness_award_background": {
         "recognition": "TemplateMatch",

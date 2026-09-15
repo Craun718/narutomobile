@@ -95,6 +95,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python Android/MaaFwApp/scripts/build_agent_bundle.py --out Android/agent-dist \
+            --abi ${{ matrix.abi }} \
             --requirements requirements.txt \
             --exclude pillow --exclude win32-setctime --exclude colorama --exclude jeepney \
             --require pillow==11.0.0 --extra-index-url https://chaquo.com/pypi-13.1/

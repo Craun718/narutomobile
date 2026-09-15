@@ -52,6 +52,7 @@
         "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
+            "ninja_book_is_android_then_no_share",
             "ninja_book_leaderboard",
             "ninja_book_undone",
             "[JumpBack]hit_to_enter_ninja_book",
@@ -495,6 +496,7 @@
             "treasure_box_undone",
             "ninja_book_award_undone",
             "ninja_book_award_selected",
+            "ninja_book_award_done",
             "back_main_screen_and_stop"
         ],
         "focus": {
@@ -517,7 +519,7 @@
         "post_delay": 0,
         "next": [
             "check_selected_ninja_book_liveness",
-            "[JumpBack]ninja_book_liveness_undone"
+            "ninja_book_liveness_undone"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">忍法帖活跃度奖励未领取</font>"
@@ -582,7 +584,8 @@
             170
         ],
         "template": [
-            "Ninja_book/liveness_waiting.png"
+            "Ninja_book/liveness_waiting.png",
+            "Ninja_book/liveness_waiting_plus.png"
         ],
         "method": 10001,
         "threshold": 0.95,
@@ -614,6 +617,7 @@
             "treasure_box_undone",
             "ninja_book_award_undone",
             "ninja_book_award_selected",
+            "ninja_book_award_done",
             "back_main_screen_and_stop"
         ],
         "focus": {
@@ -678,6 +682,7 @@
         "next": [
             "ninja_book_award_undone",
             "ninja_book_award_selected",
+            "ninja_book_award_done",
             "back_main_screen_and_stop"
         ],
         "focus": {
@@ -699,7 +704,7 @@
         "post_delay": 0,
         "next": [
             "ninja_book_check_in_treasure_box_access_method",
-            "[JumpBack]treasure_box_access_method_undone"
+            "treasure_box_access_method_undone"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">宝匣可领取或挑战</font>"
@@ -777,6 +782,7 @@
         "next": [
             "ninja_book_award_undone",
             "ninja_book_award_selected",
+            "ninja_book_award_done",
             "back_main_screen_and_stop"
         ],
         "focus": {
@@ -801,7 +807,7 @@
         "post_delay": 0,
         "next": [
             "get_treasure_box_award_without_one_key",
-            "[JumpBack]get_treasure_box_award_one_key"
+            "get_treasure_box_award_one_key"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">一键领取宝匣奖励</font>"
@@ -839,7 +845,7 @@
         "next": [
             "treasure_box_challenge_confirm_ninja",
             "treasure_box_celebrate",
-            "[JumpBack]treasure_box_challenge"
+            "treasure_box_challenge"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">前往宝匣挑战</font>"
@@ -887,7 +893,8 @@
         "post_delay": 0,
         "next": [
             "ninja_book_award_undone",
-            "ninja_book_award_selected"
+            "ninja_book_award_selected",
+            "ninja_book_award_done"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">宝匣扫荡完成</font>"
@@ -917,7 +924,8 @@
         "next": [
             "ninja_book_award_undone",
             "ninja_book_award_selected",
-            "[JumpBack]treasure_box_sweep"
+            "treasure_box_sweep",
+            "ninja_book_award_done"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">前往宝匣挑战</font>"
@@ -1065,7 +1073,8 @@
         "post_delay": 2000,
         "next": [
             "ninja_book_award_undone",
-            "ninja_book_award_selected"
+            "ninja_book_award_selected",
+            "ninja_book_award_done"
         ]
     },
     "close_ninja_book_level_up_page_when_liveness": {
@@ -1109,7 +1118,7 @@
         "next": [
             "ninja_book_leaderboard_like_undone",
             "ninja_book_leaderboard_like_done",
-            "[JumpBack]ninja_book_leaderboard"
+            "ninja_book_leaderboard"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入忍法帖排行榜界面</font>"
@@ -1191,10 +1200,9 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "ninja_book_is_android_then_no_share",
             "ninja_book_share_to_qq",
             "ninja_book_share_to_wechat",
-            "[JumpBack]ninja_book_share"
+            "ninja_book_share"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"darkgray\">进入分享页面</font>"
@@ -1203,7 +1211,10 @@
     "ninja_book_is_android_then_no_share": {
         "recognition": "Custom",
         "custom_recognition": "CheckIsAndroid",
-        "next": "close_ninja_book_leaderboard",
+        "next": [
+            "ninja_book_mission_undone",
+            "ninja_book_mission_done"
+        ],
         "focus": {
             "Node.Action.Starting": "<font color=\"darkorange\">不支持在安卓上进行分享，请使用模拟器！</font>"
         }
@@ -1224,7 +1235,7 @@
         "next": [
             "ninja_book_mission_undone",
             "ninja_book_mission_done",
-            "[JumpBack]close_ninja_book_leaderboard"
+            "close_ninja_book_leaderboard"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭忍法帖排行榜</font>"
@@ -1248,12 +1259,31 @@
         "post_delay": 0,
         "next": [
             "ninja_book_award_selected",
-            "[JumpBack]ninja_book_award_undone",
-            "[JumpBack]back_main_screen_and_stop"
+            "ninja_book_award_undone",
+            "back_main_screen_and_stop"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">忍法帖奖励未领取</font>"
         }
+    },
+    "ninja_book_award_done": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            89,
+            98,
+            111,
+            108
+        ],
+        "template": [
+            "Ninja_book/award_done.png",
+            "Ninja_book/award_select_done.png"
+        ],
+        "threshold": 0.95,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "back_main_screen_and_stop"
+        ]
     },
     "ninja_book_award_selected": {
         "max_hit": 3,
@@ -1274,7 +1304,7 @@
         "post_delay": 0,
         "next": [
             "ninja_book_award_swip_to_left",
-            "[JumpBack]back_main_screen_and_stop"
+            "back_main_screen_and_stop"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">忍法帖奖励未领取</font>"
@@ -1402,7 +1432,7 @@
         ],
         "threshold": 0.85,
         "action": "Click",
-        "timeout": 1000,
+        "timeout": 8000,
         "next": [
             "confirm_ninja_book_award"
         ],
