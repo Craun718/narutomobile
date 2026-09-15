@@ -66,14 +66,15 @@ def properties_unescape(value: str) -> str:
     return "".join(result)
 
 
-def write_local_properties(abi: str | None) -> None:
+def write_local_properties(abi: str | None, *, release: bool = False) -> None:
     path = APP_DIR / "local.properties"
+    key = "build.releaseAbi" if release else "build.debugAbi"
     properties: dict[str, str] = {}
     if path.exists():
         for line in path.read_text(encoding="utf-8").splitlines():
-            key, separator, value = line.partition("=")
+            key_, separator, value = line.partition("=")
             if separator and not line.lstrip().startswith("#"):
-                properties[key.strip()] = properties_unescape(value)
+                properties[key_.strip()] = properties_unescape(value)
 
     if not properties.get("sdk.dir"):
         sdk = find_android_sdk()
@@ -87,10 +88,11 @@ def write_local_properties(abi: str | None) -> None:
     properties["pi.profile"] = "../profile.yaml"
     if abi is None:
         properties.pop("build.debugAbi", None)
+        properties.pop("build.releaseAbi", None)
     else:
-        properties["build.debugAbi"] = abi
+        properties[key] = abi
 
-    lines = [f"{key}={properties_escape(value)}" for key, value in properties.items()]
+    lines = [f"{k}={properties_escape(v)}" for k, v in properties.items()]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -182,7 +184,10 @@ def main() -> int:
         raise SystemExit("The debug APK supports one ABI per build. Pass --abi arm64-v8a or --abi x86_64.")
 
     ensure_submodule()
-    write_local_properties(abis[0] if args.variant == "debug" else None)
+    if args.variant == "debug":
+        write_local_properties(abis[0])
+    else:
+        write_local_properties(abis[0] if len(abis) == 1 else None, release=True)
     prepare_inputs(args.variant, abis, args.skip_setup)
     apks = run_gradle(args.variant, args.clean)
 

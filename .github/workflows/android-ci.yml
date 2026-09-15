@@ -59,6 +59,8 @@ jobs:
           cache-dependency-path: Android/MaaFwApp/gradle/wrapper/gradle-wrapper.properties
 
       - uses: android-actions/setup-android@v4
+        with:
+          packages: platform-tools
 
       - name: Cache MaaFramework and agent core
         uses: actions/cache@v6
