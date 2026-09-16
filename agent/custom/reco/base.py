@@ -19,6 +19,12 @@ class IsCounterOverflow(CustomRecognition):
     计数器溢出检测
     """
 
+    mission_enter = {
+        "point_race": "积分赛",
+        "secret_realm": "秘境",
+        "weekly_win": "决斗场",
+    }
+
     def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg) -> CustomRecognition.AnalyzeResult:
         param = json.loads(argv.custom_recognition_param)
         max_hit = int(param.get("max_hit", "0"))
@@ -29,14 +35,18 @@ class IsCounterOverflow(CustomRecognition):
             return CustomRecognition.AnalyzeResult(box=None, detail={})
 
         now_count = counter.get_count(argv.task_detail.task_id)
-        logger.info(
-            f"当前节点名:{argv.node_name};当前任务入口:{argv.task_detail.entry};任务id:{argv.task_detail.task_id}"
-        )
+        entry = argv.task_detail.entry
+
+        task_name = self.mission_enter.get(entry, entry)
+
+        logger.debug(f"当前节点名:{argv.node_name};当前任务入口:{entry};任务id:{argv.task_detail.task_id}")
+
         if now_count >= max_hit:
-            logger.debug(f"计数器溢出！最大值: {max_hit} 当前值: {now_count} ")
-            logger.info("达到最大执行次数")
+            logger.info(f"{task_name}计数器溢出:目标值: {max_hit} 当前值: {now_count}")
+            logger.info("达到目标执行次数")
             return CustomRecognition.AnalyzeResult(box=None, detail={})
-        logger.debug(f"计数器状态： 最大值: {max_hit} 当前值: {now_count} ")
+
+        logger.info(f"{task_name}计数器状态：目标值: {max_hit} 当前值: {now_count}")
         return CustomRecognition.AnalyzeResult(box=Rect(0, 0, 1, 1), detail={})
 
 

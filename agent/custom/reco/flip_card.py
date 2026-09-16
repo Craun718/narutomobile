@@ -82,7 +82,7 @@ class FlipCard(CustomRecognition):
         # 判断是否双对角线都有橙色
         if "main" in orange_diags and "sub" in orange_diags:
             is_both_diag_orange = True
-            logger.info("检测到双对角线都有橙色，忽略对角线优先级")
+            logger.debug("检测到双对角线都有橙色，忽略对角线优先级")
 
         return {
             "orange_pos": orange_pos,
@@ -114,7 +114,7 @@ class FlipCard(CustomRecognition):
                 if r not in orange_info["orange_rows"] and c not in orange_info["orange_cols"]
             ]
             if valid_unflip:
-                logger.info(f"双对角线橙色，选横竖无橙色的未翻牌：{valid_unflip[0]}")
+                logger.debug(f"双对角线橙色，选横竖无橙色的未翻牌：{valid_unflip[0]}")
                 return valid_unflip[0]
             return all_unflip[0]
 
@@ -143,13 +143,13 @@ class FlipCard(CustomRecognition):
                 priority3.append((r, c))
 
         if priority1:
-            logger.info(f"初始状态选优先级1对角线牌:{priority1[0]}")
+            logger.debug(f"初始状态选优先级1对角线牌:{priority1[0]}")
             return priority1[0]
         elif priority2:
-            logger.info(f"初始状态选优先级2对角线牌:{priority2[0]}")
+            logger.debug(f"初始状态选优先级2对角线牌:{priority2[0]}")
             return priority2[0]
         elif priority3:
-            logger.info(f"初始状态选优先级3对角线牌:{priority3[0]}")
+            logger.debug(f"初始状态选优先级3对角线牌:{priority3[0]}")
             return priority3[0]
         return diag_unflip[0]
 
@@ -228,17 +228,17 @@ class FlipCard(CustomRecognition):
         best_score = -pos_data[0][0]
 
         # 日志输出单一方向分数
-        logger.info("未翻牌评分详情（优先同方向生长，行>列>对角线）：")
+        logger.debug("未翻牌评分详情（优先同方向生长，行>列>对角线）：")
         for idx, item in enumerate(pos_data[:3]):
             max_score = -item[0]
             dir_priority = item[1]
             max_dir = "行" if dir_priority == 0 else ("列" if dir_priority == 1 else "对角线")
             is_diag = "*" if -item[2] == 1 else " "
             pos = item[3]
-            logger.info(
+            logger.debug(
                 f"  候选{idx + 1}:({pos[0] + 1},{pos[1] + 1}) {is_diag} 最高分={max_score} 最高分方向={max_dir}"
             )
-        logger.info(f"最终选择：({best_pos[0] + 1},{best_pos[1] + 1}) 最高分={best_score}")
+        logger.debug(f"最终选择：({best_pos[0] + 1},{best_pos[1] + 1}) 最高分={best_score}")
 
         return best_pos
 
@@ -248,28 +248,28 @@ class FlipCard(CustomRecognition):
         for r in range(4):
             purple_count = sum(1 for col in range(4) if card_state_grid[r][col] == 1)
             if purple_count == 4:
-                logger.info(f"检测到第{r + 1}行4个紫色连成一线,胜利!")
+                logger.debug(f"检测到第{r + 1}行4个紫色连成一线,胜利!")
                 return True
         # 检查列
         for c in range(4):
             purple_count = sum(1 for row in range(4) if card_state_grid[row][c] == 1)
             if purple_count == 4:
-                logger.info(f"检测到第{c + 1}列4个紫色连成一线,胜利!")
+                logger.debug(f"检测到第{c + 1}列4个紫色连成一线,胜利!")
                 return True
         # 检查主对角线
         main_purple = sum(1 for i in range(4) if card_state_grid[i][i] == 1)
         if main_purple == 4:
-            logger.info("检测到主对角线4个紫色连成一线,胜利!")
+            logger.debug("检测到主对角线4个紫色连成一线,胜利!")
             return True
         # 检查副对角线
         sub_purple = sum(1 for i in range(4) if card_state_grid[i][3 - i] == 1)
         if sub_purple == 4:
-            logger.info("检测到副对角线4个紫色连成一线,胜利!")
+            logger.debug("检测到副对角线4个紫色连成一线,胜利!")
             return True
         return False
 
     def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg) -> CustomRecognition.AnalyzeResult:
-        logger.info("===== 开始检测翻牌游戏状态=====")
+        logger.debug("===== 开始检测翻牌游戏状态=====")
 
         # 步骤1：识别卡牌状态
         card_state_grid = []
@@ -283,11 +283,11 @@ class FlipCard(CustomRecognition):
                 if card_type == 3:
                     has_recognize_fail = True
             card_state_grid.append(row_state)
-        logger.info(f"当前卡牌状态网格：\n{card_state_grid}")
+        logger.debug(f"当前卡牌状态网格：\n{card_state_grid}")
 
         # 步骤2：处理识别失败
         if has_recognize_fail:
-            logger.info(f"检测到识别失败,点击提示ROI:{self.TIP_CLICK_ROI}")
+            logger.debug(f"检测到识别失败,点击提示ROI:{self.TIP_CLICK_ROI}")
             tip_box = Rect(*self.TIP_CLICK_ROI)
             return CustomRecognition.AnalyzeResult(
                 box=tip_box,
@@ -301,7 +301,7 @@ class FlipCard(CustomRecognition):
 
         # 步骤4：提取橙色信息
         orange_info = self.get_orange_info(card_state_grid)
-        logger.info(
+        logger.debug(
             f"橙色牌信息：位置{[(x + 1, y + 1) for x, y in orange_info['orange_pos']]}，阻挡行{orange_info['orange_rows']},"  # noqa: E501
             f"阻挡列{orange_info['orange_cols']}，阻挡对角线{orange_info['orange_diags']}，双对角线橙色：{orange_info['is_both_diag_orange']}"
         )
@@ -310,7 +310,7 @@ class FlipCard(CustomRecognition):
         if self._is_initial_state(card_state_grid):
             best_pos = self._get_valid_initial_pos(card_state_grid, orange_info)
             best_roi = self.CARD_4X4_ROI[best_pos[0]][best_pos[1]]
-            logger.info(f"初始状态选择翻牌位置：({best_pos[0] + 1},{best_pos[1] + 1}),ROI={best_roi}")
+            logger.debug(f"初始状态选择翻牌位置：({best_pos[0] + 1},{best_pos[1] + 1}),ROI={best_roi}")
             flip_box = Rect(*best_roi)
             return CustomRecognition.AnalyzeResult(
                 box=flip_box,
@@ -333,7 +333,7 @@ class FlipCard(CustomRecognition):
             )
 
         best_roi = self.CARD_4X4_ROI[best_growth_pos[0]][best_growth_pos[1]]
-        logger.info(f"紫色生长选择翻牌位置：({best_growth_pos[0] + 1},{best_growth_pos[1] + 1}),ROI={best_roi}")
+        logger.debug(f"紫色生长选择翻牌位置：({best_growth_pos[0] + 1},{best_growth_pos[1] + 1}),ROI={best_roi}")
         flip_box = Rect(*best_roi)
         return CustomRecognition.AnalyzeResult(
             box=flip_box,
