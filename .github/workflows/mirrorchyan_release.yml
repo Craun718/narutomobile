@@ -38,13 +38,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [android]
+        include:
+          - os: android
+            arch: arm64
+          - os: android
+            arch: amd64
     steps:
       - id: uploading
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: "MaaAutoNaruto-${{ matrix.os }}-*.apk"
+          filename: "MaaAutoNaruto-${{ matrix.os }}-*-${{ matrix.arch }}-*.apk"
           mirrorchyan_rid: MaaAutoNaruto-MaaFwApp
           tag: ${{ inputs.tag }}
 
@@ -53,6 +57,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           os: ${{ matrix.os }}
+          arch: ${{ matrix.arch }}
 
   mirrorchyan_res:
     runs-on: ubuntu-latest
