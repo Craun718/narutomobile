@@ -69,7 +69,7 @@ class Shopping(CustomRecognition):
 
         config = SHOP_CONFIGS.get(shop_type)
         if not config:
-            logger.info("暂不支持")
+            logger.error("暂不支持")
             return CustomRecognition.AnalyzeResult(box=None, detail={})
 
         box = self.get_child_shop_info(context, argv.image, config)
@@ -77,7 +77,7 @@ class Shopping(CustomRecognition):
             return CustomRecognition.AnalyzeResult(box=None, detail={})
 
         x, y, w, h = box
-        logger.info(f"点击位置[{x},{y},{w},{h}]")
+        logger.debug(f"点击位置[{x},{y},{w},{h}]")
         return CustomRecognition.AnalyzeResult(box=Rect(x, y, w, h), detail={})
 
     def get_child_shop_info(

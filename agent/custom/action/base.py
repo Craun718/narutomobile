@@ -448,7 +448,7 @@ class ClickWithConsent(CustomAction):
         # 使用节点自身的 recognition 配置来识别
         reco_detail = context.run_recognition(node_name, image, {})
         if reco_detail is None or not reco_detail.hit:
-            logger.error("未识别到协议勾选框（万代图标）")
+            logger.error("未识别到协议勾选框")
             return CustomAction.RunResult(success=False)
 
         best_box = reco_detail.best_result.box
@@ -466,7 +466,7 @@ class ClickWithConsent(CustomAction):
         click_x = max(0, min(click_x, resolution[0] - 1))
         click_y = max(0, min(click_y, resolution[1] - 1))
 
-        logger.info(f"执行协议勾选点击，坐标: ({click_x}, {click_y})")
+        logger.debug(f"执行协议勾选点击，坐标: ({click_x}, {click_y})")
         context.tasker.controller.post_click(click_x, click_y).wait()
 
         return CustomAction.RunResult(success=True)

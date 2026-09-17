@@ -60,6 +60,7 @@
         ]
     },
     "swipe_for_find_shop": {
+        "max_hit": 20,
         "recognition": "TemplateMatch",
         "roi": [
             96,
