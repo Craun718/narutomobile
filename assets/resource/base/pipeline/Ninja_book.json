@@ -627,10 +627,10 @@
     "treasure_box_undone": {
         "recognition": "OCR",
         "roi": [
-            96,
-            402,
-            95,
-            133
+            71,
+            394,
+            175,
+            323
         ],
         "expected": [
             "宝"
