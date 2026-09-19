@@ -8,6 +8,10 @@
                     "name": "进入火影"
                 },
                 {
+                    "name": "速战速决",
+                    "enabled": false
+                },
+                {
                     "name": "夏日回馈(beta)",
                     "enabled": false
                 },

@@ -1,6 +1,13 @@
 {
     "task": [
         {
+            "name": "速战速决",
+            "entry": "blitz",
+            "group": [
+                "event"
+            ]
+        },
+        {
             "name": "夏日回馈(beta)",
             "entry": "summer_plan",
             "group": [

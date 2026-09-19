@@ -18,6 +18,14 @@
             "description": "请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
                 {
+                    "name": "速战速决",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "blitz"
+                        }
+                    }
+                },
+                {
                     "name": "夏日回馈(beta)",
                     "description": "不会选择,只会签到",
                     "pipeline_override": {
@@ -26,6 +34,7 @@
                         }
                     }
                 },
+
                 {
                     "name": "送好礼摇铃",
                     "description": "不会选择,只会签到",
