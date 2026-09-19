@@ -264,6 +264,7 @@
             "stronghold_finished",
             "[JumpBack]stronghold_substitution"
         ],
+        "on_error": "stronghold",
         "focus": {
             "Node.Action.Starting": "<font color=\"darkgray\">在要塞中，向右走</font>"
         }
@@ -287,6 +288,7 @@
             "[JumpBack]stronghold_in_stronghold",
             "[JumpBack]stronghold_in_match",
             "[JumpBack]stronghold_match_win",
+            "[JumpBack]battle_tips",
             "stronghold_finished",
             "[JumpBack]stronghold_substitution"
         ]
