@@ -22,6 +22,7 @@
     "option": {
         "设置启动超时时间": {
             "type": "select",
+            "default_case": "20S",
             "cases": [
                 {
                     "name": "20S",
@@ -60,6 +61,7 @@
         },
         "启动超时后行为": {
             "type": "select",
+            "default_case": "启动火影",
             "description": "最多只会尝试启动火影5次",
             "cases": [
                 {
@@ -211,6 +213,7 @@
         "am_start启动": {
             "type": "switch",
             "description": "用不了monkey指令的模拟器,如雷电部分版本;开启后换成am start启动",
+            "default_case": "No",
             "cases": [
                 {
                     "name": "No"

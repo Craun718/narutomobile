@@ -15,6 +15,7 @@
     "option": {
         "选择小游戏": {
             "type": "select",
+            "default_case": "速战速决",
             "description": "请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
                 {
@@ -158,8 +159,9 @@
             ]
         },
         "忍道交锋刷什么": {
-            "description": "要刷的箱子等级,遇到低于期望等级的箱子会刷新",
             "type": "select",
+            "default_case": "4倍S箱",
+            "description": "要刷的箱子等级,遇到低于期望等级的箱子会刷新",
             "cases": [
                 {
                     "name": "4倍S箱",
@@ -212,8 +214,9 @@
             ]
         },
         "羁绊追寻自动退出": {
-            "description": "羁绊追寻剩余数字离图片太近不好识别,建议关闭自动退出",
             "type": "switch",
+            "default_case": "No",
+            "description": "羁绊追寻剩余数字离图片太近不好识别,建议关闭自动退出",
             "cases": [
                 {
                     "name": "No",
@@ -243,6 +246,7 @@
         },
         "木叶小吃店不选蓝红色奖励": {
             "type": "switch",
+            "default_case": "No",
             "cases": [
                 {
                     "name": "No"

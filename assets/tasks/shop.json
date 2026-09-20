@@ -19,6 +19,7 @@
     "option": {
         "玉石商店": {
             "type": "switch",
+            "default_case": "No",
             "description": "不想代码太乱,只做两个兑换位;目前还没优化好,可能有的选项出错",
             "cases": [
                 {
@@ -43,6 +44,7 @@
         },
         "玉石商店兑换": {
             "type": "select",
+            "default_case": "一个兑换位",
             "description": "一号兑换位物品最好在二号兑换位物品的前面",
             "cases": [
                 {
@@ -81,6 +83,7 @@
         },
         "兑换玉石": {
             "type": "switch",
+            "default_case": "No",
             "description": "将多余的碎片兑换成玉石,只有批量兑换;需要二级密码,你需要非常小心,MaaAutoNaruto不会对任何损失负责",
             "cases": [
                 {
@@ -101,6 +104,7 @@
         },
         "兑换玉石规则": {
             "type": "select",
+            "default_case": "按忍者等级",
             "description": "设置玉石商店兑换玉石的规则;只会勾选,不会取消",
             "cases": [
                 {
@@ -119,6 +123,7 @@
         },
         "分级兑换玉石": {
             "type": "select",
+            "default_case": "A忍及以下",
             "cases": [
                 {
                     "name": "A忍及以下",
@@ -174,6 +179,12 @@
         },
         "自由兑换玉石": {
             "type": "checkbox",
+            "default_case": [
+                "兑换S忍",
+                "兑换A忍",
+                "兑换B忍",
+                "兑换C忍"
+            ],
             "cases": [
                 {
                     "name": "兑换S忍",
@@ -211,6 +222,7 @@
         },
         "玉石一号兑换位": {
             "type": "select",
+            "default_case": "old蛇",
             "cases": [
                 {
                     "name": "old蛇"
@@ -320,6 +332,7 @@
         },
         "玉石二号兑换位": {
             "type": "select",
+            "default_case": "old蛇",
             "cases": [
                 {
                     "name": "old蛇"
@@ -477,6 +490,7 @@
         },
         "生存商店": {
             "type": "switch",
+            "default_case": "No",
             "description": "不想代码太乱,只做两个兑换位;目前还没优化好,可能有的选项出错",
             "cases": [
                 {
@@ -500,6 +514,7 @@
         },
         "生存商店兑换": {
             "type": "select",
+            "default_case": "一个兑换位",
             "description": "一号兑换位物品最好在二号兑换位物品的前面",
             "cases": [
                 {
@@ -538,6 +553,7 @@
         },
         "生存一号兑换位": {
             "type": "select",
+            "default_case": "凯",
             "cases": [
                 {
                     "name": "凯",
@@ -636,6 +652,7 @@
         },
         "生存二号兑换位": {
             "type": "select",
+            "default_case": "凯",
             "cases": [
                 {
                     "name": "凯",
@@ -781,6 +798,7 @@
         },
         "积分赛商店": {
             "type": "switch",
+            "default_case": "No",
             "description": "不想代码太乱,只做两个兑换位;目前还没优化好,可能有的选项出错",
             "cases": [
                 {
@@ -804,6 +822,7 @@
         },
         "积分赛商店兑换": {
             "type": "select",
+            "default_case": "一个兑换位",
             "description": "一号兑换位物品最好在二号兑换位物品的前面",
             "cases": [
                 {
@@ -842,6 +861,7 @@
         },
         "积分赛一号兑换位": {
             "type": "select",
+            "default_case": "蝎",
             "cases": [
                 {
                     "name": "蝎"
@@ -940,6 +960,7 @@
         },
         "积分赛二号兑换位": {
             "type": "select",
+            "default_case": "蝎",
             "cases": [
                 {
                     "name": "蝎"
@@ -1085,6 +1106,7 @@
         },
         "组织商店": {
             "type": "switch",
+            "default_case": "No",
             "description": "不想代码太乱,只做两个兑换位;目前还没优化好,可能有的选项出错",
             "cases": [
                 {
@@ -1108,6 +1130,7 @@
         },
         "组织商店兑换": {
             "type": "select",
+            "default_case": "一个兑换位",
             "description": "一号兑换位物品最好在二号兑换位物品的前面",
             "cases": [
                 {
@@ -1146,6 +1169,7 @@
         },
         "组织一号兑换位": {
             "type": "select",
+            "default_case": "阿斯玛",
             "cases": [
                 {
                     "name": "阿斯玛"
@@ -1284,6 +1308,7 @@
         },
         "组织二号兑换位": {
             "type": "select",
+            "default_case": "阿斯玛",
             "cases": [
                 {
                     "name": "阿斯玛"
@@ -1472,8 +1497,10 @@
             }
         },
         "商店结束不返回主页面": {
-            "description": "方便拼接商店兑换任务,节约时间;开启后任务结束不返回主界面",
             "type": "switch",
+            "default_case": "No",
+            "description": "方便拼接商店兑换任务,节约时间;开启后任务结束不返回主界面",
+
             "cases": [
                 {
                     "name": "No"

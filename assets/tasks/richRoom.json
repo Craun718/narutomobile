@@ -15,6 +15,7 @@
     "option": {
         "丰饶开大": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",

@@ -17,6 +17,7 @@
     "option": {
         "借组织助战": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -46,6 +47,7 @@
         },
         "小队突袭处理自动战斗": {
             "type": "switch",
+            "default_case": "No",
             "description": "似乎有的账号小队突袭默认不开启自动战斗,此时开启这个选项",
             "cases": [
                 {

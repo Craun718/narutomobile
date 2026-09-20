@@ -97,6 +97,7 @@
         },
         "周胜开大": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes"
@@ -225,8 +226,9 @@
             ]
         },
         "领取周胜奖励": {
-            "description": "会先打完周胜胜利次数,再领取周胜奖励",
             "type": "switch",
+            "default_case": "Yes",
+            "description": "会先打完周胜胜利次数,再领取周胜奖励",
             "cases": [
                 {
                     "name": "Yes",
@@ -245,8 +247,9 @@
             ]
         },
         "清周胜过期宝箱": {
-            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "type": "switch",
+            "default_case": "No",
+            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "cases": [
                 {
                     "name": "No"
@@ -297,6 +300,7 @@
         },
         "出现提示时重启任务": {
             "type": "switch",
+            "default_case": "No",
             "description": "在遇到对手退出,获取不到房间的时候尝试重启任务,开启会降低应对卡顿的能力",
             "cases": [
                 {
@@ -344,6 +348,7 @@
         },
         "切换预设": {
             "type": "select",
+            "default_case": "关闭",
             "description": "每局开战前自动切换到指定编号的阵容预设(忍术对战与排位赛);请保持'忍界指引寻找周胜'开启",
             "cases": [
                 {
@@ -452,6 +457,7 @@
         },
         "串行连点器(beta)": {
             "type": "switch",
+            "default_case": "No",
             "description": "雷电模拟器使用多指滑动的时候,有时会出现触摸残留bug.可以选择开启这个选项,将多指滑动转换成串行节点,但是不保证正常运行",
             "cases": [
                 {
@@ -489,6 +495,7 @@
         },
         "周胜不攻击": {
             "type": "switch",
+            "default_case": "No",
             "description": "不开启连点器,请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
                 {

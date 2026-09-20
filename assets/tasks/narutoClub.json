@@ -17,8 +17,9 @@
     ],
     "option": {
         "跳过情报社点赞": {
-            "description": "在打满包括周胜的日常任务的时候活跃度正好够100,可以开启这个选项节省时间",
             "type": "switch",
+            "default_case": "No",
+            "description": "在打满包括周胜的日常任务的时候活跃度正好够100,可以开启这个选项节省时间",
             "cases": [
                 {
                     "name": "No"
@@ -39,6 +40,7 @@
         },
         "喂豚豚": {
             "type": "switch",
+            "default_case": "No",
             "description": "确认MFA不会在喂豚豚闪退后开启,闪退bug成因还在寻找",
             "cases": [
                 {
@@ -59,6 +61,7 @@
         },
         "金币助手": {
             "type": "switch",
+            "default_case": "No",
             "description": "确认MFA不会在金币助手闪退后开启,闪退bug成因还在寻找",
             "cases": [
                 {

@@ -15,6 +15,7 @@
     "option": {
         "精英副本一键全选": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "开启后会勾选一键全选后再扫荡",
             "cases": [
                 {

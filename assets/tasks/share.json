@@ -18,6 +18,7 @@
     "option": {
         "主页面进行每日分享": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "不去奖励中心查看是否分享,而是在主页面直接进行分享",
             "cases": [
                 {
@@ -38,8 +39,9 @@
             ]
         },
         "分享后直接返回游戏": {
-            "description": "开启后不会关闭社交软件而是直接返回火影,如果容易卡顿不要开这个",
             "type": "switch",
+            "default_case": "No",
+            "description": "开启后不会关闭社交软件而是直接返回火影,如果容易卡顿不要开这个",
             "cases": [
                 {
                     "name": "No"
@@ -60,6 +62,7 @@
         "分享策略": {
             "description": "加速方式对社交软件的版本和启动速度有一定要求,需要启动速度较快",
             "type": "select",
+            "default_case": "维稳",
             "cases": [
                 {
                     "name": "维稳",

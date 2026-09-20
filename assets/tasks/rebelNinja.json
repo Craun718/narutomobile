@@ -20,6 +20,7 @@
     "option": {
         "叛忍敌人等级": {
             "type": "select",
+            "default_case": "高级",
             "cases": [
                 {
                     "name": "高级"
@@ -59,8 +60,9 @@
             ]
         },
         "叛忍只显示自己": {
-            "description": "活跃组织使用,还在测试",
             "type": "switch",
+            "default_case": "No",
+            "description": "活跃组织使用,还在测试",
             "cases": [
                 {
                     "name": "No"
@@ -77,6 +79,7 @@
         },
         "叛忍难度": {
             "type": "select",
+            "default_case": "困难",
             "description": "首领功能",
             "cases": [
                 {
@@ -103,6 +106,7 @@
         },
         "叛忍开双倍": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "首领功能",
             "cases": [
                 {
@@ -131,6 +135,7 @@
         },
         "叛忍玩法未开启时退出": {
             "type": "switch",
+            "default_case": "No",
             "description": "开启会在识别到玩法未开启的时候退出",
             "cases": [
                 {

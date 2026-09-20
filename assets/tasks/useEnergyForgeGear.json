@@ -15,6 +15,7 @@
     "option": {
         "做什么装备": {
             "type": "select",
+            "default_case": "刀",
             "cases": [
                 {
                     "name": "刀"

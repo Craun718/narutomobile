@@ -22,6 +22,7 @@
     "option": {
         "天地选择战场": {
             "type": "select",
+            "default_case": "天战场",
             "cases": [
                 {
                     "name": "天战场",
@@ -43,6 +44,7 @@
         },
         "守擂后游走避战": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "需要输入自己的ID,子串即可,可能识别失败依旧游走,名字和别人类似可能会不动",
             "cases": [
                 {
@@ -77,6 +79,7 @@
         },
         "天地选择额外奖励柱子": {
             "type": "switch",
+            "default_case": "No",
             "cases": [
                 {
                     "name": "No",
@@ -93,6 +96,7 @@
         },
         "天地挑战": {
             "type": "switch",
+            "default_case": "No",
             "cases": [
                 {
                     "name": "No",
@@ -109,6 +113,7 @@
         },
         "无限循环找柱子": {
             "type": "switch",
+            "default_case": "No",
             "description": "测试功能无限寻找空柱子,实际上会寻找UINT_MAX(4294967295)次",
             "cases": [
                 {
@@ -135,6 +140,7 @@
         },
         "天地玩法未开启时退出": {
             "type": "switch",
+            "default_case": "No",
             "description": "开启会在识别到玩法未开启的时候退出",
             "cases": [
                 {

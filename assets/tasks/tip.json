@@ -19,6 +19,7 @@
     "option": {
         "自由拖动增删任务": {
             "type": "select",
+            "default_case": "了解任务列表按钮",
             "cases": [
                 {
                     "name": "了解任务列表按钮"
@@ -28,6 +29,7 @@
         },
         "看看任务选项和问号": {
             "type": "select",
+            "default_case": "适配需求",
             "cases": [
                 {
                     "name": "适配需求"
@@ -37,6 +39,7 @@
         },
         "运用配置": {
             "type": "select",
+            "default_case": "即标签页",
             "cases": [
                 {
                     "name": "即标签页"
@@ -46,6 +49,7 @@
         },
         "导出日志": {
             "type": "select",
+            "default_case": "了解日志列表按钮",
             "cases": [
                 {
                     "name": "了解日志列表按钮"
@@ -55,6 +59,7 @@
         },
         "进行设置": {
             "type": "select",
+            "default_case": "更多功能",
             "cases": [
                 {
                     "name": "更多功能"

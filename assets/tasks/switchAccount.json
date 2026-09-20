@@ -22,6 +22,7 @@
     "option": {
         "账号切换范围": {
             "type": "select",
+            "default_case": "换区",
             "description": "因为最终用户协议(EULA),换社交媒体账号时,你必须手动同意协议;",
             "cases": [
                 {
@@ -91,6 +92,7 @@
         },
         "切换账号后行为": {
             "type": "select",
+            "default_case": "什么都不做",
             "description": "切换后行为的行为;开启点击开始游戏后,切换账号之后的任务不需要进入火影任务",
             "cases": [
                 {

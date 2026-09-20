@@ -5,7 +5,7 @@
             "entry": "ninja_book",
             "option": [
                 "领取体验卡宝箱",
-                "是否领取奖励",
+                "领取忍法帖奖励",
                 "分享后直接返回游戏",
                 "分享策略",
                 "跳过分享",
@@ -22,6 +22,7 @@
     "option": {
         "领取体验卡宝箱": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -50,13 +51,13 @@
                 }
             ]
         },
-        "是否领取奖励": {
-            "type": "select",
+        "领取忍法帖奖励": {
+            "type": "switch",
             "description": "默认不领取奖励,方便卡超影,体力,体验卡",
-            "default_case": "否",
+            "default_case": "No",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "pipeline_override": {
                         "ninja_book_award_undone": {
                             "next": [
@@ -71,7 +72,7 @@
                     }
                 },
                 {
-                    "name": "是"
+                    "name": "Yes"
                 }
             ]
         },
@@ -97,6 +98,7 @@
         },
         "宝匣挑战": {
             "type": "switch",
+            "default_case": "No",
             "description": "不会自动抽卡",
             "cases": [
                 {
@@ -118,6 +120,7 @@
         },
         "忍法帖礼盒": {
             "type": "switch",
+            "default_case": "No",
             "description": "不会自动抽卡",
             "cases": [
                 {

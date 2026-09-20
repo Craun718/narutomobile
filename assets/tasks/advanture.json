@@ -15,6 +15,7 @@
     "option": {
         "冒险副本一直推关": {
             "type": "switch",
+            "default_case": "No",
             "description": "在不开荒的时候开启这个会快一点,但开启可能会在开荒时因为功能更新卡住",
             "cases": [
                 {

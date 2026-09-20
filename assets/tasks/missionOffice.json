@@ -18,6 +18,7 @@
     "option": {
         "任务集会所超影处理": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",

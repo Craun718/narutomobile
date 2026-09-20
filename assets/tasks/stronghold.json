@@ -16,6 +16,7 @@
     "option": {
         "要塞玩法未开启时退出": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "如果关闭会在组织界面一直尝试进入对应功能",
             "cases": [
                 {

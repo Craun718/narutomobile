@@ -24,6 +24,7 @@
     "option": {
         "百忍": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "百忍虽好,可是有开放时间限制的哦",
             "cases": [
                 {
@@ -46,6 +47,7 @@
         },
         "百忍未开放时操作": {
             "type": "select",
+            "default_case": "尝试其他的玩法",
             "description": "其中无限等待选项会10秒尝试静入一次",
             "cases": [
                 {
@@ -82,6 +84,7 @@
         },
         "绝迹战场": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -103,6 +106,7 @@
         },
         "大蛇丸试炼": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -124,6 +128,7 @@
         },
         "更多玩法打满奖励停止": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "打到2100分停止",
             "cases": [
                 {
@@ -144,6 +149,7 @@
         },
         "百忍打满任务停止": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "打到2100分停止,不包括成就奖励",
             "cases": [
                 {
@@ -164,6 +170,7 @@
         },
         "打满奖励停止并领取奖励": {
             "type": "switch",
+            "default_case": "Yes",
             "description": "会领取百忍和更多玩法的奖励",
             "cases": [
                 {
@@ -190,6 +197,7 @@
         },
         "百忍是否使用连点器战斗": {
             "type": "switch",
+            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -229,6 +237,7 @@
         },
         "更多玩法在开战页面开始": {
             "type": "switch",
+            "default_case": "No",
             "description": "这个选项可以在更多玩法加载不出图片的时候用",
             "cases": [
                 {
