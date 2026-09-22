@@ -289,10 +289,10 @@
     "second_group_award_done": {
         "recognition": "TemplateMatch",
         "roi": [
-            1171,
-            279,
-            59,
-            44
+            1145,
+            253,
+            113,
+            91
         ],
         "template": [
             "Group/second_box_done.png",

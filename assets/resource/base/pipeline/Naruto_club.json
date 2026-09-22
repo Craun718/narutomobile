@@ -47,7 +47,6 @@
         ],
         "template": "Naruto_club/club_icon.png",
         "inverse": true,
-        "post_wait_freezes": 300,
         "post_delay": 2000
     },
     "naruto_club_too_many_people": {
