@@ -258,8 +258,9 @@
                     "name": "consent_text",
                     "label": "必须输入“我同意”",
                     "default": "",
+                    "pipeline_type": "string",
                     "verify": "^我同意$",
-                    "pattern_msg": "必须输入“我同意”"
+                    "pattern_msg": "必须输入“我同意”,才能使用这个选项"
                 }
             ],
             "pipeline_override": {
