@@ -57,17 +57,14 @@
         }
     },
     "train_road_entry": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
         "roi": [
-            91,
-            9,
-            395,
-            143
+            1104,
+            541,
+            149,
+            153
         ],
-        "expected": [
-            "修行",
-            "之路"
-        ],
+        "template": "Practice_place/train_road_fight.png",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -97,7 +94,7 @@
         "post_wait_freezes": 400,
         "next": [
             "confirm_train_road_sweep",
-            "[JumpBack]train_road_unsweep"
+            "train_road_unsweep"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">修行之路未扫荡</font>"
