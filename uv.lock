@@ -87,7 +87,7 @@ requires-dist = [
     { name = "maafw", specifier = ">=5.12.3" },
     { name = "notify-py", specifier = ">=0.3.2" },
     { name = "opencv-python", specifier = ">=5.0.0.93" },
-    { name = "pillow", specifier = ">=12.0.0" },
+    { name = "pillow", specifier = ">=12.3.0" },
     { name = "pip", specifier = ">=26.1.2" },
 ]
 
