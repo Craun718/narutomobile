@@ -5,6 +5,12 @@
             "entry": "illusion_secret_realm",
             "group": [
                 "event"
+            ],
+            "option": [
+                "指定模式",
+                "指定流派",
+                "忍者分类",
+                "指定忍者"
             ]
         },
         {

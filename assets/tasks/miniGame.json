@@ -24,7 +24,13 @@
                         "mini_game": {
                             "next": "illusion_secret_realm"
                         }
-                    }
+                    },
+                    "option": [
+                        "指定模式",
+                        "指定流派",
+                        "忍者分类",
+                        "指定忍者"
+                    ]
                 },
                 {
                     "name": "火热手感",
