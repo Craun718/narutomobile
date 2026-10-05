@@ -1,19 +1,6 @@
 {
     "task": [
         {
-            "name": "幻之试炼刷祝福",
-            "entry": "illusion_secret_realm",
-            "group": [
-                "event"
-            ],
-            "option": [
-                "指定模式",
-                "指定流派",
-                "忍者分类",
-                "指定忍者"
-            ]
-        },
-        {
             "name": "火热手感",
             "entry": "let_me_cook",
             "group": [
