@@ -15,8 +15,23 @@
     "option": {
         "选择小游戏": {
             "type": "select",
-            "default_case": "火热手感",
+            "default_case": "全服ban选决斗场",
             "cases": [
+                {
+                    "name": "全服ban选决斗场",
+
+                    "description": "这个任务最好在有全服票选文字的界面开启,不推荐直接在主界面开;主界面开需要使用已经适配的主题,且不稳定",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "global_community_ban"
+                        }
+                    },
+                    "option": [
+                        "全服ban选投票",
+                        "全服ban选战斗",
+                        "全服ban选领取奖励"
+                    ]
+                },
                 {
                     "name": "幻之试炼刷祝福",
                     "pipeline_override": {

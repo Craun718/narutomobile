@@ -104,13 +104,14 @@
         "tasks/asuraInstance.json",
         "tasks/miniGame.json",
         "tasks/blackMarketMerchant.json",
+        "tasks/HuanZhi.json",
+        "tasks/globalCommunityBan.json",
         "tasks/Debug.json",
         "tasks/tip.json",
         "tasks/cleanupLogs.json",
         "tasks/complete.json",
         "tasks/standaloneMiniGame.json",
         "tasks/ninjaGuide.json",
-        "tasks/sharedOption.json",
-        "tasks/HuanZhi.json"
+        "tasks/sharedOption.json"
     ]
 }

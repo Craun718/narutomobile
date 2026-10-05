@@ -78,8 +78,9 @@
             118
         ],
         "template": "Group/selected_group_gameplay.png",
-        "action": "DoNothing",
+        "pre_delay": 0,
         "post_wait_freezes": 300,
+        "post_delay": 0,
         "next": [
             "stronghold_mode",
             "[JumpBack]swipe_for_stronghold_mode"

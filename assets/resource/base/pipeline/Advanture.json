@@ -495,7 +495,6 @@
         "template": "Advanture/win.png",
         "inverse": true,
         "pre_delay": 0,
-        "action": "DoNothing",
         "post_delay": 300,
         "next": [
             "[JumpBack]loading_page",
