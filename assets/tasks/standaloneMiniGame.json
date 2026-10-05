@@ -1,6 +1,13 @@
 {
     "task": [
         {
+            "name": "幻之试炼刷祝福",
+            "entry": "illusion_secret_realm",
+            "group": [
+                "event"
+            ]
+        },
+        {
             "name": "火热手感",
             "entry": "let_me_cook",
             "group": [

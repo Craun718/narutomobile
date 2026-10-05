@@ -448,7 +448,6 @@
         }
     },
     "weekly_win_preset_confirm_pos": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "action": "Click",
         "target": [
@@ -462,7 +461,7 @@
             "weekly_win_preset_save"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:确认选择预设(坐标兜底)</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:确认选择预设</font>"
         }
     },
     "weekly_win_preset_save": {
@@ -502,7 +501,6 @@
         }
     },
     "weekly_win_preset_save_pos": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "action": "Click",
         "target": [
@@ -526,7 +524,7 @@
             "[JumpBack]go_to_war"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:保存阵容(坐标兜底)</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:保存阵容</font>"
         }
     },
     "weekly_win_rank_up": {
