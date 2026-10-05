@@ -110,6 +110,8 @@
         "tasks/complete.json",
         "tasks/standaloneMiniGame.json",
         "tasks/ninjaGuide.json",
-        "tasks/sharedOption.json"
+        "tasks/sharedOption.json",
+        "tasks/huanZhi_option.json",
+        "tasks/HuanZhi.json"
     ]
 }

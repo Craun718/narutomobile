@@ -1,0 +1,476 @@
+{
+    "幻之试炼_进入": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Tu_biao.png",
+    "roi":  [1063,3,216,535],
+    "threshold": 0.7,
+    "action": "Click",
+    "next": ["幻之试炼_选择模式"]
+},
+"幻之试炼_选择模式": {
+        // DirectHit：跳过识别，无条件成功
+        "recognition": "DirectHit",
+
+        // DoNothing：不执行任何动作
+        "action": "DoNothing",
+
+        // 默认 next，会被 option 的 pipeline_override 替换
+        "next": ["幻之试炼_未指定模式"]
+    },
+
+    "幻之试炼_未指定模式": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []    // 空数组 = 流程到此结束
+    },
+"幻之试炼_选择流派": {
+        // DirectHit：跳过识别，无条件成功
+        "recognition": "DirectHit",
+
+        // DoNothing：不执行任何动作
+        "action": "DoNothing",
+
+        // 默认 next，会被 option 的 pipeline_override 替换
+        "next": ["幻之试炼_未指定流派"]
+    },
+
+    "幻之试炼_未指定流派": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []    // 空数组 = 流程到此结束
+    },
+"幻之试炼_选择忍者": {
+        // DirectHit：跳过识别，无条件成功
+        "recognition": "DirectHit",
+
+        // DoNothing：不执行任何动作
+        "action": "DoNothing",
+
+        // 默认 next，会被 option 的 pipeline_override 替换
+        "next": ["幻之试炼_未指定忍者"]
+    },
+
+    "幻之试炼_未指定忍者": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []    // 空数组 = 流程到此结束
+    },
+    "幻之试炼_忍者分类": {
+        // DirectHit：跳过识别，无条件成功
+        "recognition": "DirectHit",
+
+        // DoNothing：不执行任何动作
+        "action": "DoNothing",
+
+        // 默认 next，会被 option 的 pipeline_override 替换
+        "next": ["幻之试炼_未指定分类"]
+    },
+
+    "幻之试炼_未指定分类": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []    // 空数组 = 流程到此结束
+    },
+    "幻之试炼_试炼入口": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Shi_lian.png",
+        "roi": [779,251,66,140],
+        "threshold": 0.6,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+        "next": ["幻之试炼_选择流派"]
+    },
+    "幻之试炼_修罗试炼": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Shi_lian.png",
+        "roi": [518,95,69,135],
+        "threshold": 0.6,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+        "next": ["幻之试炼_选择流派"]
+    },
+
+
+  "幻之试炼_翻页_刃具精通_上一页": {
+    "recognition": "DirectHit",
+        "target": [632,634,1,1], 
+    "roi":  [619,623,50,21],
+    "threshold": 0.6,
+    "action": "Click",
+    "pre_delay": 2000,
+    "next": ["幻之试炼_流派_刃具精通"]
+  },
+  "幻之试炼_流派_刃具精通": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Ren_ju.png",
+    "roi": [242, 360, 119, 38],
+    "threshold": 0.6,
+    "action": "Click",
+    "next": ["幻之试炼_下一步","幻之试炼_翻页_刃具精通_上一页"
+]
+  },
+  "幻之试炼_翻页_秘卷大师_上一页": {
+    "recognition": "DirectHit",
+        "target": [632,634,1,1], 
+    "roi":  [619,623,50,21],
+    "threshold": 0.6,
+    "action": "Click",
+    "pre_delay": 2000,
+    "next": ["幻之试炼_流派_秘卷大师"]
+  },
+  "幻之试炼_流派_秘卷大师": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Mi_juan.png",
+    "roi": [581, 360, 116, 37],
+    "threshold": 0.6,
+    "action": "Click",
+    "next": ["幻之试炼_下一步","幻之试炼_翻页_秘卷大师_上一页"
+]
+  },
+  "幻之试炼_翻页_医疗忍者_上一页": {
+    "recognition": "DirectHit",
+        "target": [632,634,1,1], 
+    "roi":  [619,623,50,21],
+    "threshold": 0.6,
+    "action": "Click",
+    "pre_delay": 2000,
+    "next": ["幻之试炼_流派_医疗忍者"]
+  },
+  "幻之试炼_流派_医疗忍者": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Yi_liao.png",
+    "roi": [913, 360, 124, 37],
+    "threshold": 0.6,
+    "action": "Click",
+    "next": ["幻之试炼_下一步","幻之试炼_翻页_医疗忍者_上一页"
+]
+  },
+  "幻之试炼_翻页_奥义领域_下一页": {
+       "recognition": "DirectHit",
+        "target": [655,632,1,1], 
+    "roi":  [619,623,50,21],
+    "threshold": 0.6,
+    "action": "Click",
+    "pre_delay": 2000,
+    "next": ["幻之试炼_流派_奥义领域"]
+  },
+  "幻之试炼_流派_奥义领域": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Ao_yi.png",
+    "roi": [234, 360, 136, 38],
+    "threshold": 0.6,
+    "action": "Click",
+    "next": ["幻之试炼_下一步","幻之试炼_翻页_奥义领域_下一页"
+]
+  },
+  "幻之试炼_翻页_最佳伙伴_下一页": {
+     "recognition": "DirectHit",
+        "target": [655,632,1,1], 
+    "roi":  [619,623,50,21],
+    "threshold": 0.6,
+    "action": "Click",
+    "pre_delay": 2000,
+    "next": ["幻之试炼_流派_最佳伙伴"]
+  },
+  "幻之试炼_流派_最佳伙伴": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Zui_jia.png",
+    "roi": [575, 360, 127, 37],
+    "threshold": 0.6,
+    "action": "Click",
+    "next": ["幻之试炼_下一步","幻之试炼_翻页_最佳伙伴_下一页"
+]
+  },
+  "幻之试炼_翻页_禁法之术_下一页": {
+       "recognition": "DirectHit",
+        "target": [655,632,1,1], 
+    "roi":  [619,623,50,21],
+    "threshold": 0.6,
+    "action": "Click",
+    "pre_delay": 2000,
+    "next": ["幻之试炼_流派_禁法之术"]
+  },
+  "幻之试炼_流派_禁法之术": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Jing_fa.png",
+    "roi": [913, 359, 123, 37],
+    "threshold": 0.6,
+    "action": "Click",
+    "next": ["幻之试炼_下一步","幻之试炼_翻页_禁法之术_下一页"
+]
+  },
+
+  "幻之试炼_下一步": {
+    "recognition": "TemplateMatch",
+    "template": "HuanZhi/Xi_yi_bu.png",
+    "roi": [921, 645, 156, 56],
+    "threshold": 0.6,
+    "action": "Click",
+    "repeat": 2,
+    "pre_delay": 2000,
+    "next": ["幻之试炼_忍者_选择"]
+  },
+    "幻之试炼_忍者_选择": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Quan_Renzhe.png",
+        "roi": [1094,93,129,38],
+        "threshold": 0.6,
+        "action": "Click",
+        
+        "pre_delay": 3000,
+         "next": [
+            "幻之试炼_忍者分类"
+        ]
+    },
+    "幻之试炼_忍者_第七班": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/第七班.png",
+        "roi": [1029,194,178,55],
+        "threshold": 0.6,
+
+        "pre_delay": 3000,
+        "action": "Click",
+        "next": ["幻之试炼_选择忍者","幻之试炼_忍者_选择"
+    ]
+    },
+    "幻之试炼_忍者_无用之人": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Wu_yon.png",
+        "roi": [1028, 296, 180, 59],
+        "threshold": 0.6,
+
+        "pre_delay": 3000,
+        "action": "Click",
+        "next": ["幻之试炼_选择忍者","幻之试炼_忍者_选择"]
+    },
+    "幻之试炼_忍者_小佐助": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/小佐助.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+                "幻之试炼_忍者_确认",
+                "幻之试炼_忍者_选择"
+        ]
+    },
+    "幻之试炼_忍者_骨架": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/骨架.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+            "幻之试炼_忍者_确认",
+            "幻之试炼_忍者_选择"
+            
+        ]
+    },
+
+    "幻之试炼_忍者_花火": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Hua_huo.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+            "幻之试炼_忍者_确认",
+            "幻之试炼_忍者_选择"
+        ]
+    },
+    "幻之试炼_忍者_斑": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Ban.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+            "幻之试炼_忍者_确认",
+            "幻之试炼_忍者_选择"
+        ]
+    },
+    "幻之试炼_忍者_卡卡西": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Ka_ka_xi.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+            "幻之试炼_忍者_确认",
+            "幻之试炼_忍者_选择"
+        ]
+    },
+    "幻之试炼_忍者_大蛇丸": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Da_she_wan.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+            "幻之试炼_忍者_确认",
+            "幻之试炼_忍者_选择"
+        ]
+    },
+    "幻之试炼_忍者_柱间": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Zhu_jian.png",
+        "roi": [779, 88, 477, 473],
+        "threshold": 0.8,
+        "action": "Click",
+        "repeat": 2,
+         "pre_delay": 2000,
+         "next": [
+            "幻之试炼_忍者_确认",
+            "幻之试炼_忍者_选择"
+        ]
+    },
+    "幻之试炼_忍者_确认": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Que_ren.png",
+        "roi": [927, 559, 172, 72],
+        "threshold": 0.6,
+        "action": "Click",
+        "repeat": 2,
+        "pre_delay": 2000,
+         "next": [
+            "幻之试炼_许愿树"
+        ]
+    },
+     "幻之试炼_许愿树": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Xu_yuan_shu.png",
+        "roi": [522, 224, 110, 57],
+        "threshold": 0.6,
+        "action": "Click",
+        "repeat": 3,
+        "repeat_delay": 500,
+        "pre_delay": 3000,
+         "next": [
+            "幻之试炼_盲点区域"
+        ]
+    },  
+        "幻之试炼_盲点区域": {
+        "recognition": "DirectHit",
+        "target": [883, 272, 1, 1], 
+        "action": "Click",
+        "repeat": 3,
+        "repeat_delay": 500,
+        "pre_delay": 2000,
+        "next": [ 
+            "幻之试炼_神力",
+            "幻之试炼_金池",
+            "幻之试炼_崇武",
+            "幻之试炼_万象",
+            "幻之试炼_光界",
+            "幻之试炼_隐藏"
+        ]
+    },
+    "幻之试炼_隐藏": {
+      "recognition": "TemplateMatch",
+    "template": "HuanZhi/隐藏祝福.png",
+    "roi": [177, 156, 331, 328],
+    "action": "Click",
+    "target": [1055, 577, 1, 1],
+    
+    "next": ["幻之试炼_重置"]
+    },
+    "幻之试炼_神力": {
+     "recognition": "TemplateMatch",
+    "template": "HuanZhi/Sheng_li.png",
+    "roi": [177, 156, 331, 328],
+    "action": "Click",
+    "target": [1055, 577, 1, 1],
+    
+    "next": ["幻之试炼_重置"]
+    },
+     "幻之试炼_金池": {
+     "recognition": "TemplateMatch",
+    "template": "HuanZhi/Jin_chi.png",
+    "roi": [177, 156, 331, 328],
+    "action": "Click",
+    "target": [1055, 577, 1, 1],
+    
+    "next": ["幻之试炼_重置"]
+    },
+     "幻之试炼_崇武": {
+     "recognition": "TemplateMatch",
+    "template": "HuanZhi/Chong_wu.png",
+    "roi": [177, 156, 331, 328],
+    "action": "Click",
+    "target": [1055, 577, 1, 1],
+    
+    "next": ["幻之试炼_重置"]
+    },
+     "幻之试炼_万象": {
+     "recognition": "TemplateMatch",
+    "template": "HuanZhi/Wan_xiang.png",
+    "roi": [177, 156, 331, 328],
+    "action": "Click"
+    },
+     "幻之试炼_光界": {
+     "recognition": "TemplateMatch",
+    "template": "HuanZhi/Guang_jie.png",
+    "roi": [177, 156, 331, 328],
+    "action": "Click",
+    "pre_delay": 2000,
+    "target": [1055, 577, 1, 1],
+    
+    "next": [
+        "自选boos",
+        "幻之试炼_重置"
+    ]
+    },
+    "自选boos": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/自选boos.png",
+        "roi": [1015,613,159,44],
+        "action": "Click",
+        "next": [
+            "幻之试炼_自选boos确认"
+        ]
+    },
+    "幻之试炼_自选boos确认": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/自选boos确认.png",
+        "roi": [427,419,189,62],
+        "threshold": 0.6,
+        "action": "Click",
+         "next": [
+            "幻之试炼_重置"
+        ]
+    },
+    "幻之试炼_重置": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Chong_zhi.png",
+        "roi": [1159, 451, 95, 100],
+        "threshold": 0.6,
+        "action": "Click",
+        "next": [
+            "幻之试炼_重置_确认"
+        ]
+    },
+     "幻之试炼_重置_确认": {
+        "recognition": "TemplateMatch",
+        "template": "HuanZhi/Chong_que.png",
+        "roi": [411, 412, 214, 81],
+        "threshold": 0.6,
+        "action": "Click",
+         "next": [
+            "幻之试炼_试炼入口"
+        ]
+    }
+}
