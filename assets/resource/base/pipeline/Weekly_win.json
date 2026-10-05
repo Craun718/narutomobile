@@ -200,7 +200,8 @@
             98
         ],
         "expected": [
-            "战斗详情"
+            "战斗详情",
+            "本局举报"
         ],
         "pre_delay": 0,
         "post_wait_freezes": 300,

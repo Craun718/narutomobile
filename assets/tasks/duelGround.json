@@ -19,57 +19,6 @@
             "group": [
                 "daily"
             ],
-            "pipeline_override": {
-                "ninja_guide_to_funtion_entry": {
-                    "next": [
-                        "[JumpBack]weekly_win_mouthly_award",
-                        "[JumpBack]weekly_win_mouthly_reset_award",
-                        "[JumpBack]weekly_win_weekly_award",
-                        "[JumpBack]weekly_win_confirm_weekly_award",
-                        "[JumpBack]weekly_win_preset_prewar",
-                        "[JumpBack]go_to_war",
-                        "ninja_guide_to_funtion_entry"
-                    ]
-                },
-                "ninja_guide_returning_player_to_funtion_entry": {
-                    "next": [
-                        "[JumpBack]weekly_win_mouthly_award",
-                        "[JumpBack]weekly_win_mouthly_reset_award",
-                        "[JumpBack]weekly_win_weekly_award",
-                        "[JumpBack]weekly_win_confirm_weekly_award",
-                        "[JumpBack]weekly_win_preset_prewar",
-                        "[JumpBack]go_to_war",
-                        "ninja_guide_returning_player_to_funtion_entry"
-                    ]
-                },
-                "weekly_win_ac_entry_undone": {
-                    "next": [
-                        "[JumpBack]weekly_win_mouthly_award",
-                        "[JumpBack]weekly_win_mouthly_reset_award",
-                        "[JumpBack]weekly_win_weekly_award",
-                        "[JumpBack]weekly_win_confirm_weekly_award",
-                        "[JumpBack]weekly_win_preset_prewar",
-                        "[JumpBack]go_to_war",
-                        "weekly_win_ac_entry_undone"
-                    ]
-                },
-                "go_to_war": {
-                    "next": [
-                        "cannot_go_to_war",
-                        "[JumpBack]weekly_win_match_fighting",
-                        "[JumpBack]weekly_win_rank_matching",
-                        "[JumpBack]weekly_win_preset_entry",
-                        "[JumpBack]weekly_win_rank_confirm_ninja",
-                        "[JumpBack]weekly_win_rank_ban",
-                        "[JumpBack]battle_tips",
-                        "[JumpBack]weekly_win_locked",
-                        "[JumpBack]weekly_win_rank_up",
-                        "[JumpBack]battle_again",
-                        "[JumpBack]weekly_win_substitution",
-                        "[JumpBack]go_to_war"
-                    ]
-                }
-            },
             "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理"
         }
     ],
@@ -347,12 +296,12 @@
             ]
         },
         "切换预设": {
-            "type": "select",
-            "default_case": "关闭",
+            "type": "switch",
+            "default_case": "No",
             "description": "每局开战前自动切换到指定编号的阵容预设(忍术对战与排位赛);请保持'忍界指引寻找周胜'开启",
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "No",
                     "pipeline_override": {
                         "weekly_win_preset_prewar": {
                             "enabled": false
@@ -365,6 +314,69 @@
                         }
                     }
                 },
+                {
+                    "name": "Yes",
+                    "option": [
+                        "决斗场预设选择"
+                    ],
+                    "pipeline_override": {
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        },
+                        "weekly_win_ac_entry_undone": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "weekly_win_ac_entry_undone"
+                            ]
+                        },
+                        "go_to_war": {
+                            "next": [
+                                "cannot_go_to_war",
+                                "[JumpBack]weekly_win_match_fighting",
+                                "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_preset_entry",
+                                "[JumpBack]weekly_win_rank_confirm_ninja",
+                                "[JumpBack]weekly_win_rank_ban",
+                                "[JumpBack]battle_tips",
+                                "[JumpBack]weekly_win_locked",
+                                "[JumpBack]weekly_win_rank_up",
+                                "[JumpBack]battle_again",
+                                "[JumpBack]weekly_win_substitution",
+                                "[JumpBack]go_to_war"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "决斗场预设选择": {
+            "type": "select",
+            "default_case": "预设1",
+            "cases": [
                 {
                     "name": "预设1",
                     "pipeline_override": {

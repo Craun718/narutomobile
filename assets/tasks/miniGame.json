@@ -16,7 +16,6 @@
         "选择小游戏": {
             "type": "select",
             "default_case": "火热手感",
-            "description": "请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
                 {
                     "name": "幻之试炼刷祝福",
@@ -116,6 +115,7 @@
                 },
                 {
                     "name": "决斗场托管一把",
+                    "description": "请尽量不要滥用这个功能影响其他人游戏体验",
                     "pipeline_override": {
                         "mini_game": {
                             "timeout": 10000,
