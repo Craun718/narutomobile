@@ -3,13 +3,15 @@
         {
             "name": "幻之试炼刷祝福",
             "entry": "illusion_secret_realm",
-            "group": "event",
             "description": "还没有做修罗;仅支持刷取万象祝福",
             "option": [
                 "指定模式",
                 "指定流派",
                 "忍者分类",
                 "指定忍者"
+            ],
+            "group": [
+                "event"
             ]
         }
     ],
