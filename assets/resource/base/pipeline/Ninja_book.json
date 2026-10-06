@@ -759,14 +759,14 @@
         "pre_delay": 200,
         "action": "Click",
         "post_wait_freezes": {
-            "threshold": 0.8,
             "time": 400,
             "target": [
                 600,
                 293,
                 79,
                 49
-            ]
+            ],
+            "threshold": 0.8
         },
         "post_delay": 0,
         "next": [

@@ -4,20 +4,19 @@
             "name": "全服ban选决斗场",
             "entry": "global_community_ban",
             "description": "这个任务最好在有全服票选文字的界面开启,不推荐直接在主界面开;主界面开需要使用已经适配的主题,且不稳定",
+            "group": [
+                "event"
+            ],
             "option": [
                 "全服ban选投票",
                 "全服ban选战斗",
                 "全服ban选领取奖励"
-            ],
-            "group": [
-                "event"
             ]
         }
     ],
     "option": {
         "全服ban选投票": {
             "type": "switch",
-            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes"
@@ -30,12 +29,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "全服ban选战斗": {
             "type": "switch",
             "description": "当开启这个选项时,决斗场胜利次数变成匹配次数",
-            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -75,11 +74,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "全服ban选领取奖励": {
             "type": "switch",
-            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes",
@@ -116,7 +115,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         }
     }
 }

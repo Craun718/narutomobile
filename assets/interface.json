@@ -1,20 +1,12 @@
 {
+    "interface_version": 2,
     "name": "MaaAutoNaruto",
-    "github": "https://github.com/duorua/narutomobile",
-    "description": "本软件开源免费,受AGPL v3协议保护。",
-    "license": "LICENSE",
     "icon": "resource/logo.ico",
     "mirrorchyan_rid": "MaaAutoNaruto",
     "mirrorchyan_multiplatform": true,
-    "interface_version": 2,
-    "agent": {
-        "child_exec": "../.venv/Scripts/python.exe",
-        "child_args": [
-            "-u",
-            "../agent/main.py"
-        ],
-        "debug_session": "Agent 调试"
-    },
+    "github": "https://github.com/duorua/narutomobile",
+    "license": "LICENSE",
+    "description": "本软件开源免费,受AGPL v3协议保护。",
     "controller": [
         {
             "name": "连接模拟器",
@@ -33,6 +25,14 @@
             ]
         }
     ],
+    "agent": {
+        "child_exec": "../.venv/Scripts/python.exe",
+        "child_args": [
+            "-u",
+            "../agent/main.py"
+        ],
+        "debug_session": "Agent 调试"
+    },
     "group": [
         {
             "name": "daily",

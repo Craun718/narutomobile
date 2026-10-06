@@ -3,6 +3,10 @@
         {
             "name": "决斗场(连点器)",
             "entry": "weekly_win",
+            "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理",
+            "group": [
+                "daily"
+            ],
             "option": [
                 "忍界指引寻找周胜",
                 "打排位",
@@ -15,11 +19,7 @@
                 "决斗场不攻击",
                 "串行连点器(beta)",
                 "切换预设"
-            ],
-            "group": [
-                "daily"
-            ],
-            "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理"
+            ]
         }
     ],
     "option": {
@@ -31,8 +31,8 @@
                     "name": "决斗场胜利次数",
                     "label": "决斗场胜利次数",
                     "description": "输入需要的打赢次数,最大999",
-                    "pipeline_type": "int",
                     "default": "1",
+                    "pipeline_type": "int",
                     "verify": "^[1-9]\\d{0,2}$"
                 }
             ],
@@ -46,7 +46,6 @@
         },
         "决斗场开大": {
             "type": "switch",
-            "default_case": "Yes",
             "cases": [
                 {
                     "name": "Yes"
@@ -172,11 +171,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "领取周胜奖励": {
             "type": "switch",
-            "default_case": "Yes",
             "description": "会先打完周胜胜利次数,再领取周胜奖励",
             "cases": [
                 {
@@ -216,11 +215,11 @@
                 {
                     "name": "No"
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "清周胜过期宝箱": {
             "type": "switch",
-            "default_case": "No",
             "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "cases": [
                 {
@@ -268,11 +267,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "出现提示时重启任务": {
             "type": "switch",
-            "default_case": "No",
             "description": "在遇到对手退出,获取不到房间的时候尝试重启任务,开启会降低应对卡顿的能力",
             "cases": [
                 {
@@ -316,11 +315,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "切换预设": {
             "type": "switch",
-            "default_case": "No",
             "description": "每局开战前自动切换到指定编号的阵容预设(忍术对战与排位赛);请保持'忍界指引寻找周胜'开启",
             "cases": [
                 {
@@ -394,11 +393,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "决斗场预设选择": {
             "type": "select",
-            "default_case": "预设1",
             "cases": [
                 {
                     "name": "预设1",
@@ -488,11 +487,11 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "预设1"
         },
         "决斗场不攻击": {
             "type": "switch",
-            "default_case": "No",
             "description": "不开启连点器,请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
                 {
@@ -512,7 +511,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         }
     }
 }

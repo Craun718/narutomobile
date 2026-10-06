@@ -4,14 +4,14 @@
             "name": "幻之试炼刷祝福",
             "entry": "illusion_secret_realm",
             "description": "还没有做修罗;仅支持刷取万象祝福",
+            "group": [
+                "event"
+            ],
             "option": [
                 "指定模式",
                 "指定流派",
                 "忍者分类",
                 "指定忍者"
-            ],
-            "group": [
-                "event"
             ]
         }
     ],
@@ -19,7 +19,6 @@
         "指定模式": {
             "type": "select",
             "label": "选择试炼模式",
-            "default_case": "试炼入口",
             "cases": [
                 {
                     "name": "试炼入口",
@@ -29,12 +28,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "试炼入口"
         },
         "指定流派": {
             "type": "select",
             "label": "选择幻之试炼流派",
-            "default_case": "奥义领域",
             "cases": [
                 {
                     "name": "刃具精通",
@@ -84,12 +83,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "奥义领域"
         },
         "指定忍者": {
             "type": "select",
             "label": "选择幻之试炼忍者",
-            "default_case": "斑",
             "cases": [
                 {
                     "name": "花火",
@@ -147,12 +146,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "斑"
         },
         "忍者分类": {
             "type": "select",
             "label": "选择忍者分类(第七班可以刷人数,其余暂没配置)",
-            "default_case": "第七班",
             "cases": [
                 {
                     "name": "第七班",
@@ -170,7 +169,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "第七班"
         }
     }
 }
