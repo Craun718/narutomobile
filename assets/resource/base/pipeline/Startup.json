@@ -331,16 +331,30 @@
         "recognition": "And",
         "all_of": [
             {
-                "sub_name": "安卓QQ",
-                "recognition": "TemplateMatch",
-                "roi": [
-                    1002,
-                    500,
-                    120,
-                    81
-                ],
-                "template": "SharedNode/android_qq_login.png",
-                "green_mask": true
+                "recognition": "Or",
+                "any_of": [
+                    {
+                        "sub_name": "安卓QQ",
+                        "recognition": "TemplateMatch",
+                        "roi": [
+                            1002,
+                            500,
+                            120,
+                            81
+                        ],
+                        "template": "SharedNode/android_qq_login.png"
+                    },
+                    {
+                        "recognition": "TemplateMatch",
+                        "roi": [
+                            707,
+                            468,
+                            371,
+                            138
+                        ],
+                        "template": "SharedNode/mobile_qq.png"
+                    }
+                ]
             },
             {
                 "sub_name": "协议对勾",
