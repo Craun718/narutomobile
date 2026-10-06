@@ -128,16 +128,6 @@
                         },
                         "start_up_switch_social_media_account": {
                             "action": "DoNothing"
-                        },
-                        "start_up_switch_mobile_social_media_account": {
-                            "roi": [
-                                213,
-                                481,
-                                336,
-                                121
-                            ],
-                            "template": "SharedNode/mobile_wechat.png",
-                            "post_wait_freezes": 500
                         }
                     }
                 },
@@ -149,9 +139,6 @@
                             "action": "DoNothing"
                         },
                         "start_up_switch_social_media_account": {
-                            "action": "DoNothing"
-                        },
-                        "start_up_switch_mobile_social_media_account": {
                             "action": "DoNothing"
                         }
                     }
@@ -217,15 +204,6 @@
                             ]
                         },
                         "start_up_switch_social_media_account": {
-                            "next": [
-                                "click_start_game",
-                                "[JumpBack]start_up_loading",
-                                "[JumpBack]close_teenager_page",
-                                "[JumpBack]refuse_info",
-                                "[JumpBack]agree_log_in"
-                            ]
-                        },
-                        "start_up_switch_mobile_social_media_account": {
                             "next": [
                                 "click_start_game",
                                 "[JumpBack]start_up_loading",
