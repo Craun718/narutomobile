@@ -358,7 +358,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "start_up_switch_social_media_account"
+            "start_up_switch_social_media_account",
+            "start_up_switch_mobile_social_media_account"
         ]
     },
     "start_up_in_switch_social_media_account": {
@@ -376,6 +377,26 @@
             "check_agreement",
             "agree_agreement",
             "[JumpBack]agreement_not_agree"
+        ]
+    },
+    "start_up_switch_mobile_social_media_account": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            707,
+            468,
+            371,
+            138
+        ],
+        "template": "SharedNode/mobile_qq.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "click_start_game",
+            "[JumpBack]start_up_loading",
+            "[JumpBack]close_teenager_page",
+            "[JumpBack]agree_log_in",
+            "[JumpBack]agree_info"
         ]
     },
     "start_up_switch_social_media_account": {
