@@ -101,8 +101,7 @@
         "template": "Group/selected_group_gameplay.png",
         "threshold": 0.8,
         "pre_delay": 0,
-        "action": "DoNothing",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 0,
         "post_delay": 0,
         "next": [
             "goto_group_pray",

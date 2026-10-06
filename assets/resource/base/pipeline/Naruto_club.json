@@ -489,7 +489,7 @@
         ],
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 6000,
+        "post_wait_freezes": 4000,
         "post_delay": 0,
         "next": [
             "close_ninja_station",
@@ -1071,11 +1071,10 @@
         "next": [
             "[JumpBack]naruto_club_duplicate_claim",
             "[JumpBack]club_submit",
-            "club_first_award",
-            "club_first_award_done",
             "benefit_station",
-            "check_club_all_submit",
-            "[JumpBack]club_first_award_on_error"
+            "club_third_award_done",
+            "club_third_award",
+            "check_club_all_submit"
         ],
         "on_error": [
             "try_esc"
@@ -1163,10 +1162,7 @@
         "pre_delay": 0,
         "post_wait_freezes": 300,
         "post_delay": 0,
-        "next": [
-            "club_second_award_done",
-            "club_second_award"
-        ],
+        "next": "close_naruto_club",
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第一个奖励已领取</font>"
         }
@@ -1192,9 +1188,9 @@
             "confirm_club_first_award",
             "roger_club_first_award",
             "club_first_award_done",
-            "club_first_award"
+            "club_first_award",
+            "naruto_club_in_loop_wheel"
         ],
-        "on_error": "naruto_club_in_loop_wheel",
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取第一个奖励</font>"
         }
@@ -1217,9 +1213,9 @@
         "post_delay": 0,
         "timeout": 10000,
         "next": [
-            "confirm_club_first_award"
+            "confirm_club_first_award",
+            "naruto_club_in_loop_wheel"
         ],
-        "on_error": "naruto_club_in_loop_wheel",
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第二次领取第一个奖励</font>"
         }
@@ -1237,14 +1233,11 @@
         ],
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 300,
-        "post_delay": 5000,
+        "post_delay": 300,
         "timeout": 10000,
         "next": [
             "[JumpBack]roger_club_first_award",
-            "club_first_award_done"
-        ],
-        "on_error": [
+            "club_first_award_done",
             "naruto_club_in_loop_wheel"
         ],
         "focus": {
@@ -1278,9 +1271,7 @@
         "template": "Naruto_club/loop_wheel.png",
         "pre_delay": 0,
         "post_delay": 0,
-        "next": [
-            "naruto_club_back_post"
-        ],
+        "next": "close_naruto_club",
         "focus": {
             "Node.Action.Starting": "<font color=\"DarkGoldenRod\">意志坚定</font>"
         }
@@ -1365,18 +1356,15 @@
         "post_delay": 0,
         "timeout": 2000,
         "next": [
-            "club_third_award_done",
-            "club_third_award"
-        ],
-        "on_error": [
-            "no_third_award"
+            "club_first_award",
+            "club_first_award_done",
+            "[JumpBack]club_first_award_on_error"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第二个奖励已领取</font>"
         }
     },
     "no_third_award": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -1399,10 +1387,11 @@
         "threshold": 0.85,
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 800,
+        "post_wait_freezes": 300,
         "post_delay": 0,
         "timeout": 3000,
         "next": [
+            "third_award_lock",
             "confirm_club_third_award",
             "club_third_award",
             "club_third_award_done"
@@ -1410,6 +1399,25 @@
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取第三个奖励</font>"
         }
+    },
+    "third_award_lock": {
+        "recognition": "OCR",
+        "roi": [
+            562,
+            342,
+            155,
+            37
+        ],
+        "expected": [
+            "活跃度",
+            "领取"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "club_second_award_done",
+            "club_second_award"
+        ]
     },
     "confirm_club_third_award": {
         "recognition": "OCR",
@@ -1469,7 +1477,8 @@
         "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
-            "close_naruto_club"
+            "club_second_award_done",
+            "club_second_award"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第三个奖励已领取</font>"
@@ -1486,8 +1495,9 @@
         "template": "Naruto_club/close_club_button.png",
         "pre_delay": 0,
         "action": "Click",
-        "post_delay": 0,
+        "post_delay": 300,
         "next": [
+            "close_naruto_club",
             "back_main_screen_and_stop"
         ],
         "focus": {

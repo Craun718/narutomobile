@@ -32,7 +32,6 @@
         "threshold": 0.9,
         "inverse": true,
         "pre_delay": 0,
-        "action": "DoNothing",
         "post_delay": 0,
         "timeout": 5000,
         "next": [
@@ -438,7 +437,6 @@
         "method": 10001,
         "threshold": 0.9,
         "pre_delay": 0,
-        "action": "DoNothing",
         "post_delay": 0
     },
     "main_screen_swipe_to_right": {
@@ -1275,7 +1273,9 @@
             59
         ],
         "expected": [
-            "确定"
+            "确定",
+            "OK",
+            "ok"
         ],
         "pre_delay": 0,
         "action": "InputText",

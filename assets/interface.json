@@ -1,6 +1,11 @@
 {
+    "interface_version": 2,
     "name": "MaaAutoNaruto",
+    "icon": "resource/logo.ico",
+    "mirrorchyan_rid": "MaaAutoNaruto",
+    "mirrorchyan_multiplatform": true,
     "github": "https://github.com/duorua/narutomobile",
+    "license": "LICENSE",
     "description": "本软件开源免费,受AGPL v3协议保护。",
     "welcome": [
         "resource/announcement/1.简介.md",
@@ -11,19 +16,6 @@
         "resource/announcement/6.用户协议.md",
         "resource/announcement/7.决斗场推荐忍者.md"
     ],
-    "license": "LICENSE",
-    "icon": "resource/logo.ico",
-    "mirrorchyan_rid": "MaaAutoNaruto",
-    "mirrorchyan_multiplatform": true,
-    "interface_version": 2,
-    "agent": {
-        "child_exec": "../.venv/Scripts/python.exe",
-        "child_args": [
-            "-u",
-            "../agent/main.py"
-        ],
-        "debug_session": "Agent 调试"
-    },
     "controller": [
         {
             "name": "连接模拟器",
@@ -42,6 +34,14 @@
             ]
         }
     ],
+    "agent": {
+        "child_exec": "../.venv/Scripts/python.exe",
+        "child_args": [
+            "-u",
+            "../agent/main.py"
+        ],
+        "debug_session": "Agent 调试"
+    },
     "group": [
         {
             "name": "daily",
@@ -88,7 +88,6 @@
         "tasks/headhunt.json",
         "tasks/activity.json",
         "tasks/useEnergy.json",
-        "tasks/useEnergyForgeGear.json",
         "tasks/richRoom.json",
         "tasks/ninjaBook.json",
         "tasks/duelGround.json",
@@ -114,6 +113,8 @@
         "tasks/asuraInstance.json",
         "tasks/miniGame.json",
         "tasks/blackMarketMerchant.json",
+        "tasks/huanZhi.json",
+        "tasks/globalCommunityBan.json",
         "tasks/Debug.json",
         "tasks/tip.json",
         "tasks/cleanupLogs.json",

@@ -24,7 +24,7 @@
         "timeout": 30000,
         "next": [
             "before_game",
-            "start_up_check_has_x",
+            "[JumpBack]start_up_check_has_x",
             "[JumpBack]close_friend_rank",
             "[JumpBack]splash_screen",
             "[JumpBack]start_up_loading",
@@ -87,7 +87,7 @@
             "check_agreement",
             "agree_agreement",
             "[JumpBack]agreement_not_agree",
-            "start_up_check_has_x",
+            "[JumpBack]start_up_check_has_x",
             "[JumpBack]close_friend_rank",
             "[JumpBack]splash_screen",
             "[JumpBack]close_before_game_notice",
@@ -513,7 +513,6 @@
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 500,
-        "post_delay": 200,
-        "next": "back_main_screen_and_stop"
+        "post_delay": 200
     }
 }

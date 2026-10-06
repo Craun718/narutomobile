@@ -200,7 +200,8 @@
             98
         ],
         "expected": [
-            "战斗详情"
+            "战斗详情",
+            "本局举报"
         ],
         "pre_delay": 0,
         "post_wait_freezes": 300,
@@ -306,7 +307,7 @@
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">周胜任务结束</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">决斗场任务结束</font>"
         }
     },
     "weekly_win_preset_prewar": {
@@ -448,7 +449,6 @@
         }
     },
     "weekly_win_preset_confirm_pos": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "action": "Click",
         "target": [
@@ -462,7 +462,7 @@
             "weekly_win_preset_save"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:确认选择预设(坐标兜底)</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:确认选择预设</font>"
         }
     },
     "weekly_win_preset_save": {
@@ -502,7 +502,6 @@
         }
     },
     "weekly_win_preset_save_pos": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "action": "Click",
         "target": [
@@ -526,7 +525,7 @@
             "[JumpBack]go_to_war"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:保存阵容(坐标兜底)</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:保存阵容</font>"
         }
     },
     "weekly_win_rank_up": {
@@ -618,7 +617,7 @@
             "Weekly_win/substitution.png",
             "Weekly_win/substitution_10th.png"
         ],
-        "threshold": 0.9,
+        "threshold": 0.8,
         "next": [
             "weekly_win_substitution",
             "weekly_win_match_fighting",
