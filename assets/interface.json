@@ -87,6 +87,7 @@
         "tasks/mail.json",
         "tasks/livenessAward.json",
         "tasks/secretRealm.json",
+        "tasks/secretRealmWeeklyBox.json",
         "tasks/unlcokSecondaryPassword.json",
         "tasks/shop.json",
         "tasks/getCopperSecondaryPassword.json",
