@@ -619,9 +619,9 @@
         ],
         "threshold": 0.8,
         "next": [
+            "[JumpBack]battle_tips",
             "weekly_win_substitution",
             "weekly_win_match_fighting",
-            "[JumpBack]battle_tips",
             "battle_end"
         ]
     },
