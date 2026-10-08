@@ -198,6 +198,8 @@
             80
         ],
         "template": "Group/copper_pray.png",
+        "method": 10001,
+        "threshold": 0.9,
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 300,
