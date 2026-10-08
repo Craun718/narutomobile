@@ -1271,7 +1271,7 @@
         "template": "Naruto_club/loop_wheel.png",
         "pre_delay": 0,
         "post_delay": 0,
-        "next": "close_naruto_club",
+        "next": "naruto_club_skip_loop",
         "focus": {
             "Node.Action.Starting": "<font color=\"DarkGoldenRod\">意志坚定</font>"
         }
@@ -1368,7 +1368,8 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "close_naruto_club"
+            "club_second_award_done",
+            "club_second_award"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"red\">无法领取第三奖励</font>"
@@ -1483,6 +1484,23 @@
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">第三个奖励已领取</font>"
         }
+    },
+    "naruto_club_skip_loop": {
+        "max_hit": 1,
+        "recognition": "TemplateMatch",
+        "roi": [
+            464,
+            190,
+            387,
+            370
+        ],
+        "template": "Naruto_club/loop_wheel.png",
+        "pre_delay": 0,
+        "action": "ClickKey",
+        "key": 4,
+        "post_wait_freezes": 300,
+        "post_delay": 0,
+        "next": "close_naruto_club"
     },
     "close_naruto_club": {
         "recognition": "TemplateMatch",
