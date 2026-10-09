@@ -89,6 +89,7 @@ MaaAutoNaruto 是一款基于[MaaFramework](https://maafw.xyz)开发的`火影�
 - [x] 新春邮局
 - [x] 问答游戏
 - [x] 合成赠礼
+- [x] 合成赠礼/美味蛋糕
 - [x] 聚宝试炼(还只有奖励领取)
 
 ### 超影适配

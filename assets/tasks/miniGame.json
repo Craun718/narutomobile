@@ -138,7 +138,7 @@
                     }
                 },
                 {
-                    "name": "合成赠礼",
+                    "name": "合成赠礼/美味蛋糕",
                     "pipeline_override": {
                         "mini_game": {
                             "next": "craft_gift"

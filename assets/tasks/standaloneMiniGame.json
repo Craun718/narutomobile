@@ -80,7 +80,7 @@
             ]
         },
         {
-            "name": "合成赠礼",
+            "name": "合成赠礼/美味蛋糕",
             "entry": "craft_gift",
             "group": [
                 "event"
