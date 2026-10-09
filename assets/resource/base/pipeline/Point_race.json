@@ -41,11 +41,19 @@
     },
     "point_race_challenge_enter": {
         "recognition": "TemplateMatch",
+        "roi": [
+            1014,
+            468,
+            265,
+            251
+        ],
         "template": "SharedNode/challenge_rhombus.png",
+        "method": 10001,
+        "threshold": 0.9,
         "pre_wait_freezes": 200,
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 400,
+        "post_wait_freezes": 200,
         "post_delay": 0,
         "next": [
             "point_race_challenge_limit",
@@ -213,6 +221,12 @@
     },
     "point_race_quit": {
         "recognition": "TemplateMatch",
+        "roi": [
+            1014,
+            468,
+            265,
+            251
+        ],
         "template": "SharedNode/challenge_rhombus.png",
         "pre_delay": 0,
         "post_delay": 0,
@@ -225,9 +239,16 @@
     },
     "point_race_skip": {
         "recognition": "OCR",
+        "roi": [
+            0,
+            434,
+            244,
+            285
+        ],
         "expected": "跳过",
         "pre_delay": 0,
         "action": "Click",
+        "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
             "point_race_challenge_finished",
