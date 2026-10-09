@@ -89,15 +89,14 @@ footer = """
 > 用户QQ群：[724500650](https://qm.qq.com/q/ekVOQE2bao)  
 > 软件本体完全免费，若您有付费购买请立即退款并举报！  
 
-> [!WARNING]  
-> **man安卓版正在内测中,当前问题较多,非测试人员使用请注意**  
+> [!NOTE]  
+> 如果没有特殊需求，手机版请下载带有`arm`字样的apk文件，电脑版请下载带有`x86_64`字样的zip文件。
 """
-
 
 
 [git]
 # 过滤提交
-conventional_commits = true # 使用约定式提交格式
+conventional_commits = true   # 使用约定式提交格式
 filter_unconventional = false # 不过滤非约定式提交
 # 启用完整的 commit 信息
 split_commits = false
