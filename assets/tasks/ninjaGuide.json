@@ -41,7 +41,69 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
+        },
+
+        "忍界指引寻找组织": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "roi": [
+                                120,
+                                68,
+                                98,
+                                585
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "group_gameplay_undone",
+                                "group_gameplay_done",
+                                "no_group",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "roi": [
+                                306,
+                                100,
+                                83,
+                                558
+                            ],
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "组织"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "group_gameplay_undone",
+                                "group_gameplay_done",
+                                "no_group",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找任务集会所": {
             "type": "select",
@@ -84,7 +146,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找积分赛": {
             "type": "select",
@@ -127,7 +190,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找修行之路": {
             "type": "select",
@@ -151,7 +215,8 @@
                         "ninja_guide_to_funtion_entry": {
                             "next": [
                                 "train_road_entry",
-                                "ninja_guide_to_funtion_entry"
+                                "train_road_award",
+                                "[JumpBack]ninja_guide_to_funtion_retry"
                             ]
                         },
                         "ninja_guide_returning_player_find_funtion_entry": {
@@ -169,12 +234,14 @@
                         "ninja_guide_returning_player_to_funtion_entry": {
                             "next": [
                                 "train_road_entry",
-                                "ninja_guide_returning_player_to_funtion_entry"
+                                "train_road_award",
+                                "[JumpBack]ninja_guide_to_funtion_retry"
                             ]
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找秘境": {
             "type": "select",
@@ -237,7 +304,72 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
+        },
+        "忍界指引寻找秘境周度宝箱": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_weekly_box_create_room",
+                                "secret_realm_weekly_box_ac_entry_undone"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_weekly_box_create_room",
+                                "secret_realm_weekly_box_ac_entry_undone"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找黑市商人": {
             "type": "select",
@@ -300,7 +432,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找周胜": {
             "type": "select",
@@ -409,10 +542,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "打排位": {
             "type": "switch",
+
             "cases": [
                 {
                     "name": "No",
@@ -460,7 +595,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "忍界指引寻找要塞": {
             "type": "select",
@@ -519,7 +655,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找天地": {
             "type": "select",
@@ -578,7 +715,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找叛忍": {
             "type": "select",
@@ -635,7 +773,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         },
         "忍界指引寻找冠军送礼": {
             "type": "select",
@@ -698,7 +837,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "开"
         }
     }
 }

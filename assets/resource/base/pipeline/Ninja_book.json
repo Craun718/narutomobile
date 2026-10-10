@@ -38,15 +38,30 @@
         }
     },
     "ninja_book_undone": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            1205,
-            412,
-            63,
-            39
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    1205,
+                    412,
+                    63,
+                    39
+                ],
+                "template": "Ninja_book/ninja_book_undone_masked.png",
+                "green_mask": true
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1175,
+                    456,
+                    96,
+                    44
+                ],
+                "expected": "忍法帖"
+            }
         ],
-        "template": "Ninja_book/ninja_book_undone_masked.png",
-        "green_mask": true,
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 300,
@@ -200,7 +215,7 @@
         ],
         "template": "Ninja_book/top_bar.png",
         "green_mask": true,
-        "threshold": 0.9,
+        "threshold": 0.85,
         "action": "Click",
         "target": [
             1074,
@@ -290,8 +305,7 @@
         "template": "Ninja_book/cancel.png",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 300,
-        "post_delay": 0,
+        "post_delay": 300,
         "next": [
             "ninja_book_close_share",
             "close_ninja_book_leaderboard",
@@ -490,8 +504,7 @@
         "threshold": 0.9,
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 500,
-        "post_delay": 0,
+        "post_delay": 500,
         "next": [
             "treasure_box_undone",
             "ninja_book_award_undone",
@@ -543,10 +556,10 @@
         "post_wait_freezes": 500,
         "post_delay": 0,
         "next": [
-            "check_no_ninja_book_liveness_award",
             "[JumpBack]ninja_book_liveness_award",
             "[JumpBack]close_ninja_book_level_up_page_when_liveness",
-            "[JumpBack]close_ninja_book_liveness_detail"
+            "[JumpBack]close_ninja_book_liveness_detail",
+            "check_no_ninja_book_liveness_award"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">确认已经选中活跃度奖励</font>"
@@ -605,14 +618,14 @@
             111
         ],
         "template": [
-            "Ninja_book/liveness_undone_selected.png"
+            "Ninja_book/liveness_undone_selected.png",
+            "Ninja_book/liveness_undone_selected_1.png"
         ],
         "green_mask": true,
         "threshold": 0.9,
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 500,
-        "post_delay": 0,
+        "post_delay": 500,
         "next": [
             "treasure_box_undone",
             "ninja_book_award_undone",
@@ -627,10 +640,10 @@
     "treasure_box_undone": {
         "recognition": "OCR",
         "roi": [
-            96,
-            402,
-            95,
-            133
+            71,
+            394,
+            175,
+            323
         ],
         "expected": [
             "宝"
@@ -677,8 +690,7 @@
         "template": "Ninja_book/mechanical_treasure_box_access_method_undone.png",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 500,
-        "post_delay": 0,
+        "post_delay": 500,
         "next": [
             "ninja_book_award_undone",
             "ninja_book_award_selected",
@@ -747,14 +759,14 @@
         "pre_delay": 200,
         "action": "Click",
         "post_wait_freezes": {
-            "threshold": 0.8,
             "time": 400,
             "target": [
                 600,
                 293,
                 79,
                 49
-            ]
+            ],
+            "threshold": 0.8
         },
         "post_delay": 0,
         "next": [
@@ -777,8 +789,7 @@
         "template": "Ninja_book/get_mechanical_treasure_box_award.png",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 500,
-        "post_delay": 0,
+        "post_delay": 500,
         "next": [
             "ninja_book_award_undone",
             "ninja_book_award_selected",
@@ -889,8 +900,7 @@
         ],
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 500,
-        "post_delay": 0,
+        "post_delay": 500,
         "next": [
             "ninja_book_award_undone",
             "ninja_book_award_selected",
@@ -1004,7 +1014,7 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "[JumpBack]treasure_box_click_All_skill",
+            "treasure_box_click_All_skill",
             "treasure_box_challenge_not_in_fight"
         ]
     },
@@ -1251,7 +1261,8 @@
             108
         ],
         "template": [
-            "Ninja_book/has_award.png"
+            "Ninja_book/has_award.png",
+            "Ninja_book/has_award_1.png"
         ],
         "pre_delay": 0,
         "action": "Click",
@@ -1328,6 +1339,7 @@
         "next": [
             "check_no_ninja_book_award_red_point",
             "top_level_award",
+            "[JumpBack]get_ninja_book_free_award",
             "[JumpBack]get_ninja_book_award",
             "[JumpBack]ninja_book_award_swipe_to_right"
         ],
@@ -1399,13 +1411,39 @@
         "threshold": 0.85,
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 500,
-        "post_delay": 0,
+        "post_delay": 500,
         "next": [
             "back_main_screen_and_stop"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检查没有忍法帖奖励红点</font>"
+        }
+    },
+    "get_ninja_book_free_award": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            165,
+            490,
+            1114,
+            39
+        ],
+        "template": "Ninja_book/free_award.png",
+        "green_mask": true,
+        "method": 10001,
+        "threshold": 0.95,
+        "action": "Click",
+        "target_offset": [
+            40,
+            47,
+            -79,
+            15
+        ],
+        "timeout": 8000,
+        "next": [
+            "confirm_ninja_book_award"
+        ],
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">领取忍法帖免费奖励</font>"
         }
     },
     "get_ninja_book_award": {
@@ -1599,6 +1637,10 @@
                 "duration": 100
             }
         ],
-        "post_delay": 0
+        "post_delay": 0,
+        "next": [
+            "treasure_box_click_All_skill",
+            "treasure_box_challenge_not_in_fight"
+        ]
     }
 }

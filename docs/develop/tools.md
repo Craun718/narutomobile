@@ -30,7 +30,7 @@
 
 ### 利用 Pre-commit Hooks 自动进行代码格式化
 
-1. 确保你的电脑上有 Python 与 Node 环境
+1. 确保你的电脑上有 Python 与 Node.js 环境
 
 2. 在项目根目录下执行以下命令
 
@@ -97,4 +97,6 @@
 
 ### js环境常见命令
 
-可以在package.json内查看
+1. pnpm install 安装
+
+2. 其他命令可以在package.json内查看

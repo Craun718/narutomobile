@@ -3,6 +3,10 @@
         {
             "name": "叛忍(beta)",
             "entry": "rebel_ninja",
+            "description": "尽量开启只显示自己,防止目标被遮挡,可以在叛忍地图打开;还不能打首领;部分选项是首领功能,[size:15][color:tomato]需要二级密码,你需要非常小心,MaaAutoNaruto不会对任何损失负责[/color][/size]",
+            "group": [
+                "weekly"
+            ],
             "option": [
                 "叛忍敌人等级",
                 "叛忍只显示自己",
@@ -10,11 +14,7 @@
                 "叛忍开双倍",
                 "叛忍玩法未开启时退出",
                 "忍界指引寻找叛忍"
-            ],
-            "group": [
-                "weekly"
-            ],
-            "description": "尽量开启只显示自己,防止目标被遮挡,可以在叛忍地图打开;还不能打首领;部分选项是首领功能,[size:15][color:tomato]需要二级密码,你需要非常小心,MaaAutoNaruto不会对任何损失负责[/color][/size]"
+            ]
         }
     ],
     "option": {
@@ -56,11 +56,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "高级"
         },
         "叛忍只显示自己": {
-            "description": "活跃组织使用,还在测试",
             "type": "switch",
+            "description": "活跃组织使用,还在测试",
             "cases": [
                 {
                     "name": "No"
@@ -73,7 +74,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "叛忍难度": {
             "type": "select",
@@ -99,7 +101,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "困难"
         },
         "叛忍开双倍": {
             "type": "switch",
@@ -127,7 +130,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "叛忍玩法未开启时退出": {
             "type": "switch",
@@ -144,7 +148,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         }
     }
 }

@@ -16,6 +16,7 @@
 1. **安装 VSCode** - 代码编辑器
 2. **安装 Git** - 版本控制工具
 3. **安装 Python** - 开发语言（**≥3.13**，推荐使用 **Python 3.13.15** 版本）
+4. **安装 node.js** - 辅助开发（**版本≥22**,相关见于下方10.开发辅助环境）
 
 ### 1.3 可选开发工具
 
@@ -23,7 +24,7 @@
 | --- | --- |
 | [MaaDebugger](https://github.com/MaaXYZ/MaaDebugger) | 独立调试工具 |
 | [Maa Pipeline Support](https://marketplace.visualstudio.com/items?itemName=nekosu.maa-support) | VSCode 插件，提供调试、截图、获取 ROI 、取色等功能（强烈推荐） |
-| [MFAToolsPlus](https://github.com/SweetSmellFox/MFAToolsPlus) | 独立截图、获取 ROI 及取色工具 |
+| [MFAToolsPlus](https://github.com/SweetSmellFox/MFAToolsPlus) | 独立截图、获取 ROI 及取色工具,除非你知道maafw的图像处理逻辑,否则使用maafw系的截图工具 |
 | [MaaPipelineEditor](https://github.com/kqcoxn/MaaPipelineEditor) | 任务流程pipeline可视化工具（推荐） |
 
 ---
@@ -146,7 +147,7 @@ python -m agent.main <identifier>#<identifier>替换为uuid如"3be2c931-9c0d-4d6
 
 ## 10.开发辅助环境(如格式化工具)
 
-- 参见[tools.md](https://github.com/duorua/narutomobile/edit/main/docs/develop/tools.md)
+- 参见[tools.md](https://github.com/duorua/narutomobile/blob/main/docs/develop/tools.md)
 
 ## 完成
 

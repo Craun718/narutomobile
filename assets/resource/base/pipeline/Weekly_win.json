@@ -148,11 +148,11 @@
         "timeout": 10000,
         "next": [
             "[JumpBack]winner_decided",
-            "[JumpBack]click_All_skill",
+            "click_All_skill",
             "battle_tips",
             "[JumpBack]go_to_war",
             "battle_end",
-            "[JumpBack]weekly_win_match_fighting"
+            "weekly_win_match_fighting"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始战斗</font>"
@@ -200,7 +200,8 @@
             98
         ],
         "expected": [
-            "战斗详情"
+            "战斗详情",
+            "本局举报"
         ],
         "pre_delay": 0,
         "post_wait_freezes": 300,
@@ -306,7 +307,7 @@
         "post_delay": 0,
         "next": "back_main_screen_and_stop",
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">周胜任务结束</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">决斗场任务结束</font>"
         }
     },
     "weekly_win_preset_prewar": {
@@ -448,7 +449,6 @@
         }
     },
     "weekly_win_preset_confirm_pos": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "action": "Click",
         "target": [
@@ -462,7 +462,7 @@
             "weekly_win_preset_save"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:确认选择预设(坐标兜底)</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:确认选择预设</font>"
         }
     },
     "weekly_win_preset_save": {
@@ -502,7 +502,6 @@
         }
     },
     "weekly_win_preset_save_pos": {
-        "recognition": "DirectHit",
         "pre_delay": 0,
         "action": "Click",
         "target": [
@@ -526,7 +525,7 @@
             "[JumpBack]go_to_war"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:保存阵容(坐标兜底)</font>"
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">切换预设:保存阵容</font>"
         }
     },
     "weekly_win_rank_up": {
@@ -618,11 +617,11 @@
             "Weekly_win/substitution.png",
             "Weekly_win/substitution_10th.png"
         ],
-        "threshold": 0.9,
+        "threshold": 0.8,
         "next": [
+            "[JumpBack]battle_tips",
             "weekly_win_substitution",
             "weekly_win_match_fighting",
-            "[JumpBack]battle_tips",
             "battle_end"
         ]
     },
@@ -933,8 +932,7 @@
             76,
             69
         ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
+        "post_delay": 300,
         "next": [
             "weekly_win_without_weekly_duel_mission_award_2",
             "weekly_win_get_weekly_duel_mission_award_2_end",
@@ -954,8 +952,7 @@
         "order_by": "Horizontal",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 200,
-        "post_delay": 0,
+        "post_delay": 200,
         "next": [
             "weekly_win_check_no_daily_duel_mission_award",
             "[JumpBack]weekly_win_get_duel_mission_award"
@@ -1013,8 +1010,7 @@
         ],
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 400,
-        "post_delay": 0,
+        "post_delay": 400,
         "next": [
             "close_mission_and_back_main_screen"
         ],
@@ -1092,8 +1088,7 @@
         "template": "Weekly_win/duel_mission_award_waiting.png",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 400,
-        "post_delay": 0,
+        "post_delay": 400,
         "next": [
             "back_main_screen_and_stop"
         ],
@@ -1159,8 +1154,7 @@
         "template": "Weekly_win/duel_mission_award_waiting.png",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 400,
-        "post_delay": 0,
+        "post_delay": 400,
         "next": [
             "weekly_win_check_daily_duel_mission_back_fight",
             "[JumpBack]weekly_win_check_no_daily_duel_mission_recover_award"
@@ -1259,128 +1253,5 @@
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">匹配首胜任务未完成</font>"
         }
-    },
-    "weekly_win_combo_attack": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            1099,
-            548,
-            92,
-            92
-        ],
-        "post_delay": 0
-    },
-    "weekly_win_combo_attack_1": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            1099,
-            548,
-            92,
-            92
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_skill_1"
-        ]
-    },
-    "weekly_win_combo_skill_1": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            970,
-            613,
-            62,
-            54
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_skill_2"
-        ]
-    },
-    "weekly_win_combo_attack_2": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            1099,
-            548,
-            92,
-            92
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_ultimate"
-        ]
-    },
-    "weekly_win_combo_replace": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            793,
-            564,
-            142,
-            154
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_attack"
-        ]
-    },
-    "weekly_win_combo_roll": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            1127,
-            268,
-            56,
-            55
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_replace"
-        ]
-    },
-    "weekly_win_combo_skill_2": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            985,
-            471,
-            65,
-            59
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_attack_2"
-        ]
-    },
-    "weekly_win_combo_summon": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            1128,
-            153,
-            54,
-            51
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_roll"
-        ]
-    },
-    "weekly_win_combo_ultimate": {
-        "pre_delay": 0,
-        "action": "Click",
-        "target": [
-            1120,
-            400,
-            71,
-            65
-        ],
-        "post_delay": 0,
-        "next": [
-            "weekly_win_combo_summon"
-        ]
     }
 }

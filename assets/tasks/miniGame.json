@@ -3,20 +3,63 @@
         {
             "name": "小游戏",
             "entry": "mini_game",
-            "option": [
-                "选择小游戏"
-            ],
+            "description": "小游戏可以主页进,也可以从有小游戏名的功能入口界面进",
             "group": [
                 "event"
             ],
-            "description": "小游戏可以主页进,也可以从有小游戏名的功能入口界面进"
+            "option": [
+                "选择小游戏"
+            ]
         }
     ],
     "option": {
         "选择小游戏": {
             "type": "select",
-            "description": "请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
+                {
+                    "name": "全服ban选决斗场",
+                    "description": "这个任务最好在有全服票选文字的界面开启,不推荐直接在主界面开;主界面开需要使用已经适配的主题,且不稳定",
+                    "option": [
+                        "全服ban选投票",
+                        "全服ban选战斗",
+                        "全服ban选领取奖励"
+                    ],
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "global_community_ban"
+                        }
+                    }
+                },
+                {
+                    "name": "幻之试炼刷祝福",
+                    "option": [
+                        "幻之试炼模式",
+                        "幻之试炼流派",
+                        "幻之试炼忍者分类",
+                        "幻之试炼忍者"
+                    ],
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "illusion_secret_realm"
+                        }
+                    }
+                },
+                {
+                    "name": "火热手感",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "let_me_cook"
+                        }
+                    }
+                },
+                {
+                    "name": "速战速决",
+                    "pipeline_override": {
+                        "mini_game": {
+                            "next": "blitz"
+                        }
+                    }
+                },
                 {
                     "name": "夏日回馈(beta)",
                     "description": "不会选择,只会签到",
@@ -26,6 +69,7 @@
                         }
                     }
                 },
+
                 {
                     "name": "送好礼摇铃",
                     "description": "不会选择,只会签到",
@@ -84,6 +128,7 @@
                 },
                 {
                     "name": "决斗场托管一把",
+                    "description": "请尽量不要滥用这个功能影响其他人游戏体验",
                     "pipeline_override": {
                         "mini_game": {
                             "timeout": 10000,
@@ -92,7 +137,7 @@
                     }
                 },
                 {
-                    "name": "合成赠礼",
+                    "name": "合成赠礼/美味蛋糕",
                     "pipeline_override": {
                         "mini_game": {
                             "next": "craft_gift"
@@ -119,7 +164,8 @@
                     "name": "忍道交锋(beta)",
                     "description": "刷不出来8个S箱",
                     "option": [
-                        "忍道交锋刷什么"
+                        "忍道交锋刷什么",
+                        "串行连点器(beta)"
                     ],
                     "pipeline_override": {
                         "mini_game": {
@@ -146,11 +192,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "合成赠礼/美味蛋糕"
         },
         "忍道交锋刷什么": {
-            "description": "要刷的箱子等级,遇到低于期望等级的箱子会刷新",
             "type": "select",
+            "description": "要刷的箱子等级,遇到低于期望等级的箱子会刷新",
             "cases": [
                 {
                     "name": "4倍S箱",
@@ -200,11 +247,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "4倍S箱"
         },
         "羁绊追寻自动退出": {
-            "description": "羁绊追寻剩余数字离图片太近不好识别,建议关闭自动退出",
             "type": "switch",
+            "description": "羁绊追寻剩余数字离图片太近不好识别,建议关闭自动退出",
             "cases": [
                 {
                     "name": "No",
@@ -230,7 +278,8 @@
                 {
                     "name": "Yes"
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "木叶小吃店不选蓝红色奖励": {
             "type": "switch",
@@ -249,7 +298,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         }
     }
 }

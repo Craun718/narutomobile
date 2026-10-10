@@ -3,22 +3,23 @@
         {
             "name": "火影情报社(beta)",
             "entry": "naruto_club",
-            "option": [
-                "跳过情报社点赞",
-                "喂豚豚",
-                "金币助手"
-            ],
+            "default_check": true,
+            "description": "该任务并不稳定,如遇卡顿可能需要人工接管;确认MFA不会在喂豚豚和金币助手闪退后开启再对应选项,闪退bug成因还在寻找",
             "group": [
                 "daily"
             ],
-            "default_check": true,
-            "description": "该任务并不稳定,如遇卡顿可能需要人工接管;确认MFA不会在喂豚豚和金币助手闪退后开启再对应选项,闪退bug成因还在寻找"
+            "option": [
+                "跳过情报社点赞",
+                "喂豚豚",
+                "金币助手",
+                "情报社卡顿模式"
+            ]
         }
     ],
     "option": {
         "跳过情报社点赞": {
-            "description": "在打满包括周胜的日常任务的时候活跃度正好够100,可以开启这个选项节省时间",
             "type": "switch",
+            "description": "在打满包括周胜的日常任务的时候活跃度正好够100,可以开启这个选项节省时间",
             "cases": [
                 {
                     "name": "No"
@@ -35,7 +36,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "喂豚豚": {
             "type": "switch",
@@ -55,7 +57,8 @@
                 {
                     "name": "Yes"
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "金币助手": {
             "type": "switch",
@@ -76,7 +79,26 @@
                 {
                     "name": "Yes"
                 }
-            ]
+            ],
+            "default_case": "No"
+        },
+        "情报社卡顿模式": {
+            "type": "switch",
+            "description": "如果情报社非常容易卡,那么请开启这个选项",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "club_submit": {
+                            "post_wait_freezes": 1000
+                        }
+                    }
+                }
+            ],
+            "default_case": "No"
         }
     }
 }

@@ -3,13 +3,13 @@
         {
             "name": "冒险副本",
             "entry": "advanture",
-            "option": [
-                "冒险副本一直推关"
-            ],
+            "description": "不会打高级关卡,忍者不要特效太多的(包括大招文字)",
             "group": [
                 "progression"
             ],
-            "description": "不会打高级关卡,忍者不要特效太多的(包括大招文字)"
+            "option": [
+                "冒险副本一直推关"
+            ]
         }
     ],
     "option": {
@@ -37,7 +37,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         }
     }
 }

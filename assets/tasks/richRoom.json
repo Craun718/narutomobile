@@ -3,13 +3,13 @@
         {
             "name": "丰饶之间",
             "entry": "rich_room",
-            "option": [
-                "丰饶开大"
-            ],
+            "default_check": true,
             "group": [
                 "daily"
             ],
-            "default_check": true
+            "option": [
+                "丰饶开大"
+            ]
         }
     ],
     "option": {
@@ -108,7 +108,8 @@
                 {
                     "name": "No"
                 }
-            ]
+            ],
+            "default_case": "Yes"
         }
     }
 }

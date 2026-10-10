@@ -3,7 +3,11 @@
         {
             "name": "积分赛",
             "entry": "point_race",
+            "default_check": true,
             "description": "领取当日奖励,挑战逻辑是挑战战力比自己低的,并不保证取胜",
+            "group": [
+                "daily"
+            ],
             "option": [
                 "积分赛强制战斗",
                 "积分赛跨服",
@@ -12,11 +16,7 @@
                 "积分赛失败后再战",
                 "从奖励中心进入",
                 "忍界指引寻找积分赛"
-            ],
-            "group": [
-                "daily"
-            ],
-            "default_check": true
+            ]
         }
     ],
     "option": {
@@ -52,11 +52,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "积分赛失败后再战": {
-            "description": "胜败乃兵家常事界面的操作",
             "type": "switch",
+            "description": "胜败乃兵家常事界面的操作",
             "cases": [
                 {
                     "name": "No",
@@ -74,11 +75,12 @@
                 {
                     "name": "Yes"
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "积分赛跨服": {
-            "description": "进行积分赛跨服挑战",
             "type": "switch",
+            "description": "进行积分赛跨服挑战",
             "cases": [
                 {
                     "name": "No"
@@ -93,11 +95,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "积分赛战斗": {
-            "description": "是否寻找对手挑战,关闭后只会领取奖励",
             "type": "switch",
+            "description": "是否寻找对手挑战,关闭后只会领取奖励",
             "cases": [
                 {
                     "name": "Yes"
@@ -114,18 +117,19 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "积分赛挑战次数": {
-            "description": "积分赛挑战次数设置",
             "type": "input",
+            "description": "积分赛挑战次数设置",
             "inputs": [
                 {
                     "name": "积分赛挑战次数",
                     "label": "积分赛挑战次数",
                     "description": "输入需要的挑战次数,最大999",
-                    "pipeline_type": "int",
                     "default": "1",
+                    "pipeline_type": "int",
                     "verify": "^[1-9]\\d{0,2}$"
                 }
             ],

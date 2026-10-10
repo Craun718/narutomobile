@@ -69,6 +69,8 @@
             104
         ],
         "template": "Use_energy/ez_sweep.png",
+        "method": 10001,
+        "threshold": 0.9,
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 200,
@@ -239,6 +241,112 @@
         "next": [
             "use_energy_check_one_key_select",
             "use_energy_check_not_one_key_select"
+        ]
+    },
+    "use_energy_explan_level_option": {
+        "max_hit": 5,
+        "recognition": "TemplateMatch",
+        "roi": [
+            390,
+            155,
+            56,
+            59
+        ],
+        "template": "Use_energy/expand_option.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 400,
+        "post_delay": 0,
+        "next": [
+            "use_energy_select_level_option",
+            "use_energy_explan_level_option"
+        ]
+    },
+    "use_energy_check_level_option": {
+        "recognition": "OCR",
+        "roi": [
+            301,
+            165,
+            108,
+            39
+        ],
+        "expected": "等级",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "use_energy_check_star_option",
+            "use_energy_explan_star_option"
+        ]
+    },
+    "use_energy_select_level_option": {
+        "recognition": "OCR",
+        "roi": [
+            303,
+            204,
+            130,
+            158
+        ],
+        "expected": "等级",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "post_delay": 0,
+        "next": [
+            "use_energy_check_level_option",
+            "use_energy_select_level_option"
+        ]
+    },
+    "use_energy_explan_star_option": {
+        "max_hit": 5,
+        "recognition": "TemplateMatch",
+        "roi": [
+            683,
+            162,
+            54,
+            49
+        ],
+        "template": "Use_energy/expand_option.png",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 400,
+        "post_delay": 0,
+        "next": [
+            "use_energy_select_star_option",
+            "use_energy_explan_star_option"
+        ]
+    },
+    "use_energy_check_star_option": {
+        "recognition": "OCR",
+        "roi": [
+            597,
+            162,
+            103,
+            44
+        ],
+        "expected": "星级",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "use_energy_check_one_key_select",
+            "use_energy_check_not_one_key_select"
+        ]
+    },
+    "use_energy_select_star_option": {
+        "recognition": "OCR",
+        "roi": [
+            600,
+            206,
+            128,
+            264
+        ],
+        "expected": "星级",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "post_delay": 0,
+        "next": [
+            "use_energy_check_star_option",
+            "use_energy_select_star_option"
         ]
     }
 }

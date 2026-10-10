@@ -3,99 +3,48 @@
         {
             "name": "决斗场(连点器)",
             "entry": "weekly_win",
+            "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理",
+            "group": [
+                "daily"
+            ],
             "option": [
                 "忍界指引寻找周胜",
                 "打排位",
                 "何时退出",
-                "周胜开大",
+                "决斗场开大",
                 "领取周胜奖励",
                 "清周胜过期宝箱",
                 "从奖励中心进入",
                 "出现提示时重启任务",
-                "周胜不攻击",
+                "决斗场不攻击",
                 "串行连点器(beta)",
                 "切换预设"
-            ],
-            "group": [
-                "daily"
-            ],
-            "pipeline_override": {
-                "ninja_guide_to_funtion_entry": {
-                    "next": [
-                        "[JumpBack]weekly_win_mouthly_award",
-                        "[JumpBack]weekly_win_mouthly_reset_award",
-                        "[JumpBack]weekly_win_weekly_award",
-                        "[JumpBack]weekly_win_confirm_weekly_award",
-                        "[JumpBack]weekly_win_preset_prewar",
-                        "[JumpBack]go_to_war",
-                        "ninja_guide_to_funtion_entry"
-                    ]
-                },
-                "ninja_guide_returning_player_to_funtion_entry": {
-                    "next": [
-                        "[JumpBack]weekly_win_mouthly_award",
-                        "[JumpBack]weekly_win_mouthly_reset_award",
-                        "[JumpBack]weekly_win_weekly_award",
-                        "[JumpBack]weekly_win_confirm_weekly_award",
-                        "[JumpBack]weekly_win_preset_prewar",
-                        "[JumpBack]go_to_war",
-                        "ninja_guide_returning_player_to_funtion_entry"
-                    ]
-                },
-                "weekly_win_ac_entry_undone": {
-                    "next": [
-                        "[JumpBack]weekly_win_mouthly_award",
-                        "[JumpBack]weekly_win_mouthly_reset_award",
-                        "[JumpBack]weekly_win_weekly_award",
-                        "[JumpBack]weekly_win_confirm_weekly_award",
-                        "[JumpBack]weekly_win_preset_prewar",
-                        "[JumpBack]go_to_war",
-                        "weekly_win_ac_entry_undone"
-                    ]
-                },
-                "go_to_war": {
-                    "next": [
-                        "cannot_go_to_war",
-                        "[JumpBack]weekly_win_match_fighting",
-                        "[JumpBack]weekly_win_rank_matching",
-                        "[JumpBack]weekly_win_preset_entry",
-                        "[JumpBack]weekly_win_rank_confirm_ninja",
-                        "[JumpBack]weekly_win_rank_ban",
-                        "[JumpBack]battle_tips",
-                        "[JumpBack]weekly_win_locked",
-                        "[JumpBack]weekly_win_rank_up",
-                        "[JumpBack]battle_again",
-                        "[JumpBack]weekly_win_substitution",
-                        "[JumpBack]go_to_war"
-                    ]
-                }
-            },
-            "description": "请在主页开始任务,请尽量不要滥用这个功能影响其他人游戏体验;该功能**不支持雷电模拟器**,与之有关的问题也不会被受理"
+            ]
         }
     ],
     "option": {
         "何时退出": {
             "type": "input",
-            "description": "周胜胜利次数设置",
+            "description": "决斗场胜利次数设置",
             "inputs": [
                 {
-                    "name": "周胜胜利次数",
-                    "label": "周胜胜利次数",
+                    "name": "决斗场胜利次数",
+                    "label": "决斗场胜利次数",
                     "description": "输入需要的打赢次数,最大999",
-                    "pipeline_type": "int",
                     "default": "1",
+                    "pipeline_type": "int",
                     "verify": "^[1-9]\\d{0,2}$"
                 }
             ],
             "pipeline_override": {
                 "go_to_war_again": {
                     "custom_recognition_param": {
-                        "max_hit": "{周胜胜利次数}"
+                        "max_hit": "{决斗场胜利次数}"
                     }
                 }
             }
         },
-        "周胜开大": {
+        "决斗场开大": {
             "type": "switch",
             "cases": [
                 {
@@ -222,11 +171,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "领取周胜奖励": {
-            "description": "会先打完周胜胜利次数,再领取周胜奖励",
             "type": "switch",
+            "description": "会先打完周胜胜利次数,再领取周胜奖励",
             "cases": [
                 {
                     "name": "Yes",
@@ -236,17 +186,41 @@
                                 "weekly_win_duel_mission",
                                 "back_main_screen_and_stop"
                             ]
+                        },
+                        "global_community_ban_in_main": {
+                            "next": [
+                                "global_community_ban_to_vote",
+                                "global_community_ban_match",
+                                "weekly_win_duel_mission",
+                                "global_community_ban_stop"
+                            ]
+                        },
+                        "global_community_ban_quit_vote": {
+                            "next": [
+                                "global_community_ban_quit_vote",
+                                "global_community_ban_match",
+                                "weekly_win_duel_mission",
+                                "global_community_ban_stop"
+                            ]
+                        },
+                        "global_community_ban_counter": {
+                            "next": [
+                                "go_to_war_again",
+                                "weekly_win_duel_mission",
+                                "global_community_ban_stop"
+                            ]
                         }
                     }
                 },
                 {
                     "name": "No"
                 }
-            ]
+            ],
+            "default_case": "Yes"
         },
         "清周胜过期宝箱": {
-            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "type": "switch",
+            "description": "清周胜过期宝箱要有时间卡;每赢一局后会先领取并清理过期宝箱,再继续战斗;期望的获胜测试还是和上面的周胜胜利次数一样",
             "cases": [
                 {
                     "name": "No"
@@ -293,7 +267,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "出现提示时重启任务": {
             "type": "switch",
@@ -340,14 +315,15 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         },
         "切换预设": {
-            "type": "select",
+            "type": "switch",
             "description": "每局开战前自动切换到指定编号的阵容预设(忍术对战与排位赛);请保持'忍界指引寻找周胜'开启",
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "No",
                     "pipeline_override": {
                         "weekly_win_preset_prewar": {
                             "enabled": false
@@ -360,6 +336,69 @@
                         }
                     }
                 },
+                {
+                    "name": "Yes",
+                    "option": [
+                        "决斗场预设选择"
+                    ],
+                    "pipeline_override": {
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_to_funtion_entry"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "ninja_guide_returning_player_to_funtion_entry"
+                            ]
+                        },
+                        "weekly_win_ac_entry_undone": {
+                            "next": [
+                                "[JumpBack]weekly_win_mouthly_award",
+                                "[JumpBack]weekly_win_mouthly_reset_award",
+                                "[JumpBack]weekly_win_weekly_award",
+                                "[JumpBack]weekly_win_confirm_weekly_award",
+                                "[JumpBack]weekly_win_preset_prewar",
+                                "[JumpBack]go_to_war",
+                                "weekly_win_ac_entry_undone"
+                            ]
+                        },
+                        "go_to_war": {
+                            "next": [
+                                "cannot_go_to_war",
+                                "[JumpBack]weekly_win_match_fighting",
+                                "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_preset_entry",
+                                "[JumpBack]weekly_win_rank_confirm_ninja",
+                                "[JumpBack]weekly_win_rank_ban",
+                                "[JumpBack]battle_tips",
+                                "[JumpBack]weekly_win_locked",
+                                "[JumpBack]weekly_win_rank_up",
+                                "[JumpBack]battle_again",
+                                "[JumpBack]weekly_win_substitution",
+                                "[JumpBack]go_to_war"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "No"
+        },
+        "决斗场预设选择": {
+            "type": "select",
+            "cases": [
                 {
                     "name": "预设1",
                     "pipeline_override": {
@@ -448,46 +487,10 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "预设1"
         },
-        "串行连点器(beta)": {
-            "type": "switch",
-            "description": "雷电模拟器使用多指滑动的时候,有时会出现触摸残留bug.可以选择开启这个选项,将多指滑动转换成串行节点,但是不保证正常运行",
-            "cases": [
-                {
-                    "name": "No"
-                },
-                {
-                    "name": "Yes",
-                    "pipeline_override": {
-                        "weekly_win_match_fighting": {
-                            "next": [
-                                "[JumpBack]winner_decided",
-                                "[JumpBack]weekly_win_combo_attack_1",
-                                "battle_tips",
-                                "[JumpBack]go_to_war",
-                                "battle_end",
-                                "[JumpBack]weekly_win_match_fighting"
-                            ]
-                        },
-                        "secret_realm_in_fight": {
-                            "next": [
-                                "[JumpBack]secret_realm_combo_attack_1",
-                                "secret_realm_settlement",
-                                "secret_realm_wasted",
-                                "secret_realm_win",
-                                "secret_realm_in_fight",
-                                "secret_realm_celebreate",
-                                "secret_realm_celebreate_1",
-                                "secret_realm_old_settlement",
-                                "secret_realm_fight"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "周胜不攻击": {
+        "决斗场不攻击": {
             "type": "switch",
             "description": "不开启连点器,请尽量不要滥用这个功能影响其他人游戏体验",
             "cases": [
@@ -508,7 +511,8 @@
                         }
                     }
                 }
-            ]
+            ],
+            "default_case": "No"
         }
     }
 }

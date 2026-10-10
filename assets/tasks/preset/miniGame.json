@@ -8,6 +8,22 @@
                     "name": "进入火影"
                 },
                 {
+                    "name": "全服ban选决斗场",
+                    "enabled": false
+                },
+                {
+                    "name": "幻之试炼刷祝福",
+                    "enabled": false
+                },
+                {
+                    "name": "火热手感",
+                    "enabled": false
+                },
+                {
+                    "name": "速战速决",
+                    "enabled": false
+                },
+                {
                     "name": "夏日回馈(beta)",
                     "enabled": false
                 },
@@ -17,6 +33,10 @@
                 },
                 {
                     "name": "奥义图大富翁(beta)",
+                    "enabled": false
+                },
+                {
+                    "name": "冠军送礼",
                     "enabled": false
                 },
                 {
@@ -36,7 +56,7 @@
                     "enabled": false
                 },
                 {
-                    "name": "合成赠礼",
+                    "name": "合成赠礼/美味蛋糕",
                     "enabled": false
                 },
                 {

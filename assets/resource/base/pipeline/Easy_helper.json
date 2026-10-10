@@ -1,15 +1,66 @@
 {
     "easy_helper": {
+        "max_hit": 2,
         "pre_delay": 0,
         "post_delay": 0,
         "timeout": 3000,
         "next": [
             "easy_helper_enter",
             "easy_helper_done",
+            "easy_helper_may_be_in_more",
             "[JumpBack]back_main_screen"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入轻松助手任务</font>"
+        }
+    },
+
+    "easy_helper_may_be_in_more": {
+        "max_hit": 3,
+        "recognition": "TemplateMatch",
+        "roi": [
+            1066,
+            1,
+            145,
+            533
+        ],
+        "template": "Easy_season/more.png",
+        "green_mask": true,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 400,
+        "timeout": 2000,
+        "next": [
+            "easy_helper_in_more",
+            "easy_helper_may_be_in_more",
+            "easy_helper_one_key",
+            "[JumpBack]easy_helper_daily"
+        ]
+    },
+    "easy_helper_in_more": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            866,
+            375,
+            316,
+            165
+        ],
+        "template": [
+            "Easy_helper/easy_helper_undone_masked.png",
+            "Easy_helper/easy_helper_undone_masked_1.png"
+        ],
+        "green_mask": true,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 0,
+        "next": [
+            "easy_helper_one_key",
+            "[JumpBack]easy_helper_daily",
+            "easy_helper_in_more",
+            "easy_helper_may_be_in_more"
+        ],
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入轻松季</font>"
         }
     },
     "easy_helper_done": {
@@ -39,7 +90,10 @@
             145,
             533
         ],
-        "template": "Easy_helper/easy_helper_undone_masked.png",
+        "template": [
+            "Easy_helper/easy_helper_undone_masked.png",
+            "Easy_helper/easy_helper_undone_masked_1.png"
+        ],
         "green_mask": true,
         "method": 10001,
         "threshold": 0.95,
@@ -48,7 +102,8 @@
         "post_delay": 700,
         "next": [
             "easy_helper_one_key",
-            "[JumpBack]easy_helper_daily"
+            "[JumpBack]easy_helper_daily",
+            "easy_helper_enter"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入轻松助手</font>"
@@ -258,8 +313,7 @@
         "template": "Easy_helper/log_on_award.png",
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 300,
-        "post_delay": 0,
+        "post_delay": 300,
         "next": [
             "easy_helper_privilege_undone",
             "easy_helper_privilege_done"
@@ -297,7 +351,8 @@
         "post_wait_freezes": 100,
         "post_delay": 0,
         "next": [
-            "easy_helper_sweep"
+            "easy_helper_sweep",
+            "easy_helper_privilege_done"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">轻松特权已完成</font>"
@@ -355,14 +410,43 @@
         "threshold": 0.9,
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 100,
-        "post_delay": 0,
-        "next": [
-            "easy_helper_team_dash_sweep"
-        ],
+        "post_delay": 100,
+        "next": "easy_helper_team_dash_sweep",
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">检查能否进行扫荡</font>"
         }
+    },
+    "easy_helper_team_dash_sweep_check_4x": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            963,
+            498,
+            39,
+            41
+        ],
+        "template": "Easy_helper/uncheck.png",
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "easy_helper_team_dash_sweep_checked_4x",
+            "easy_helper_team_dash_sweep_check_4x"
+        ]
+    },
+    "easy_helper_team_dash_sweep_checked_4x": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            963,
+            498,
+            39,
+            41
+        ],
+        "template": "Easy_helper/check.png",
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": "easy_helper_team_dash_sweep"
     },
     "get_easy_helper_sweep": {
         "recognition": "TemplateMatch",
@@ -403,9 +487,7 @@
         ],
         "pre_delay": 0,
         "post_delay": 0,
-        "next": [
-            "easy_helper_team_dash_sweep"
-        ]
+        "next": "easy_helper_team_dash_sweep"
     },
     "check_without_easy_helper_back_to_sweep": {
         "recognition": "TemplateMatch",
@@ -419,8 +501,7 @@
         "threshold": 0.85,
         "inverse": true,
         "pre_delay": 0,
-        "post_wait_freezes": 300,
-        "post_delay": 0,
+        "post_delay": 300,
         "next": [
             "easy_helper_sweep",
             "[JumpBack]easy_helper_celebrate_sweep",
@@ -470,11 +551,20 @@
         }
     },
     "easy_helper_team_dash_sweep": {
+        "recognition": "OCR",
+        "roi": [
+            795,
+            486,
+            474,
+            98
+        ],
+        "expected": "扫荡",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
             "check_no_easy_helper_team_dash_sweep",
-            "[JumpBack]get_easy_helper_team_dash_sweep"
+            "[JumpBack]get_easy_helper_team_dash_sweep",
+            "easy_helper_back_to_team_dash_sweep"
         ]
     },
     "check_no_easy_helper_team_dash_sweep": {
@@ -488,10 +578,8 @@
         "template": "Easy_helper/team_dash_undone.png",
         "threshold": 0.9,
         "inverse": true,
-        "pre_wait_freezes": 200,
-        "pre_delay": 0,
-        "post_wait_freezes": 100,
-        "post_delay": 0,
+        "pre_delay": 200,
+        "post_delay": 100,
         "next": [
             "back_main_screen_and_stop"
         ],
@@ -515,7 +603,8 @@
         "post_delay": 0,
         "next": [
             "confirm_easy_helper_team_dash_sweep",
-            "[JumpBack]easy_helper_back_to_team_dash_sweep"
+            "get_easy_helper_team_dash_sweep",
+            "easy_helper_back_to_team_dash_sweep"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">开始小队扫荡</font>"
@@ -535,8 +624,8 @@
         "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
-            "check_easy_helper_back_to_team_dash_sweep",
-            "[JumpBack]easy_helper_back_to_team_dash_sweep"
+            "easy_helper_back_to_team_dash_sweep",
+            "easy_helper_team_dash_sweep"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">继续扫荡</font>"
@@ -553,8 +642,7 @@
         "template": "Easy_helper/team_dash_back_to_sweep.png",
         "threshold": 0.9,
         "inverse": true,
-        "pre_delay": 0,
-        "post_wait_freezes": 100,
+        "pre_delay": 100,
         "post_delay": 0,
         "next": [
             "easy_helper_team_dash_sweep"
@@ -577,6 +665,10 @@
         "action": "Click",
         "post_wait_freezes": 100,
         "post_delay": 0,
+        "next": [
+            "easy_helper_back_to_team_dash_sweep",
+            "check_easy_helper_back_to_team_dash_sweep"
+        ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">返回小队扫荡界面</font>"
         }
