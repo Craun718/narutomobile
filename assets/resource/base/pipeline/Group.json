@@ -454,7 +454,8 @@
         "next": [
             "close_second_group_award_box",
             "third_group_award_done",
-            "[JumpBack]third_group_award"
+            "[JumpBack]third_group_award",
+            "group_pray_to_pursuit_dawn_organization"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭20人签到奖励</font>"
