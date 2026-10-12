@@ -202,7 +202,7 @@
         "threshold": 0.9,
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 400,
         "post_delay": 0,
         "next": [
             "confirm_copper_group_pray",
@@ -752,7 +752,7 @@
         "green_mask": true,
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 400,
         "post_delay": 0,
         "next": [
             "yesterday_award_done",
