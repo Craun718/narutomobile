@@ -55,6 +55,8 @@
         "post_delay": 0,
         "next": [
             "point_race_without_yesterday_award",
+            "point_race_challenge_limit",
+            "wait_for_select_opponent",
             "point_race_challenge_enter"
         ]
     },
