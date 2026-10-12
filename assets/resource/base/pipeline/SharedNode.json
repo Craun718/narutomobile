@@ -257,6 +257,7 @@
             "[JumpBack]goto_daily_award",
             "already_in_daily_award",
             "[JumpBack]close_chat",
+            "[JumpBack]check_has_x",
             "award_center_enter"
         ]
     },
@@ -647,7 +648,8 @@
                     "SharedNode/ninja_tools.png",
                     "SharedNode/rich_room_ninja_guide.png"
                 ],
-                "threshold": 0.8
+                "method": 10001,
+                "threshold": 0.9
             },
             {
                 "sub_name": "文字",
