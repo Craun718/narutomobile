@@ -1,5 +1,6 @@
 {
     "naruto_club": {
+        "max_hit": 1,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -425,6 +426,10 @@
             "scroll",
             "close_surf_post"
         ],
+        "on_error": [
+            "naruto_club",
+            "award_kale"
+        ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭话题</font>"
         }
@@ -455,15 +460,12 @@
     "close_scroll": {
         "recognition": "OCR",
         "roi": [
-            1029,
-            0,
-            112,
-            55
+            1150,
+            123,
+            61,
+            44
         ],
-        "expected": [
-            "后退"
-        ],
-        "threshold": 0.4,
+        "expected": "首页",
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 500,
@@ -1545,7 +1547,7 @@
         "action": "StopTask",
         "post_delay": 0,
         "focus": {
-            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">当前操作超时，疑似遇到真投入</font>"
+            "Node.Action.Starting": "<font color=\"DarkGoldenRod\">当前操作超时,疑似遇到真投入</font>"
         }
     },
     "try_esc": {
