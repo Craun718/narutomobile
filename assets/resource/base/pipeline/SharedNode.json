@@ -714,7 +714,7 @@
     "unknow_error": {
         "action": "StopTask",
         "focus": {
-            "Node.Action.Starting": "<font color=\"tomato\">未知原因导致卡死。</font>"
+            "Node.Action.Starting": "<font color=\"tomato\">未知原因导致卡死</font>"
         }
     },
     "retry_failed": {
@@ -725,7 +725,7 @@
             "back_main_screen_failed"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"tomato\">超过重试次数!返回主页并结束任务。</font>"
+            "Node.Action.Starting": "<font color=\"tomato\">超过重试次数!返回主页并结束任务</font>"
         }
     },
     "try_back_main_screen": {
