@@ -408,6 +408,7 @@
         }
     },
     "close_surf_post": {
+        "max_hit": 5,
         "recognition": "OCR",
         "roi": [
             59,
@@ -422,12 +423,12 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 0,
+        "timeout": 15000,
         "next": [
             "scroll",
             "close_surf_post"
         ],
         "on_error": [
-            "naruto_club",
             "award_kale"
         ],
         "focus": {
