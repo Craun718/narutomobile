@@ -8,6 +8,10 @@
             "group": [
                 "daily"
             ],
+            "controller": [
+                "连接模拟器",
+                "PlayCover on macOS"
+            ],
             "option": [
                 "设置启动超时时间",
                 "启动超时后行为",

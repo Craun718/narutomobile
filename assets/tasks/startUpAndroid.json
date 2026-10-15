@@ -1,0 +1,158 @@
+{
+    "task": [
+        {
+            "name": "进入火影[安卓实机]",
+            "entry": "start_up",
+            "default_check": true,
+            "description": "软件会关闭公告气泡;连点器任务可能不兼容**雷电模拟器**;如果此任务经常失败可以在[开始游戏按钮界面]或者[无公告游戏主界面]开启任务;安卓端man-MaaFwApp目前不尝试唤起qq",
+            "group": [
+                "daily"
+            ],
+            "controller": ["安卓实机"],
+            "option": [
+                "进入火影安卓实机",
+                "设置启动超时时间",
+                "启动超时后行为",
+                "账号属性安卓实机",
+                "允许MAN管理qq和火影信息",
+                "拒绝qq获取火影信息",
+                "am_start启动",
+                "启用协议自动勾选"
+            ]
+        }
+    ],
+    "option": {
+        "进入火影安卓实机": {
+            "type": "select",
+            "description": "微信未适配,同时影响切换到的账号的类型,注意要确保自己调出的登录界面是横屏的",
+            "cases": [
+                {
+                    "name": "适配",
+                    "pipeline_override": {
+                        "check_agreement": {
+                            "all_of": [
+                                {
+                                    "sub_name": "安卓QQ",
+                                    "recognition": "TemplateMatch",
+                                    "roi": [
+                                        707,
+                                        468,
+                                        371,
+                                        138
+                                    ],
+                                    "template": "SharedNode/mobile_qq.png"
+                                },
+                                {
+                                    "sub_name": "协议对勾",
+                                    "recognition": "TemplateMatch",
+                                    "roi": [
+                                        77,
+                                        582,
+                                        61,
+                                        61
+                                    ],
+                                    "template": "SharedNode/agreement_check.png",
+                                    "green_mask": true
+                                }
+                            ]
+                        },
+                        "start_up_in_switch_social_media_account": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "start_up_switch_social_media_account": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "agreement_not_agree": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "agree_log_in": {
+                            "roi": [
+                                201,
+                                986,
+                                316,
+                                122
+                            ]
+                        },
+                        "agree_info": {
+                            "roi": [
+                                157,
+                                864,
+                                408,
+                                368
+                            ]
+                        },
+                        "refuse_info": {
+                            "roi": [
+                                157,
+                                864,
+                                408,
+                                368
+                            ]
+                        },
+                        "confirm_refuse_info": {
+                            "roi": [
+                                315,
+                                587,
+                                329,
+                                316
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "适配"
+        },
+        "账号属性安卓实机": {
+            "type": "select",
+            "description": "微信未适配,同时影响切换到的账号的类型,注意要确保自己调出的登录界面是横屏的",
+            "cases": [
+                {
+                    "name": "QQ"
+                },
+                {
+                    "name": "微信",
+                    "description": "模拟器不尝试唤起微信,切换账号的时候也一样",
+                    "pipeline_override": {
+                        "switch_account_switch_social_media_account": {
+                            "action": "DoNothing"
+                        },
+                        "start_up_switch_social_media_account": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "不唤起社交媒体",
+                    "description": "qq,微信多开等情况,唤起不想要的社交媒体,此时开启这个选项",
+                    "pipeline_override": {
+                        "switch_account_switch_social_media_account": {
+                            "action": "DoNothing"
+                        },
+                        "start_up_switch_social_media_account": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ],
+            "default_case": "QQ"
+        }
+    }
+}
