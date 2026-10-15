@@ -148,11 +148,15 @@
                         },
                         "start_up_switch_social_media_account": {
                             "action": "DoNothing"
-                        }
+                        },
+                        "next": [
+                            "start_up_check_is_android",
+                            "start_naruto"
+                        ]
                     }
                 }
             ],
-            "default_case": "QQ"
+            "default_case": "不唤起社交媒体"
         }
     }
 }
