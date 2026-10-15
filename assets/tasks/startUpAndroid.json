@@ -149,10 +149,12 @@
                         "start_up_switch_social_media_account": {
                             "action": "DoNothing"
                         },
-                        "next": [
-                            "start_up_check_is_android",
-                            "start_naruto"
-                        ]
+                        "start_up": {
+                            "next": [
+                                "start_up_check_is_android",
+                                "start_naruto"
+                            ]
+                        }
                     }
                 }
             ],
