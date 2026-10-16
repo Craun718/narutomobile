@@ -99,6 +99,7 @@
         "tasks/buyEnergySecondaryPassword.json",
         "tasks/teamDashSecondaryPassword.json",
         "tasks/switchAccount.json",
+        "tasks/switchAccountAndroid.json",
         "tasks/exitNaruto.json",
         "tasks/stronghold.json",
         "tasks/skyGround.json",

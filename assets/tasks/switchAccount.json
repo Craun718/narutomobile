@@ -7,6 +7,10 @@
             "group": [
                 "daily"
             ],
+            "controller": [
+                "连接模拟器",
+                "PlayCover on macOS"
+            ],
             "option": [
                 "账号切换范围",
                 "目标区",
