@@ -7,9 +7,6 @@
                     "name": "进入火影"
                 },
                 {
-                    "name": "进入火影[安卓实机]"
-                },
-                {
                     "name": "轻松助手",
                     "enabled": false
                 },
@@ -100,10 +97,6 @@
                 },
                 {
                     "name": "切换账号(beta)",
-                    "enabled": false
-                },
-                {
-                    "name": "切换账号[安卓实机]",
                     "enabled": false
                 },
                 {
