@@ -32,42 +32,42 @@
                     "pipeline_override": {
                         "switch_account_switch_qq": {
                             "roi": [
-                                100,
-                                872,
-                                553,
-                                407
+                                4,
+                                389,
+                                715,
+                                890
                             ]
                         },
                         "switch_account_in_switch_qq": {
                             "roi": [
-                                544,
-                                464,
-                                175,
-                                815
+                                4,
+                                389,
+                                715,
+                                890
                             ]
                         },
                         "swipe_for_switch_account_find_target_qq_account": {
                             "roi": [
-                                544,
-                                464,
-                                175,
-                                815
+                                4,
+                                389,
+                                715,
+                                890
                             ]
                         },
                         "switch_account_not_find_target_qq_account": {
                             "roi": [
-                                544,
-                                464,
-                                175,
-                                815
+                                4,
+                                389,
+                                715,
+                                890
                             ]
                         },
                         "switch_account_find_target_qq_account": {
                             "roi": [
-                                13,
-                                859,
-                                569,
-                                420
+                                0,
+                                907,
+                                478,
+                                372
                             ]
                         }
                     }
