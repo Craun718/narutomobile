@@ -11,7 +11,8 @@
             "option": [
                 "主页面进行每日分享",
                 "分享后直接返回游戏",
-                "分享策略"
+                "分享策略",
+                "安卓实机分享唤起社交媒体"
             ]
         }
     ],
@@ -25,7 +26,6 @@
                     "pipeline_override": {
                         "share": {
                             "next": [
-                                "is_android_then_no_share",
                                 "share_start_in_main_screen",
                                 "[JumpBack]back_main_screen_before_task"
                             ]
@@ -118,6 +118,41 @@
                     ]
                 }
             }
+        },
+        "安卓实机分享唤起社交媒体": {
+            "type": "switch",
+            "controller": ["安卓实机"],
+            "description": "由于实机社交媒体版本和显示情况多,默认不唤起社交媒体",
+            "cases": [
+                {
+                    "name": "Yes"
+                },
+                {
+                    "name": "No",
+                    "description": "qq,微信多开等情况,唤起不想要的社交媒体,此时开启这个选项",
+                    "pipeline_override": {
+                        "share": {
+                            "next": [
+                                "is_android_then_no_share",
+                                "share_in_center_enter",
+                                "share_ac_entry",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
+                        "ninja_book_undone": {
+                            "next": [
+                                "ninja_book_is_android_then_no_share",
+                                "ninja_book_leaderboard",
+                                "ninja_book_undone",
+                                "[JumpBack]hit_to_enter_ninja_book",
+                                "[JumpBack]hit_to_enter_ninja_book_x",
+                                "[JumpBack]ninja_book_skip"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "No"
         }
     }
 }
