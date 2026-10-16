@@ -3,7 +3,7 @@
         {
             "name": "切换账号[安卓实机]",
             "entry": "switch_account",
-            "description": "请在主页开始任务;需要拉起的qq是横版(平板版)界面;微信在模拟器上登录会封微信账号,只能扫码登录,所以不支持切微信账号;安卓端man-MaaFwApp目前不尝试唤起qq",
+            "description": "目前横屏切换竖屏会中断任务是正常的,是maafw的ImageReader报错",
             "group": [
                 "daily"
             ],
@@ -25,7 +25,7 @@
     "option": {
         "切换账号安卓实机": {
             "type": "select",
-            "description": "微信未适配,同时影响切换到的账号的类型",
+            "description": "微信未适配",
             "cases": [
                 {
                     "name": "适配",
