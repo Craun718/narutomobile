@@ -84,11 +84,31 @@
                             "template": "SharedNode/mobile_qq.png"
                         },
                         "agree_log_in": {
-                            "roi": [
-                                4,
-                                389,
-                                715,
-                                890
+                            "recognition": "And",
+                            "all_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "roi": [
+                                        4,
+                                        389,
+                                        715,
+                                        890
+                                    ],
+                                    "expected": "同意"
+                                },
+                                {
+                                    "recognition": "OCR",
+                                    "roi": [
+                                        4,
+                                        389,
+                                        715,
+                                        890
+                                    ],
+                                    "expected": [
+                                        "切换账号",
+                                        "拒绝"
+                                    ]
+                                }
                             ]
                         },
                         "agree_info": {
