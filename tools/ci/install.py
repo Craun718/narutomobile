@@ -109,10 +109,11 @@ def install_resource(version):
         interface = jsonc.load(f)
 
     interface["version"] = version
-    if "beta" in version:
-        interface["welcome"] = "你正在使用的是公测版，这不是一个稳定版本！"
-    if "ci" in version:
-        interface["welcome"] = "欢迎使用内部测试版本，包含最不稳定但是最新的功能。"
+    interface["welcome"] = "resource/Changelog.md"
+    # if "beta" in version:
+    #     interface["welcome"] = "你正在使用的是公测版，这不是一个稳定版本！"
+    # if "ci" in version:
+    #     interface["welcome"] = "欢迎使用内部测试版本，包含最不稳定但是最新的功能。"
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         jsonc.dump(interface, f, ensure_ascii=False, indent=4)
