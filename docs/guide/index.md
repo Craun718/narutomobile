@@ -13,7 +13,7 @@ MaaAutoNaruto 是一款基于[MaaFramework](https://maafw.xyz)开发的`火影�
 
 3. 在模拟器设置里将调整为平板**1920×1080**并**锁定屏幕旋转**为横屏以达到最佳运行效果。
 
-4. 运行`MaaAutoNaruto.exe`，学习软件入门指引教程。
+4. 运行`MFAAvalonia.exe`，学习软件入门指引教程。
 
 5. 调整软件配置，然后点击`开始任务`。
 
