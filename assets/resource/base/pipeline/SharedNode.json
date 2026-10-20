@@ -236,7 +236,8 @@
         "expected": [
             "资源",
             "加载中"
-        ]
+        ],
+        "$doc": "不要增加识别百分号%,因为有卡死在0%的情况,此时报错"
     },
     "award_center_enter": {
         "recognition": "TemplateMatch",
