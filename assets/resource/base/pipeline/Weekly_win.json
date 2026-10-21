@@ -1120,7 +1120,7 @@
         "next": [
             "weekly_win_check_no_daily_duel_mission_recover_award",
             "weekly_win_check_daily_duel_mission_without_time_card",
-            "[JumpBack]weekly_win_check_daily_duel_mission_free_recover_award"
+            "weekly_win_check_daily_duel_mission_free_recover_award"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">有时间卡</font>"

@@ -7,6 +7,10 @@
                     "name": "进入火影[安卓实机]"
                 },
                 {
+                    "name": "进入火影",
+                    "enabled": false
+                },
+                {
                     "name": "轻松助手",
                     "enabled": false
                 },
