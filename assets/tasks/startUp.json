@@ -4,7 +4,7 @@
             "name": "进入火影",
             "entry": "start_up",
             "default_check": true,
-            "description": "注意这个是模拟器核火影用的;MAN会关闭气泡;连点器任务可能不兼容**雷电模拟器**",
+            "description": "MAN会关闭气泡;连点器任务可能不兼容**雷电模拟器**",
             "group": [
                 "daily"
             ],
@@ -91,10 +91,6 @@
         },
         "账号属性": {
             "type": "select",
-            "controller": [
-                "连接模拟器",
-                "PlayCover on macOS"
-            ],
             "description": "因为微信不能用模拟器登录所以无法自动登录,对其他任务没影响;同时影响切换到的账号的类型,注意要确保自己调出的登录界面是横屏的",
             "cases": [
                 {
