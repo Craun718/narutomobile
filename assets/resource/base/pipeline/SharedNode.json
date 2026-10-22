@@ -99,7 +99,6 @@
             "离开队伍"
         ],
         "pre_delay": 0,
-        "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 0,
         "next": "confirm_tip",
@@ -237,7 +236,8 @@
         "expected": [
             "资源",
             "加载中"
-        ]
+        ],
+        "$doc": "不要增加识别百分号%,因为有卡死在0%的情况,此时报错"
     },
     "award_center_enter": {
         "recognition": "TemplateMatch",
@@ -258,6 +258,7 @@
             "[JumpBack]goto_daily_award",
             "already_in_daily_award",
             "[JumpBack]close_chat",
+            "[JumpBack]check_has_x",
             "award_center_enter"
         ]
     },
@@ -648,7 +649,8 @@
                     "SharedNode/ninja_tools.png",
                     "SharedNode/rich_room_ninja_guide.png"
                 ],
-                "threshold": 0.8
+                "method": 10001,
+                "threshold": 0.9
             },
             {
                 "sub_name": "文字",
@@ -713,7 +715,7 @@
     "unknow_error": {
         "action": "StopTask",
         "focus": {
-            "Node.Action.Starting": "<font color=\"tomato\">未知原因导致卡死。</font>"
+            "Node.Action.Starting": "<font color=\"tomato\">未知原因导致卡死</font>"
         }
     },
     "retry_failed": {
@@ -724,7 +726,7 @@
             "back_main_screen_failed"
         ],
         "focus": {
-            "Node.Action.Starting": "<font color=\"tomato\">超过重试次数!返回主页并结束任务。</font>"
+            "Node.Action.Starting": "<font color=\"tomato\">超过重试次数!返回主页并结束任务</font>"
         }
     },
     "try_back_main_screen": {

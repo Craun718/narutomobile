@@ -52,8 +52,17 @@
                                 "[JumpBack]back_main_screen_before_task"
                             ]
                         },
+                        "secret_realm_weekly_box": {
+                            "next": [
+                                "secret_realm_weekly_box_in_hood",
+                                "secret_realm_weekly_box_in_center_enter",
+                                "[JumpBack]award_center_enter",
+                                "[JumpBack]back_main_screen_before_task"
+                            ]
+                        },
                         "black_market_merchant": {
                             "next": [
+                                "black_market_merchant_in_hood",
                                 "black_market_merchant_in_center_enter",
                                 "[JumpBack]award_center_enter",
                                 "[JumpBack]back_main_screen_before_task"

@@ -307,6 +307,70 @@
             ],
             "default_case": "开"
         },
+        "忍界指引寻找秘境周度宝箱": {
+            "type": "select",
+            "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",
+            "cases": [
+                {
+                    "name": "开",
+                    "pipeline_override": {
+                        "ninja_guide_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_weekly_box_create_room",
+                                "secret_realm_weekly_box_ac_entry_undone"
+                            ]
+                        },
+                        "ninja_guide_returning_player_find_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_in_funtion_entry": {
+                            "expected": [
+                                "秘境",
+                                "探险"
+                            ],
+                            "replace": [
+                                "秘境",
+                                "秋境"
+                            ]
+                        },
+                        "ninja_guide_returning_player_to_funtion_entry": {
+                            "next": [
+                                "secret_realm_weekly_box_create_room",
+                                "secret_realm_weekly_box_ac_entry_undone"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "开"
+        },
         "忍界指引寻找黑市商人": {
             "type": "select",
             "description": "这个选项不需要选择,开启从奖励中心进入之后会改变进入方式",

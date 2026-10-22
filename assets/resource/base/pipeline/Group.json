@@ -198,9 +198,11 @@
             80
         ],
         "template": "Group/copper_pray.png",
+        "method": 10001,
+        "threshold": 0.9,
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 400,
         "post_delay": 0,
         "next": [
             "confirm_copper_group_pray",
@@ -452,7 +454,8 @@
         "next": [
             "close_second_group_award_box",
             "third_group_award_done",
-            "[JumpBack]third_group_award"
+            "[JumpBack]third_group_award",
+            "group_pray_to_pursuit_dawn_organization"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">关闭20人签到奖励</font>"
@@ -750,7 +753,7 @@
         "green_mask": true,
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 400,
         "post_delay": 0,
         "next": [
             "yesterday_award_done",

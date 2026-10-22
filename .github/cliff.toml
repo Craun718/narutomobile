@@ -33,6 +33,14 @@ body = """
     ## 未发布
 {% endif %}\
 
+{% if version and version is containing("-ci") %}
+**⚠️ 欢迎使用内部测试版本，包含最不稳定但是最新的功能**
+
+{% elif version and version is matching(".*(rc|alpha|beta).*") %}
+**⚠️ 你正在使用的是公测版，这不是一个稳定版本！**
+
+{% endif %}
+
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
     {% for commit in commits
@@ -72,12 +80,9 @@ footer = """
   {%- endif -%}
 {%- endfor -%}
 
-{% if latest_version is matching(".*(rc|alpha|beta).*") -%}
-
-**⚠️ 此版本为内部测试版本，非测试参与人员请勿下载！**
-{%- else -%}
+{% if not (latest_version is matching(".*(rc|alpha|beta|-ci).*")) -%}
     {% if latest_version -%}
-    **绝大部分用户请下载 [MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip)**
+    **绝大部分windows用户请下载 [MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip)**
     {%- else -%}
     **绝大部分用户请下载 MaaAutoNaruto-win-x86_64
     {%- endif %}
@@ -86,18 +91,17 @@ footer = """
 
 > 本项目GitHub链接：[duorua/narutomobile](https://github.com/duorua/narutomobile)  
 > 最新稳定版下载地址: [release](https://github.com/duorua/narutomobile/releases/latest)  
-> 用户QQ群：[724500650](https://qm.qq.com/q/ekVOQE2bao)  
+> 用户QQ群：[1047724031](https://qm.qq.com/q/owetU4d3Yk)
 > 软件本体完全免费，若您有付费购买请立即退款并举报！  
 
-> [!WARNING]  
-> **man安卓版正在内测中,当前问题较多,非测试人员使用请注意**  
+> [!NOTE]  
+> 如果没有特殊需求，手机版请下载带有`arm`字样的apk文件，电脑版请下载带有`x86_64`字样的zip文件。
 """
-
 
 
 [git]
 # 过滤提交
-conventional_commits = true # 使用约定式提交格式
+conventional_commits = true   # 使用约定式提交格式
 filter_unconventional = false # 不过滤非约定式提交
 # 启用完整的 commit 信息
 split_commits = false

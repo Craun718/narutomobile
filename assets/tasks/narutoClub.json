@@ -12,7 +12,8 @@
                 "跳过情报社点赞",
                 "喂豚豚",
                 "金币助手",
-                "情报社卡顿模式"
+                "情报社卡顿模式",
+                "情报社出错跳过"
             ]
         }
     ],
@@ -94,6 +95,33 @@
                     "pipeline_override": {
                         "club_submit": {
                             "post_wait_freezes": 1000
+                        }
+                    }
+                }
+            ],
+            "default_case": "No"
+        },
+        "情报社出错跳过": {
+            "type": "switch",
+            "description": "会尽力保证跳出卡死界面,跳过之后将不会报错",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "click_club_icon": {
+                            "next": [
+                                "check_surf_post",
+                                "[JumpBack]surf_post",
+                                "click_club_icon",
+                                "naruto_club_too_many_people",
+                                "[JumpBack]swipe_for_comments",
+                                "[JumpBack]surf_post_try_reflash",
+                                "[JumpBack]without_naruto_club",
+                                "try_esc"
+                            ]
                         }
                     }
                 }

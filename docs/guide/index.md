@@ -9,9 +9,13 @@ MaaAutoNaruto 是一款基于[MaaFramework](https://maafw.xyz)开发的`火影�
 
 1. 在[release页面](https://github.com/duorua/narutomobile/releases/latest)下载最新版本。
 
-2. 在模拟器设置里将调整为平板**1920×1080**并**锁定屏幕旋转**为横屏以达到最佳运行效果。
+2. 将压缩文件内的所有内容都解压到单独的文件夹。
 
-3. 调整软件配置，然后点击`开始任务`。
+3. 在模拟器设置里将调整为平板**1920×1080**并**锁定屏幕旋转**为横屏以达到最佳运行效果。
+
+4. 运行`MFAAvalonia.exe`，学习软件入门指引教程。
+
+5. 调整软件配置，然后点击`开始任务`。
 
 > [!TIP]
 > 如果遇到问题，请先仔细阅读[常见问题解决方案](./faq)。
@@ -71,7 +75,7 @@ MaaAutoNaruto 是一款基于[MaaFramework](https://maafw.xyz)开发的`火影�
 - [x] 日志清理
 - [x] 关闭火影
 - [x] 显示触摸(debug)
-- [x] 完成标记(配合auto-mas项目)
+- ~~[x] 完成标记(配合auto-mas项目)~~ AUTO-MAS 现已支持 MFW 专项
 
 ### 活动类
 
@@ -89,6 +93,7 @@ MaaAutoNaruto 是一款基于[MaaFramework](https://maafw.xyz)开发的`火影�
 - [x] 新春邮局
 - [x] 问答游戏
 - [x] 合成赠礼
+- [x] 合成赠礼/美味蛋糕
 - [x] 聚宝试炼(还只有奖励领取)
 
 ### 超影适配

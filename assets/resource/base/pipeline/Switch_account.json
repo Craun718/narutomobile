@@ -401,7 +401,7 @@
             1
         ],
         "duration": 150,
-        "$doc": "为了适配不同分辨率只能使用文字识别"
+        "$doc": "为了适配不同分辨率使用文字识别"
     },
     "switch_account_not_find_target_qq_account": {
         "recognition": "OCR",

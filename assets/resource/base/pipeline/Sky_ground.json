@@ -617,12 +617,9 @@
             718
         ],
         "template": [
-            "Sky_ground/fight_column.png",
-            "Sky_ground/fight_column_ground.png"
+            "Sky_ground/fight_column.png"
         ],
-        "threshold": [
-            0.8
-        ],
+        "threshold": 0.9,
         "action": "Click",
         "target_offset": [
             10,
@@ -853,11 +850,11 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "[JumpBack]battle_tips",
             "sky_ground_click_All_skill",
             "sky_ground_success",
             "sky_ground_fail",
-            "sky_ground_in_main",
-            "[JumpBack]battle_tips"
+            "sky_ground_in_main"
         ]
     },
     "sky_ground_success": {
@@ -1143,11 +1140,11 @@
         ],
         "post_delay": 0,
         "next": [
+            "[JumpBack]battle_tips",
             "sky_ground_click_All_skill",
             "sky_ground_success",
             "sky_ground_fail",
-            "sky_ground_in_main",
-            "[JumpBack]battle_tips"
+            "sky_ground_in_main"
         ]
     }
 }
