@@ -6,7 +6,6 @@
     "mirrorchyan_multiplatform": true,
     "github": "https://github.com/duorua/narutomobile",
     "license": "LICENSE",
-    "description": "本软件开源免费,受AGPL v3协议保护。",
     "welcome": [
         "resource/announcement/1.简介.md",
         "resource/announcement/2.使用说明.md",
@@ -16,6 +15,7 @@
         "resource/announcement/6.用户协议.md",
         "resource/announcement/7.决斗场推荐忍者.md"
     ],
+    "description": "本软件开源免费,受AGPL v3协议保护。",
     "controller": [
         {
             "name": "连接模拟器",
