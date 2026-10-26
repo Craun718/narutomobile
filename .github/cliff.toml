@@ -78,24 +78,18 @@ footer = """
   {%- if release.version and latest_version == "" -%}
     {%- set_global latest_version = release.version -%}
   {%- endif -%}
-{%- endfor -%}
+{%- endfor %}
 
-{% if not (latest_version is matching(".*(rc|alpha|beta|-ci).*")) -%}
-    {% if latest_version -%}
-    **绝大部分windows用户请下载 [MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip)**
-    {%- else -%}
-    **绝大部分用户请下载 MaaAutoNaruto-win-x86_64
-    {%- endif %}
-    [已有 Mirror酱 CDK？点击前往高速下载](https://mirrorchyan.com/zh/projects?rid=MaaAutoNaruto&source=MaaAutoNarutogh-release)
-{%- endif %}
-
-> 本项目GitHub链接：[duorua/narutomobile](https://github.com/duorua/narutomobile)  
+> 本项目GitHub链接: [duorua/narutomobile](https://github.com/duorua/narutomobile)  
 > 最新稳定版下载地址: [release](https://github.com/duorua/narutomobile/releases/latest)  
-> 用户QQ群：[1047724031](https://qm.qq.com/q/owetU4d3Yk)
+> 用户QQ群: [1047724031](https://qm.qq.com/q/owetU4d3Yk)
 > 软件本体完全免费，若您有付费购买请立即退款并举报！  
 
 > [!NOTE]  
-> 如果没有特殊需求，手机版请下载带有`arm`字样的apk文件，电脑版请下载带有`x86_64`字样的zip文件。
+> 如果没有特殊需求，请使用以下链接下载：<br>
+> 手机版: [Android ARM64 (.apk)]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-android-public-release-arm64-{{ latest_version }}.apk)<br>
+> PC版: [Windows x86_64 (.zip)]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-win-x86_64-{{ latest_version }}.zip)<br>
+> macOS版: [Apple Silicon (.tar.gz)]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-macos-aarch64-{{ latest_version }}.tar.gz) / [Intel (.tar.gz)]({{ self::remote_url() }}/releases/download/{{ latest_version }}/MaaAutoNaruto-macos-x86_64-{{ latest_version }}.tar.gz)
 """
 
 
