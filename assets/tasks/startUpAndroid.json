@@ -28,77 +28,79 @@
                 {
                     "name": "No",
                     "option": ["账号属性安卓实机"],
-                    "check_agreement": {
-                        "all_of": [
-                            {
-                                "sub_name": "安卓QQ",
-                                "recognition": "TemplateMatch",
-                                "roi": [
-                                    707,
-                                    468,
-                                    371,
-                                    138
-                                ],
-                                "template": "SharedNode/mobile_qq.png"
-                            },
-                            {
-                                "sub_name": "协议对勾",
-                                "recognition": "TemplateMatch",
-                                "roi": [
-                                    77,
-                                    582,
-                                    61,
-                                    61
-                                ],
-                                "template": "SharedNode/agreement_check.png",
-                                "green_mask": true
-                            }
-                        ]
-                    },
-                    "start_up_in_switch_social_media_account": {
-                        "roi": [
-                            707,
-                            468,
-                            371,
-                            138
-                        ],
-                        "template": "SharedNode/mobile_qq.png"
-                    },
-                    "start_up_switch_social_media_account": {
-                        "roi": [
-                            707,
-                            468,
-                            371,
-                            138
-                        ],
-                        "template": "SharedNode/mobile_qq.png"
-                    },
-                    "agreement_not_agree": {
-                        "roi": [
-                            707,
-                            468,
-                            371,
-                            138
-                        ],
-                        "template": "SharedNode/mobile_qq.png"
-                    },
-                    "switch_account_in_switch_social_media_account": {
-                        "roi": [
-                            707,
-                            468,
-                            371,
-                            138
-                        ],
-                        "template": "SharedNode/mobile_qq.png"
-                    },
-                    "switch_account_switch_social_media_account": {
-                        "roi": [
-                            707,
-                            468,
-                            371,
-                            138
-                        ],
-                        "template": "SharedNode/mobile_qq.png"
+                    "pipeline_override": {
+                        "check_agreement": {
+                            "all_of": [
+                                {
+                                    "sub_name": "QQ",
+                                    "recognition": "TemplateMatch",
+                                    "roi": [
+                                        707,
+                                        468,
+                                        371,
+                                        138
+                                    ],
+                                    "template": "SharedNode/mobile_qq.png"
+                                },
+                                {
+                                    "sub_name": "协议对勾",
+                                    "recognition": "TemplateMatch",
+                                    "roi": [
+                                        77,
+                                        582,
+                                        61,
+                                        61
+                                    ],
+                                    "template": "SharedNode/agreement_check.png",
+                                    "green_mask": true
+                                }
+                            ]
+                        },
+                        "start_up_in_switch_social_media_account": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "start_up_switch_social_media_account": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "agreement_not_agree": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "switch_account_in_switch_social_media_account": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        },
+                        "switch_account_switch_social_media_account": {
+                            "roi": [
+                                707,
+                                468,
+                                371,
+                                138
+                            ],
+                            "template": "SharedNode/mobile_qq.png"
+                        }
                     }
                 },
                 {
