@@ -1421,7 +1421,7 @@
                     527
                 ],
                 "template": "Naruto_club/club_second_award_done.png",
-                "threshold": 0.9
+                "threshold": 0.8
             }
         ],
         "box_index": 1,

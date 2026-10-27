@@ -272,10 +272,10 @@
     "use_energy_forge_gear_in_sweep_interface_enough": {
         "recognition": "OCR",
         "roi": [
-            681,
-            491,
-            79,
-            37
+            419,
+            463,
+            456,
+            93
         ],
         "expected": "已足够",
         "pre_delay": 0,
