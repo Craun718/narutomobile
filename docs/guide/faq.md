@@ -22,9 +22,19 @@
 
     A: 请使用科学上网忍具。
 
-5. Q: 更新速度特别慢或无法更新？
+5. Q: 下载速度特别慢或无法更新？
 
-    A: 可以试试[Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaAutoNaruto&os=windows&arch=x64&channel=stable&source=MaaAutoNarutogh-doc)高速下载服务。
+    A: 若从 `GitHub` 源下载速度较慢，可搜索相关加速教程，或加入 QQ 群咨询其他用户。
+
+    MAN 现已支持 [Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaAutoNaruto&os=windows&arch=x64&channel=stable&source=MaaAutoNarutogh-doc)高速下载服务，可大幅提升下载速度，同时提供人工客服答疑。
+
+    如果只需要下载软件，也可以优先使用网页下载，相对更容易下载成功。
+
+6. Q: GitHub 源更新报错怎么办？
+
+    A: 如果报错 `403 rate limit exceeded`，说明 GitHub 匿名请求已达到限制。可以点击“关于 token”，前往 GitHub 生成个人 token，并填入“更新 token”栏。token 以 `github_pat` 开头。
+
+    新版本下载失败可能是 GitHub 链接不稳定导致，请尝试更稳定的 GitHub 链接方式，或使用 [Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaAutoNaruto&os=windows&arch=x64&channel=stable&source=MaaAutoNarutogh-doc)下载。
 
 ## 软件启动问题
 
@@ -84,7 +94,25 @@
 
 6. 重启电脑，系统会重置本地连接。
 
-如果以上方案均不能解决问题，请[导出日志](./issue.md)进行反馈。
+如果以上方案均不能解决问题，可以尝试手动连接 ADB：
+
+1. 如果模拟器版本不支持某种特化捕获或触控方式（如 `EmulatorExtras`），强行开启可能导致无法连接 ADB。
+
+2. 进入`设置 -> 连接设置`，关闭`使用指纹匹配设备`。
+
+3. 点击当前控制器栏旁边的电脑和笔图标，进入 ADB 编辑器，开始手动连接 ADB。
+
+4. 右键模拟器快捷方式，依次选择“打开文件所在位置”，直到进入模拟器安装目录。找到 `adb.exe` 的路径（如 `D:/soft/mumu/shell/adb.exe`，不同版本 MuMu 的路径可能不同），填入 ADB 编辑器的“ADB 路径”栏。
+
+5. 通过模拟器查询目标实例的 ADB 端口号：低版本可在多开器的 ADB 按钮中查看，高版本可在问题诊断中查看。找到 ADB 地址（如 `127.0.0.1:16384`）后，填入 ADB 编辑器的“ADB 地址”栏。也可以先用 `adb connect` 尝试连接对应地址。
+
+6. 填写完成后，点击`重新连接`按钮。
+
+7. 仍无法连接时，可以尝试将 `adb.exe` 所在路径保存到系统 `PATH`。
+
+8. MAN 的 B 站官方账号有连接 ADB 的视频教程，也可以参考。
+
+如果手动连接仍不能解决问题，请[导出日志](./issue.md)进行反馈。
 
 ## 软件使用问题
 
@@ -92,13 +120,15 @@
 
     A: 推荐用mumu官方版，不要用定制版。而且强烈建议不要用雷电，因为bug非常多。
 
-2. Q: 更新检测失败
+2. Q: 无法启动火影app、启动后在桌面乱点，或者能识别但不能点击？
 
-    A: 试试[Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaAutoNaruto&os=windows&arch=x64&channel=stable&source=MaaAutoNarutogh-doc)高速下载服务或自行前往GitHub仓库手动下载。
+    A: 先在模拟器设置里关闭后台保活（也可能叫应用保活）。
 
-3. Q: 无法启动火影app或者启动后在桌面乱点?
+    MuMu V5 的个别版本也存在“能识别但不能点击”的情况，原因暂不明确。若关闭后台保活后仍复现，可以尝试更新或回退 MuMu 版本。
 
-    A: 在模拟器设置里把后台保活关掉（也可能叫应用保活）。
+3. Q: 经常打不开多开怎么办？
+
+    A: 可以检查 `mumumanager.exe` 的运行状态，并确认调用它的命令是否能正常输出。
 
 4. Q: 资源加载失败，Agent启动失败 ？
 
