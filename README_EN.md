@@ -40,6 +40,10 @@ An image-recognition-based automation tool for *Naruto Mobile* (火影忍者手�
 
 See the [FAQ documentation](docs/guide/faq.md)
 
+## Usage Notes
+
+See the [usage notes documentation](docs/guide/manual.md)
+
 ## Features
 
 ### Daily

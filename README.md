@@ -40,6 +40,10 @@
 
 请见 [FAQ文档](docs/guide/faq.md)
 
+## 使用说明
+
+请见 [使用说明文档](docs/guide/manual.md)
+
 ## 主要功能
 
 ### 日常
