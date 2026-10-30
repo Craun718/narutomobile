@@ -1135,7 +1135,8 @@
         "next": [
             "ninja_book_leaderboard_like_undone",
             "ninja_book_leaderboard_like_done",
-            "ninja_book_leaderboard"
+            "ninja_book_leaderboard",
+            "[JumpBack]hit_to_enter_ninja_book_x"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">进入忍法帖排行榜界面</font>"
