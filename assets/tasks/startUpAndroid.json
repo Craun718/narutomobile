@@ -4,7 +4,7 @@
             "name": "进入火影[安卓实机]",
             "entry": "start_up",
             "default_check": true,
-            "description": "目前横屏切换竖屏会中断任务是正常的,是maafw的ImageReader报错",
+            "description": "目前横屏切换竖屏会中断任务是正常的,一般是ImageReader报错",
             "group": [
                 "daily"
             ],
