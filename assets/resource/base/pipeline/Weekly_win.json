@@ -1019,11 +1019,28 @@
         "next": [
             "weekly_win_check_daily_duel_mission_free_recover_award",
             "[JumpBack]weekly_win_check_daily_duel_mission_recover_award",
+            "weekly_win_check_daily_duel_mission_award_lock",
             "weekly_win_check_daily_duel_mission_without_recover_award"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">追回过期决斗任务奖励</font>"
         }
+    },
+    "weekly_win_check_daily_duel_mission_award_lock": {
+        "recognition": "OCR",
+        "roi": [
+            1002,
+            122,
+            239,
+            417
+        ],
+        "expected": "未达成",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 0,
+        "next": [
+            "weekly_win_check_daily_duel_mission_back_fight"
+        ]
     },
     "weekly_win_check_daily_duel_mission_without_recover_award": {
         "recognition": "TemplateMatch",

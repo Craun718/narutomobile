@@ -252,6 +252,7 @@
                         "weekly_win_check_no_daily_duel_mission_award": {
                             "next": [
                                 "weekly_win_check_daily_duel_mission_recover_award",
+                                "weekly_win_check_daily_duel_mission_award_lock",
                                 "weekly_win_check_daily_duel_mission_back_fight"
                             ]
                         },
