@@ -294,7 +294,7 @@
                             "next": [
                                 "cannot_go_to_war",
                                 "[JumpBack]weekly_win_match_fighting",
-                                "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_matching",
                                 "[JumpBack]weekly_win_preset_entry",
                                 "[JumpBack]weekly_win_rank_confirm_ninja",
                                 "[JumpBack]weekly_win_rank_ban",
@@ -303,7 +303,7 @@
                                 "[JumpBack]weekly_win_rank_up",
                                 "[JumpBack]battle_again",
                                 "[JumpBack]weekly_win_substitution",
-                                "[JumpBack]go_to_war"
+                                "go_to_war"
                             ]
                         },
                         "tips_confirm": {
@@ -349,7 +349,7 @@
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
                                 "[JumpBack]weekly_win_preset_prewar",
-                                "[JumpBack]go_to_war",
+                                "go_to_war",
                                 "ninja_guide_to_funtion_entry"
                             ]
                         },
@@ -360,7 +360,7 @@
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
                                 "[JumpBack]weekly_win_preset_prewar",
-                                "[JumpBack]go_to_war",
+                                "go_to_war",
                                 "ninja_guide_returning_player_to_funtion_entry"
                             ]
                         },
@@ -371,7 +371,7 @@
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
                                 "[JumpBack]weekly_win_preset_prewar",
-                                "[JumpBack]go_to_war",
+                                "go_to_war",
                                 "weekly_win_ac_entry_undone"
                             ]
                         },
@@ -379,7 +379,7 @@
                             "next": [
                                 "cannot_go_to_war",
                                 "[JumpBack]weekly_win_match_fighting",
-                                "[JumpBack]weekly_win_rank_matching",
+                                "[JumpBack]weekly_win_matching",
                                 "[JumpBack]weekly_win_preset_entry",
                                 "[JumpBack]weekly_win_rank_confirm_ninja",
                                 "[JumpBack]weekly_win_rank_ban",
@@ -388,7 +388,7 @@
                                 "[JumpBack]weekly_win_rank_up",
                                 "[JumpBack]battle_again",
                                 "[JumpBack]weekly_win_substitution",
-                                "[JumpBack]go_to_war"
+                                "go_to_war"
                             ]
                         }
                     }
@@ -411,12 +411,6 @@
                             ],
                             "expected": [
                                 "1"
-                            ],
-                            "target": [
-                                825,
-                                109,
-                                64,
-                                38
                             ]
                         }
                     }
@@ -433,12 +427,6 @@
                             ],
                             "expected": [
                                 "2"
-                            ],
-                            "target": [
-                                996,
-                                116,
-                                26,
-                                23
                             ]
                         }
                     }
@@ -455,12 +443,6 @@
                             ],
                             "expected": [
                                 "3"
-                            ],
-                            "target": [
-                                1081,
-                                115,
-                                21,
-                                23
                             ]
                         }
                     }
@@ -477,12 +459,6 @@
                             ],
                             "expected": [
                                 "4"
-                            ],
-                            "target": [
-                                1164,
-                                114,
-                                23,
-                                25
                             ]
                         }
                     }
