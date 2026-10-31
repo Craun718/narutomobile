@@ -488,8 +488,7 @@
                                 "[JumpBack]weekly_win_mouthly_reset_award",
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
-                                "[JumpBack]weekly_win_preset_prewar",
-                                "[JumpBack]go_to_war",
+                                "go_to_war",
                                 "ninja_guide_to_funtion_entry"
                             ]
                         },
@@ -537,8 +536,7 @@
                                 "[JumpBack]weekly_win_mouthly_reset_award",
                                 "[JumpBack]weekly_win_weekly_award",
                                 "[JumpBack]weekly_win_confirm_weekly_award",
-                                "[JumpBack]weekly_win_preset_prewar",
-                                "[JumpBack]go_to_war",
+                                "go_to_war",
                                 "ninja_guide_returning_player_to_funtion_entry"
                             ]
                         }
@@ -549,7 +547,6 @@
         },
         "打排位": {
             "type": "switch",
-
             "cases": [
                 {
                     "name": "No",

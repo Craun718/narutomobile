@@ -1045,6 +1045,7 @@
         "next": [
             "club_submit_blank",
             "[JumpBack]naruto_club_duplicate_claim",
+            "[JumpBack]submit_lag",
             "[JumpBack]club_submit",
             "check_club_all_submit",
             "club_reward_wrong_page"
@@ -1070,18 +1071,47 @@
             "Node.Action.Starting": "<font color=\"DarkGoldenRod\">这里已经空了,可能是系统繁忙,退出请报社</font>"
         }
     },
+    "submit_lag": {
+        "recognition": "ColorMatch",
+        "roi": [
+            570,
+            291,
+            140,
+            135
+        ],
+        "method": 4,
+        "lower": [
+            45,
+            45,
+            44
+        ],
+        "upper": [
+            46,
+            45,
+            45
+        ],
+        "count": 1000,
+        "pre_delay": 0,
+        "post_delay": 300
+    },
     "check_club_all_submit": {
         "max_hit": 5,
-        "recognition": "And",
-        "all_of": [
-            "club_reward_page"
+        "recognition": "TemplateMatch",
+        "roi": [
+            555,
+            68,
+            123,
+            651
         ],
-        "box_index": 0,
+        "template": "Naruto_club/mission_submit.png",
+        "threshold": 0.9,
+        "inverse": true,
         "pre_delay": 0,
         "post_delay": 300,
         "timeout": 10000,
         "next": [
             "[JumpBack]naruto_club_duplicate_claim",
+            "[JumpBack]submit_lag",
             "[JumpBack]club_submit",
             "club_third_award_done",
             "club_third_award_unavailable",
@@ -1108,8 +1138,7 @@
                     651
                 ],
                 "template": "Naruto_club/mission_submit.png",
-                "method": 10001,
-                "threshold": 0.95
+                "threshold": 0.9
             }
         ],
         "box_index": 1,
@@ -1421,7 +1450,7 @@
                     527
                 ],
                 "template": "Naruto_club/club_second_award_done.png",
-                "threshold": 0.9
+                "threshold": 0.8
             }
         ],
         "box_index": 1,

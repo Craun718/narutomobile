@@ -647,6 +647,45 @@
             "[JumpBack]team_dash_sweep_win"
         ]
     },
+    "team_dash_battle_tips": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            527,
+            120,
+            225,
+            157
+        ],
+        "template": "Weekly_win/battle_tips.png",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "timeout": 10000,
+        "next": [
+            "team_dash_tips_confirm"
+        ],
+        "on_error": [
+            "back_main_screen_and_stop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "<font color=\"DeepSkyBlue\">战斗异常提示</font>"
+        }
+    },
+    "team_dash_tips_confirm": {
+        "recognition": "OCR",
+        "roi": [
+            529,
+            375,
+            221,
+            155
+        ],
+        "expected": "确定",
+        "pre_delay": 0,
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "team_dash_tips_confirm",
+            "team_dash"
+        ]
+    },
     "team_dash_not_in_auto_battle": {
         "recognition": "OCR",
         "roi": [
