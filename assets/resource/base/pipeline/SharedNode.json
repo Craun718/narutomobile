@@ -3,7 +3,10 @@
         "max_hit": 1,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": "back_main_screen"
+        "next": [
+            "back_main_screen",
+            "check_main_screen"
+        ]
     },
     "back_and_stop_after_task_done": {
         "max_hit": 1,
