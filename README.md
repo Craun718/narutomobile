@@ -14,6 +14,10 @@
   <a href="https://mirrorchyan.com/zh/projects?rid=MaaAutoNaruto&source=MaaAutoNarutogh-badge" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a>
 </p>
 
+<p align="center">
+  <a href="README.md">简体中文</a> | <a href="README_EN.md">English</a>
+</p>
+
 <div align="center">
 
 # Maa Auto Naruto
@@ -35,6 +39,10 @@
 ## 常见问题
 
 请见 [FAQ文档](docs/guide/faq.md)
+
+## 使用说明
+
+请见 [使用说明文档](docs/guide/manual.md)
 
 ## 主要功能
 
