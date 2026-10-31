@@ -1,5 +1,15 @@
 # 常见问题
 
+官方教学视频：
+
+[电脑端使用](https://www.bilibili.com/video/BV1bz9kBNEbm)
+
+[电脑端adb链接](https://www.bilibili.com/video/BV1KHNn67Eno)
+
+[安卓端使用](https://www.bilibili.com/video/BV1sBnA6iEcu)
+
+[安卓端shizuku](https://www.bilibili.com/video/BV1PF4y6KEvs)
+
 ## 项目相关
 
 1. Q: 硬件配置有要求吗？
